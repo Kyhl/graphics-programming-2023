@@ -31,10 +31,7 @@
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/exercises/exercise00/CMakeFiles/exercise00.dir/main.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/exercises/exercise00/CMakeFiles/exercise00.dir/main.cpp.obj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/exercises/exercise00/exercise00.exe" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/exercises/exercise00/exercise00.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/libraries/itugl/CMakeFiles/itugl.dir/src/ituGL/core/BufferObject.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/libraries/itugl/CMakeFiles/itugl.dir/src/ituGL/core/BufferObject.cpp.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/libraries/itugl/libitugl.a" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/libraries/itugl/libitugl.a" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/exercises/exercise00/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/exercises/exercise00/main.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libraries/itugl/src/ituGL/core/BufferObject.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/libraries/itugl/src/ituGL/core/BufferObject.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,9 +76,9 @@
   }
 }</component>
   <component name="RunManager" selected="CMake Application.exercise00">
-    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
+    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
       <method v="2">
-        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
     <configuration name="exercise00" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ITU-graphics-programming" TARGET_NAME="exercise00" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="ITU-graphics-programming" RUN_TARGET_NAME="exercise00">
@@ -128,6 +125,7 @@
       <workItem from="1675154560123" duration="8052000" />
       <workItem from="1675169713688" duration="628000" />
       <workItem from="1675170357561" duration="6565000" />
+      <workItem from="1675181239516" duration="3936000" />
     </task>
     <servers />
   </component>

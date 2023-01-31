@@ -9,6 +9,7 @@
 #include <ituGL/geometry/ElementBufferObject.h>
 #define _USE_MATH_DEFINES
 #include <cmath>
+#include <vector>
 
 
 void framebuffer_size_callback(GLFWwindow* window, int width, int height);
@@ -59,22 +60,22 @@ int main()
     unsigned int shaderProgram = buildShaderProgram();
     // set up vertex data (and buffer(s)) and configure vertex attributes
     // ------------------------------------------------------------------
-    float vertices[] = {
-            //Triangle #1
-        -0.5f, -0.5f, 0.0f, // left
-         0.5f, -0.5f, 0.0f, // right
-         0.5f,  0.5f, 0.0f,  // top
-
-            //Triangle #2
-        -0.5f, 0.5f, 0.0f, // right
-
-
-
-    };
-    unsigned int triangles[] = {
-            0,1,2,
-            2,0,3
-    };
+//    float vertices[] = {
+//            //Triangle #1
+//        -0.5f, -0.5f, 0.0f, // left
+//         0.5f, -0.5f, 0.0f, // right
+//         0.5f,  0.5f, 0.0f,  // top
+//
+//            //Triangle #2
+//        -0.5f, 0.5f, 0.0f, // right
+//
+//
+//
+//    };
+//    unsigned int triangles[] = {
+//            0,1,2,
+//            2,0,3
+//    };
 
     VertexBufferObject VBO;
     VertexArrayObject VAO;
@@ -85,13 +86,32 @@ int main()
     VAO.Bind();
     VBO.Bind();
     EBO.Bind();
+    std::vector<float> vertices = {
+            //Triangle #1
+            0.0f,0.0f,0.0f,  // left
+            0.5f, -0.1f, 0.0f, // right
+            0.5f,  0.1f, 0.0f,  // top
 
-    int vertCount = sizeof(vertices)/sizeof(float);
-    int triCount = sizeof(triangles)/sizeof(uint32_t);
 
-    EBO.AllocateData(std::as_bytes(std::span(triangles,triCount)));
-    VBO.AllocateData(std::as_bytes(std::span(vertices,vertCount)));
 
+
+    };
+    std::vector<unsigned int> triangles = {
+            0,1,2,
+
+    };
+//    int vertCount = sizeof(vertices)/sizeof(float);
+//    int triCount = sizeof(triangles)/sizeof(uint32_t);
+//
+//    EBO.AllocateData(std::as_bytes(std::span(triangles,triCount)));
+//    VBO.AllocateData(std::as_bytes(std::span(vertices,vertCount)));
+
+
+    int vertCount = sizeof(vertices)/sizeof(Data::Type::Float);
+    int triCount = sizeof(triangles)/sizeof(Data::Type::UInt);
+
+    EBO.AllocateData(std::as_bytes(std::span{triangles}));
+    VBO.AllocateData(std::as_bytes(std::span{vertices}));
     VertexAttribute position(Data::Type::Float,3);
     VAO.SetAttribute(0,position,0);
     // note that this is allowed, the call to glVertexAttribPointer registered VBO as the vertex attribute's bound vertex buffer object so afterwards we can safely unbind
@@ -109,6 +129,7 @@ int main()
     // -----------
 
 
+    int index = 2;
     while (!window.ShouldClose())
     {
         // input
@@ -123,20 +144,33 @@ int main()
         VBO.Bind();
         EBO.Bind();
         time += 0.1;
-        vertices[0] = sqrt(2)/2*std::sin((45+time) * (M_PI/180));
-        vertices[1] =  sqrt(2)/2*std::cos((45+time) * (M_PI/180));
-        vertices[3] =  sqrt(2)/2*std::sin((135+time) * (M_PI/180));
-        vertices[4] =  sqrt(2)/2*std::cos((135+time) * (M_PI/180));
-        vertices[6] =  sqrt(2)/2*std::sin((225+time) * (M_PI/180));
-        vertices[7] =  sqrt(2)/2*std::cos((225+time) * (M_PI/180));
-        vertices[9] =  sqrt(2)/2*std::sin((315+time) * (M_PI/180));
-        vertices[10] = sqrt(2)/2*std::cos((315+time) * (M_PI/180));
 
-        VBO.UpdateData((std::span(vertices,vertCount)),0);
+        triCount = sizeof(triangles)/sizeof(uint32_t);
+//        vertices[0] = sqrt(2)/2*std::sin((45+time) * (M_PI/180));
+//        vertices[1] =  sqrt(2)/2*std::cos((45+time) * (M_PI/180));
+//        vertices[3] =  sqrt(2)/2*std::sin((135+time) * (M_PI/180));
+//        vertices[4] =  sqrt(2)/2*std::cos((135+time) * (M_PI/180));
+//        vertices[6] =  sqrt(2)/2*std::sin((225+time) * (M_PI/180));
+//        vertices[7] =  sqrt(2)/2*std::cos((225+time) * (M_PI/180));
+//        vertices[9] =  sqrt(2)/2*std::sin((315+time) * (M_PI/180));
+//        vertices[10] = sqrt(2)/2*std::cos((315+time) * (M_PI/180));
+        vertices.push_back(sqrt(2)/2*std::sin((45+time) * (M_PI/180)));
+        vertices.push_back(sqrt(2)/2*std::sin((45+time) * (M_PI/180)));
+        vertices.push_back(0.0f);
+        index++;
+        triangles.push_back(0);
+        triangles.push_back(index);
+        index++;
+        triangles.push_back(index);
+        //EBO.UpdateData(std::span{vertices},0);
+        VBO.UpdateData(std::span{vertices},0);
+        //VBO.UpdateData((std::span(vertices.data(),vertCount)),0);
         // draw our first triangle
         glUseProgram(shaderProgram);
+
          // seeing as we only have a single VAO there's no need to bind it every time, but we'll do so to keep things a bit more organized
         //glDrawArrays(GL_TRIANGLES, 0, 6);
+
         glDrawElements(GL_TRIANGLES,triCount,GL_UNSIGNED_INT,0);
         // glBindVertexArray(0); // no need to unbind it every time 
 

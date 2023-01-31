@@ -3,6 +3,7 @@
 VertexBufferObject::VertexBufferObject()
 {
     // Nothing to do here, it is done by the base class
+
 }
 
 // Call the base implementation with Usage::StaticDraw

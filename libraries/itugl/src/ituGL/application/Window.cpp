@@ -6,7 +6,7 @@ Window::Window(int width, int height, const char* title) : m_window(nullptr)
     glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 4);
     glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 1);
     glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
-
+    glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT,GL_TRUE);
 #ifdef __APPLE__
     glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
 #endif
@@ -19,11 +19,16 @@ Window::Window(int width, int height, const char* title) : m_window(nullptr)
 // If we have an internal GLFW window, destroy it
 Window::~Window()
 {
+    if(m_window)
+    {
+        glfwDestroyWindow(m_window);
+    }
 }
 
 // Get the current dimensions (width and height) of the window
 void Window::GetDimensions(int& width, int& height) const
 {
+    glfwGetWindowSize(m_window,&width,&height);
 }
 
 // Tell the window that it should close

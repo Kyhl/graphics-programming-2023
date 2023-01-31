@@ -39,14 +39,15 @@ include CMakeFiles/rules.ninja
 #############################################
 # Logical path to working directory; prefix for absolute paths.
 
-cmake_ninja_workdir = C$:/UnityFiles/graphics-programming-2023/cmake-build-debug/
+cmake_ninja_workdir = D$:/GraphicsProgramming/graphics-programming-2023/cmake-build-debug/
 
 #############################################
 # Utility command for edit_cache
 
 build CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = cmd.exe /C "cd /D C:\UnityFiles\graphics-programming-2023\cmake-build-debug && "C:\Program Files\JetBrains\CLion 2022.3.2\bin\cmake\win\x64\bin\cmake.exe" -E echo "No interactive CMake dialog available.""
-  DESC = No interactive CMake dialog available...
+  COMMAND = cmd.exe /C "cd /D D:\GraphicsProgramming\graphics-programming-2023\cmake-build-debug && "C:\Program Files\CMake\bin\cmake-gui.exe" -SD:\GraphicsProgramming\graphics-programming-2023 -BD:\GraphicsProgramming\graphics-programming-2023\cmake-build-debug"
+  DESC = Running CMake cache editor...
+  pool = console
   restat = 1
 
 build edit_cache: phony CMakeFiles/edit_cache.util
@@ -56,7 +57,7 @@ build edit_cache: phony CMakeFiles/edit_cache.util
 # Utility command for rebuild_cache
 
 build CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = cmd.exe /C "cd /D C:\UnityFiles\graphics-programming-2023\cmake-build-debug && "C:\Program Files\JetBrains\CLion 2022.3.2\bin\cmake\win\x64\bin\cmake.exe" --regenerate-during-build -SC:\UnityFiles\graphics-programming-2023 -BC:\UnityFiles\graphics-programming-2023\cmake-build-debug"
+  COMMAND = cmd.exe /C "cd /D D:\GraphicsProgramming\graphics-programming-2023\cmake-build-debug && "C:\Program Files\CMake\bin\cmake.exe" --regenerate-during-build -SD:\GraphicsProgramming\graphics-programming-2023 -BD:\GraphicsProgramming\graphics-programming-2023\cmake-build-debug"
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1
@@ -74,7 +75,7 @@ build list_install_components: phony
 # Utility command for install
 
 build CMakeFiles/install.util: CUSTOM_COMMAND all
-  COMMAND = cmd.exe /C "cd /D C:\UnityFiles\graphics-programming-2023\cmake-build-debug && "C:\Program Files\JetBrains\CLion 2022.3.2\bin\cmake\win\x64\bin\cmake.exe" -P cmake_install.cmake"
+  COMMAND = cmd.exe /C "cd /D D:\GraphicsProgramming\graphics-programming-2023\cmake-build-debug && "C:\Program Files\CMake\bin\cmake.exe" -P cmake_install.cmake"
   DESC = Install the project...
   pool = console
   restat = 1
@@ -86,7 +87,7 @@ build install: phony CMakeFiles/install.util
 # Utility command for install/local
 
 build CMakeFiles/install/local.util: CUSTOM_COMMAND all
-  COMMAND = cmd.exe /C "cd /D C:\UnityFiles\graphics-programming-2023\cmake-build-debug && "C:\Program Files\JetBrains\CLion 2022.3.2\bin\cmake\win\x64\bin\cmake.exe" -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake"
+  COMMAND = cmd.exe /C "cd /D D:\GraphicsProgramming\graphics-programming-2023\cmake-build-debug && "C:\Program Files\CMake\bin\cmake.exe" -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake"
   DESC = Installing only the local directory...
   pool = console
   restat = 1
@@ -98,7 +99,7 @@ build install/local: phony CMakeFiles/install/local.util
 # Utility command for install/strip
 
 build CMakeFiles/install/strip.util: CUSTOM_COMMAND all
-  COMMAND = cmd.exe /C "cd /D C:\UnityFiles\graphics-programming-2023\cmake-build-debug && "C:\Program Files\JetBrains\CLion 2022.3.2\bin\cmake\win\x64\bin\cmake.exe" -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake"
+  COMMAND = cmd.exe /C "cd /D D:\GraphicsProgramming\graphics-programming-2023\cmake-build-debug && "C:\Program Files\CMake\bin\cmake.exe" -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake"
   DESC = Installing the project stripped...
   pool = console
   restat = 1
@@ -107,7 +108,7 @@ build install/strip: phony CMakeFiles/install/strip.util
 
 # =============================================================================
 # Write statements declared in CMakeLists.txt:
-# C:/UnityFiles/graphics-programming-2023/CMakeLists.txt
+# D:/GraphicsProgramming/graphics-programming-2023/CMakeLists.txt
 # =============================================================================
 
 
@@ -115,8 +116,9 @@ build install/strip: phony CMakeFiles/install/strip.util
 # Utility command for edit_cache
 
 build libraries/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = cmd.exe /C "cd /D C:\UnityFiles\graphics-programming-2023\cmake-build-debug\libraries && "C:\Program Files\JetBrains\CLion 2022.3.2\bin\cmake\win\x64\bin\cmake.exe" -E echo "No interactive CMake dialog available.""
-  DESC = No interactive CMake dialog available...
+  COMMAND = cmd.exe /C "cd /D D:\GraphicsProgramming\graphics-programming-2023\cmake-build-debug\libraries && "C:\Program Files\CMake\bin\cmake-gui.exe" -SD:\GraphicsProgramming\graphics-programming-2023 -BD:\GraphicsProgramming\graphics-programming-2023\cmake-build-debug"
+  DESC = Running CMake cache editor...
+  pool = console
   restat = 1
 
 build libraries/edit_cache: phony libraries/CMakeFiles/edit_cache.util
@@ -126,7 +128,7 @@ build libraries/edit_cache: phony libraries/CMakeFiles/edit_cache.util
 # Utility command for rebuild_cache
 
 build libraries/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = cmd.exe /C "cd /D C:\UnityFiles\graphics-programming-2023\cmake-build-debug\libraries && "C:\Program Files\JetBrains\CLion 2022.3.2\bin\cmake\win\x64\bin\cmake.exe" --regenerate-during-build -SC:\UnityFiles\graphics-programming-2023 -BC:\UnityFiles\graphics-programming-2023\cmake-build-debug"
+  COMMAND = cmd.exe /C "cd /D D:\GraphicsProgramming\graphics-programming-2023\cmake-build-debug\libraries && "C:\Program Files\CMake\bin\cmake.exe" --regenerate-during-build -SD:\GraphicsProgramming\graphics-programming-2023 -BD:\GraphicsProgramming\graphics-programming-2023\cmake-build-debug"
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1
@@ -144,7 +146,7 @@ build libraries/list_install_components: phony
 # Utility command for install
 
 build libraries/CMakeFiles/install.util: CUSTOM_COMMAND libraries/all
-  COMMAND = cmd.exe /C "cd /D C:\UnityFiles\graphics-programming-2023\cmake-build-debug\libraries && "C:\Program Files\JetBrains\CLion 2022.3.2\bin\cmake\win\x64\bin\cmake.exe" -P cmake_install.cmake"
+  COMMAND = cmd.exe /C "cd /D D:\GraphicsProgramming\graphics-programming-2023\cmake-build-debug\libraries && "C:\Program Files\CMake\bin\cmake.exe" -P cmake_install.cmake"
   DESC = Install the project...
   pool = console
   restat = 1
@@ -156,7 +158,7 @@ build libraries/install: phony libraries/CMakeFiles/install.util
 # Utility command for install/local
 
 build libraries/CMakeFiles/install/local.util: CUSTOM_COMMAND libraries/all
-  COMMAND = cmd.exe /C "cd /D C:\UnityFiles\graphics-programming-2023\cmake-build-debug\libraries && "C:\Program Files\JetBrains\CLion 2022.3.2\bin\cmake\win\x64\bin\cmake.exe" -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake"
+  COMMAND = cmd.exe /C "cd /D D:\GraphicsProgramming\graphics-programming-2023\cmake-build-debug\libraries && "C:\Program Files\CMake\bin\cmake.exe" -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake"
   DESC = Installing only the local directory...
   pool = console
   restat = 1
@@ -168,7 +170,7 @@ build libraries/install/local: phony libraries/CMakeFiles/install/local.util
 # Utility command for install/strip
 
 build libraries/CMakeFiles/install/strip.util: CUSTOM_COMMAND libraries/all
-  COMMAND = cmd.exe /C "cd /D C:\UnityFiles\graphics-programming-2023\cmake-build-debug\libraries && "C:\Program Files\JetBrains\CLion 2022.3.2\bin\cmake\win\x64\bin\cmake.exe" -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake"
+  COMMAND = cmd.exe /C "cd /D D:\GraphicsProgramming\graphics-programming-2023\cmake-build-debug\libraries && "C:\Program Files\CMake\bin\cmake.exe" -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake"
   DESC = Installing the project stripped...
   pool = console
   restat = 1
@@ -177,7 +179,7 @@ build libraries/install/strip: phony libraries/CMakeFiles/install/strip.util
 
 # =============================================================================
 # Write statements declared in CMakeLists.txt:
-# C:/UnityFiles/graphics-programming-2023/libraries/CMakeLists.txt
+# D:/GraphicsProgramming/graphics-programming-2023/libraries/CMakeLists.txt
 # =============================================================================
 
 # =============================================================================
@@ -189,10 +191,10 @@ build libraries/install/strip: phony libraries/CMakeFiles/install/strip.util
 
 build cmake_object_order_depends_target_glad: phony || libraries/glad/CMakeFiles/glad.dir
 
-build libraries/glad/CMakeFiles/glad.dir/src/glad.c.obj: C_COMPILER__glad_Debug C$:/UnityFiles/graphics-programming-2023/libraries/glad/src/glad.c || cmake_object_order_depends_target_glad
+build libraries/glad/CMakeFiles/glad.dir/src/glad.c.obj: C_COMPILER__glad_Debug D$:/GraphicsProgramming/graphics-programming-2023/libraries/glad/src/glad.c || cmake_object_order_depends_target_glad
   DEP_FILE = libraries\glad\CMakeFiles\glad.dir\src\glad.c.obj.d
   FLAGS = -g -fdiagnostics-color=always
-  INCLUDES = -IC:/UnityFiles/graphics-programming-2023/libraries/glad/include -IC:/UnityFiles/graphics-programming-2023/libraries/glfw/include -IC:/UnityFiles/graphics-programming-2023/libraries/imgui/include -IC:/UnityFiles/graphics-programming-2023/libraries/glm/include -IC:/UnityFiles/graphics-programming-2023/libraries/stb/include -IC:/UnityFiles/graphics-programming-2023/libraries/assimp/include -IC:/UnityFiles/graphics-programming-2023/libraries/assimp -IC:/UnityFiles/graphics-programming-2023/libraries/itugl/include
+  INCLUDES = -ID:/GraphicsProgramming/graphics-programming-2023/libraries/glad/include -ID:/GraphicsProgramming/graphics-programming-2023/libraries/glfw/include -ID:/GraphicsProgramming/graphics-programming-2023/libraries/imgui/include -ID:/GraphicsProgramming/graphics-programming-2023/libraries/glm/include -ID:/GraphicsProgramming/graphics-programming-2023/libraries/stb/include -ID:/GraphicsProgramming/graphics-programming-2023/libraries/assimp/include -ID:/GraphicsProgramming/graphics-programming-2023/libraries/assimp -ID:/GraphicsProgramming/graphics-programming-2023/libraries/itugl/include
   OBJECT_DIR = libraries\glad\CMakeFiles\glad.dir
   OBJECT_FILE_DIR = libraries\glad\CMakeFiles\glad.dir\src
   TARGET_COMPILE_PDB = libraries\glad\CMakeFiles\glad.dir\glad.pdb
@@ -220,8 +222,9 @@ build libraries/glad/libglad.a: C_STATIC_LIBRARY_LINKER__glad_Debug libraries/gl
 # Utility command for edit_cache
 
 build libraries/glad/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = cmd.exe /C "cd /D C:\UnityFiles\graphics-programming-2023\cmake-build-debug\libraries\glad && "C:\Program Files\JetBrains\CLion 2022.3.2\bin\cmake\win\x64\bin\cmake.exe" -E echo "No interactive CMake dialog available.""
-  DESC = No interactive CMake dialog available...
+  COMMAND = cmd.exe /C "cd /D D:\GraphicsProgramming\graphics-programming-2023\cmake-build-debug\libraries\glad && "C:\Program Files\CMake\bin\cmake-gui.exe" -SD:\GraphicsProgramming\graphics-programming-2023 -BD:\GraphicsProgramming\graphics-programming-2023\cmake-build-debug"
+  DESC = Running CMake cache editor...
+  pool = console
   restat = 1
 
 build libraries/glad/edit_cache: phony libraries/glad/CMakeFiles/edit_cache.util
@@ -231,7 +234,7 @@ build libraries/glad/edit_cache: phony libraries/glad/CMakeFiles/edit_cache.util
 # Utility command for rebuild_cache
 
 build libraries/glad/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = cmd.exe /C "cd /D C:\UnityFiles\graphics-programming-2023\cmake-build-debug\libraries\glad && "C:\Program Files\JetBrains\CLion 2022.3.2\bin\cmake\win\x64\bin\cmake.exe" --regenerate-during-build -SC:\UnityFiles\graphics-programming-2023 -BC:\UnityFiles\graphics-programming-2023\cmake-build-debug"
+  COMMAND = cmd.exe /C "cd /D D:\GraphicsProgramming\graphics-programming-2023\cmake-build-debug\libraries\glad && "C:\Program Files\CMake\bin\cmake.exe" --regenerate-during-build -SD:\GraphicsProgramming\graphics-programming-2023 -BD:\GraphicsProgramming\graphics-programming-2023\cmake-build-debug"
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1
@@ -249,7 +252,7 @@ build libraries/glad/list_install_components: phony
 # Utility command for install
 
 build libraries/glad/CMakeFiles/install.util: CUSTOM_COMMAND libraries/glad/all
-  COMMAND = cmd.exe /C "cd /D C:\UnityFiles\graphics-programming-2023\cmake-build-debug\libraries\glad && "C:\Program Files\JetBrains\CLion 2022.3.2\bin\cmake\win\x64\bin\cmake.exe" -P cmake_install.cmake"
+  COMMAND = cmd.exe /C "cd /D D:\GraphicsProgramming\graphics-programming-2023\cmake-build-debug\libraries\glad && "C:\Program Files\CMake\bin\cmake.exe" -P cmake_install.cmake"
   DESC = Install the project...
   pool = console
   restat = 1
@@ -261,7 +264,7 @@ build libraries/glad/install: phony libraries/glad/CMakeFiles/install.util
 # Utility command for install/local
 
 build libraries/glad/CMakeFiles/install/local.util: CUSTOM_COMMAND libraries/glad/all
-  COMMAND = cmd.exe /C "cd /D C:\UnityFiles\graphics-programming-2023\cmake-build-debug\libraries\glad && "C:\Program Files\JetBrains\CLion 2022.3.2\bin\cmake\win\x64\bin\cmake.exe" -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake"
+  COMMAND = cmd.exe /C "cd /D D:\GraphicsProgramming\graphics-programming-2023\cmake-build-debug\libraries\glad && "C:\Program Files\CMake\bin\cmake.exe" -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake"
   DESC = Installing only the local directory...
   pool = console
   restat = 1
@@ -273,7 +276,7 @@ build libraries/glad/install/local: phony libraries/glad/CMakeFiles/install/loca
 # Utility command for install/strip
 
 build libraries/glad/CMakeFiles/install/strip.util: CUSTOM_COMMAND libraries/glad/all
-  COMMAND = cmd.exe /C "cd /D C:\UnityFiles\graphics-programming-2023\cmake-build-debug\libraries\glad && "C:\Program Files\JetBrains\CLion 2022.3.2\bin\cmake\win\x64\bin\cmake.exe" -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake"
+  COMMAND = cmd.exe /C "cd /D D:\GraphicsProgramming\graphics-programming-2023\cmake-build-debug\libraries\glad && "C:\Program Files\CMake\bin\cmake.exe" -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake"
   DESC = Installing the project stripped...
   pool = console
   restat = 1
@@ -282,7 +285,7 @@ build libraries/glad/install/strip: phony libraries/glad/CMakeFiles/install/stri
 
 # =============================================================================
 # Write statements declared in CMakeLists.txt:
-# C:/UnityFiles/graphics-programming-2023/libraries/CMakeLists.txt
+# D:/GraphicsProgramming/graphics-programming-2023/libraries/CMakeLists.txt
 # =============================================================================
 
 
@@ -296,8 +299,9 @@ build libraries/glfw/uninstall: phony libraries/glfw/CMakeFiles/uninstall
 # Utility command for edit_cache
 
 build libraries/glfw/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = cmd.exe /C "cd /D C:\UnityFiles\graphics-programming-2023\cmake-build-debug\libraries\glfw && "C:\Program Files\JetBrains\CLion 2022.3.2\bin\cmake\win\x64\bin\cmake.exe" -E echo "No interactive CMake dialog available.""
-  DESC = No interactive CMake dialog available...
+  COMMAND = cmd.exe /C "cd /D D:\GraphicsProgramming\graphics-programming-2023\cmake-build-debug\libraries\glfw && "C:\Program Files\CMake\bin\cmake-gui.exe" -SD:\GraphicsProgramming\graphics-programming-2023 -BD:\GraphicsProgramming\graphics-programming-2023\cmake-build-debug"
+  DESC = Running CMake cache editor...
+  pool = console
   restat = 1
 
 build libraries/glfw/edit_cache: phony libraries/glfw/CMakeFiles/edit_cache.util
@@ -307,7 +311,7 @@ build libraries/glfw/edit_cache: phony libraries/glfw/CMakeFiles/edit_cache.util
 # Utility command for rebuild_cache
 
 build libraries/glfw/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = cmd.exe /C "cd /D C:\UnityFiles\graphics-programming-2023\cmake-build-debug\libraries\glfw && "C:\Program Files\JetBrains\CLion 2022.3.2\bin\cmake\win\x64\bin\cmake.exe" --regenerate-during-build -SC:\UnityFiles\graphics-programming-2023 -BC:\UnityFiles\graphics-programming-2023\cmake-build-debug"
+  COMMAND = cmd.exe /C "cd /D D:\GraphicsProgramming\graphics-programming-2023\cmake-build-debug\libraries\glfw && "C:\Program Files\CMake\bin\cmake.exe" --regenerate-during-build -SD:\GraphicsProgramming\graphics-programming-2023 -BD:\GraphicsProgramming\graphics-programming-2023\cmake-build-debug"
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1
@@ -325,7 +329,7 @@ build libraries/glfw/list_install_components: phony
 # Utility command for install
 
 build libraries/glfw/CMakeFiles/install.util: CUSTOM_COMMAND libraries/glfw/all
-  COMMAND = cmd.exe /C "cd /D C:\UnityFiles\graphics-programming-2023\cmake-build-debug\libraries\glfw && "C:\Program Files\JetBrains\CLion 2022.3.2\bin\cmake\win\x64\bin\cmake.exe" -P cmake_install.cmake"
+  COMMAND = cmd.exe /C "cd /D D:\GraphicsProgramming\graphics-programming-2023\cmake-build-debug\libraries\glfw && "C:\Program Files\CMake\bin\cmake.exe" -P cmake_install.cmake"
   DESC = Install the project...
   pool = console
   restat = 1
@@ -337,7 +341,7 @@ build libraries/glfw/install: phony libraries/glfw/CMakeFiles/install.util
 # Utility command for install/local
 
 build libraries/glfw/CMakeFiles/install/local.util: CUSTOM_COMMAND libraries/glfw/all
-  COMMAND = cmd.exe /C "cd /D C:\UnityFiles\graphics-programming-2023\cmake-build-debug\libraries\glfw && "C:\Program Files\JetBrains\CLion 2022.3.2\bin\cmake\win\x64\bin\cmake.exe" -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake"
+  COMMAND = cmd.exe /C "cd /D D:\GraphicsProgramming\graphics-programming-2023\cmake-build-debug\libraries\glfw && "C:\Program Files\CMake\bin\cmake.exe" -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake"
   DESC = Installing only the local directory...
   pool = console
   restat = 1
@@ -349,7 +353,7 @@ build libraries/glfw/install/local: phony libraries/glfw/CMakeFiles/install/loca
 # Utility command for install/strip
 
 build libraries/glfw/CMakeFiles/install/strip.util: CUSTOM_COMMAND libraries/glfw/all
-  COMMAND = cmd.exe /C "cd /D C:\UnityFiles\graphics-programming-2023\cmake-build-debug\libraries\glfw && "C:\Program Files\JetBrains\CLion 2022.3.2\bin\cmake\win\x64\bin\cmake.exe" -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake"
+  COMMAND = cmd.exe /C "cd /D D:\GraphicsProgramming\graphics-programming-2023\cmake-build-debug\libraries\glfw && "C:\Program Files\CMake\bin\cmake.exe" -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake"
   DESC = Installing the project stripped...
   pool = console
   restat = 1
@@ -361,11 +365,11 @@ build libraries/glfw/install/strip: phony libraries/glfw/CMakeFiles/install/stri
 # Custom command for libraries\glfw\CMakeFiles\uninstall
 
 build libraries/glfw/CMakeFiles/uninstall | ${cmake_ninja_workdir}libraries/glfw/CMakeFiles/uninstall: CUSTOM_COMMAND
-  COMMAND = cmd.exe /C "cd /D C:\UnityFiles\graphics-programming-2023\cmake-build-debug\libraries\glfw && "C:\Program Files\JetBrains\CLion 2022.3.2\bin\cmake\win\x64\bin\cmake.exe" -P C:/UnityFiles/graphics-programming-2023/cmake-build-debug/libraries/glfw/cmake_uninstall.cmake"
+  COMMAND = cmd.exe /C "cd /D D:\GraphicsProgramming\graphics-programming-2023\cmake-build-debug\libraries\glfw && "C:\Program Files\CMake\bin\cmake.exe" -P D:/GraphicsProgramming/graphics-programming-2023/cmake-build-debug/libraries/glfw/cmake_uninstall.cmake"
 
 # =============================================================================
 # Write statements declared in CMakeLists.txt:
-# C:/UnityFiles/graphics-programming-2023/libraries/glfw/CMakeLists.txt
+# D:/GraphicsProgramming/graphics-programming-2023/libraries/glfw/CMakeLists.txt
 # =============================================================================
 
 # =============================================================================
@@ -377,151 +381,151 @@ build libraries/glfw/CMakeFiles/uninstall | ${cmake_ninja_workdir}libraries/glfw
 
 build cmake_object_order_depends_target_glfw: phony || libraries/glfw/src/CMakeFiles/glfw.dir
 
-build libraries/glfw/src/CMakeFiles/glfw.dir/context.c.obj: C_COMPILER__glfw_Debug C$:/UnityFiles/graphics-programming-2023/libraries/glfw/src/context.c || cmake_object_order_depends_target_glfw
+build libraries/glfw/src/CMakeFiles/glfw.dir/context.c.obj: C_COMPILER__glfw_Debug D$:/GraphicsProgramming/graphics-programming-2023/libraries/glfw/src/context.c || cmake_object_order_depends_target_glfw
   DEFINES = -DUNICODE -DWINVER=0x0501 -D_GLFW_USE_CONFIG_H -D_UNICODE
   DEP_FILE = libraries\glfw\src\CMakeFiles\glfw.dir\context.c.obj.d
   FLAGS = -g -fdiagnostics-color=always -Wall -std=gnu99 -Wdeclaration-after-statement
-  INCLUDES = -IC:/UnityFiles/graphics-programming-2023/libraries/glad/include -IC:/UnityFiles/graphics-programming-2023/libraries/glfw/include -IC:/UnityFiles/graphics-programming-2023/libraries/imgui/include -IC:/UnityFiles/graphics-programming-2023/libraries/glm/include -IC:/UnityFiles/graphics-programming-2023/libraries/stb/include -IC:/UnityFiles/graphics-programming-2023/libraries/assimp/include -IC:/UnityFiles/graphics-programming-2023/libraries/assimp -IC:/UnityFiles/graphics-programming-2023/libraries/itugl/include -IC:/UnityFiles/graphics-programming-2023/libraries/glfw/src -IC:/UnityFiles/graphics-programming-2023/cmake-build-debug/libraries/glfw/src
+  INCLUDES = -ID:/GraphicsProgramming/graphics-programming-2023/libraries/glad/include -ID:/GraphicsProgramming/graphics-programming-2023/libraries/glfw/include -ID:/GraphicsProgramming/graphics-programming-2023/libraries/imgui/include -ID:/GraphicsProgramming/graphics-programming-2023/libraries/glm/include -ID:/GraphicsProgramming/graphics-programming-2023/libraries/stb/include -ID:/GraphicsProgramming/graphics-programming-2023/libraries/assimp/include -ID:/GraphicsProgramming/graphics-programming-2023/libraries/assimp -ID:/GraphicsProgramming/graphics-programming-2023/libraries/itugl/include -ID:/GraphicsProgramming/graphics-programming-2023/libraries/glfw/src -ID:/GraphicsProgramming/graphics-programming-2023/cmake-build-debug/libraries/glfw/src
   OBJECT_DIR = libraries\glfw\src\CMakeFiles\glfw.dir
   OBJECT_FILE_DIR = libraries\glfw\src\CMakeFiles\glfw.dir
   TARGET_COMPILE_PDB = libraries\glfw\src\CMakeFiles\glfw.dir\glfw.pdb
   TARGET_PDB = libraries\glfw\src\libglfw3.pdb
 
-build libraries/glfw/src/CMakeFiles/glfw.dir/init.c.obj: C_COMPILER__glfw_Debug C$:/UnityFiles/graphics-programming-2023/libraries/glfw/src/init.c || cmake_object_order_depends_target_glfw
+build libraries/glfw/src/CMakeFiles/glfw.dir/init.c.obj: C_COMPILER__glfw_Debug D$:/GraphicsProgramming/graphics-programming-2023/libraries/glfw/src/init.c || cmake_object_order_depends_target_glfw
   DEFINES = -DUNICODE -DWINVER=0x0501 -D_GLFW_USE_CONFIG_H -D_UNICODE
   DEP_FILE = libraries\glfw\src\CMakeFiles\glfw.dir\init.c.obj.d
   FLAGS = -g -fdiagnostics-color=always -Wall -std=gnu99 -Wdeclaration-after-statement
-  INCLUDES = -IC:/UnityFiles/graphics-programming-2023/libraries/glad/include -IC:/UnityFiles/graphics-programming-2023/libraries/glfw/include -IC:/UnityFiles/graphics-programming-2023/libraries/imgui/include -IC:/UnityFiles/graphics-programming-2023/libraries/glm/include -IC:/UnityFiles/graphics-programming-2023/libraries/stb/include -IC:/UnityFiles/graphics-programming-2023/libraries/assimp/include -IC:/UnityFiles/graphics-programming-2023/libraries/assimp -IC:/UnityFiles/graphics-programming-2023/libraries/itugl/include -IC:/UnityFiles/graphics-programming-2023/libraries/glfw/src -IC:/UnityFiles/graphics-programming-2023/cmake-build-debug/libraries/glfw/src
+  INCLUDES = -ID:/GraphicsProgramming/graphics-programming-2023/libraries/glad/include -ID:/GraphicsProgramming/graphics-programming-2023/libraries/glfw/include -ID:/GraphicsProgramming/graphics-programming-2023/libraries/imgui/include -ID:/GraphicsProgramming/graphics-programming-2023/libraries/glm/include -ID:/GraphicsProgramming/graphics-programming-2023/libraries/stb/include -ID:/GraphicsProgramming/graphics-programming-2023/libraries/assimp/include -ID:/GraphicsProgramming/graphics-programming-2023/libraries/assimp -ID:/GraphicsProgramming/graphics-programming-2023/libraries/itugl/include -ID:/GraphicsProgramming/graphics-programming-2023/libraries/glfw/src -ID:/GraphicsProgramming/graphics-programming-2023/cmake-build-debug/libraries/glfw/src
   OBJECT_DIR = libraries\glfw\src\CMakeFiles\glfw.dir
   OBJECT_FILE_DIR = libraries\glfw\src\CMakeFiles\glfw.dir
   TARGET_COMPILE_PDB = libraries\glfw\src\CMakeFiles\glfw.dir\glfw.pdb
   TARGET_PDB = libraries\glfw\src\libglfw3.pdb
 
-build libraries/glfw/src/CMakeFiles/glfw.dir/input.c.obj: C_COMPILER__glfw_Debug C$:/UnityFiles/graphics-programming-2023/libraries/glfw/src/input.c || cmake_object_order_depends_target_glfw
+build libraries/glfw/src/CMakeFiles/glfw.dir/input.c.obj: C_COMPILER__glfw_Debug D$:/GraphicsProgramming/graphics-programming-2023/libraries/glfw/src/input.c || cmake_object_order_depends_target_glfw
   DEFINES = -DUNICODE -DWINVER=0x0501 -D_GLFW_USE_CONFIG_H -D_UNICODE
   DEP_FILE = libraries\glfw\src\CMakeFiles\glfw.dir\input.c.obj.d
   FLAGS = -g -fdiagnostics-color=always -Wall -std=gnu99 -Wdeclaration-after-statement
-  INCLUDES = -IC:/UnityFiles/graphics-programming-2023/libraries/glad/include -IC:/UnityFiles/graphics-programming-2023/libraries/glfw/include -IC:/UnityFiles/graphics-programming-2023/libraries/imgui/include -IC:/UnityFiles/graphics-programming-2023/libraries/glm/include -IC:/UnityFiles/graphics-programming-2023/libraries/stb/include -IC:/UnityFiles/graphics-programming-2023/libraries/assimp/include -IC:/UnityFiles/graphics-programming-2023/libraries/assimp -IC:/UnityFiles/graphics-programming-2023/libraries/itugl/include -IC:/UnityFiles/graphics-programming-2023/libraries/glfw/src -IC:/UnityFiles/graphics-programming-2023/cmake-build-debug/libraries/glfw/src
+  INCLUDES = -ID:/GraphicsProgramming/graphics-programming-2023/libraries/glad/include -ID:/GraphicsProgramming/graphics-programming-2023/libraries/glfw/include -ID:/GraphicsProgramming/graphics-programming-2023/libraries/imgui/include -ID:/GraphicsProgramming/graphics-programming-2023/libraries/glm/include -ID:/GraphicsProgramming/graphics-programming-2023/libraries/stb/include -ID:/GraphicsProgramming/graphics-programming-2023/libraries/assimp/include -ID:/GraphicsProgramming/graphics-programming-2023/libraries/assimp -ID:/GraphicsProgramming/graphics-programming-2023/libraries/itugl/include -ID:/GraphicsProgramming/graphics-programming-2023/libraries/glfw/src -ID:/GraphicsProgramming/graphics-programming-2023/cmake-build-debug/libraries/glfw/src
   OBJECT_DIR = libraries\glfw\src\CMakeFiles\glfw.dir
   OBJECT_FILE_DIR = libraries\glfw\src\CMakeFiles\glfw.dir
   TARGET_COMPILE_PDB = libraries\glfw\src\CMakeFiles\glfw.dir\glfw.pdb
   TARGET_PDB = libraries\glfw\src\libglfw3.pdb
 
-build libraries/glfw/src/CMakeFiles/glfw.dir/monitor.c.obj: C_COMPILER__glfw_Debug C$:/UnityFiles/graphics-programming-2023/libraries/glfw/src/monitor.c || cmake_object_order_depends_target_glfw
+build libraries/glfw/src/CMakeFiles/glfw.dir/monitor.c.obj: C_COMPILER__glfw_Debug D$:/GraphicsProgramming/graphics-programming-2023/libraries/glfw/src/monitor.c || cmake_object_order_depends_target_glfw
   DEFINES = -DUNICODE -DWINVER=0x0501 -D_GLFW_USE_CONFIG_H -D_UNICODE
   DEP_FILE = libraries\glfw\src\CMakeFiles\glfw.dir\monitor.c.obj.d
   FLAGS = -g -fdiagnostics-color=always -Wall -std=gnu99 -Wdeclaration-after-statement
-  INCLUDES = -IC:/UnityFiles/graphics-programming-2023/libraries/glad/include -IC:/UnityFiles/graphics-programming-2023/libraries/glfw/include -IC:/UnityFiles/graphics-programming-2023/libraries/imgui/include -IC:/UnityFiles/graphics-programming-2023/libraries/glm/include -IC:/UnityFiles/graphics-programming-2023/libraries/stb/include -IC:/UnityFiles/graphics-programming-2023/libraries/assimp/include -IC:/UnityFiles/graphics-programming-2023/libraries/assimp -IC:/UnityFiles/graphics-programming-2023/libraries/itugl/include -IC:/UnityFiles/graphics-programming-2023/libraries/glfw/src -IC:/UnityFiles/graphics-programming-2023/cmake-build-debug/libraries/glfw/src
+  INCLUDES = -ID:/GraphicsProgramming/graphics-programming-2023/libraries/glad/include -ID:/GraphicsProgramming/graphics-programming-2023/libraries/glfw/include -ID:/GraphicsProgramming/graphics-programming-2023/libraries/imgui/include -ID:/GraphicsProgramming/graphics-programming-2023/libraries/glm/include -ID:/GraphicsProgramming/graphics-programming-2023/libraries/stb/include -ID:/GraphicsProgramming/graphics-programming-2023/libraries/assimp/include -ID:/GraphicsProgramming/graphics-programming-2023/libraries/assimp -ID:/GraphicsProgramming/graphics-programming-2023/libraries/itugl/include -ID:/GraphicsProgramming/graphics-programming-2023/libraries/glfw/src -ID:/GraphicsProgramming/graphics-programming-2023/cmake-build-debug/libraries/glfw/src
   OBJECT_DIR = libraries\glfw\src\CMakeFiles\glfw.dir
   OBJECT_FILE_DIR = libraries\glfw\src\CMakeFiles\glfw.dir
   TARGET_COMPILE_PDB = libraries\glfw\src\CMakeFiles\glfw.dir\glfw.pdb
   TARGET_PDB = libraries\glfw\src\libglfw3.pdb
 
-build libraries/glfw/src/CMakeFiles/glfw.dir/vulkan.c.obj: C_COMPILER__glfw_Debug C$:/UnityFiles/graphics-programming-2023/libraries/glfw/src/vulkan.c || cmake_object_order_depends_target_glfw
+build libraries/glfw/src/CMakeFiles/glfw.dir/vulkan.c.obj: C_COMPILER__glfw_Debug D$:/GraphicsProgramming/graphics-programming-2023/libraries/glfw/src/vulkan.c || cmake_object_order_depends_target_glfw
   DEFINES = -DUNICODE -DWINVER=0x0501 -D_GLFW_USE_CONFIG_H -D_UNICODE
   DEP_FILE = libraries\glfw\src\CMakeFiles\glfw.dir\vulkan.c.obj.d
   FLAGS = -g -fdiagnostics-color=always -Wall -std=gnu99 -Wdeclaration-after-statement
-  INCLUDES = -IC:/UnityFiles/graphics-programming-2023/libraries/glad/include -IC:/UnityFiles/graphics-programming-2023/libraries/glfw/include -IC:/UnityFiles/graphics-programming-2023/libraries/imgui/include -IC:/UnityFiles/graphics-programming-2023/libraries/glm/include -IC:/UnityFiles/graphics-programming-2023/libraries/stb/include -IC:/UnityFiles/graphics-programming-2023/libraries/assimp/include -IC:/UnityFiles/graphics-programming-2023/libraries/assimp -IC:/UnityFiles/graphics-programming-2023/libraries/itugl/include -IC:/UnityFiles/graphics-programming-2023/libraries/glfw/src -IC:/UnityFiles/graphics-programming-2023/cmake-build-debug/libraries/glfw/src
+  INCLUDES = -ID:/GraphicsProgramming/graphics-programming-2023/libraries/glad/include -ID:/GraphicsProgramming/graphics-programming-2023/libraries/glfw/include -ID:/GraphicsProgramming/graphics-programming-2023/libraries/imgui/include -ID:/GraphicsProgramming/graphics-programming-2023/libraries/glm/include -ID:/GraphicsProgramming/graphics-programming-2023/libraries/stb/include -ID:/GraphicsProgramming/graphics-programming-2023/libraries/assimp/include -ID:/GraphicsProgramming/graphics-programming-2023/libraries/assimp -ID:/GraphicsProgramming/graphics-programming-2023/libraries/itugl/include -ID:/GraphicsProgramming/graphics-programming-2023/libraries/glfw/src -ID:/GraphicsProgramming/graphics-programming-2023/cmake-build-debug/libraries/glfw/src
   OBJECT_DIR = libraries\glfw\src\CMakeFiles\glfw.dir
   OBJECT_FILE_DIR = libraries\glfw\src\CMakeFiles\glfw.dir
   TARGET_COMPILE_PDB = libraries\glfw\src\CMakeFiles\glfw.dir\glfw.pdb
   TARGET_PDB = libraries\glfw\src\libglfw3.pdb
 
-build libraries/glfw/src/CMakeFiles/glfw.dir/window.c.obj: C_COMPILER__glfw_Debug C$:/UnityFiles/graphics-programming-2023/libraries/glfw/src/window.c || cmake_object_order_depends_target_glfw
+build libraries/glfw/src/CMakeFiles/glfw.dir/window.c.obj: C_COMPILER__glfw_Debug D$:/GraphicsProgramming/graphics-programming-2023/libraries/glfw/src/window.c || cmake_object_order_depends_target_glfw
   DEFINES = -DUNICODE -DWINVER=0x0501 -D_GLFW_USE_CONFIG_H -D_UNICODE
   DEP_FILE = libraries\glfw\src\CMakeFiles\glfw.dir\window.c.obj.d
   FLAGS = -g -fdiagnostics-color=always -Wall -std=gnu99 -Wdeclaration-after-statement
-  INCLUDES = -IC:/UnityFiles/graphics-programming-2023/libraries/glad/include -IC:/UnityFiles/graphics-programming-2023/libraries/glfw/include -IC:/UnityFiles/graphics-programming-2023/libraries/imgui/include -IC:/UnityFiles/graphics-programming-2023/libraries/glm/include -IC:/UnityFiles/graphics-programming-2023/libraries/stb/include -IC:/UnityFiles/graphics-programming-2023/libraries/assimp/include -IC:/UnityFiles/graphics-programming-2023/libraries/assimp -IC:/UnityFiles/graphics-programming-2023/libraries/itugl/include -IC:/UnityFiles/graphics-programming-2023/libraries/glfw/src -IC:/UnityFiles/graphics-programming-2023/cmake-build-debug/libraries/glfw/src
+  INCLUDES = -ID:/GraphicsProgramming/graphics-programming-2023/libraries/glad/include -ID:/GraphicsProgramming/graphics-programming-2023/libraries/glfw/include -ID:/GraphicsProgramming/graphics-programming-2023/libraries/imgui/include -ID:/GraphicsProgramming/graphics-programming-2023/libraries/glm/include -ID:/GraphicsProgramming/graphics-programming-2023/libraries/stb/include -ID:/GraphicsProgramming/graphics-programming-2023/libraries/assimp/include -ID:/GraphicsProgramming/graphics-programming-2023/libraries/assimp -ID:/GraphicsProgramming/graphics-programming-2023/libraries/itugl/include -ID:/GraphicsProgramming/graphics-programming-2023/libraries/glfw/src -ID:/GraphicsProgramming/graphics-programming-2023/cmake-build-debug/libraries/glfw/src
   OBJECT_DIR = libraries\glfw\src\CMakeFiles\glfw.dir
   OBJECT_FILE_DIR = libraries\glfw\src\CMakeFiles\glfw.dir
   TARGET_COMPILE_PDB = libraries\glfw\src\CMakeFiles\glfw.dir\glfw.pdb
   TARGET_PDB = libraries\glfw\src\libglfw3.pdb
 
-build libraries/glfw/src/CMakeFiles/glfw.dir/win32_init.c.obj: C_COMPILER__glfw_Debug C$:/UnityFiles/graphics-programming-2023/libraries/glfw/src/win32_init.c || cmake_object_order_depends_target_glfw
+build libraries/glfw/src/CMakeFiles/glfw.dir/win32_init.c.obj: C_COMPILER__glfw_Debug D$:/GraphicsProgramming/graphics-programming-2023/libraries/glfw/src/win32_init.c || cmake_object_order_depends_target_glfw
   DEFINES = -DUNICODE -DWINVER=0x0501 -D_GLFW_USE_CONFIG_H -D_UNICODE
   DEP_FILE = libraries\glfw\src\CMakeFiles\glfw.dir\win32_init.c.obj.d
   FLAGS = -g -fdiagnostics-color=always -Wall -std=gnu99 -Wdeclaration-after-statement
-  INCLUDES = -IC:/UnityFiles/graphics-programming-2023/libraries/glad/include -IC:/UnityFiles/graphics-programming-2023/libraries/glfw/include -IC:/UnityFiles/graphics-programming-2023/libraries/imgui/include -IC:/UnityFiles/graphics-programming-2023/libraries/glm/include -IC:/UnityFiles/graphics-programming-2023/libraries/stb/include -IC:/UnityFiles/graphics-programming-2023/libraries/assimp/include -IC:/UnityFiles/graphics-programming-2023/libraries/assimp -IC:/UnityFiles/graphics-programming-2023/libraries/itugl/include -IC:/UnityFiles/graphics-programming-2023/libraries/glfw/src -IC:/UnityFiles/graphics-programming-2023/cmake-build-debug/libraries/glfw/src
+  INCLUDES = -ID:/GraphicsProgramming/graphics-programming-2023/libraries/glad/include -ID:/GraphicsProgramming/graphics-programming-2023/libraries/glfw/include -ID:/GraphicsProgramming/graphics-programming-2023/libraries/imgui/include -ID:/GraphicsProgramming/graphics-programming-2023/libraries/glm/include -ID:/GraphicsProgramming/graphics-programming-2023/libraries/stb/include -ID:/GraphicsProgramming/graphics-programming-2023/libraries/assimp/include -ID:/GraphicsProgramming/graphics-programming-2023/libraries/assimp -ID:/GraphicsProgramming/graphics-programming-2023/libraries/itugl/include -ID:/GraphicsProgramming/graphics-programming-2023/libraries/glfw/src -ID:/GraphicsProgramming/graphics-programming-2023/cmake-build-debug/libraries/glfw/src
   OBJECT_DIR = libraries\glfw\src\CMakeFiles\glfw.dir
   OBJECT_FILE_DIR = libraries\glfw\src\CMakeFiles\glfw.dir
   TARGET_COMPILE_PDB = libraries\glfw\src\CMakeFiles\glfw.dir\glfw.pdb
   TARGET_PDB = libraries\glfw\src\libglfw3.pdb
 
-build libraries/glfw/src/CMakeFiles/glfw.dir/win32_joystick.c.obj: C_COMPILER__glfw_Debug C$:/UnityFiles/graphics-programming-2023/libraries/glfw/src/win32_joystick.c || cmake_object_order_depends_target_glfw
+build libraries/glfw/src/CMakeFiles/glfw.dir/win32_joystick.c.obj: C_COMPILER__glfw_Debug D$:/GraphicsProgramming/graphics-programming-2023/libraries/glfw/src/win32_joystick.c || cmake_object_order_depends_target_glfw
   DEFINES = -DUNICODE -DWINVER=0x0501 -D_GLFW_USE_CONFIG_H -D_UNICODE
   DEP_FILE = libraries\glfw\src\CMakeFiles\glfw.dir\win32_joystick.c.obj.d
   FLAGS = -g -fdiagnostics-color=always -Wall -std=gnu99 -Wdeclaration-after-statement
-  INCLUDES = -IC:/UnityFiles/graphics-programming-2023/libraries/glad/include -IC:/UnityFiles/graphics-programming-2023/libraries/glfw/include -IC:/UnityFiles/graphics-programming-2023/libraries/imgui/include -IC:/UnityFiles/graphics-programming-2023/libraries/glm/include -IC:/UnityFiles/graphics-programming-2023/libraries/stb/include -IC:/UnityFiles/graphics-programming-2023/libraries/assimp/include -IC:/UnityFiles/graphics-programming-2023/libraries/assimp -IC:/UnityFiles/graphics-programming-2023/libraries/itugl/include -IC:/UnityFiles/graphics-programming-2023/libraries/glfw/src -IC:/UnityFiles/graphics-programming-2023/cmake-build-debug/libraries/glfw/src
+  INCLUDES = -ID:/GraphicsProgramming/graphics-programming-2023/libraries/glad/include -ID:/GraphicsProgramming/graphics-programming-2023/libraries/glfw/include -ID:/GraphicsProgramming/graphics-programming-2023/libraries/imgui/include -ID:/GraphicsProgramming/graphics-programming-2023/libraries/glm/include -ID:/GraphicsProgramming/graphics-programming-2023/libraries/stb/include -ID:/GraphicsProgramming/graphics-programming-2023/libraries/assimp/include -ID:/GraphicsProgramming/graphics-programming-2023/libraries/assimp -ID:/GraphicsProgramming/graphics-programming-2023/libraries/itugl/include -ID:/GraphicsProgramming/graphics-programming-2023/libraries/glfw/src -ID:/GraphicsProgramming/graphics-programming-2023/cmake-build-debug/libraries/glfw/src
   OBJECT_DIR = libraries\glfw\src\CMakeFiles\glfw.dir
   OBJECT_FILE_DIR = libraries\glfw\src\CMakeFiles\glfw.dir
   TARGET_COMPILE_PDB = libraries\glfw\src\CMakeFiles\glfw.dir\glfw.pdb
   TARGET_PDB = libraries\glfw\src\libglfw3.pdb
 
-build libraries/glfw/src/CMakeFiles/glfw.dir/win32_monitor.c.obj: C_COMPILER__glfw_Debug C$:/UnityFiles/graphics-programming-2023/libraries/glfw/src/win32_monitor.c || cmake_object_order_depends_target_glfw
+build libraries/glfw/src/CMakeFiles/glfw.dir/win32_monitor.c.obj: C_COMPILER__glfw_Debug D$:/GraphicsProgramming/graphics-programming-2023/libraries/glfw/src/win32_monitor.c || cmake_object_order_depends_target_glfw
   DEFINES = -DUNICODE -DWINVER=0x0501 -D_GLFW_USE_CONFIG_H -D_UNICODE
   DEP_FILE = libraries\glfw\src\CMakeFiles\glfw.dir\win32_monitor.c.obj.d
   FLAGS = -g -fdiagnostics-color=always -Wall -std=gnu99 -Wdeclaration-after-statement
-  INCLUDES = -IC:/UnityFiles/graphics-programming-2023/libraries/glad/include -IC:/UnityFiles/graphics-programming-2023/libraries/glfw/include -IC:/UnityFiles/graphics-programming-2023/libraries/imgui/include -IC:/UnityFiles/graphics-programming-2023/libraries/glm/include -IC:/UnityFiles/graphics-programming-2023/libraries/stb/include -IC:/UnityFiles/graphics-programming-2023/libraries/assimp/include -IC:/UnityFiles/graphics-programming-2023/libraries/assimp -IC:/UnityFiles/graphics-programming-2023/libraries/itugl/include -IC:/UnityFiles/graphics-programming-2023/libraries/glfw/src -IC:/UnityFiles/graphics-programming-2023/cmake-build-debug/libraries/glfw/src
+  INCLUDES = -ID:/GraphicsProgramming/graphics-programming-2023/libraries/glad/include -ID:/GraphicsProgramming/graphics-programming-2023/libraries/glfw/include -ID:/GraphicsProgramming/graphics-programming-2023/libraries/imgui/include -ID:/GraphicsProgramming/graphics-programming-2023/libraries/glm/include -ID:/GraphicsProgramming/graphics-programming-2023/libraries/stb/include -ID:/GraphicsProgramming/graphics-programming-2023/libraries/assimp/include -ID:/GraphicsProgramming/graphics-programming-2023/libraries/assimp -ID:/GraphicsProgramming/graphics-programming-2023/libraries/itugl/include -ID:/GraphicsProgramming/graphics-programming-2023/libraries/glfw/src -ID:/GraphicsProgramming/graphics-programming-2023/cmake-build-debug/libraries/glfw/src
   OBJECT_DIR = libraries\glfw\src\CMakeFiles\glfw.dir
   OBJECT_FILE_DIR = libraries\glfw\src\CMakeFiles\glfw.dir
   TARGET_COMPILE_PDB = libraries\glfw\src\CMakeFiles\glfw.dir\glfw.pdb
   TARGET_PDB = libraries\glfw\src\libglfw3.pdb
 
-build libraries/glfw/src/CMakeFiles/glfw.dir/win32_time.c.obj: C_COMPILER__glfw_Debug C$:/UnityFiles/graphics-programming-2023/libraries/glfw/src/win32_time.c || cmake_object_order_depends_target_glfw
+build libraries/glfw/src/CMakeFiles/glfw.dir/win32_time.c.obj: C_COMPILER__glfw_Debug D$:/GraphicsProgramming/graphics-programming-2023/libraries/glfw/src/win32_time.c || cmake_object_order_depends_target_glfw
   DEFINES = -DUNICODE -DWINVER=0x0501 -D_GLFW_USE_CONFIG_H -D_UNICODE
   DEP_FILE = libraries\glfw\src\CMakeFiles\glfw.dir\win32_time.c.obj.d
   FLAGS = -g -fdiagnostics-color=always -Wall -std=gnu99 -Wdeclaration-after-statement
-  INCLUDES = -IC:/UnityFiles/graphics-programming-2023/libraries/glad/include -IC:/UnityFiles/graphics-programming-2023/libraries/glfw/include -IC:/UnityFiles/graphics-programming-2023/libraries/imgui/include -IC:/UnityFiles/graphics-programming-2023/libraries/glm/include -IC:/UnityFiles/graphics-programming-2023/libraries/stb/include -IC:/UnityFiles/graphics-programming-2023/libraries/assimp/include -IC:/UnityFiles/graphics-programming-2023/libraries/assimp -IC:/UnityFiles/graphics-programming-2023/libraries/itugl/include -IC:/UnityFiles/graphics-programming-2023/libraries/glfw/src -IC:/UnityFiles/graphics-programming-2023/cmake-build-debug/libraries/glfw/src
+  INCLUDES = -ID:/GraphicsProgramming/graphics-programming-2023/libraries/glad/include -ID:/GraphicsProgramming/graphics-programming-2023/libraries/glfw/include -ID:/GraphicsProgramming/graphics-programming-2023/libraries/imgui/include -ID:/GraphicsProgramming/graphics-programming-2023/libraries/glm/include -ID:/GraphicsProgramming/graphics-programming-2023/libraries/stb/include -ID:/GraphicsProgramming/graphics-programming-2023/libraries/assimp/include -ID:/GraphicsProgramming/graphics-programming-2023/libraries/assimp -ID:/GraphicsProgramming/graphics-programming-2023/libraries/itugl/include -ID:/GraphicsProgramming/graphics-programming-2023/libraries/glfw/src -ID:/GraphicsProgramming/graphics-programming-2023/cmake-build-debug/libraries/glfw/src
   OBJECT_DIR = libraries\glfw\src\CMakeFiles\glfw.dir
   OBJECT_FILE_DIR = libraries\glfw\src\CMakeFiles\glfw.dir
   TARGET_COMPILE_PDB = libraries\glfw\src\CMakeFiles\glfw.dir\glfw.pdb
   TARGET_PDB = libraries\glfw\src\libglfw3.pdb
 
-build libraries/glfw/src/CMakeFiles/glfw.dir/win32_thread.c.obj: C_COMPILER__glfw_Debug C$:/UnityFiles/graphics-programming-2023/libraries/glfw/src/win32_thread.c || cmake_object_order_depends_target_glfw
+build libraries/glfw/src/CMakeFiles/glfw.dir/win32_thread.c.obj: C_COMPILER__glfw_Debug D$:/GraphicsProgramming/graphics-programming-2023/libraries/glfw/src/win32_thread.c || cmake_object_order_depends_target_glfw
   DEFINES = -DUNICODE -DWINVER=0x0501 -D_GLFW_USE_CONFIG_H -D_UNICODE
   DEP_FILE = libraries\glfw\src\CMakeFiles\glfw.dir\win32_thread.c.obj.d
   FLAGS = -g -fdiagnostics-color=always -Wall -std=gnu99 -Wdeclaration-after-statement
-  INCLUDES = -IC:/UnityFiles/graphics-programming-2023/libraries/glad/include -IC:/UnityFiles/graphics-programming-2023/libraries/glfw/include -IC:/UnityFiles/graphics-programming-2023/libraries/imgui/include -IC:/UnityFiles/graphics-programming-2023/libraries/glm/include -IC:/UnityFiles/graphics-programming-2023/libraries/stb/include -IC:/UnityFiles/graphics-programming-2023/libraries/assimp/include -IC:/UnityFiles/graphics-programming-2023/libraries/assimp -IC:/UnityFiles/graphics-programming-2023/libraries/itugl/include -IC:/UnityFiles/graphics-programming-2023/libraries/glfw/src -IC:/UnityFiles/graphics-programming-2023/cmake-build-debug/libraries/glfw/src
+  INCLUDES = -ID:/GraphicsProgramming/graphics-programming-2023/libraries/glad/include -ID:/GraphicsProgramming/graphics-programming-2023/libraries/glfw/include -ID:/GraphicsProgramming/graphics-programming-2023/libraries/imgui/include -ID:/GraphicsProgramming/graphics-programming-2023/libraries/glm/include -ID:/GraphicsProgramming/graphics-programming-2023/libraries/stb/include -ID:/GraphicsProgramming/graphics-programming-2023/libraries/assimp/include -ID:/GraphicsProgramming/graphics-programming-2023/libraries/assimp -ID:/GraphicsProgramming/graphics-programming-2023/libraries/itugl/include -ID:/GraphicsProgramming/graphics-programming-2023/libraries/glfw/src -ID:/GraphicsProgramming/graphics-programming-2023/cmake-build-debug/libraries/glfw/src
   OBJECT_DIR = libraries\glfw\src\CMakeFiles\glfw.dir
   OBJECT_FILE_DIR = libraries\glfw\src\CMakeFiles\glfw.dir
   TARGET_COMPILE_PDB = libraries\glfw\src\CMakeFiles\glfw.dir\glfw.pdb
   TARGET_PDB = libraries\glfw\src\libglfw3.pdb
 
-build libraries/glfw/src/CMakeFiles/glfw.dir/win32_window.c.obj: C_COMPILER__glfw_Debug C$:/UnityFiles/graphics-programming-2023/libraries/glfw/src/win32_window.c || cmake_object_order_depends_target_glfw
+build libraries/glfw/src/CMakeFiles/glfw.dir/win32_window.c.obj: C_COMPILER__glfw_Debug D$:/GraphicsProgramming/graphics-programming-2023/libraries/glfw/src/win32_window.c || cmake_object_order_depends_target_glfw
   DEFINES = -DUNICODE -DWINVER=0x0501 -D_GLFW_USE_CONFIG_H -D_UNICODE
   DEP_FILE = libraries\glfw\src\CMakeFiles\glfw.dir\win32_window.c.obj.d
   FLAGS = -g -fdiagnostics-color=always -Wall -std=gnu99 -Wdeclaration-after-statement
-  INCLUDES = -IC:/UnityFiles/graphics-programming-2023/libraries/glad/include -IC:/UnityFiles/graphics-programming-2023/libraries/glfw/include -IC:/UnityFiles/graphics-programming-2023/libraries/imgui/include -IC:/UnityFiles/graphics-programming-2023/libraries/glm/include -IC:/UnityFiles/graphics-programming-2023/libraries/stb/include -IC:/UnityFiles/graphics-programming-2023/libraries/assimp/include -IC:/UnityFiles/graphics-programming-2023/libraries/assimp -IC:/UnityFiles/graphics-programming-2023/libraries/itugl/include -IC:/UnityFiles/graphics-programming-2023/libraries/glfw/src -IC:/UnityFiles/graphics-programming-2023/cmake-build-debug/libraries/glfw/src
+  INCLUDES = -ID:/GraphicsProgramming/graphics-programming-2023/libraries/glad/include -ID:/GraphicsProgramming/graphics-programming-2023/libraries/glfw/include -ID:/GraphicsProgramming/graphics-programming-2023/libraries/imgui/include -ID:/GraphicsProgramming/graphics-programming-2023/libraries/glm/include -ID:/GraphicsProgramming/graphics-programming-2023/libraries/stb/include -ID:/GraphicsProgramming/graphics-programming-2023/libraries/assimp/include -ID:/GraphicsProgramming/graphics-programming-2023/libraries/assimp -ID:/GraphicsProgramming/graphics-programming-2023/libraries/itugl/include -ID:/GraphicsProgramming/graphics-programming-2023/libraries/glfw/src -ID:/GraphicsProgramming/graphics-programming-2023/cmake-build-debug/libraries/glfw/src
   OBJECT_DIR = libraries\glfw\src\CMakeFiles\glfw.dir
   OBJECT_FILE_DIR = libraries\glfw\src\CMakeFiles\glfw.dir
   TARGET_COMPILE_PDB = libraries\glfw\src\CMakeFiles\glfw.dir\glfw.pdb
   TARGET_PDB = libraries\glfw\src\libglfw3.pdb
 
-build libraries/glfw/src/CMakeFiles/glfw.dir/wgl_context.c.obj: C_COMPILER__glfw_Debug C$:/UnityFiles/graphics-programming-2023/libraries/glfw/src/wgl_context.c || cmake_object_order_depends_target_glfw
+build libraries/glfw/src/CMakeFiles/glfw.dir/wgl_context.c.obj: C_COMPILER__glfw_Debug D$:/GraphicsProgramming/graphics-programming-2023/libraries/glfw/src/wgl_context.c || cmake_object_order_depends_target_glfw
   DEFINES = -DUNICODE -DWINVER=0x0501 -D_GLFW_USE_CONFIG_H -D_UNICODE
   DEP_FILE = libraries\glfw\src\CMakeFiles\glfw.dir\wgl_context.c.obj.d
   FLAGS = -g -fdiagnostics-color=always -Wall -std=gnu99 -Wdeclaration-after-statement
-  INCLUDES = -IC:/UnityFiles/graphics-programming-2023/libraries/glad/include -IC:/UnityFiles/graphics-programming-2023/libraries/glfw/include -IC:/UnityFiles/graphics-programming-2023/libraries/imgui/include -IC:/UnityFiles/graphics-programming-2023/libraries/glm/include -IC:/UnityFiles/graphics-programming-2023/libraries/stb/include -IC:/UnityFiles/graphics-programming-2023/libraries/assimp/include -IC:/UnityFiles/graphics-programming-2023/libraries/assimp -IC:/UnityFiles/graphics-programming-2023/libraries/itugl/include -IC:/UnityFiles/graphics-programming-2023/libraries/glfw/src -IC:/UnityFiles/graphics-programming-2023/cmake-build-debug/libraries/glfw/src
+  INCLUDES = -ID:/GraphicsProgramming/graphics-programming-2023/libraries/glad/include -ID:/GraphicsProgramming/graphics-programming-2023/libraries/glfw/include -ID:/GraphicsProgramming/graphics-programming-2023/libraries/imgui/include -ID:/GraphicsProgramming/graphics-programming-2023/libraries/glm/include -ID:/GraphicsProgramming/graphics-programming-2023/libraries/stb/include -ID:/GraphicsProgramming/graphics-programming-2023/libraries/assimp/include -ID:/GraphicsProgramming/graphics-programming-2023/libraries/assimp -ID:/GraphicsProgramming/graphics-programming-2023/libraries/itugl/include -ID:/GraphicsProgramming/graphics-programming-2023/libraries/glfw/src -ID:/GraphicsProgramming/graphics-programming-2023/cmake-build-debug/libraries/glfw/src
   OBJECT_DIR = libraries\glfw\src\CMakeFiles\glfw.dir
   OBJECT_FILE_DIR = libraries\glfw\src\CMakeFiles\glfw.dir
   TARGET_COMPILE_PDB = libraries\glfw\src\CMakeFiles\glfw.dir\glfw.pdb
   TARGET_PDB = libraries\glfw\src\libglfw3.pdb
 
-build libraries/glfw/src/CMakeFiles/glfw.dir/egl_context.c.obj: C_COMPILER__glfw_Debug C$:/UnityFiles/graphics-programming-2023/libraries/glfw/src/egl_context.c || cmake_object_order_depends_target_glfw
+build libraries/glfw/src/CMakeFiles/glfw.dir/egl_context.c.obj: C_COMPILER__glfw_Debug D$:/GraphicsProgramming/graphics-programming-2023/libraries/glfw/src/egl_context.c || cmake_object_order_depends_target_glfw
   DEFINES = -DUNICODE -DWINVER=0x0501 -D_GLFW_USE_CONFIG_H -D_UNICODE
   DEP_FILE = libraries\glfw\src\CMakeFiles\glfw.dir\egl_context.c.obj.d
   FLAGS = -g -fdiagnostics-color=always -Wall -std=gnu99 -Wdeclaration-after-statement
-  INCLUDES = -IC:/UnityFiles/graphics-programming-2023/libraries/glad/include -IC:/UnityFiles/graphics-programming-2023/libraries/glfw/include -IC:/UnityFiles/graphics-programming-2023/libraries/imgui/include -IC:/UnityFiles/graphics-programming-2023/libraries/glm/include -IC:/UnityFiles/graphics-programming-2023/libraries/stb/include -IC:/UnityFiles/graphics-programming-2023/libraries/assimp/include -IC:/UnityFiles/graphics-programming-2023/libraries/assimp -IC:/UnityFiles/graphics-programming-2023/libraries/itugl/include -IC:/UnityFiles/graphics-programming-2023/libraries/glfw/src -IC:/UnityFiles/graphics-programming-2023/cmake-build-debug/libraries/glfw/src
+  INCLUDES = -ID:/GraphicsProgramming/graphics-programming-2023/libraries/glad/include -ID:/GraphicsProgramming/graphics-programming-2023/libraries/glfw/include -ID:/GraphicsProgramming/graphics-programming-2023/libraries/imgui/include -ID:/GraphicsProgramming/graphics-programming-2023/libraries/glm/include -ID:/GraphicsProgramming/graphics-programming-2023/libraries/stb/include -ID:/GraphicsProgramming/graphics-programming-2023/libraries/assimp/include -ID:/GraphicsProgramming/graphics-programming-2023/libraries/assimp -ID:/GraphicsProgramming/graphics-programming-2023/libraries/itugl/include -ID:/GraphicsProgramming/graphics-programming-2023/libraries/glfw/src -ID:/GraphicsProgramming/graphics-programming-2023/cmake-build-debug/libraries/glfw/src
   OBJECT_DIR = libraries\glfw\src\CMakeFiles\glfw.dir
   OBJECT_FILE_DIR = libraries\glfw\src\CMakeFiles\glfw.dir
   TARGET_COMPILE_PDB = libraries\glfw\src\CMakeFiles\glfw.dir\glfw.pdb
   TARGET_PDB = libraries\glfw\src\libglfw3.pdb
 
-build libraries/glfw/src/CMakeFiles/glfw.dir/osmesa_context.c.obj: C_COMPILER__glfw_Debug C$:/UnityFiles/graphics-programming-2023/libraries/glfw/src/osmesa_context.c || cmake_object_order_depends_target_glfw
+build libraries/glfw/src/CMakeFiles/glfw.dir/osmesa_context.c.obj: C_COMPILER__glfw_Debug D$:/GraphicsProgramming/graphics-programming-2023/libraries/glfw/src/osmesa_context.c || cmake_object_order_depends_target_glfw
   DEFINES = -DUNICODE -DWINVER=0x0501 -D_GLFW_USE_CONFIG_H -D_UNICODE
   DEP_FILE = libraries\glfw\src\CMakeFiles\glfw.dir\osmesa_context.c.obj.d
   FLAGS = -g -fdiagnostics-color=always -Wall -std=gnu99 -Wdeclaration-after-statement
-  INCLUDES = -IC:/UnityFiles/graphics-programming-2023/libraries/glad/include -IC:/UnityFiles/graphics-programming-2023/libraries/glfw/include -IC:/UnityFiles/graphics-programming-2023/libraries/imgui/include -IC:/UnityFiles/graphics-programming-2023/libraries/glm/include -IC:/UnityFiles/graphics-programming-2023/libraries/stb/include -IC:/UnityFiles/graphics-programming-2023/libraries/assimp/include -IC:/UnityFiles/graphics-programming-2023/libraries/assimp -IC:/UnityFiles/graphics-programming-2023/libraries/itugl/include -IC:/UnityFiles/graphics-programming-2023/libraries/glfw/src -IC:/UnityFiles/graphics-programming-2023/cmake-build-debug/libraries/glfw/src
+  INCLUDES = -ID:/GraphicsProgramming/graphics-programming-2023/libraries/glad/include -ID:/GraphicsProgramming/graphics-programming-2023/libraries/glfw/include -ID:/GraphicsProgramming/graphics-programming-2023/libraries/imgui/include -ID:/GraphicsProgramming/graphics-programming-2023/libraries/glm/include -ID:/GraphicsProgramming/graphics-programming-2023/libraries/stb/include -ID:/GraphicsProgramming/graphics-programming-2023/libraries/assimp/include -ID:/GraphicsProgramming/graphics-programming-2023/libraries/assimp -ID:/GraphicsProgramming/graphics-programming-2023/libraries/itugl/include -ID:/GraphicsProgramming/graphics-programming-2023/libraries/glfw/src -ID:/GraphicsProgramming/graphics-programming-2023/cmake-build-debug/libraries/glfw/src
   OBJECT_DIR = libraries\glfw\src\CMakeFiles\glfw.dir
   OBJECT_FILE_DIR = libraries\glfw\src\CMakeFiles\glfw.dir
   TARGET_COMPILE_PDB = libraries\glfw\src\CMakeFiles\glfw.dir\glfw.pdb
@@ -549,8 +553,9 @@ build libraries/glfw/src/libglfw3.a: C_STATIC_LIBRARY_LINKER__glfw_Debug librari
 # Utility command for edit_cache
 
 build libraries/glfw/src/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = cmd.exe /C "cd /D C:\UnityFiles\graphics-programming-2023\cmake-build-debug\libraries\glfw\src && "C:\Program Files\JetBrains\CLion 2022.3.2\bin\cmake\win\x64\bin\cmake.exe" -E echo "No interactive CMake dialog available.""
-  DESC = No interactive CMake dialog available...
+  COMMAND = cmd.exe /C "cd /D D:\GraphicsProgramming\graphics-programming-2023\cmake-build-debug\libraries\glfw\src && "C:\Program Files\CMake\bin\cmake-gui.exe" -SD:\GraphicsProgramming\graphics-programming-2023 -BD:\GraphicsProgramming\graphics-programming-2023\cmake-build-debug"
+  DESC = Running CMake cache editor...
+  pool = console
   restat = 1
 
 build libraries/glfw/src/edit_cache: phony libraries/glfw/src/CMakeFiles/edit_cache.util
@@ -560,7 +565,7 @@ build libraries/glfw/src/edit_cache: phony libraries/glfw/src/CMakeFiles/edit_ca
 # Utility command for rebuild_cache
 
 build libraries/glfw/src/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = cmd.exe /C "cd /D C:\UnityFiles\graphics-programming-2023\cmake-build-debug\libraries\glfw\src && "C:\Program Files\JetBrains\CLion 2022.3.2\bin\cmake\win\x64\bin\cmake.exe" --regenerate-during-build -SC:\UnityFiles\graphics-programming-2023 -BC:\UnityFiles\graphics-programming-2023\cmake-build-debug"
+  COMMAND = cmd.exe /C "cd /D D:\GraphicsProgramming\graphics-programming-2023\cmake-build-debug\libraries\glfw\src && "C:\Program Files\CMake\bin\cmake.exe" --regenerate-during-build -SD:\GraphicsProgramming\graphics-programming-2023 -BD:\GraphicsProgramming\graphics-programming-2023\cmake-build-debug"
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1
@@ -578,7 +583,7 @@ build libraries/glfw/src/list_install_components: phony
 # Utility command for install
 
 build libraries/glfw/src/CMakeFiles/install.util: CUSTOM_COMMAND libraries/glfw/src/all
-  COMMAND = cmd.exe /C "cd /D C:\UnityFiles\graphics-programming-2023\cmake-build-debug\libraries\glfw\src && "C:\Program Files\JetBrains\CLion 2022.3.2\bin\cmake\win\x64\bin\cmake.exe" -P cmake_install.cmake"
+  COMMAND = cmd.exe /C "cd /D D:\GraphicsProgramming\graphics-programming-2023\cmake-build-debug\libraries\glfw\src && "C:\Program Files\CMake\bin\cmake.exe" -P cmake_install.cmake"
   DESC = Install the project...
   pool = console
   restat = 1
@@ -590,7 +595,7 @@ build libraries/glfw/src/install: phony libraries/glfw/src/CMakeFiles/install.ut
 # Utility command for install/local
 
 build libraries/glfw/src/CMakeFiles/install/local.util: CUSTOM_COMMAND libraries/glfw/src/all
-  COMMAND = cmd.exe /C "cd /D C:\UnityFiles\graphics-programming-2023\cmake-build-debug\libraries\glfw\src && "C:\Program Files\JetBrains\CLion 2022.3.2\bin\cmake\win\x64\bin\cmake.exe" -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake"
+  COMMAND = cmd.exe /C "cd /D D:\GraphicsProgramming\graphics-programming-2023\cmake-build-debug\libraries\glfw\src && "C:\Program Files\CMake\bin\cmake.exe" -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake"
   DESC = Installing only the local directory...
   pool = console
   restat = 1
@@ -602,7 +607,7 @@ build libraries/glfw/src/install/local: phony libraries/glfw/src/CMakeFiles/inst
 # Utility command for install/strip
 
 build libraries/glfw/src/CMakeFiles/install/strip.util: CUSTOM_COMMAND libraries/glfw/src/all
-  COMMAND = cmd.exe /C "cd /D C:\UnityFiles\graphics-programming-2023\cmake-build-debug\libraries\glfw\src && "C:\Program Files\JetBrains\CLion 2022.3.2\bin\cmake\win\x64\bin\cmake.exe" -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake"
+  COMMAND = cmd.exe /C "cd /D D:\GraphicsProgramming\graphics-programming-2023\cmake-build-debug\libraries\glfw\src && "C:\Program Files\CMake\bin\cmake.exe" -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake"
   DESC = Installing the project stripped...
   pool = console
   restat = 1
@@ -611,7 +616,7 @@ build libraries/glfw/src/install/strip: phony libraries/glfw/src/CMakeFiles/inst
 
 # =============================================================================
 # Write statements declared in CMakeLists.txt:
-# C:/UnityFiles/graphics-programming-2023/libraries/CMakeLists.txt
+# D:/GraphicsProgramming/graphics-programming-2023/libraries/CMakeLists.txt
 # =============================================================================
 
 # =============================================================================
@@ -623,82 +628,82 @@ build libraries/glfw/src/install/strip: phony libraries/glfw/src/CMakeFiles/inst
 
 build cmake_object_order_depends_target_itugl: phony || libraries/itugl/CMakeFiles/itugl.dir
 
-build libraries/itugl/CMakeFiles/itugl.dir/src/ituGL/application/Window.cpp.obj: CXX_COMPILER__itugl_Debug C$:/UnityFiles/graphics-programming-2023/libraries/itugl/src/ituGL/application/Window.cpp || cmake_object_order_depends_target_itugl
+build libraries/itugl/CMakeFiles/itugl.dir/src/ituGL/application/Window.cpp.obj: CXX_COMPILER__itugl_Debug D$:/GraphicsProgramming/graphics-programming-2023/libraries/itugl/src/ituGL/application/Window.cpp || cmake_object_order_depends_target_itugl
   DEP_FILE = libraries\itugl\CMakeFiles\itugl.dir\src\ituGL\application\Window.cpp.obj.d
   FLAGS = -g -fdiagnostics-color=always -std=c++20
-  INCLUDES = -IC:/UnityFiles/graphics-programming-2023/libraries/glad/include -IC:/UnityFiles/graphics-programming-2023/libraries/glfw/include -IC:/UnityFiles/graphics-programming-2023/libraries/imgui/include -IC:/UnityFiles/graphics-programming-2023/libraries/glm/include -IC:/UnityFiles/graphics-programming-2023/libraries/stb/include -IC:/UnityFiles/graphics-programming-2023/libraries/assimp/include -IC:/UnityFiles/graphics-programming-2023/libraries/assimp -IC:/UnityFiles/graphics-programming-2023/libraries/itugl/include
+  INCLUDES = -ID:/GraphicsProgramming/graphics-programming-2023/libraries/glad/include -ID:/GraphicsProgramming/graphics-programming-2023/libraries/glfw/include -ID:/GraphicsProgramming/graphics-programming-2023/libraries/imgui/include -ID:/GraphicsProgramming/graphics-programming-2023/libraries/glm/include -ID:/GraphicsProgramming/graphics-programming-2023/libraries/stb/include -ID:/GraphicsProgramming/graphics-programming-2023/libraries/assimp/include -ID:/GraphicsProgramming/graphics-programming-2023/libraries/assimp -ID:/GraphicsProgramming/graphics-programming-2023/libraries/itugl/include
   OBJECT_DIR = libraries\itugl\CMakeFiles\itugl.dir
   OBJECT_FILE_DIR = libraries\itugl\CMakeFiles\itugl.dir\src\ituGL\application
   TARGET_COMPILE_PDB = libraries\itugl\CMakeFiles\itugl.dir\itugl.pdb
   TARGET_PDB = libraries\itugl\libitugl.pdb
 
-build libraries/itugl/CMakeFiles/itugl.dir/src/ituGL/core/BufferObject.cpp.obj: CXX_COMPILER__itugl_Debug C$:/UnityFiles/graphics-programming-2023/libraries/itugl/src/ituGL/core/BufferObject.cpp || cmake_object_order_depends_target_itugl
+build libraries/itugl/CMakeFiles/itugl.dir/src/ituGL/core/BufferObject.cpp.obj: CXX_COMPILER__itugl_Debug D$:/GraphicsProgramming/graphics-programming-2023/libraries/itugl/src/ituGL/core/BufferObject.cpp || cmake_object_order_depends_target_itugl
   DEP_FILE = libraries\itugl\CMakeFiles\itugl.dir\src\ituGL\core\BufferObject.cpp.obj.d
   FLAGS = -g -fdiagnostics-color=always -std=c++20
-  INCLUDES = -IC:/UnityFiles/graphics-programming-2023/libraries/glad/include -IC:/UnityFiles/graphics-programming-2023/libraries/glfw/include -IC:/UnityFiles/graphics-programming-2023/libraries/imgui/include -IC:/UnityFiles/graphics-programming-2023/libraries/glm/include -IC:/UnityFiles/graphics-programming-2023/libraries/stb/include -IC:/UnityFiles/graphics-programming-2023/libraries/assimp/include -IC:/UnityFiles/graphics-programming-2023/libraries/assimp -IC:/UnityFiles/graphics-programming-2023/libraries/itugl/include
+  INCLUDES = -ID:/GraphicsProgramming/graphics-programming-2023/libraries/glad/include -ID:/GraphicsProgramming/graphics-programming-2023/libraries/glfw/include -ID:/GraphicsProgramming/graphics-programming-2023/libraries/imgui/include -ID:/GraphicsProgramming/graphics-programming-2023/libraries/glm/include -ID:/GraphicsProgramming/graphics-programming-2023/libraries/stb/include -ID:/GraphicsProgramming/graphics-programming-2023/libraries/assimp/include -ID:/GraphicsProgramming/graphics-programming-2023/libraries/assimp -ID:/GraphicsProgramming/graphics-programming-2023/libraries/itugl/include
   OBJECT_DIR = libraries\itugl\CMakeFiles\itugl.dir
   OBJECT_FILE_DIR = libraries\itugl\CMakeFiles\itugl.dir\src\ituGL\core
   TARGET_COMPILE_PDB = libraries\itugl\CMakeFiles\itugl.dir\itugl.pdb
   TARGET_PDB = libraries\itugl\libitugl.pdb
 
-build libraries/itugl/CMakeFiles/itugl.dir/src/ituGL/core/Data.cpp.obj: CXX_COMPILER__itugl_Debug C$:/UnityFiles/graphics-programming-2023/libraries/itugl/src/ituGL/core/Data.cpp || cmake_object_order_depends_target_itugl
+build libraries/itugl/CMakeFiles/itugl.dir/src/ituGL/core/Data.cpp.obj: CXX_COMPILER__itugl_Debug D$:/GraphicsProgramming/graphics-programming-2023/libraries/itugl/src/ituGL/core/Data.cpp || cmake_object_order_depends_target_itugl
   DEP_FILE = libraries\itugl\CMakeFiles\itugl.dir\src\ituGL\core\Data.cpp.obj.d
   FLAGS = -g -fdiagnostics-color=always -std=c++20
-  INCLUDES = -IC:/UnityFiles/graphics-programming-2023/libraries/glad/include -IC:/UnityFiles/graphics-programming-2023/libraries/glfw/include -IC:/UnityFiles/graphics-programming-2023/libraries/imgui/include -IC:/UnityFiles/graphics-programming-2023/libraries/glm/include -IC:/UnityFiles/graphics-programming-2023/libraries/stb/include -IC:/UnityFiles/graphics-programming-2023/libraries/assimp/include -IC:/UnityFiles/graphics-programming-2023/libraries/assimp -IC:/UnityFiles/graphics-programming-2023/libraries/itugl/include
+  INCLUDES = -ID:/GraphicsProgramming/graphics-programming-2023/libraries/glad/include -ID:/GraphicsProgramming/graphics-programming-2023/libraries/glfw/include -ID:/GraphicsProgramming/graphics-programming-2023/libraries/imgui/include -ID:/GraphicsProgramming/graphics-programming-2023/libraries/glm/include -ID:/GraphicsProgramming/graphics-programming-2023/libraries/stb/include -ID:/GraphicsProgramming/graphics-programming-2023/libraries/assimp/include -ID:/GraphicsProgramming/graphics-programming-2023/libraries/assimp -ID:/GraphicsProgramming/graphics-programming-2023/libraries/itugl/include
   OBJECT_DIR = libraries\itugl\CMakeFiles\itugl.dir
   OBJECT_FILE_DIR = libraries\itugl\CMakeFiles\itugl.dir\src\ituGL\core
   TARGET_COMPILE_PDB = libraries\itugl\CMakeFiles\itugl.dir\itugl.pdb
   TARGET_PDB = libraries\itugl\libitugl.pdb
 
-build libraries/itugl/CMakeFiles/itugl.dir/src/ituGL/core/DeviceGL.cpp.obj: CXX_COMPILER__itugl_Debug C$:/UnityFiles/graphics-programming-2023/libraries/itugl/src/ituGL/core/DeviceGL.cpp || cmake_object_order_depends_target_itugl
+build libraries/itugl/CMakeFiles/itugl.dir/src/ituGL/core/DeviceGL.cpp.obj: CXX_COMPILER__itugl_Debug D$:/GraphicsProgramming/graphics-programming-2023/libraries/itugl/src/ituGL/core/DeviceGL.cpp || cmake_object_order_depends_target_itugl
   DEP_FILE = libraries\itugl\CMakeFiles\itugl.dir\src\ituGL\core\DeviceGL.cpp.obj.d
   FLAGS = -g -fdiagnostics-color=always -std=c++20
-  INCLUDES = -IC:/UnityFiles/graphics-programming-2023/libraries/glad/include -IC:/UnityFiles/graphics-programming-2023/libraries/glfw/include -IC:/UnityFiles/graphics-programming-2023/libraries/imgui/include -IC:/UnityFiles/graphics-programming-2023/libraries/glm/include -IC:/UnityFiles/graphics-programming-2023/libraries/stb/include -IC:/UnityFiles/graphics-programming-2023/libraries/assimp/include -IC:/UnityFiles/graphics-programming-2023/libraries/assimp -IC:/UnityFiles/graphics-programming-2023/libraries/itugl/include
+  INCLUDES = -ID:/GraphicsProgramming/graphics-programming-2023/libraries/glad/include -ID:/GraphicsProgramming/graphics-programming-2023/libraries/glfw/include -ID:/GraphicsProgramming/graphics-programming-2023/libraries/imgui/include -ID:/GraphicsProgramming/graphics-programming-2023/libraries/glm/include -ID:/GraphicsProgramming/graphics-programming-2023/libraries/stb/include -ID:/GraphicsProgramming/graphics-programming-2023/libraries/assimp/include -ID:/GraphicsProgramming/graphics-programming-2023/libraries/assimp -ID:/GraphicsProgramming/graphics-programming-2023/libraries/itugl/include
   OBJECT_DIR = libraries\itugl\CMakeFiles\itugl.dir
   OBJECT_FILE_DIR = libraries\itugl\CMakeFiles\itugl.dir\src\ituGL\core
   TARGET_COMPILE_PDB = libraries\itugl\CMakeFiles\itugl.dir\itugl.pdb
   TARGET_PDB = libraries\itugl\libitugl.pdb
 
-build libraries/itugl/CMakeFiles/itugl.dir/src/ituGL/core/Object.cpp.obj: CXX_COMPILER__itugl_Debug C$:/UnityFiles/graphics-programming-2023/libraries/itugl/src/ituGL/core/Object.cpp || cmake_object_order_depends_target_itugl
+build libraries/itugl/CMakeFiles/itugl.dir/src/ituGL/core/Object.cpp.obj: CXX_COMPILER__itugl_Debug D$:/GraphicsProgramming/graphics-programming-2023/libraries/itugl/src/ituGL/core/Object.cpp || cmake_object_order_depends_target_itugl
   DEP_FILE = libraries\itugl\CMakeFiles\itugl.dir\src\ituGL\core\Object.cpp.obj.d
   FLAGS = -g -fdiagnostics-color=always -std=c++20
-  INCLUDES = -IC:/UnityFiles/graphics-programming-2023/libraries/glad/include -IC:/UnityFiles/graphics-programming-2023/libraries/glfw/include -IC:/UnityFiles/graphics-programming-2023/libraries/imgui/include -IC:/UnityFiles/graphics-programming-2023/libraries/glm/include -IC:/UnityFiles/graphics-programming-2023/libraries/stb/include -IC:/UnityFiles/graphics-programming-2023/libraries/assimp/include -IC:/UnityFiles/graphics-programming-2023/libraries/assimp -IC:/UnityFiles/graphics-programming-2023/libraries/itugl/include
+  INCLUDES = -ID:/GraphicsProgramming/graphics-programming-2023/libraries/glad/include -ID:/GraphicsProgramming/graphics-programming-2023/libraries/glfw/include -ID:/GraphicsProgramming/graphics-programming-2023/libraries/imgui/include -ID:/GraphicsProgramming/graphics-programming-2023/libraries/glm/include -ID:/GraphicsProgramming/graphics-programming-2023/libraries/stb/include -ID:/GraphicsProgramming/graphics-programming-2023/libraries/assimp/include -ID:/GraphicsProgramming/graphics-programming-2023/libraries/assimp -ID:/GraphicsProgramming/graphics-programming-2023/libraries/itugl/include
   OBJECT_DIR = libraries\itugl\CMakeFiles\itugl.dir
   OBJECT_FILE_DIR = libraries\itugl\CMakeFiles\itugl.dir\src\ituGL\core
   TARGET_COMPILE_PDB = libraries\itugl\CMakeFiles\itugl.dir\itugl.pdb
   TARGET_PDB = libraries\itugl\libitugl.pdb
 
-build libraries/itugl/CMakeFiles/itugl.dir/src/ituGL/geometry/ElementBufferObject.cpp.obj: CXX_COMPILER__itugl_Debug C$:/UnityFiles/graphics-programming-2023/libraries/itugl/src/ituGL/geometry/ElementBufferObject.cpp || cmake_object_order_depends_target_itugl
+build libraries/itugl/CMakeFiles/itugl.dir/src/ituGL/geometry/ElementBufferObject.cpp.obj: CXX_COMPILER__itugl_Debug D$:/GraphicsProgramming/graphics-programming-2023/libraries/itugl/src/ituGL/geometry/ElementBufferObject.cpp || cmake_object_order_depends_target_itugl
   DEP_FILE = libraries\itugl\CMakeFiles\itugl.dir\src\ituGL\geometry\ElementBufferObject.cpp.obj.d
   FLAGS = -g -fdiagnostics-color=always -std=c++20
-  INCLUDES = -IC:/UnityFiles/graphics-programming-2023/libraries/glad/include -IC:/UnityFiles/graphics-programming-2023/libraries/glfw/include -IC:/UnityFiles/graphics-programming-2023/libraries/imgui/include -IC:/UnityFiles/graphics-programming-2023/libraries/glm/include -IC:/UnityFiles/graphics-programming-2023/libraries/stb/include -IC:/UnityFiles/graphics-programming-2023/libraries/assimp/include -IC:/UnityFiles/graphics-programming-2023/libraries/assimp -IC:/UnityFiles/graphics-programming-2023/libraries/itugl/include
+  INCLUDES = -ID:/GraphicsProgramming/graphics-programming-2023/libraries/glad/include -ID:/GraphicsProgramming/graphics-programming-2023/libraries/glfw/include -ID:/GraphicsProgramming/graphics-programming-2023/libraries/imgui/include -ID:/GraphicsProgramming/graphics-programming-2023/libraries/glm/include -ID:/GraphicsProgramming/graphics-programming-2023/libraries/stb/include -ID:/GraphicsProgramming/graphics-programming-2023/libraries/assimp/include -ID:/GraphicsProgramming/graphics-programming-2023/libraries/assimp -ID:/GraphicsProgramming/graphics-programming-2023/libraries/itugl/include
   OBJECT_DIR = libraries\itugl\CMakeFiles\itugl.dir
   OBJECT_FILE_DIR = libraries\itugl\CMakeFiles\itugl.dir\src\ituGL\geometry
   TARGET_COMPILE_PDB = libraries\itugl\CMakeFiles\itugl.dir\itugl.pdb
   TARGET_PDB = libraries\itugl\libitugl.pdb
 
-build libraries/itugl/CMakeFiles/itugl.dir/src/ituGL/geometry/VertexArrayObject.cpp.obj: CXX_COMPILER__itugl_Debug C$:/UnityFiles/graphics-programming-2023/libraries/itugl/src/ituGL/geometry/VertexArrayObject.cpp || cmake_object_order_depends_target_itugl
+build libraries/itugl/CMakeFiles/itugl.dir/src/ituGL/geometry/VertexArrayObject.cpp.obj: CXX_COMPILER__itugl_Debug D$:/GraphicsProgramming/graphics-programming-2023/libraries/itugl/src/ituGL/geometry/VertexArrayObject.cpp || cmake_object_order_depends_target_itugl
   DEP_FILE = libraries\itugl\CMakeFiles\itugl.dir\src\ituGL\geometry\VertexArrayObject.cpp.obj.d
   FLAGS = -g -fdiagnostics-color=always -std=c++20
-  INCLUDES = -IC:/UnityFiles/graphics-programming-2023/libraries/glad/include -IC:/UnityFiles/graphics-programming-2023/libraries/glfw/include -IC:/UnityFiles/graphics-programming-2023/libraries/imgui/include -IC:/UnityFiles/graphics-programming-2023/libraries/glm/include -IC:/UnityFiles/graphics-programming-2023/libraries/stb/include -IC:/UnityFiles/graphics-programming-2023/libraries/assimp/include -IC:/UnityFiles/graphics-programming-2023/libraries/assimp -IC:/UnityFiles/graphics-programming-2023/libraries/itugl/include
+  INCLUDES = -ID:/GraphicsProgramming/graphics-programming-2023/libraries/glad/include -ID:/GraphicsProgramming/graphics-programming-2023/libraries/glfw/include -ID:/GraphicsProgramming/graphics-programming-2023/libraries/imgui/include -ID:/GraphicsProgramming/graphics-programming-2023/libraries/glm/include -ID:/GraphicsProgramming/graphics-programming-2023/libraries/stb/include -ID:/GraphicsProgramming/graphics-programming-2023/libraries/assimp/include -ID:/GraphicsProgramming/graphics-programming-2023/libraries/assimp -ID:/GraphicsProgramming/graphics-programming-2023/libraries/itugl/include
   OBJECT_DIR = libraries\itugl\CMakeFiles\itugl.dir
   OBJECT_FILE_DIR = libraries\itugl\CMakeFiles\itugl.dir\src\ituGL\geometry
   TARGET_COMPILE_PDB = libraries\itugl\CMakeFiles\itugl.dir\itugl.pdb
   TARGET_PDB = libraries\itugl\libitugl.pdb
 
-build libraries/itugl/CMakeFiles/itugl.dir/src/ituGL/geometry/VertexAttribute.cpp.obj: CXX_COMPILER__itugl_Debug C$:/UnityFiles/graphics-programming-2023/libraries/itugl/src/ituGL/geometry/VertexAttribute.cpp || cmake_object_order_depends_target_itugl
+build libraries/itugl/CMakeFiles/itugl.dir/src/ituGL/geometry/VertexAttribute.cpp.obj: CXX_COMPILER__itugl_Debug D$:/GraphicsProgramming/graphics-programming-2023/libraries/itugl/src/ituGL/geometry/VertexAttribute.cpp || cmake_object_order_depends_target_itugl
   DEP_FILE = libraries\itugl\CMakeFiles\itugl.dir\src\ituGL\geometry\VertexAttribute.cpp.obj.d
   FLAGS = -g -fdiagnostics-color=always -std=c++20
-  INCLUDES = -IC:/UnityFiles/graphics-programming-2023/libraries/glad/include -IC:/UnityFiles/graphics-programming-2023/libraries/glfw/include -IC:/UnityFiles/graphics-programming-2023/libraries/imgui/include -IC:/UnityFiles/graphics-programming-2023/libraries/glm/include -IC:/UnityFiles/graphics-programming-2023/libraries/stb/include -IC:/UnityFiles/graphics-programming-2023/libraries/assimp/include -IC:/UnityFiles/graphics-programming-2023/libraries/assimp -IC:/UnityFiles/graphics-programming-2023/libraries/itugl/include
+  INCLUDES = -ID:/GraphicsProgramming/graphics-programming-2023/libraries/glad/include -ID:/GraphicsProgramming/graphics-programming-2023/libraries/glfw/include -ID:/GraphicsProgramming/graphics-programming-2023/libraries/imgui/include -ID:/GraphicsProgramming/graphics-programming-2023/libraries/glm/include -ID:/GraphicsProgramming/graphics-programming-2023/libraries/stb/include -ID:/GraphicsProgramming/graphics-programming-2023/libraries/assimp/include -ID:/GraphicsProgramming/graphics-programming-2023/libraries/assimp -ID:/GraphicsProgramming/graphics-programming-2023/libraries/itugl/include
   OBJECT_DIR = libraries\itugl\CMakeFiles\itugl.dir
   OBJECT_FILE_DIR = libraries\itugl\CMakeFiles\itugl.dir\src\ituGL\geometry
   TARGET_COMPILE_PDB = libraries\itugl\CMakeFiles\itugl.dir\itugl.pdb
   TARGET_PDB = libraries\itugl\libitugl.pdb
 
-build libraries/itugl/CMakeFiles/itugl.dir/src/ituGL/geometry/VertexBufferObject.cpp.obj: CXX_COMPILER__itugl_Debug C$:/UnityFiles/graphics-programming-2023/libraries/itugl/src/ituGL/geometry/VertexBufferObject.cpp || cmake_object_order_depends_target_itugl
+build libraries/itugl/CMakeFiles/itugl.dir/src/ituGL/geometry/VertexBufferObject.cpp.obj: CXX_COMPILER__itugl_Debug D$:/GraphicsProgramming/graphics-programming-2023/libraries/itugl/src/ituGL/geometry/VertexBufferObject.cpp || cmake_object_order_depends_target_itugl
   DEP_FILE = libraries\itugl\CMakeFiles\itugl.dir\src\ituGL\geometry\VertexBufferObject.cpp.obj.d
   FLAGS = -g -fdiagnostics-color=always -std=c++20
-  INCLUDES = -IC:/UnityFiles/graphics-programming-2023/libraries/glad/include -IC:/UnityFiles/graphics-programming-2023/libraries/glfw/include -IC:/UnityFiles/graphics-programming-2023/libraries/imgui/include -IC:/UnityFiles/graphics-programming-2023/libraries/glm/include -IC:/UnityFiles/graphics-programming-2023/libraries/stb/include -IC:/UnityFiles/graphics-programming-2023/libraries/assimp/include -IC:/UnityFiles/graphics-programming-2023/libraries/assimp -IC:/UnityFiles/graphics-programming-2023/libraries/itugl/include
+  INCLUDES = -ID:/GraphicsProgramming/graphics-programming-2023/libraries/glad/include -ID:/GraphicsProgramming/graphics-programming-2023/libraries/glfw/include -ID:/GraphicsProgramming/graphics-programming-2023/libraries/imgui/include -ID:/GraphicsProgramming/graphics-programming-2023/libraries/glm/include -ID:/GraphicsProgramming/graphics-programming-2023/libraries/stb/include -ID:/GraphicsProgramming/graphics-programming-2023/libraries/assimp/include -ID:/GraphicsProgramming/graphics-programming-2023/libraries/assimp -ID:/GraphicsProgramming/graphics-programming-2023/libraries/itugl/include
   OBJECT_DIR = libraries\itugl\CMakeFiles\itugl.dir
   OBJECT_FILE_DIR = libraries\itugl\CMakeFiles\itugl.dir\src\ituGL\geometry
   TARGET_COMPILE_PDB = libraries\itugl\CMakeFiles\itugl.dir\itugl.pdb
@@ -726,8 +731,9 @@ build libraries/itugl/libitugl.a: CXX_STATIC_LIBRARY_LINKER__itugl_Debug librari
 # Utility command for edit_cache
 
 build libraries/itugl/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = cmd.exe /C "cd /D C:\UnityFiles\graphics-programming-2023\cmake-build-debug\libraries\itugl && "C:\Program Files\JetBrains\CLion 2022.3.2\bin\cmake\win\x64\bin\cmake.exe" -E echo "No interactive CMake dialog available.""
-  DESC = No interactive CMake dialog available...
+  COMMAND = cmd.exe /C "cd /D D:\GraphicsProgramming\graphics-programming-2023\cmake-build-debug\libraries\itugl && "C:\Program Files\CMake\bin\cmake-gui.exe" -SD:\GraphicsProgramming\graphics-programming-2023 -BD:\GraphicsProgramming\graphics-programming-2023\cmake-build-debug"
+  DESC = Running CMake cache editor...
+  pool = console
   restat = 1
 
 build libraries/itugl/edit_cache: phony libraries/itugl/CMakeFiles/edit_cache.util
@@ -737,7 +743,7 @@ build libraries/itugl/edit_cache: phony libraries/itugl/CMakeFiles/edit_cache.ut
 # Utility command for rebuild_cache
 
 build libraries/itugl/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = cmd.exe /C "cd /D C:\UnityFiles\graphics-programming-2023\cmake-build-debug\libraries\itugl && "C:\Program Files\JetBrains\CLion 2022.3.2\bin\cmake\win\x64\bin\cmake.exe" --regenerate-during-build -SC:\UnityFiles\graphics-programming-2023 -BC:\UnityFiles\graphics-programming-2023\cmake-build-debug"
+  COMMAND = cmd.exe /C "cd /D D:\GraphicsProgramming\graphics-programming-2023\cmake-build-debug\libraries\itugl && "C:\Program Files\CMake\bin\cmake.exe" --regenerate-during-build -SD:\GraphicsProgramming\graphics-programming-2023 -BD:\GraphicsProgramming\graphics-programming-2023\cmake-build-debug"
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1
@@ -755,7 +761,7 @@ build libraries/itugl/list_install_components: phony
 # Utility command for install
 
 build libraries/itugl/CMakeFiles/install.util: CUSTOM_COMMAND libraries/itugl/all
-  COMMAND = cmd.exe /C "cd /D C:\UnityFiles\graphics-programming-2023\cmake-build-debug\libraries\itugl && "C:\Program Files\JetBrains\CLion 2022.3.2\bin\cmake\win\x64\bin\cmake.exe" -P cmake_install.cmake"
+  COMMAND = cmd.exe /C "cd /D D:\GraphicsProgramming\graphics-programming-2023\cmake-build-debug\libraries\itugl && "C:\Program Files\CMake\bin\cmake.exe" -P cmake_install.cmake"
   DESC = Install the project...
   pool = console
   restat = 1
@@ -767,7 +773,7 @@ build libraries/itugl/install: phony libraries/itugl/CMakeFiles/install.util
 # Utility command for install/local
 
 build libraries/itugl/CMakeFiles/install/local.util: CUSTOM_COMMAND libraries/itugl/all
-  COMMAND = cmd.exe /C "cd /D C:\UnityFiles\graphics-programming-2023\cmake-build-debug\libraries\itugl && "C:\Program Files\JetBrains\CLion 2022.3.2\bin\cmake\win\x64\bin\cmake.exe" -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake"
+  COMMAND = cmd.exe /C "cd /D D:\GraphicsProgramming\graphics-programming-2023\cmake-build-debug\libraries\itugl && "C:\Program Files\CMake\bin\cmake.exe" -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake"
   DESC = Installing only the local directory...
   pool = console
   restat = 1
@@ -779,7 +785,7 @@ build libraries/itugl/install/local: phony libraries/itugl/CMakeFiles/install/lo
 # Utility command for install/strip
 
 build libraries/itugl/CMakeFiles/install/strip.util: CUSTOM_COMMAND libraries/itugl/all
-  COMMAND = cmd.exe /C "cd /D C:\UnityFiles\graphics-programming-2023\cmake-build-debug\libraries\itugl && "C:\Program Files\JetBrains\CLion 2022.3.2\bin\cmake\win\x64\bin\cmake.exe" -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake"
+  COMMAND = cmd.exe /C "cd /D D:\GraphicsProgramming\graphics-programming-2023\cmake-build-debug\libraries\itugl && "C:\Program Files\CMake\bin\cmake.exe" -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake"
   DESC = Installing the project stripped...
   pool = console
   restat = 1
@@ -788,7 +794,7 @@ build libraries/itugl/install/strip: phony libraries/itugl/CMakeFiles/install/st
 
 # =============================================================================
 # Write statements declared in CMakeLists.txt:
-# C:/UnityFiles/graphics-programming-2023/CMakeLists.txt
+# D:/GraphicsProgramming/graphics-programming-2023/CMakeLists.txt
 # =============================================================================
 
 
@@ -796,8 +802,9 @@ build libraries/itugl/install/strip: phony libraries/itugl/CMakeFiles/install/st
 # Utility command for edit_cache
 
 build exercises/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = cmd.exe /C "cd /D C:\UnityFiles\graphics-programming-2023\cmake-build-debug\exercises && "C:\Program Files\JetBrains\CLion 2022.3.2\bin\cmake\win\x64\bin\cmake.exe" -E echo "No interactive CMake dialog available.""
-  DESC = No interactive CMake dialog available...
+  COMMAND = cmd.exe /C "cd /D D:\GraphicsProgramming\graphics-programming-2023\cmake-build-debug\exercises && "C:\Program Files\CMake\bin\cmake-gui.exe" -SD:\GraphicsProgramming\graphics-programming-2023 -BD:\GraphicsProgramming\graphics-programming-2023\cmake-build-debug"
+  DESC = Running CMake cache editor...
+  pool = console
   restat = 1
 
 build exercises/edit_cache: phony exercises/CMakeFiles/edit_cache.util
@@ -807,7 +814,7 @@ build exercises/edit_cache: phony exercises/CMakeFiles/edit_cache.util
 # Utility command for rebuild_cache
 
 build exercises/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = cmd.exe /C "cd /D C:\UnityFiles\graphics-programming-2023\cmake-build-debug\exercises && "C:\Program Files\JetBrains\CLion 2022.3.2\bin\cmake\win\x64\bin\cmake.exe" --regenerate-during-build -SC:\UnityFiles\graphics-programming-2023 -BC:\UnityFiles\graphics-programming-2023\cmake-build-debug"
+  COMMAND = cmd.exe /C "cd /D D:\GraphicsProgramming\graphics-programming-2023\cmake-build-debug\exercises && "C:\Program Files\CMake\bin\cmake.exe" --regenerate-during-build -SD:\GraphicsProgramming\graphics-programming-2023 -BD:\GraphicsProgramming\graphics-programming-2023\cmake-build-debug"
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1
@@ -825,7 +832,7 @@ build exercises/list_install_components: phony
 # Utility command for install
 
 build exercises/CMakeFiles/install.util: CUSTOM_COMMAND exercises/all
-  COMMAND = cmd.exe /C "cd /D C:\UnityFiles\graphics-programming-2023\cmake-build-debug\exercises && "C:\Program Files\JetBrains\CLion 2022.3.2\bin\cmake\win\x64\bin\cmake.exe" -P cmake_install.cmake"
+  COMMAND = cmd.exe /C "cd /D D:\GraphicsProgramming\graphics-programming-2023\cmake-build-debug\exercises && "C:\Program Files\CMake\bin\cmake.exe" -P cmake_install.cmake"
   DESC = Install the project...
   pool = console
   restat = 1
@@ -837,7 +844,7 @@ build exercises/install: phony exercises/CMakeFiles/install.util
 # Utility command for install/local
 
 build exercises/CMakeFiles/install/local.util: CUSTOM_COMMAND exercises/all
-  COMMAND = cmd.exe /C "cd /D C:\UnityFiles\graphics-programming-2023\cmake-build-debug\exercises && "C:\Program Files\JetBrains\CLion 2022.3.2\bin\cmake\win\x64\bin\cmake.exe" -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake"
+  COMMAND = cmd.exe /C "cd /D D:\GraphicsProgramming\graphics-programming-2023\cmake-build-debug\exercises && "C:\Program Files\CMake\bin\cmake.exe" -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake"
   DESC = Installing only the local directory...
   pool = console
   restat = 1
@@ -849,7 +856,7 @@ build exercises/install/local: phony exercises/CMakeFiles/install/local.util
 # Utility command for install/strip
 
 build exercises/CMakeFiles/install/strip.util: CUSTOM_COMMAND exercises/all
-  COMMAND = cmd.exe /C "cd /D C:\UnityFiles\graphics-programming-2023\cmake-build-debug\exercises && "C:\Program Files\JetBrains\CLion 2022.3.2\bin\cmake\win\x64\bin\cmake.exe" -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake"
+  COMMAND = cmd.exe /C "cd /D D:\GraphicsProgramming\graphics-programming-2023\cmake-build-debug\exercises && "C:\Program Files\CMake\bin\cmake.exe" -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake"
   DESC = Installing the project stripped...
   pool = console
   restat = 1
@@ -858,7 +865,7 @@ build exercises/install/strip: phony exercises/CMakeFiles/install/strip.util
 
 # =============================================================================
 # Write statements declared in CMakeLists.txt:
-# C:/UnityFiles/graphics-programming-2023/exercises/CMakeLists.txt
+# D:/GraphicsProgramming/graphics-programming-2023/exercises/CMakeLists.txt
 # =============================================================================
 
 # =============================================================================
@@ -870,10 +877,10 @@ build exercises/install/strip: phony exercises/CMakeFiles/install/strip.util
 
 build cmake_object_order_depends_target_exercise00: phony || cmake_object_order_depends_target_glad cmake_object_order_depends_target_glfw cmake_object_order_depends_target_itugl
 
-build exercises/exercise00/CMakeFiles/exercise00.dir/main.cpp.obj: CXX_COMPILER__exercise00_Debug C$:/UnityFiles/graphics-programming-2023/exercises/exercise00/main.cpp || cmake_object_order_depends_target_exercise00
+build exercises/exercise00/CMakeFiles/exercise00.dir/main.cpp.obj: CXX_COMPILER__exercise00_Debug D$:/GraphicsProgramming/graphics-programming-2023/exercises/exercise00/main.cpp || cmake_object_order_depends_target_exercise00
   DEP_FILE = exercises\exercise00\CMakeFiles\exercise00.dir\main.cpp.obj.d
   FLAGS = -g -fdiagnostics-color=always -std=c++20
-  INCLUDES = -IC:/UnityFiles/graphics-programming-2023/libraries/glad/include -IC:/UnityFiles/graphics-programming-2023/libraries/glfw/include -IC:/UnityFiles/graphics-programming-2023/libraries/imgui/include -IC:/UnityFiles/graphics-programming-2023/libraries/glm/include -IC:/UnityFiles/graphics-programming-2023/libraries/stb/include -IC:/UnityFiles/graphics-programming-2023/libraries/assimp/include -IC:/UnityFiles/graphics-programming-2023/libraries/assimp -IC:/UnityFiles/graphics-programming-2023/libraries/itugl/include
+  INCLUDES = -ID:/GraphicsProgramming/graphics-programming-2023/libraries/glad/include -ID:/GraphicsProgramming/graphics-programming-2023/libraries/glfw/include -ID:/GraphicsProgramming/graphics-programming-2023/libraries/imgui/include -ID:/GraphicsProgramming/graphics-programming-2023/libraries/glm/include -ID:/GraphicsProgramming/graphics-programming-2023/libraries/stb/include -ID:/GraphicsProgramming/graphics-programming-2023/libraries/assimp/include -ID:/GraphicsProgramming/graphics-programming-2023/libraries/assimp -ID:/GraphicsProgramming/graphics-programming-2023/libraries/itugl/include
   OBJECT_DIR = exercises\exercise00\CMakeFiles\exercise00.dir
   OBJECT_FILE_DIR = exercises\exercise00\CMakeFiles\exercise00.dir
   TARGET_COMPILE_PDB = exercises\exercise00\CMakeFiles\exercise00.dir\
@@ -903,8 +910,9 @@ build exercises/exercise00/exercise00.exe: CXX_EXECUTABLE_LINKER__exercise00_Deb
 # Utility command for edit_cache
 
 build exercises/exercise00/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = cmd.exe /C "cd /D C:\UnityFiles\graphics-programming-2023\cmake-build-debug\exercises\exercise00 && "C:\Program Files\JetBrains\CLion 2022.3.2\bin\cmake\win\x64\bin\cmake.exe" -E echo "No interactive CMake dialog available.""
-  DESC = No interactive CMake dialog available...
+  COMMAND = cmd.exe /C "cd /D D:\GraphicsProgramming\graphics-programming-2023\cmake-build-debug\exercises\exercise00 && "C:\Program Files\CMake\bin\cmake-gui.exe" -SD:\GraphicsProgramming\graphics-programming-2023 -BD:\GraphicsProgramming\graphics-programming-2023\cmake-build-debug"
+  DESC = Running CMake cache editor...
+  pool = console
   restat = 1
 
 build exercises/exercise00/edit_cache: phony exercises/exercise00/CMakeFiles/edit_cache.util
@@ -914,7 +922,7 @@ build exercises/exercise00/edit_cache: phony exercises/exercise00/CMakeFiles/edi
 # Utility command for rebuild_cache
 
 build exercises/exercise00/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = cmd.exe /C "cd /D C:\UnityFiles\graphics-programming-2023\cmake-build-debug\exercises\exercise00 && "C:\Program Files\JetBrains\CLion 2022.3.2\bin\cmake\win\x64\bin\cmake.exe" --regenerate-during-build -SC:\UnityFiles\graphics-programming-2023 -BC:\UnityFiles\graphics-programming-2023\cmake-build-debug"
+  COMMAND = cmd.exe /C "cd /D D:\GraphicsProgramming\graphics-programming-2023\cmake-build-debug\exercises\exercise00 && "C:\Program Files\CMake\bin\cmake.exe" --regenerate-during-build -SD:\GraphicsProgramming\graphics-programming-2023 -BD:\GraphicsProgramming\graphics-programming-2023\cmake-build-debug"
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1
@@ -932,7 +940,7 @@ build exercises/exercise00/list_install_components: phony
 # Utility command for install
 
 build exercises/exercise00/CMakeFiles/install.util: CUSTOM_COMMAND exercises/exercise00/all
-  COMMAND = cmd.exe /C "cd /D C:\UnityFiles\graphics-programming-2023\cmake-build-debug\exercises\exercise00 && "C:\Program Files\JetBrains\CLion 2022.3.2\bin\cmake\win\x64\bin\cmake.exe" -P cmake_install.cmake"
+  COMMAND = cmd.exe /C "cd /D D:\GraphicsProgramming\graphics-programming-2023\cmake-build-debug\exercises\exercise00 && "C:\Program Files\CMake\bin\cmake.exe" -P cmake_install.cmake"
   DESC = Install the project...
   pool = console
   restat = 1
@@ -944,7 +952,7 @@ build exercises/exercise00/install: phony exercises/exercise00/CMakeFiles/instal
 # Utility command for install/local
 
 build exercises/exercise00/CMakeFiles/install/local.util: CUSTOM_COMMAND exercises/exercise00/all
-  COMMAND = cmd.exe /C "cd /D C:\UnityFiles\graphics-programming-2023\cmake-build-debug\exercises\exercise00 && "C:\Program Files\JetBrains\CLion 2022.3.2\bin\cmake\win\x64\bin\cmake.exe" -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake"
+  COMMAND = cmd.exe /C "cd /D D:\GraphicsProgramming\graphics-programming-2023\cmake-build-debug\exercises\exercise00 && "C:\Program Files\CMake\bin\cmake.exe" -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake"
   DESC = Installing only the local directory...
   pool = console
   restat = 1
@@ -956,7 +964,7 @@ build exercises/exercise00/install/local: phony exercises/exercise00/CMakeFiles/
 # Utility command for install/strip
 
 build exercises/exercise00/CMakeFiles/install/strip.util: CUSTOM_COMMAND exercises/exercise00/all
-  COMMAND = cmd.exe /C "cd /D C:\UnityFiles\graphics-programming-2023\cmake-build-debug\exercises\exercise00 && "C:\Program Files\JetBrains\CLion 2022.3.2\bin\cmake\win\x64\bin\cmake.exe" -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake"
+  COMMAND = cmd.exe /C "cd /D D:\GraphicsProgramming\graphics-programming-2023\cmake-build-debug\exercises\exercise00 && "C:\Program Files\CMake\bin\cmake.exe" -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake"
   DESC = Installing the project stripped...
   pool = console
   restat = 1
@@ -990,56 +998,56 @@ build uninstall: phony libraries/glfw/uninstall
 # =============================================================================
 
 #############################################
-# Folder: C:/UnityFiles/graphics-programming-2023/cmake-build-debug
+# Folder: D:/GraphicsProgramming/graphics-programming-2023/cmake-build-debug
 
 build all: phony libraries/all exercises/all
 
 # =============================================================================
 
 #############################################
-# Folder: C:/UnityFiles/graphics-programming-2023/cmake-build-debug/exercises
+# Folder: D:/GraphicsProgramming/graphics-programming-2023/cmake-build-debug/exercises
 
 build exercises/all: phony exercises/exercise00/all
 
 # =============================================================================
 
 #############################################
-# Folder: C:/UnityFiles/graphics-programming-2023/cmake-build-debug/exercises/exercise00
+# Folder: D:/GraphicsProgramming/graphics-programming-2023/cmake-build-debug/exercises/exercise00
 
 build exercises/exercise00/all: phony exercises/exercise00/exercise00.exe
 
 # =============================================================================
 
 #############################################
-# Folder: C:/UnityFiles/graphics-programming-2023/cmake-build-debug/libraries
+# Folder: D:/GraphicsProgramming/graphics-programming-2023/cmake-build-debug/libraries
 
 build libraries/all: phony libraries/glad/all libraries/glfw/all libraries/itugl/all
 
 # =============================================================================
 
 #############################################
-# Folder: C:/UnityFiles/graphics-programming-2023/cmake-build-debug/libraries/glad
+# Folder: D:/GraphicsProgramming/graphics-programming-2023/cmake-build-debug/libraries/glad
 
 build libraries/glad/all: phony libraries/glad/libglad.a
 
 # =============================================================================
 
 #############################################
-# Folder: C:/UnityFiles/graphics-programming-2023/cmake-build-debug/libraries/glfw
+# Folder: D:/GraphicsProgramming/graphics-programming-2023/cmake-build-debug/libraries/glfw
 
 build libraries/glfw/all: phony libraries/glfw/src/all
 
 # =============================================================================
 
 #############################################
-# Folder: C:/UnityFiles/graphics-programming-2023/cmake-build-debug/libraries/glfw/src
+# Folder: D:/GraphicsProgramming/graphics-programming-2023/cmake-build-debug/libraries/glfw/src
 
 build libraries/glfw/src/all: phony libraries/glfw/src/libglfw3.a
 
 # =============================================================================
 
 #############################################
-# Folder: C:/UnityFiles/graphics-programming-2023/cmake-build-debug/libraries/itugl
+# Folder: D:/GraphicsProgramming/graphics-programming-2023/cmake-build-debug/libraries/itugl
 
 build libraries/itugl/all: phony libraries/itugl/libitugl.a
 
@@ -1050,14 +1058,14 @@ build libraries/itugl/all: phony libraries/itugl/libitugl.a
 #############################################
 # Re-run CMake if any of its inputs changed.
 
-build build.ninja: RERUN_CMAKE | C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/BasicConfigVersion-SameMajorVersion.cmake.in C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/CMakeCCompiler.cmake.in C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/CMakeCCompilerABI.c C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/CMakeCInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/CMakeCXXCompiler.cmake.in C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/CMakeCXXCompilerABI.cpp C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/CMakeCXXInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/CMakeCommonLanguageInclude.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/CMakeCompilerIdDetection.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/CMakeDependentOption.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/CMakeDetermineCCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/CMakeDetermineCXXCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/CMakeDetermineCompileFeatures.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/CMakeDetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/CMakeDetermineCompilerABI.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/CMakeDetermineCompilerId.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/CMakeDetermineRCCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/CMakeDetermineSystem.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/CMakeFindBinUtils.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/CMakeGenericSystem.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/CMakeInitializeConfigs.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/CMakeLanguageInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/CMakePackageConfigHelpers.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/CMakeParseImplicitIncludeInfo.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/CMakeParseImplicitLinkInfo.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/CMakeParseLibraryArchitecture.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/CMakeRCCompiler.cmake.in C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/CMakeRCInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/CMakeSystem.cmake.in C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/CMakeSystemSpecificInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/CMakeSystemSpecificInitialize.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/CMakeTestCCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/CMakeTestCXXCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/CMakeTestCompilerCommon.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/CMakeTestRCCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/CheckCCompilerFlag.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/CheckCSourceCompiles.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/CheckIncludeFile.c.in C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/CheckIncludeFile.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/CheckLibraryExists.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/Compiler/ADSP-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/Compiler/ARMCC-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/Compiler/ARMClang-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/Compiler/AppleClang-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/Compiler/Borland-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/Compiler/Bruce-C-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/Compiler/CMakeCommonCompilerMacros.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/Compiler/Clang-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/Compiler/Clang-DetermineCompilerInternal.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/Compiler/Comeau-CXX-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/Compiler/Compaq-C-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/Compiler/Compaq-CXX-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/Compiler/Cray-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/Compiler/Embarcadero-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/Compiler/Fujitsu-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/Compiler/FujitsuClang-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/Compiler/GHS-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/Compiler/GNU-C-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/Compiler/GNU-C.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/Compiler/GNU-CXX-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/Compiler/GNU-CXX.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/Compiler/GNU-FindBinUtils.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/Compiler/GNU.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/Compiler/HP-C-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/Compiler/HP-CXX-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/Compiler/IAR-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/Compiler/IBMCPP-C-DetermineVersionInternal.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/Compiler/IBMCPP-CXX-DetermineVersionInternal.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/Compiler/IBMClang-C-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/Compiler/IBMClang-CXX-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/Compiler/Intel-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/Compiler/IntelLLVM-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/Compiler/LCC-C-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/Compiler/LCC-CXX-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/Compiler/MSVC-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/Compiler/NVHPC-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/Compiler/NVIDIA-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/Compiler/OpenWatcom-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/Compiler/PGI-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/Compiler/PathScale-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/Compiler/SCO-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/Compiler/SDCC-C-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/Compiler/SunPro-C-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/Compiler/SunPro-CXX-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/Compiler/TI-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/Compiler/TinyCC-C-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/Compiler/VisualAge-C-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/Compiler/VisualAge-CXX-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/Compiler/Watcom-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/Compiler/XL-C-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/Compiler/XL-CXX-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/Compiler/XLClang-C-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/Compiler/XLClang-CXX-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/Compiler/zOS-C-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/Compiler/zOS-CXX-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/FindDoxygen.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/FindPackageHandleStandardArgs.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/FindPackageMessage.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/FindThreads.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/GNUInstallDirs.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/Internal/CheckCompilerFlag.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/Internal/CheckFlagCommonConfig.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/Internal/CheckSourceCompiles.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/Internal/FeatureTesting.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/Platform/Windows-Determine-CXX.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/Platform/Windows-GNU-C-ABI.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/Platform/Windows-GNU-C.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/Platform/Windows-GNU-CXX-ABI.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/Platform/Windows-GNU-CXX.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/Platform/Windows-GNU.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/Platform/Windows-windres.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/Platform/Windows.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/Platform/WindowsPaths.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/WriteBasicConfigVersionFile.cmake C$:/UnityFiles/graphics-programming-2023/CMakeLists.txt C$:/UnityFiles/graphics-programming-2023/exercises/CMakeLists.txt C$:/UnityFiles/graphics-programming-2023/exercises/exercise00/CMakeLists.txt C$:/UnityFiles/graphics-programming-2023/libraries/CMakeLists.txt C$:/UnityFiles/graphics-programming-2023/libraries/glad/CMakeLists.txt C$:/UnityFiles/graphics-programming-2023/libraries/glfw/CMakeLists.txt C$:/UnityFiles/graphics-programming-2023/libraries/glfw/cmake_uninstall.cmake.in C$:/UnityFiles/graphics-programming-2023/libraries/glfw/src/CMakeLists.txt C$:/UnityFiles/graphics-programming-2023/libraries/glfw/src/glfw3.pc.in C$:/UnityFiles/graphics-programming-2023/libraries/glfw/src/glfw3Config.cmake.in C$:/UnityFiles/graphics-programming-2023/libraries/glfw/src/glfw_config.h.in C$:/UnityFiles/graphics-programming-2023/libraries/itugl/CMakeLists.txt CMakeCache.txt CMakeFiles/3.24.2/CMakeCCompiler.cmake CMakeFiles/3.24.2/CMakeCXXCompiler.cmake CMakeFiles/3.24.2/CMakeRCCompiler.cmake CMakeFiles/3.24.2/CMakeSystem.cmake
+build build.ninja: RERUN_CMAKE | C$:/Program$ Files/CMake/share/cmake-3.24/Modules/BasicConfigVersion-SameMajorVersion.cmake.in C$:/Program$ Files/CMake/share/cmake-3.24/Modules/CMakeCCompiler.cmake.in C$:/Program$ Files/CMake/share/cmake-3.24/Modules/CMakeCCompilerABI.c C$:/Program$ Files/CMake/share/cmake-3.24/Modules/CMakeCInformation.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/CMakeCXXCompiler.cmake.in C$:/Program$ Files/CMake/share/cmake-3.24/Modules/CMakeCXXCompilerABI.cpp C$:/Program$ Files/CMake/share/cmake-3.24/Modules/CMakeCXXInformation.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/CMakeCommonLanguageInclude.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/CMakeCompilerIdDetection.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/CMakeDependentOption.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/CMakeDetermineCCompiler.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/CMakeDetermineCXXCompiler.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/CMakeDetermineCompileFeatures.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/CMakeDetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/CMakeDetermineCompilerABI.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/CMakeDetermineCompilerId.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/CMakeDetermineRCCompiler.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/CMakeDetermineSystem.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/CMakeFindBinUtils.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/CMakeGenericSystem.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/CMakeInitializeConfigs.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/CMakeLanguageInformation.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/CMakePackageConfigHelpers.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/CMakeParseImplicitIncludeInfo.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/CMakeParseImplicitLinkInfo.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/CMakeParseLibraryArchitecture.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/CMakeRCCompiler.cmake.in C$:/Program$ Files/CMake/share/cmake-3.24/Modules/CMakeRCInformation.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/CMakeSystem.cmake.in C$:/Program$ Files/CMake/share/cmake-3.24/Modules/CMakeSystemSpecificInformation.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/CMakeSystemSpecificInitialize.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/CMakeTestCCompiler.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/CMakeTestCXXCompiler.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/CMakeTestCompilerCommon.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/CMakeTestRCCompiler.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/CheckCCompilerFlag.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/CheckCSourceCompiles.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/CheckIncludeFile.c.in C$:/Program$ Files/CMake/share/cmake-3.24/Modules/CheckIncludeFile.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/CheckLibraryExists.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/Compiler/ADSP-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/Compiler/ARMCC-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/Compiler/ARMClang-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/Compiler/AppleClang-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/Compiler/Borland-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/Compiler/Bruce-C-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/Compiler/CMakeCommonCompilerMacros.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/Compiler/Clang-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/Compiler/Clang-DetermineCompilerInternal.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/Compiler/Comeau-CXX-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/Compiler/Compaq-C-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/Compiler/Compaq-CXX-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/Compiler/Cray-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/Compiler/Embarcadero-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/Compiler/Fujitsu-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/Compiler/FujitsuClang-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/Compiler/GHS-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/Compiler/GNU-C-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/Compiler/GNU-C.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/Compiler/GNU-CXX-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/Compiler/GNU-CXX.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/Compiler/GNU-FindBinUtils.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/Compiler/GNU.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/Compiler/HP-C-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/Compiler/HP-CXX-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/Compiler/IAR-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/Compiler/IBMCPP-C-DetermineVersionInternal.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/Compiler/IBMCPP-CXX-DetermineVersionInternal.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/Compiler/IBMClang-C-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/Compiler/IBMClang-CXX-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/Compiler/Intel-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/Compiler/IntelLLVM-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/Compiler/LCC-C-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/Compiler/LCC-CXX-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/Compiler/MSVC-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/Compiler/NVHPC-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/Compiler/NVIDIA-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/Compiler/OpenWatcom-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/Compiler/PGI-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/Compiler/PathScale-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/Compiler/SCO-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/Compiler/SDCC-C-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/Compiler/SunPro-C-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/Compiler/SunPro-CXX-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/Compiler/TI-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/Compiler/TinyCC-C-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/Compiler/VisualAge-C-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/Compiler/VisualAge-CXX-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/Compiler/Watcom-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/Compiler/XL-C-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/Compiler/XL-CXX-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/Compiler/XLClang-C-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/Compiler/XLClang-CXX-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/Compiler/zOS-C-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/Compiler/zOS-CXX-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/FindDoxygen.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/FindPackageHandleStandardArgs.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/FindPackageMessage.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/FindThreads.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/GNUInstallDirs.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/Internal/CheckCompilerFlag.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/Internal/CheckFlagCommonConfig.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/Internal/CheckSourceCompiles.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/Internal/FeatureTesting.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/Platform/Windows-Determine-CXX.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/Platform/Windows-GNU-C-ABI.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/Platform/Windows-GNU-C.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/Platform/Windows-GNU-CXX-ABI.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/Platform/Windows-GNU-CXX.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/Platform/Windows-GNU.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/Platform/Windows-windres.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/Platform/Windows.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/Platform/WindowsPaths.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/WriteBasicConfigVersionFile.cmake CMakeCache.txt CMakeFiles/3.24.1/CMakeCCompiler.cmake CMakeFiles/3.24.1/CMakeCXXCompiler.cmake CMakeFiles/3.24.1/CMakeRCCompiler.cmake CMakeFiles/3.24.1/CMakeSystem.cmake D$:/GraphicsProgramming/graphics-programming-2023/CMakeLists.txt D$:/GraphicsProgramming/graphics-programming-2023/exercises/CMakeLists.txt D$:/GraphicsProgramming/graphics-programming-2023/exercises/exercise00/CMakeLists.txt D$:/GraphicsProgramming/graphics-programming-2023/libraries/CMakeLists.txt D$:/GraphicsProgramming/graphics-programming-2023/libraries/glad/CMakeLists.txt D$:/GraphicsProgramming/graphics-programming-2023/libraries/glfw/CMakeLists.txt D$:/GraphicsProgramming/graphics-programming-2023/libraries/glfw/cmake_uninstall.cmake.in D$:/GraphicsProgramming/graphics-programming-2023/libraries/glfw/src/CMakeLists.txt D$:/GraphicsProgramming/graphics-programming-2023/libraries/glfw/src/glfw3.pc.in D$:/GraphicsProgramming/graphics-programming-2023/libraries/glfw/src/glfw3Config.cmake.in D$:/GraphicsProgramming/graphics-programming-2023/libraries/glfw/src/glfw_config.h.in D$:/GraphicsProgramming/graphics-programming-2023/libraries/itugl/CMakeLists.txt
   pool = console
 
 
 #############################################
 # A missing CMake input file is not an error.
 
-build C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/BasicConfigVersion-SameMajorVersion.cmake.in C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/CMakeCCompiler.cmake.in C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/CMakeCCompilerABI.c C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/CMakeCInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/CMakeCXXCompiler.cmake.in C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/CMakeCXXCompilerABI.cpp C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/CMakeCXXInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/CMakeCommonLanguageInclude.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/CMakeCompilerIdDetection.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/CMakeDependentOption.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/CMakeDetermineCCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/CMakeDetermineCXXCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/CMakeDetermineCompileFeatures.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/CMakeDetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/CMakeDetermineCompilerABI.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/CMakeDetermineCompilerId.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/CMakeDetermineRCCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/CMakeDetermineSystem.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/CMakeFindBinUtils.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/CMakeGenericSystem.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/CMakeInitializeConfigs.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/CMakeLanguageInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/CMakePackageConfigHelpers.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/CMakeParseImplicitIncludeInfo.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/CMakeParseImplicitLinkInfo.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/CMakeParseLibraryArchitecture.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/CMakeRCCompiler.cmake.in C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/CMakeRCInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/CMakeSystem.cmake.in C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/CMakeSystemSpecificInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/CMakeSystemSpecificInitialize.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/CMakeTestCCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/CMakeTestCXXCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/CMakeTestCompilerCommon.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/CMakeTestRCCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/CheckCCompilerFlag.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/CheckCSourceCompiles.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/CheckIncludeFile.c.in C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/CheckIncludeFile.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/CheckLibraryExists.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/Compiler/ADSP-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/Compiler/ARMCC-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/Compiler/ARMClang-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/Compiler/AppleClang-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/Compiler/Borland-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/Compiler/Bruce-C-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/Compiler/CMakeCommonCompilerMacros.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/Compiler/Clang-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/Compiler/Clang-DetermineCompilerInternal.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/Compiler/Comeau-CXX-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/Compiler/Compaq-C-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/Compiler/Compaq-CXX-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/Compiler/Cray-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/Compiler/Embarcadero-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/Compiler/Fujitsu-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/Compiler/FujitsuClang-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/Compiler/GHS-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/Compiler/GNU-C-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/Compiler/GNU-C.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/Compiler/GNU-CXX-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/Compiler/GNU-CXX.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/Compiler/GNU-FindBinUtils.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/Compiler/GNU.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/Compiler/HP-C-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/Compiler/HP-CXX-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/Compiler/IAR-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/Compiler/IBMCPP-C-DetermineVersionInternal.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/Compiler/IBMCPP-CXX-DetermineVersionInternal.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/Compiler/IBMClang-C-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/Compiler/IBMClang-CXX-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/Compiler/Intel-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/Compiler/IntelLLVM-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/Compiler/LCC-C-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/Compiler/LCC-CXX-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/Compiler/MSVC-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/Compiler/NVHPC-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/Compiler/NVIDIA-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/Compiler/OpenWatcom-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/Compiler/PGI-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/Compiler/PathScale-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/Compiler/SCO-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/Compiler/SDCC-C-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/Compiler/SunPro-C-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/Compiler/SunPro-CXX-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/Compiler/TI-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/Compiler/TinyCC-C-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/Compiler/VisualAge-C-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/Compiler/VisualAge-CXX-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/Compiler/Watcom-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/Compiler/XL-C-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/Compiler/XL-CXX-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/Compiler/XLClang-C-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/Compiler/XLClang-CXX-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/Compiler/zOS-C-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/Compiler/zOS-CXX-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/FindDoxygen.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/FindPackageHandleStandardArgs.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/FindPackageMessage.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/FindThreads.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/GNUInstallDirs.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/Internal/CheckCompilerFlag.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/Internal/CheckFlagCommonConfig.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/Internal/CheckSourceCompiles.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/Internal/FeatureTesting.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/Platform/Windows-Determine-CXX.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/Platform/Windows-GNU-C-ABI.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/Platform/Windows-GNU-C.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/Platform/Windows-GNU-CXX-ABI.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/Platform/Windows-GNU-CXX.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/Platform/Windows-GNU.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/Platform/Windows-windres.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/Platform/Windows.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/Platform/WindowsPaths.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/WriteBasicConfigVersionFile.cmake C$:/UnityFiles/graphics-programming-2023/CMakeLists.txt C$:/UnityFiles/graphics-programming-2023/exercises/CMakeLists.txt C$:/UnityFiles/graphics-programming-2023/exercises/exercise00/CMakeLists.txt C$:/UnityFiles/graphics-programming-2023/libraries/CMakeLists.txt C$:/UnityFiles/graphics-programming-2023/libraries/glad/CMakeLists.txt C$:/UnityFiles/graphics-programming-2023/libraries/glfw/CMakeLists.txt C$:/UnityFiles/graphics-programming-2023/libraries/glfw/cmake_uninstall.cmake.in C$:/UnityFiles/graphics-programming-2023/libraries/glfw/src/CMakeLists.txt C$:/UnityFiles/graphics-programming-2023/libraries/glfw/src/glfw3.pc.in C$:/UnityFiles/graphics-programming-2023/libraries/glfw/src/glfw3Config.cmake.in C$:/UnityFiles/graphics-programming-2023/libraries/glfw/src/glfw_config.h.in C$:/UnityFiles/graphics-programming-2023/libraries/itugl/CMakeLists.txt CMakeCache.txt CMakeFiles/3.24.2/CMakeCCompiler.cmake CMakeFiles/3.24.2/CMakeCXXCompiler.cmake CMakeFiles/3.24.2/CMakeRCCompiler.cmake CMakeFiles/3.24.2/CMakeSystem.cmake: phony
+build C$:/Program$ Files/CMake/share/cmake-3.24/Modules/BasicConfigVersion-SameMajorVersion.cmake.in C$:/Program$ Files/CMake/share/cmake-3.24/Modules/CMakeCCompiler.cmake.in C$:/Program$ Files/CMake/share/cmake-3.24/Modules/CMakeCCompilerABI.c C$:/Program$ Files/CMake/share/cmake-3.24/Modules/CMakeCInformation.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/CMakeCXXCompiler.cmake.in C$:/Program$ Files/CMake/share/cmake-3.24/Modules/CMakeCXXCompilerABI.cpp C$:/Program$ Files/CMake/share/cmake-3.24/Modules/CMakeCXXInformation.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/CMakeCommonLanguageInclude.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/CMakeCompilerIdDetection.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/CMakeDependentOption.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/CMakeDetermineCCompiler.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/CMakeDetermineCXXCompiler.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/CMakeDetermineCompileFeatures.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/CMakeDetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/CMakeDetermineCompilerABI.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/CMakeDetermineCompilerId.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/CMakeDetermineRCCompiler.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/CMakeDetermineSystem.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/CMakeFindBinUtils.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/CMakeGenericSystem.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/CMakeInitializeConfigs.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/CMakeLanguageInformation.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/CMakePackageConfigHelpers.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/CMakeParseImplicitIncludeInfo.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/CMakeParseImplicitLinkInfo.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/CMakeParseLibraryArchitecture.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/CMakeRCCompiler.cmake.in C$:/Program$ Files/CMake/share/cmake-3.24/Modules/CMakeRCInformation.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/CMakeSystem.cmake.in C$:/Program$ Files/CMake/share/cmake-3.24/Modules/CMakeSystemSpecificInformation.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/CMakeSystemSpecificInitialize.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/CMakeTestCCompiler.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/CMakeTestCXXCompiler.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/CMakeTestCompilerCommon.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/CMakeTestRCCompiler.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/CheckCCompilerFlag.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/CheckCSourceCompiles.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/CheckIncludeFile.c.in C$:/Program$ Files/CMake/share/cmake-3.24/Modules/CheckIncludeFile.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/CheckLibraryExists.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/Compiler/ADSP-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/Compiler/ARMCC-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/Compiler/ARMClang-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/Compiler/AppleClang-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/Compiler/Borland-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/Compiler/Bruce-C-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/Compiler/CMakeCommonCompilerMacros.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/Compiler/Clang-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/Compiler/Clang-DetermineCompilerInternal.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/Compiler/Comeau-CXX-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/Compiler/Compaq-C-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/Compiler/Compaq-CXX-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/Compiler/Cray-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/Compiler/Embarcadero-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/Compiler/Fujitsu-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/Compiler/FujitsuClang-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/Compiler/GHS-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/Compiler/GNU-C-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/Compiler/GNU-C.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/Compiler/GNU-CXX-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/Compiler/GNU-CXX.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/Compiler/GNU-FindBinUtils.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/Compiler/GNU.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/Compiler/HP-C-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/Compiler/HP-CXX-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/Compiler/IAR-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/Compiler/IBMCPP-C-DetermineVersionInternal.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/Compiler/IBMCPP-CXX-DetermineVersionInternal.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/Compiler/IBMClang-C-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/Compiler/IBMClang-CXX-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/Compiler/Intel-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/Compiler/IntelLLVM-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/Compiler/LCC-C-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/Compiler/LCC-CXX-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/Compiler/MSVC-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/Compiler/NVHPC-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/Compiler/NVIDIA-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/Compiler/OpenWatcom-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/Compiler/PGI-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/Compiler/PathScale-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/Compiler/SCO-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/Compiler/SDCC-C-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/Compiler/SunPro-C-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/Compiler/SunPro-CXX-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/Compiler/TI-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/Compiler/TinyCC-C-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/Compiler/VisualAge-C-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/Compiler/VisualAge-CXX-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/Compiler/Watcom-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/Compiler/XL-C-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/Compiler/XL-CXX-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/Compiler/XLClang-C-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/Compiler/XLClang-CXX-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/Compiler/zOS-C-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/Compiler/zOS-CXX-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/FindDoxygen.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/FindPackageHandleStandardArgs.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/FindPackageMessage.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/FindThreads.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/GNUInstallDirs.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/Internal/CheckCompilerFlag.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/Internal/CheckFlagCommonConfig.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/Internal/CheckSourceCompiles.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/Internal/FeatureTesting.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/Platform/Windows-Determine-CXX.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/Platform/Windows-GNU-C-ABI.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/Platform/Windows-GNU-C.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/Platform/Windows-GNU-CXX-ABI.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/Platform/Windows-GNU-CXX.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/Platform/Windows-GNU.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/Platform/Windows-windres.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/Platform/Windows.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/Platform/WindowsPaths.cmake C$:/Program$ Files/CMake/share/cmake-3.24/Modules/WriteBasicConfigVersionFile.cmake CMakeCache.txt CMakeFiles/3.24.1/CMakeCCompiler.cmake CMakeFiles/3.24.1/CMakeCXXCompiler.cmake CMakeFiles/3.24.1/CMakeRCCompiler.cmake CMakeFiles/3.24.1/CMakeSystem.cmake D$:/GraphicsProgramming/graphics-programming-2023/CMakeLists.txt D$:/GraphicsProgramming/graphics-programming-2023/exercises/CMakeLists.txt D$:/GraphicsProgramming/graphics-programming-2023/exercises/exercise00/CMakeLists.txt D$:/GraphicsProgramming/graphics-programming-2023/libraries/CMakeLists.txt D$:/GraphicsProgramming/graphics-programming-2023/libraries/glad/CMakeLists.txt D$:/GraphicsProgramming/graphics-programming-2023/libraries/glfw/CMakeLists.txt D$:/GraphicsProgramming/graphics-programming-2023/libraries/glfw/cmake_uninstall.cmake.in D$:/GraphicsProgramming/graphics-programming-2023/libraries/glfw/src/CMakeLists.txt D$:/GraphicsProgramming/graphics-programming-2023/libraries/glfw/src/glfw3.pc.in D$:/GraphicsProgramming/graphics-programming-2023/libraries/glfw/src/glfw3Config.cmake.in D$:/GraphicsProgramming/graphics-programming-2023/libraries/glfw/src/glfw_config.h.in D$:/GraphicsProgramming/graphics-programming-2023/libraries/itugl/CMakeLists.txt: phony
 
 
 #############################################

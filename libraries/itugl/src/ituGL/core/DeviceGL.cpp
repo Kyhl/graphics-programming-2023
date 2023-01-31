@@ -8,15 +8,21 @@ DeviceGL* DeviceGL::m_instance = nullptr;
 
 DeviceGL::DeviceGL() : m_contextLoaded(false)
 {
+    glfwInit();
 }
 
 DeviceGL::~DeviceGL()
 {
+    glfwTerminate();
 }
 
 // Set the window that OpenGL will use for rendering
 void DeviceGL::SetCurrentWindow(Window& window)
 {
+    GLFWwindow* glfwWindow = window.GetInternalWindow();
+    glfwMakeContextCurrent(glfwWindow);
+    glfwSetFramebufferSizeCallback(glfwWindow, FrameBufferResized);
+    m_contextLoaded = gladLoadGLLoader((GLADloadproc) glfwGetProcAddress);
 }
 
 // Set the dimensions of the viewport
@@ -27,6 +33,7 @@ void DeviceGL::SetViewport(GLint x, GLint y, GLsizei width, GLsizei height)
 // Poll the events in the window event queue
 void DeviceGL::PollEvents()
 {
+    glfwPollEvents();
 }
 
 // Clear the framebuffer with the specified color

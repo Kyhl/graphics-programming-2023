@@ -6,13 +6,17 @@
 #include <ituGL/geometry/VertexArrayObject.h>
 #include <ituGL/geometry/VertexAttribute.h>
 #include <ituGL/geometry/VertexBufferObject.h>
+#include <ituGL/geometry/ElementBufferObject.h>
+#define _USE_MATH_DEFINES
+#include <cmath>
+
 
 void framebuffer_size_callback(GLFWwindow* window, int width, int height);
 void processInput(Window& window);
 unsigned int buildShaderProgram();
 // settings
 const unsigned int SCR_WIDTH = 800;
-const unsigned int SCR_HEIGHT = 600;
+const unsigned int SCR_HEIGHT = 800;
 
 const char* vertexShaderSource = "#version 330 core\n"
 "layout (location = 0) in vec3 aPos;\n"
@@ -62,24 +66,31 @@ int main()
          0.5f,  0.5f, 0.0f,  // top
 
             //Triangle #2
-        -0.5f, -0.5f, 0.0f, // left
         -0.5f, 0.5f, 0.0f, // right
-        0.5f,  0.5f, 0.0f,  // top
 
 
 
     };
+    unsigned int triangles[] = {
+            0,1,2,
+            2,0,3
+    };
 
     VertexBufferObject VBO;
     VertexArrayObject VAO;
+    ElementBufferObject EBO;
 
 
     // bind the Vertex Array Object first, then bind and set vertex buffer(s), and then configure vertex attributes(s).
     VAO.Bind();
     VBO.Bind();
-    std::span data(vertices,18);
-    VBO.AllocateData(std::as_bytes(data));
+    EBO.Bind();
 
+    int vertCount = sizeof(vertices)/sizeof(float);
+    int triCount = sizeof(triangles)/sizeof(uint32_t);
+
+    EBO.AllocateData(std::as_bytes(std::span(triangles,triCount)));
+    VBO.AllocateData(std::as_bytes(std::span(vertices,vertCount)));
 
     VertexAttribute position(Data::Type::Float,3);
     VAO.SetAttribute(0,position,0);
@@ -88,13 +99,16 @@ int main()
     // You can unbind the VAO afterwards so other VAO calls won't accidentally modify this VAO, but this rarely happens. Modifying other
     // VAOs requires a call to glBindVertexArray anyways so we generally don't unbind VAOs (nor VBOs) when it's not directly necessary.
     VAO.Unbind();
-
+    EBO.Unbind();
 
     // uncomment this call to draw in wireframe polygons.
     //glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
-
+    float time = 0.5;
+    float angle = time * (M_PI/180);
     // render loop
     // -----------
+
+
     while (!window.ShouldClose())
     {
         // input
@@ -105,12 +119,29 @@ int main()
         // ------
         glClearColor(0.2f, 0.3f, 1.3f, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT);
+        VAO.Bind();
+        VBO.Bind();
+        EBO.Bind();
+        time += 0.1;
+        vertices[0] = sqrt(2)/2*std::sin((45+time) * (M_PI/180));
+        vertices[1] =  sqrt(2)/2*std::cos((45+time) * (M_PI/180));
+        vertices[3] =  sqrt(2)/2*std::sin((135+time) * (M_PI/180));
+        vertices[4] =  sqrt(2)/2*std::cos((135+time) * (M_PI/180));
+        vertices[6] =  sqrt(2)/2*std::sin((225+time) * (M_PI/180));
+        vertices[7] =  sqrt(2)/2*std::cos((225+time) * (M_PI/180));
+        vertices[9] =  sqrt(2)/2*std::sin((315+time) * (M_PI/180));
+        vertices[10] = sqrt(2)/2*std::cos((315+time) * (M_PI/180));
 
+        VBO.UpdateData((std::span(vertices,vertCount)),0);
         // draw our first triangle
         glUseProgram(shaderProgram);
-        VAO.Bind(); // seeing as we only have a single VAO there's no need to bind it every time, but we'll do so to keep things a bit more organized
-        glDrawArrays(GL_TRIANGLES, 0, 6);
+         // seeing as we only have a single VAO there's no need to bind it every time, but we'll do so to keep things a bit more organized
+        //glDrawArrays(GL_TRIANGLES, 0, 6);
+        glDrawElements(GL_TRIANGLES,triCount,GL_UNSIGNED_INT,0);
         // glBindVertexArray(0); // no need to unbind it every time 
+
+        angle = time * (M_PI/180);
+
 
         // glfw: swap buffers and poll IO events (keys pressed/released, mouse moved etc.)
         // -------------------------------------------------------------------------------
@@ -120,7 +151,9 @@ int main()
 
     // optional: de-allocate all resources once they've outlived their purpose:
     // ------------------------------------------------------------------------
-
+    VAO.Unbind();
+    VBO.Unbind();
+    EBO.Unbind();
     glDeleteProgram(shaderProgram);
 
     // glfw: terminate, clearing all previously allocated GLFW resources.

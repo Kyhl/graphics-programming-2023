@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="D:\GraphicsProgramming\graphics-programming-2023\cmake-build-debug-visual-studio\CMakeFiles\9ba75fecd46ecc2c0287e718f4f220a9\INSTALL_force.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{3508A436-0E4D-3C05-AC7F-A3C68E35670A}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,10 @@
+^D:\GRAPHICSPROGRAMMING\GRAPHICS-PROGRAMMING-2023\CMAKE-BUILD-DEBUG-VISUAL-STUDIO\CMAKEFILES\E661573B4EE4D3CD1EFA928D3AF79CAC\GENERATE.STAMP.RULE
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SD:/GraphicsProgramming/graphics-programming-2023 -BD:/GraphicsProgramming/graphics-programming-2023/cmake-build-debug-visual-studio --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file D:/GraphicsProgramming/graphics-programming-2023/cmake-build-debug-visual-studio/ITU-graphics-programming.sln
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

@@ -59,10 +59,10 @@ void TerrainApplication::Initialize()
         for(float u=0;u<m_gridX;u++)
         {
             //Vertices
-            vertices.emplace_back(u/m_gridX -0.5,i/m_gridY -0.5, stb_perlin_noise3(u/m_gridX -0.5,i/m_gridY -0.5,0,0,0,0)*0.8);
-            vertices.emplace_back((u+1)/m_gridX -0.5,(i)/m_gridY-0.5 ,stb_perlin_noise3((u+1)/m_gridX -0.5,(i)/m_gridY-0.5,0,0,0,0)*0.8);
-            vertices.emplace_back((u)/m_gridX -0.5,(i+1)/m_gridY -0.5,stb_perlin_noise3((u)/m_gridX -0.5,(i+1)/m_gridY -0.5,0,0,0,0)*0.8);
-            vertices.emplace_back((u+1)/m_gridX -0.5,(i+1)/m_gridY-0.5,stb_perlin_noise3((u+1)/m_gridX -0.5,(i+1)/m_gridY-0.5,0,0,0,0)*0.8);
+            vertices.emplace_back(u/m_gridX -0.5,i/m_gridY -0.5,       stb_perlin_noise3(u/m_gridX -0.5,i/m_gridY -0.5,0,4,2,8)*0.8);
+            vertices.emplace_back((u+1)/m_gridX -0.5,(i)/m_gridY-0.5 , stb_perlin_noise3((u+1)/m_gridX -0.5,(i)/m_gridY-0.5,0,4,2,8)*0.8);
+            vertices.emplace_back((u)/m_gridX -0.5,(i+1)/m_gridY -0.5, stb_perlin_noise3((u)/m_gridX -0.5,(i+1)/m_gridY -0.5,0,4,2,8)*0.8);
+            vertices.emplace_back((u+1)/m_gridX -0.5,(i+1)/m_gridY-0.5,stb_perlin_noise3((u+1)/m_gridX -0.5,(i+1)/m_gridY-0.5,0,4,2,8)*0.8);
 
             //Indice declarations
             indices.emplace_back(i*m_gridY*4+u*4);

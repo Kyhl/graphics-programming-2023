@@ -45,42 +45,59 @@ void TerrainApplication::Initialize()
 
     // (todo) 01.1: Create containers for the vertex position
     std::vector<Vector3> vertices;
-
+    std::vector<Vector2> textureCoords;
 
 
 
     //ebo.AllocateData<unsigned int>(std::span(indices));
 
     // (todo) 01.1: Fill in vertex data
-    for(int i = 0;i<5;i++)
+    for(float i = 0;i<m_gridY;i++)
     {
-        for(int u=0;u<5;u++)
+        for(float u=0;u<m_gridX;u++)
         {
-            vertices.emplace_back(u,i,0);
-            vertices.emplace_back(u+1,i,0);
-            vertices.emplace_back(u+1,i+1,0);
-            vertices.emplace_back(u,i,0);
-            vertices.emplace_back(u,i+1,0);
-            vertices.emplace_back(u+1,i+1,0);
+            //Vertices
+            vertices.emplace_back(u/m_gridX -0.5,i/m_gridY -0.5,0);
+            vertices.emplace_back((u+1)/m_gridX -0.5,(i+1)/m_gridY-0.5,0);
+            vertices.emplace_back((u+1)/m_gridX -0.5,(i)/m_gridY-0.5 ,0);
+
+            vertices.emplace_back((u)/m_gridX -0.5,(i)/m_gridY -0.5,0);
+            vertices.emplace_back((u+1)/m_gridX -0.5,(i+1)/m_gridY -0.5,0);
+            vertices.emplace_back((u)/m_gridX -0.5,(i+1)/m_gridY -0.5,0);
+
+            //Texture coordinates
+            textureCoords.emplace_back(0,0);
+            textureCoords.emplace_back(1,1);
+            textureCoords.emplace_back(1,0);
+
+            textureCoords.emplace_back(0,0);
+            textureCoords.emplace_back(1,1);
+            textureCoords.emplace_back(0,1);
+
         }
     }
-
+    vertexSize = m_gridX * m_gridY * 6;
     // (todo) 01.1: Initialize VAO, and VBO
     vao.Bind();
 
     vbo.Bind();
-    vbo.AllocateData<Vector3>(std::span(vertices));
+    vbo.AllocateData((vertices.size()*GL_FLOAT_VEC3)+(textureCoords.size()*GL_FLOAT_VEC2));
+    vbo.UpdateData(std::span(vertices));
+    vbo.UpdateData(std::span(textureCoords),(vertices.size()*GL_FLOAT_VEC3));
     VertexAttribute position(Data::Type::Float, 3);
+    VertexAttribute textures(Data::Type::Float, 2);
     vao.SetAttribute(0, position, 0);
+    vao.SetAttribute(1,textures,(vertices.size()*GL_FLOAT_VEC3));
 
     // (todo) 01.5: Initialize EBO
     //ebo.Bind();
 
     // (todo) 01.1: Unbind VAO, and VBO
-    vao.Unbind();
-    vbo.Unbind();
+    VertexArrayObject::Unbind();
+    VertexBufferObject::Unbind();
     // (todo) 01.5: Unbind EBO
     //ebo.Unbind();
+    //glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
 }
 
 void TerrainApplication::Update()
@@ -101,7 +118,8 @@ void TerrainApplication::Render()
     glUseProgram(m_shaderProgram);
 
     // (todo) 01.1: Draw the grid
-    glDrawArrays(GL_TRIANGLES, 0, 216);
+    vao.Bind();
+    glDrawArrays(GL_TRIANGLES, 0, vertexSize+1000);
 }
 
 void TerrainApplication::Cleanup()

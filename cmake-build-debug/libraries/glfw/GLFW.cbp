@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="GLFW"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;CMake Files\libraries\;CMake Files\libraries\glfw\;CMake Files\libraries\glfw\src\;CMake Files\libraries\glad\;CMake Files\libraries\itugl\;CMake Files\exercises\;CMake Files\exercises\exercise00\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="D:/GraphicsProgramming/graphics-programming-2023/cmake-build-debug/libraries/glfw"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="C:/PROGRA~1/JETBRA~1/CLION2~1.3/bin/mingw/bin/mingw32-make.exe -f &quot;D:/GraphicsProgramming/graphics-programming-2023/cmake-build-debug/libraries/glfw/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="C:/PROGRA~1/JETBRA~1/CLION2~1.3/bin/mingw/bin/mingw32-make.exe -f &quot;D:/GraphicsProgramming/graphics-programming-2023/cmake-build-debug/libraries/glfw/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~1/JETBRA~1/CLION2~1.3/bin/mingw/bin/mingw32-make.exe -f &quot;D:/GraphicsProgramming/graphics-programming-2023/cmake-build-debug/libraries/glfw/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~1/JETBRA~1/CLION2~1.3/bin/mingw/bin/mingw32-make.exe -f &quot;D:/GraphicsProgramming/graphics-programming-2023/cmake-build-debug/libraries/glfw/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="uninstall">
+				<Option working_dir="D:/GraphicsProgramming/graphics-programming-2023/cmake-build-debug/libraries/glfw"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="C:/PROGRA~1/JETBRA~1/CLION2~1.3/bin/mingw/bin/mingw32-make.exe -f &quot;D:/GraphicsProgramming/graphics-programming-2023/cmake-build-debug/libraries/glfw/Makefile&quot;  VERBOSE=1 uninstall"/>
+					<CompileFile command="C:/PROGRA~1/JETBRA~1/CLION2~1.3/bin/mingw/bin/mingw32-make.exe -f &quot;D:/GraphicsProgramming/graphics-programming-2023/cmake-build-debug/libraries/glfw/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~1/JETBRA~1/CLION2~1.3/bin/mingw/bin/mingw32-make.exe -f &quot;D:/GraphicsProgramming/graphics-programming-2023/cmake-build-debug/libraries/glfw/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~1/JETBRA~1/CLION2~1.3/bin/mingw/bin/mingw32-make.exe -f &quot;D:/GraphicsProgramming/graphics-programming-2023/cmake-build-debug/libraries/glfw/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="glfw">
+				<Option output="D:/GraphicsProgramming/graphics-programming-2023/cmake-build-debug/libraries/glfw/src/libglfw3.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="D:/GraphicsProgramming/graphics-programming-2023/cmake-build-debug/libraries/glfw/src"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-D_GLFW_USE_CONFIG_H"/>
+					<Add option="-D_UNICODE"/>
+					<Add option="-DUNICODE"/>
+					<Add option="-DWINVER=0x0501"/>
+					<Add directory="D:/GraphicsProgramming/graphics-programming-2023/libraries/glad/include"/>
+					<Add directory="D:/GraphicsProgramming/graphics-programming-2023/libraries/glfw/include"/>
+					<Add directory="D:/GraphicsProgramming/graphics-programming-2023/libraries/imgui/include"/>
+					<Add directory="D:/GraphicsProgramming/graphics-programming-2023/libraries/glm/include"/>
+					<Add directory="D:/GraphicsProgramming/graphics-programming-2023/libraries/stb/include"/>
+					<Add directory="D:/GraphicsProgramming/graphics-programming-2023/libraries/assimp/include"/>
+					<Add directory="D:/GraphicsProgramming/graphics-programming-2023/libraries/assimp"/>
+					<Add directory="D:/GraphicsProgramming/graphics-programming-2023/libraries/itugl/include"/>
+					<Add directory="D:/GraphicsProgramming/graphics-programming-2023/libraries/glfw/src"/>
+					<Add directory="D:/GraphicsProgramming/graphics-programming-2023/cmake-build-debug/libraries/glfw/src"/>
+					<Add directory="C:/Program Files/JetBrains/CLion 2022.2.3/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++"/>
+					<Add directory="C:/Program Files/JetBrains/CLion 2022.2.3/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32"/>
+					<Add directory="C:/Program Files/JetBrains/CLion 2022.2.3/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/backward"/>
+					<Add directory="C:/Program Files/JetBrains/CLion 2022.2.3/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include"/>
+					<Add directory="C:/Program Files/JetBrains/CLion 2022.2.3/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../include"/>
+					<Add directory="C:/Program Files/JetBrains/CLion 2022.2.3/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed"/>
+					<Add directory="C:/Program Files/JetBrains/CLion 2022.2.3/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/PROGRA~1/JETBRA~1/CLION2~1.3/bin/mingw/bin/mingw32-make.exe -f &quot;D:/GraphicsProgramming/graphics-programming-2023/cmake-build-debug/libraries/glfw/src/Makefile&quot;  VERBOSE=1 glfw"/>
+					<CompileFile command="C:/PROGRA~1/JETBRA~1/CLION2~1.3/bin/mingw/bin/mingw32-make.exe -f &quot;D:/GraphicsProgramming/graphics-programming-2023/cmake-build-debug/libraries/glfw/src/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~1/JETBRA~1/CLION2~1.3/bin/mingw/bin/mingw32-make.exe -f &quot;D:/GraphicsProgramming/graphics-programming-2023/cmake-build-debug/libraries/glfw/src/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~1/JETBRA~1/CLION2~1.3/bin/mingw/bin/mingw32-make.exe -f &quot;D:/GraphicsProgramming/graphics-programming-2023/cmake-build-debug/libraries/glfw/src/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="glfw/fast">
+				<Option output="D:/GraphicsProgramming/graphics-programming-2023/cmake-build-debug/libraries/glfw/src/libglfw3.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="D:/GraphicsProgramming/graphics-programming-2023/cmake-build-debug/libraries/glfw/src"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-D_GLFW_USE_CONFIG_H"/>
+					<Add option="-D_UNICODE"/>
+					<Add option="-DUNICODE"/>
+					<Add option="-DWINVER=0x0501"/>
+					<Add directory="D:/GraphicsProgramming/graphics-programming-2023/libraries/glad/include"/>
+					<Add directory="D:/GraphicsProgramming/graphics-programming-2023/libraries/glfw/include"/>
+					<Add directory="D:/GraphicsProgramming/graphics-programming-2023/libraries/imgui/include"/>
+					<Add directory="D:/GraphicsProgramming/graphics-programming-2023/libraries/glm/include"/>
+					<Add directory="D:/GraphicsProgramming/graphics-programming-2023/libraries/stb/include"/>
+					<Add directory="D:/GraphicsProgramming/graphics-programming-2023/libraries/assimp/include"/>
+					<Add directory="D:/GraphicsProgramming/graphics-programming-2023/libraries/assimp"/>
+					<Add directory="D:/GraphicsProgramming/graphics-programming-2023/libraries/itugl/include"/>
+					<Add directory="D:/GraphicsProgramming/graphics-programming-2023/libraries/glfw/src"/>
+					<Add directory="D:/GraphicsProgramming/graphics-programming-2023/cmake-build-debug/libraries/glfw/src"/>
+					<Add directory="C:/Program Files/JetBrains/CLion 2022.2.3/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++"/>
+					<Add directory="C:/Program Files/JetBrains/CLion 2022.2.3/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32"/>
+					<Add directory="C:/Program Files/JetBrains/CLion 2022.2.3/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/backward"/>
+					<Add directory="C:/Program Files/JetBrains/CLion 2022.2.3/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include"/>
+					<Add directory="C:/Program Files/JetBrains/CLion 2022.2.3/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../include"/>
+					<Add directory="C:/Program Files/JetBrains/CLion 2022.2.3/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed"/>
+					<Add directory="C:/Program Files/JetBrains/CLion 2022.2.3/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/PROGRA~1/JETBRA~1/CLION2~1.3/bin/mingw/bin/mingw32-make.exe -f &quot;D:/GraphicsProgramming/graphics-programming-2023/cmake-build-debug/libraries/glfw/src/Makefile&quot;  VERBOSE=1 glfw/fast"/>
+					<CompileFile command="C:/PROGRA~1/JETBRA~1/CLION2~1.3/bin/mingw/bin/mingw32-make.exe -f &quot;D:/GraphicsProgramming/graphics-programming-2023/cmake-build-debug/libraries/glfw/src/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~1/JETBRA~1/CLION2~1.3/bin/mingw/bin/mingw32-make.exe -f &quot;D:/GraphicsProgramming/graphics-programming-2023/cmake-build-debug/libraries/glfw/src/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~1/JETBRA~1/CLION2~1.3/bin/mingw/bin/mingw32-make.exe -f &quot;D:/GraphicsProgramming/graphics-programming-2023/cmake-build-debug/libraries/glfw/src/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="D:/GraphicsProgramming/graphics-programming-2023/cmake-build-debug/libraries/glfw/src/glfw_config.h">
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="D:/GraphicsProgramming/graphics-programming-2023/libraries/glfw/include/GLFW/glfw3.h">
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="D:/GraphicsProgramming/graphics-programming-2023/libraries/glfw/include/GLFW/glfw3native.h">
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="D:/GraphicsProgramming/graphics-programming-2023/libraries/glfw/src/context.c">
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="D:/GraphicsProgramming/graphics-programming-2023/libraries/glfw/src/egl_context.c">
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="D:/GraphicsProgramming/graphics-programming-2023/libraries/glfw/src/egl_context.h">
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="D:/GraphicsProgramming/graphics-programming-2023/libraries/glfw/src/init.c">
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="D:/GraphicsProgramming/graphics-programming-2023/libraries/glfw/src/input.c">
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="D:/GraphicsProgramming/graphics-programming-2023/libraries/glfw/src/internal.h">
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="D:/GraphicsProgramming/graphics-programming-2023/libraries/glfw/src/mappings.h">
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="D:/GraphicsProgramming/graphics-programming-2023/libraries/glfw/src/monitor.c">
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="D:/GraphicsProgramming/graphics-programming-2023/libraries/glfw/src/osmesa_context.c">
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="D:/GraphicsProgramming/graphics-programming-2023/libraries/glfw/src/osmesa_context.h">
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="D:/GraphicsProgramming/graphics-programming-2023/libraries/glfw/src/vulkan.c">
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="D:/GraphicsProgramming/graphics-programming-2023/libraries/glfw/src/wgl_context.c">
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="D:/GraphicsProgramming/graphics-programming-2023/libraries/glfw/src/wgl_context.h">
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="D:/GraphicsProgramming/graphics-programming-2023/libraries/glfw/src/win32_init.c">
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="D:/GraphicsProgramming/graphics-programming-2023/libraries/glfw/src/win32_joystick.c">
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="D:/GraphicsProgramming/graphics-programming-2023/libraries/glfw/src/win32_joystick.h">
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="D:/GraphicsProgramming/graphics-programming-2023/libraries/glfw/src/win32_monitor.c">
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="D:/GraphicsProgramming/graphics-programming-2023/libraries/glfw/src/win32_platform.h">
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="D:/GraphicsProgramming/graphics-programming-2023/libraries/glfw/src/win32_thread.c">
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="D:/GraphicsProgramming/graphics-programming-2023/libraries/glfw/src/win32_time.c">
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="D:/GraphicsProgramming/graphics-programming-2023/libraries/glfw/src/win32_window.c">
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="D:/GraphicsProgramming/graphics-programming-2023/libraries/glfw/src/window.c">
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="D:/GraphicsProgramming/graphics-programming-2023/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="D:/GraphicsProgramming/graphics-programming-2023/libraries/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\libraries\"/>
+		</Unit>
+		<Unit filename="D:/GraphicsProgramming/graphics-programming-2023/libraries/glfw/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\libraries\glfw\"/>
+		</Unit>
+		<Unit filename="D:/GraphicsProgramming/graphics-programming-2023/libraries/glfw/cmake_uninstall.cmake.in">
+			<Option virtualFolder="CMake Files\libraries\glfw\"/>
+		</Unit>
+		<Unit filename="D:/GraphicsProgramming/graphics-programming-2023/libraries/glfw/src/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\libraries\glfw\src\"/>
+		</Unit>
+		<Unit filename="D:/GraphicsProgramming/graphics-programming-2023/libraries/glfw/src/glfw3.pc.in">
+			<Option virtualFolder="CMake Files\libraries\glfw\src\"/>
+		</Unit>
+		<Unit filename="D:/GraphicsProgramming/graphics-programming-2023/libraries/glfw/src/glfw3Config.cmake.in">
+			<Option virtualFolder="CMake Files\libraries\glfw\src\"/>
+		</Unit>
+		<Unit filename="D:/GraphicsProgramming/graphics-programming-2023/libraries/glfw/src/glfw_config.h.in">
+			<Option virtualFolder="CMake Files\libraries\glfw\src\"/>
+		</Unit>
+		<Unit filename="D:/GraphicsProgramming/graphics-programming-2023/libraries/glad/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\libraries\glad\"/>
+		</Unit>
+		<Unit filename="D:/GraphicsProgramming/graphics-programming-2023/libraries/itugl/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\libraries\itugl\"/>
+		</Unit>
+		<Unit filename="D:/GraphicsProgramming/graphics-programming-2023/exercises/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\exercises\"/>
+		</Unit>
+		<Unit filename="D:/GraphicsProgramming/graphics-programming-2023/exercises/exercise00/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\exercises\exercise00\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

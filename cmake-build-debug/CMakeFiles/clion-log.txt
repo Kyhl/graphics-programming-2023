@@ -1,0 +1,6 @@
+"C:\Program Files\CMake\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - MinGW Makefiles" -S D:\GraphicsProgramming\graphics-programming-2023 -B D:\GraphicsProgramming\graphics-programming-2023\cmake-build-debug
+-- Could NOT find Doxygen (missing: DOXYGEN_EXECUTABLE) 
+-- Using Win32 for window creation
+-- Configuring done
+-- Generating done
+-- Build files have been written to: D:/GraphicsProgramming/graphics-programming-2023/cmake-build-debug

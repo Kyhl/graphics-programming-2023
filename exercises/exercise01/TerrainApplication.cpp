@@ -91,22 +91,25 @@ void TerrainApplication::Initialize()
             v1.pos = Vector3(u/m_gridX -0.5,i/m_gridY -0.5,    height1*0.1);
             v1.textureCoordinate = Vector2(0,0);
             v1.color = GetColor(height1);
-            
+            v1.normal = Vector3(1,1,1);
 
             Vertex v2;
             v2.pos = Vector3((u+1)/m_gridX -0.5,(i)/m_gridY-0.5 , height2*0.1);
             v2.textureCoordinate = Vector2(1,0);
             v2.color = GetColor(height2);
+            v2.normal = Vector3(1,1,1);
 
             Vertex v3;
             v3.pos = Vector3((u)/m_gridX -0.5,(i+1)/m_gridY -0.5, height3*0.1);
             v3.textureCoordinate = Vector2(0,1);
             v3.color = GetColor(height3);
+            v3.normal = Vector3(1,1,1);
 
             Vertex v4;
             v4.pos = Vector3((u+1)/m_gridX -0.5,(i+1)/m_gridY-0.5,height4*0.1);
             v4.textureCoordinate = Vector2(1,1);
             v4.color = GetColor(height4);
+            v4.normal = Vector3(1,1,1);
 
             vertices.emplace_back(v1);
             vertices.emplace_back(v2);
@@ -123,6 +126,83 @@ void TerrainApplication::Initialize()
 
         }
     }
+    float spaceBetweenVerticesH = 1.0 / float(m_gridX);
+    float spaceBetweenVerticesV = 1.0 / float(m_gridY);
+    for (int i = 0; i < m_gridY; i++) {
+        for (int u = 0; u < m_gridX; u++) {
+            for (int j = 0; j < 4; j++) {
+                Vector3 left;
+                Vector3 right;
+                Vector3 up;
+                Vector3 down;
+
+                int currentRow;
+                int currentColumn;
+
+                if (j == 0) {
+                    currentRow = i;
+                    currentColumn = u;
+                }
+                else if (j == 1) {
+                    currentRow = i;
+                    currentColumn = u + 1;
+                }
+                else if (j == 2) {
+                    currentRow = i + 1;
+                    currentColumn = u + 1;
+                }
+                else {
+                    currentRow = i + 1;
+                    currentColumn = u;
+                }
+
+                float x = vertices[i * m_gridX * 4 + u * 4 + j].pos.x;
+                float y = vertices[i * m_gridX * 4 + u * 4 + j].pos.y;
+
+                if (currentColumn - 1 < 0) {
+                    left.x = x;
+                    left.z = stb_perlin_fbm_noise3(x, y, 0, lac, gain, oct) * 0.1;
+
+                }
+                else {
+                    left.x = x - spaceBetweenVerticesH;
+                    left.z = stb_perlin_fbm_noise3(x - spaceBetweenVerticesH, y, 0, lac, gain, oct) * 0.1;
+                }
+
+                if (currentColumn + 1 >= m_gridX) {
+                    right.x = x;
+                    right.z = stb_perlin_fbm_noise3(x, y, 0, lac, gain, oct) * 0.1;
+                }
+                else {
+                    right.x = x + spaceBetweenVerticesH;
+                    right.z = stb_perlin_fbm_noise3(x + spaceBetweenVerticesH, y, 0, lac, gain, oct) * 0.1;
+                }
+
+                if (currentRow - 1 < 0) {
+                    up.y = y;
+                    up.z = stb_perlin_fbm_noise3(x, y, 0, lac, gain, oct) * 0.1;
+                }
+                else {
+                    up.y = y - spaceBetweenVerticesV;
+                    up.z = stb_perlin_fbm_noise3(x, y - spaceBetweenVerticesV, 0, lac, gain, oct) * 0.1;
+                }
+
+                if (currentRow + 1 >= m_gridY) {
+                    down.y = y;
+                    down.z = stb_perlin_fbm_noise3(x, y, 0, lac, gain, oct) * 0.1;
+                }
+                else {
+                    down.y = y + spaceBetweenVerticesV;
+                    down.z = stb_perlin_fbm_noise3(x, y + spaceBetweenVerticesV, 0, lac, gain, oct) * 0.1;
+                }
+
+                float deltaX = float(right.z - left.z) / (right.x - left.x);
+                float deltaY = float(up.z - down.z) / (up.y - down.y);
+                Vector3 normal(deltaX, deltaY, 1);
+                vertices[i * m_gridX * 4 + u * 4 + j].normal = normal.Normalize();
+            }
+        }
+    }
     // (todo) 01.1: Initialize VAO, and VBO
     vao.Bind();
 
@@ -132,10 +212,12 @@ void TerrainApplication::Initialize()
     VertexAttribute position(Data::Type::Float, 3);
     VertexAttribute textures(Data::Type::Float, 2);
     VertexAttribute colors(Data::Type::Float,3);
+    VertexAttribute normals(Data::Type::Float,3);
 
     vao.SetAttribute(0, position, 0, sizeof(Vertex));
     vao.SetAttribute(1, textures, sizeof(Vector3), sizeof(Vertex));
     vao.SetAttribute(2, colors, sizeof(Vector3) + sizeof(Vector2), sizeof(Vertex));
+    vao.SetAttribute(3,normals,sizeof(Vector3)+sizeof(Vector2)+sizeof(Vector3),sizeof(Vertex));
 
     // (todo) 01.5: Initialize EBO
     ebo.Bind();

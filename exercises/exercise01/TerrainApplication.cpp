@@ -30,39 +30,88 @@ struct Vector3
 };
 
 // (todo) 01.8: Declare an struct with the vertex format
-
-
+struct Vertex {
+    Vector3 pos;
+    Vector2 textureCoordinate;
+    Vector3 color;
+    Vector3 normal;
+};
+Vector3 GetColor(float z) {
+    if (z < -0.50) {
+        return Vector3(0, 0, 1);
+    }
+    else if (z < -0.4) {
+        return Vector3(0.76,0.70,0.50);
+    }
+    else if (z < -0.25) {
+        return Vector3(0, 1, 0);
+    }
+    else if(z < 0.45)
+    {
+        return Vector3(0.5,0.5,0.5);
+    }
+    else {
+        return Vector3(1, 1, 1);
+    }
+}
 
 TerrainApplication::TerrainApplication()
-    : Application(1024, 1024, "Terrain demo"), m_gridX(16), m_gridY(16), m_shaderProgram(0)
+    : Application(1024, 1024, "Terrain demo"), m_gridX(64), m_gridY(64), m_shaderProgram(0)
 {
 }
 
 void TerrainApplication::Initialize()
 {
     Application::Initialize();
-
+    glEnable(GL_DEPTH_TEST);
     // Build shaders and store in m_shaderProgram
     BuildShaders();
 
     // (todo) 01.1: Create containers for the vertex position
-    std::vector<Vector3> vertices;
-    std::vector<Vector2> textureCoords;
+    std::vector<Vertex> vertices;
     std::vector<unsigned int> indices;
 
-
     //ebo.AllocateData<unsigned int>(std::span(indices));
+    float lac = 5.0f;
+    float gain = 1.2f;
+    int oct = 2;
+
 
     // (todo) 01.1: Fill in vertex data
     for(float i = 0;i<m_gridY;i++)
     {
         for(float u=0;u<m_gridX;u++)
         {
-            //Vertices
-            vertices.emplace_back(u/m_gridX -0.5,i/m_gridY -0.5,       stb_perlin_noise3(u/m_gridX -0.5,i/m_gridY -0.5,0,4,2,8)*0.8);
-            vertices.emplace_back((u+1)/m_gridX -0.5,(i)/m_gridY-0.5 , stb_perlin_noise3((u+1)/m_gridX -0.5,(i)/m_gridY-0.5,0,4,2,8)*0.8);
-            vertices.emplace_back((u)/m_gridX -0.5,(i+1)/m_gridY -0.5, stb_perlin_noise3((u)/m_gridX -0.5,(i+1)/m_gridY -0.5,0,4,2,8)*0.8);
-            vertices.emplace_back((u+1)/m_gridX -0.5,(i+1)/m_gridY-0.5,stb_perlin_noise3((u+1)/m_gridX -0.5,(i+1)/m_gridY-0.5,0,4,2,8)*0.8);
+            auto height1 = stb_perlin_fbm_noise3(u/m_gridX -0.5f,i/m_gridY -0.5f,0,lac, gain, oct);
+            auto height2 =stb_perlin_fbm_noise3((u+1.0f)/m_gridX -0.5f,(i)/m_gridY-0.5f,0,lac, gain, oct);
+            auto height3 = stb_perlin_fbm_noise3((u)/m_gridX -0.5f,(i+1)/m_gridY -0.5f,0,lac, gain, oct);
+            auto height4 = stb_perlin_fbm_noise3((u+1.0f)/m_gridX -0.5f,(i+1)/m_gridY-0.5f,0,lac, gain, oct);
+
+            Vertex v1;
+            v1.pos = Vector3(u/m_gridX -0.5,i/m_gridY -0.5,    height1*0.1);
+            v1.textureCoordinate = Vector2(0,0);
+            v1.color = GetColor(height1);
+            
+
+            Vertex v2;
+            v2.pos = Vector3((u+1)/m_gridX -0.5,(i)/m_gridY-0.5 , height2*0.1);
+            v2.textureCoordinate = Vector2(1,0);
+            v2.color = GetColor(height2);
+
+            Vertex v3;
+            v3.pos = Vector3((u)/m_gridX -0.5,(i+1)/m_gridY -0.5, height3*0.1);
+            v3.textureCoordinate = Vector2(0,1);
+            v3.color = GetColor(height3);
+
+            Vertex v4;
+            v4.pos = Vector3((u+1)/m_gridX -0.5,(i+1)/m_gridY-0.5,height4*0.1);
+            v4.textureCoordinate = Vector2(1,1);
+            v4.color = GetColor(height4);
+
+            vertices.emplace_back(v1);
+            vertices.emplace_back(v2);
+            vertices.emplace_back(v3);
+            vertices.emplace_back(v4);
 
             //Indice declarations
             indices.emplace_back(i*m_gridY*4+u*4);
@@ -72,32 +121,28 @@ void TerrainApplication::Initialize()
             indices.emplace_back(i*m_gridY*4+u*4+2);
             indices.emplace_back(i*m_gridY*4+u*4+3);
 
-            //Texture coordinates
-            textureCoords.emplace_back(0,0);
-            textureCoords.emplace_back(1,0);
-            textureCoords.emplace_back(0,1);
-            textureCoords.emplace_back(1,1);
         }
     }
-    vertexSize = 2*3*m_gridX * m_gridY ;
     // (todo) 01.1: Initialize VAO, and VBO
     vao.Bind();
 
     vbo.Bind();
-    vbo.AllocateData((vertices.size()*GL_FLOAT_VEC3)+(textureCoords.size()*GL_FLOAT_VEC2));
-    vbo.UpdateData(std::span(vertices));
-    vbo.UpdateData(std::span(textureCoords),(vertices.size()*GL_FLOAT_VEC3));
+    vbo.AllocateData(std::span(vertices));
+
     VertexAttribute position(Data::Type::Float, 3);
     VertexAttribute textures(Data::Type::Float, 2);
-    vao.SetAttribute(0, position, 0);
-    vao.SetAttribute(1,textures,(vertices.size()*GL_FLOAT_VEC3));
+    VertexAttribute colors(Data::Type::Float,3);
+
+    vao.SetAttribute(0, position, 0, sizeof(Vertex));
+    vao.SetAttribute(1, textures, sizeof(Vector3), sizeof(Vertex));
+    vao.SetAttribute(2, colors, sizeof(Vector3) + sizeof(Vector2), sizeof(Vertex));
 
     // (todo) 01.5: Initialize EBO
     ebo.Bind();
     ebo.AllocateData<unsigned int>(std::span(indices));
     // (todo) 01.1: Unbind VAO, and VBO
-    VertexArrayObject::Unbind();
-    VertexBufferObject::Unbind();
+    vao.Unbind();
+    vbo.Unbind();
     // (todo) 01.5: Unbind EBO
     ebo.Unbind();
     //glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
@@ -116,14 +161,16 @@ void TerrainApplication::Render()
 
     // Clear color and depth
     GetDevice().Clear(true, Color(0.0f, 0.0f, 0.0f, 1.0f), true, 1.0f);
-
+    vao.Bind();
     // Set shader to be used
     glUseProgram(m_shaderProgram);
 
     // (todo) 01.1: Draw the grid
-    vao.Bind();
+
     //glDrawArrays(GL_TRIANGLES, 0, vertexSize+1000);
-    glDrawElements(GL_TRIANGLES, vertexSize, GL_UNSIGNED_INT, nullptr);
+    glDrawElements(GL_TRIANGLES, 2*3*m_gridX * m_gridY, GL_UNSIGNED_INT, 0);
+
+
 }
 
 void TerrainApplication::Cleanup()

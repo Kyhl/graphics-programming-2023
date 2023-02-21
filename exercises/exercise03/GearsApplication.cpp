@@ -53,13 +53,14 @@ void GearsApplication::Render()
 
     // (todo) 03.1: Draw large gear at the center
     glm::mat4 centerGearMatrix(1.0f);
-    DrawGear(m_largeGear, centerGearMatrix, Color(1.0f, 1.0f, 1.0f));
+
+    DrawGear(m_largeGear, glm::rotate(centerGearMatrix,1.0f*GetCurrentTime(),glm::vec3(0,0,1)), Color(1.0f, 0.0f, 0.1f));
 
     // (todo) 03.2: Draw medium gear to the right
-
+    DrawGear(m_mediumGear, glm::rotate(glm::translate(centerGearMatrix,glm::vec3(0.75f,0,0)),-2.0f*GetCurrentTime(),glm::vec3(0,0,1)), Color(0.0f, 1.0f, 0.1f));
 
     // (todo) 03.3: Draw small gear at the top-left corner
-
+    DrawGear(m_smallGear, glm::scale(glm::rotate(glm::translate(centerGearMatrix,glm::vec3(-1.0f,1.0f,0)),(-0.533f*GetCurrentTime())+1.196f,glm::vec3(0,0,1)),glm::vec3(7.4f,7.4f,7.4f)), Color(0.0f, 0.0f, 1.0f));
 
     // (todo) 03.4: Draw small gear linked to the center gear
 
@@ -96,7 +97,7 @@ void GearsApplication::InitializeShaders()
     m_colorUniform = m_shaderProgram.GetUniformLocation("Color");
 
     // (todo) 03.1: Find the WorldMatrix uniform location
-
+    m_worldMatrixUniform = m_shaderProgram.GetUniformLocation("WorldMatrix");
 
     // (todo) 03.5: Find the ViewProjMatrix uniform location
 
@@ -110,6 +111,7 @@ void GearsApplication::DrawGear(const Mesh& mesh, const glm::mat4& worldMatrix, 
 
     // (todo) 03.1: Set the value of the WorldMatrix uniform
 
+    m_shaderProgram.SetUniform(m_worldMatrixUniform,worldMatrix);
 
     mesh.DrawSubmesh(0);
 }

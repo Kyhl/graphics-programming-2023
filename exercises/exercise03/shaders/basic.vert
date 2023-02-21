@@ -14,7 +14,7 @@ uniform mat4 ViewProjMatrix = mat4(1.0f);
 
 void main()
 {
-	Position = ViewProjMatrix*WorldMatrix*vec4(VertexPosition, 1.0);
-	Normal = ViewProjMatrix*WorldMatrix*vec4(VertexNormal,0.0);
+	Position = vec4(VertexPosition, 1.0);
+	Normal = WorldMatrix*vec4(VertexNormal,0.0);
 	gl_Position = ViewProjMatrix*WorldMatrix*vec4(VertexPosition, 1.0);
 }

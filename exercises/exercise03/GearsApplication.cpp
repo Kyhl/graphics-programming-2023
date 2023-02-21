@@ -36,7 +36,13 @@ void GearsApplication::Update()
     const Window& window = GetMainWindow();
 
     // (todo) 03.5: Update the camera matrices
-
+    int width = 1024, height = 1024;
+    window.GetDimensions(width, height);
+    float pVal = 1.0f*((float)width/(float)height);
+    float nVal = -1.0f*((float)width/(float)height);
+    m_camera.SetPerspectiveProjectionMatrix(3.15/2,((float)width/(float)height),0.1,10);
+//    m_camera.SetOrthographicProjectionMatrix(glm::vec3(nVal,nVal,nVal-1),glm::vec3(pVal,pVal,pVal+1));
+    m_camera.SetViewMatrix(glm::vec3(0,0,2),glm::vec3(window.GetMousePosition(true),0),glm::vec3(0.0f, 1.0f, 0.0f));
 
 }
 
@@ -49,7 +55,7 @@ void GearsApplication::Render()
     m_shaderProgram.Use();
 
     // (todo) 03.5: Set the view projection matrix from the camera. Once set, we will use it for all the objects
-
+    m_shaderProgram.SetUniform(m_viewProjMatrixUniform,m_camera.GetViewProjectionMatrix());
 
     // (todo) 03.1: Draw large gear at the center
     glm::mat4 centerGearMatrix(1.0f);
@@ -60,7 +66,7 @@ void GearsApplication::Render()
     DrawGear(m_mediumGear, glm::rotate(glm::translate(centerGearMatrix,glm::vec3(0.75f,0,0)),-2.0f*GetCurrentTime(),glm::vec3(0,0,1)), Color(0.0f, 1.0f, 0.1f));
 
     // (todo) 03.3: Draw small gear at the top-left corner
-    DrawGear(m_smallGear, glm::scale(glm::rotate(glm::translate(centerGearMatrix,glm::vec3(-1.0f,1.0f,0)),(-0.533f*GetCurrentTime())+1.196f,glm::vec3(0,0,1)),glm::vec3(7.4f,7.4f,7.4f)), Color(0.0f, 0.0f, 1.0f));
+    DrawGear(m_smallGear, glm::scale(glm::rotate(glm::translate(centerGearMatrix,glm::vec3(-1.0f,1.0f,0)),(-0.533f*GetCurrentTime())+1.196f,glm::vec3(0,0,1)),glm::vec3(7.4f,7.4f,1)), Color(0.0f, 0.0f, 1.0f));
 
     // (todo) 03.4: Draw small gear linked to the center gear
     DrawGear(m_smallGear, glm::rotate(glm::translate(glm::rotate(centerGearMatrix,1.0f*GetCurrentTime(),glm::vec3(0,0,1)),glm::vec3(0.0f,0.2f,0.0f)),-3.0f*GetCurrentTime(),glm::vec3(0,0,1)), Color(1.0f, 1.0f, 0.0f));
@@ -100,7 +106,7 @@ void GearsApplication::InitializeShaders()
     m_worldMatrixUniform = m_shaderProgram.GetUniformLocation("WorldMatrix");
 
     // (todo) 03.5: Find the ViewProjMatrix uniform location
-
+    m_viewProjMatrixUniform = m_shaderProgram.GetUniformLocation("ViewProjMatrix");
 
 }
 

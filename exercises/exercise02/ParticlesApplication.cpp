@@ -13,15 +13,15 @@ struct Particle
 {
     glm::vec2 position;
     // (todo) 02.X: Add more vertex attributes
- 
+    float size;
 };
 
 // List of attributes of the particle. Must match the structure above
-const std::array<VertexAttribute, 1> s_vertexAttributes =
+const std::array<VertexAttribute, 2> s_vertexAttributes =
 {
     VertexAttribute(Data::Type::Float, 2), // position
     // (todo) 02.X: Add more vertex attributes
-
+    VertexAttribute(Data::Type::Float,1),
 };
 
 
@@ -42,7 +42,7 @@ void ParticlesApplication::Initialize()
     m_mousePosition = GetMainWindow().GetMousePosition(true);
 
     // (todo) 02.2: Enable the GL_PROGRAM_POINT_SIZE feature on the device
-
+    GetDevice().SetFeatureEnabled(GL_PROGRAM_POINT_SIZE,true);
 
     // (todo) 02.3: Enable the GL_BLEND feature on the device
 
@@ -64,9 +64,9 @@ void ParticlesApplication::Update()
     if (window.IsMouseButtonPressed(Window::MouseButton::Left))
     {
         // (todo) 02.X: Compute new particle attributes here
+        float size = RandomRange(2, 10);
 
-
-        EmitParticle(mousePosition);
+        EmitParticle(mousePosition,size);
     }
 
     // save the mouse position (to compare next frame and obtain velocity)
@@ -142,13 +142,13 @@ void ParticlesApplication::InitializeShaders()
     }
 }
 
-void ParticlesApplication::EmitParticle(const glm::vec2& position)
+void ParticlesApplication::EmitParticle(const glm::vec2& position, const float& size)
 {
     // Initialize the particle
     Particle particle;
     particle.position = position;
     // (todo) 02.X: Set the value for other attributes of the particle
-
+    particle.size = size;
 
     // Get the index in the circular buffer
     unsigned int particleIndex = m_particleCount % m_particleCapacity;

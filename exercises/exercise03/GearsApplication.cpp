@@ -63,7 +63,7 @@ void GearsApplication::Render()
     DrawGear(m_smallGear, glm::scale(glm::rotate(glm::translate(centerGearMatrix,glm::vec3(-1.0f,1.0f,0)),(-0.533f*GetCurrentTime())+1.196f,glm::vec3(0,0,1)),glm::vec3(7.4f,7.4f,7.4f)), Color(0.0f, 0.0f, 1.0f));
 
     // (todo) 03.4: Draw small gear linked to the center gear
-
+    DrawGear(m_smallGear, glm::rotate(glm::translate(glm::rotate(centerGearMatrix,1.0f*GetCurrentTime(),glm::vec3(0,0,1)),glm::vec3(0.0f,0.2f,0.0f)),-3.0f*GetCurrentTime(),glm::vec3(0,0,1)), Color(1.0f, 1.0f, 0.0f));
 
     Application::Render();
 }

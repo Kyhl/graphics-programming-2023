@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="CMakePresetLoader"><![CDATA[{
+  "useNewFormat": true
+}]]></component>
+  <component name="CMakeReloadState">
+    <option name="reloaded" value="true" />
+  </component>
+  <component name="CMakeRunConfigurationManager">
+    <generated>
+      <config projectName="ITU-graphics-programming" targetName="glad" />
+      <config projectName="ITU-graphics-programming" targetName="glfw" />
+      <config projectName="ITU-graphics-programming" targetName="exercise03" />
+      <config projectName="ITU-graphics-programming" targetName="exercise02" />
+      <config projectName="ITU-graphics-programming" targetName="exercise01" />
+      <config projectName="ITU-graphics-programming" targetName="itugl" />
+      <config projectName="ITU-graphics-programming" targetName="exercise00" />
+      <config projectName="ITU-graphics-programming" targetName="uninstall" />
+    </generated>
+  </component>
+  <component name="CMakeSettings">
+    <configurations>
+      <configuration PROFILE_NAME="Debug-Visual Studio" ENABLED="true" CONFIG_NAME="Debug" TOOLCHAIN_NAME="Visual Studio" GENERATION_OPTIONS="-G &quot;Visual Studio 16 2019&quot;" />
+    </configurations>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="b32bd480-0163-43cf-bab0-47c56b673b38" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug-visual-studio/.cmake/api/v1/reply/cmakeFiles-v1-f7e0779afbf733631fdd.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug-visual-studio/.cmake/api/v1/reply/codemodel-v2-6f98d7686b01231c6703.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug-visual-studio/.cmake/api/v1/reply/index-2023-02-21T10-21-04-0125.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug-visual-studio/.cmake/api/v1/reply/target-ALL_BUILD-Debug-3d5a473071aaaff1bf27.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug-visual-studio/.cmake/api/v1/reply/target-ALL_BUILD-MinSizeRel-3d5a473071aaaff1bf27.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug-visual-studio/.cmake/api/v1/reply/target-ALL_BUILD-RelWithDebInfo-3d5a473071aaaff1bf27.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug-visual-studio/.cmake/api/v1/reply/target-ALL_BUILD-Release-3d5a473071aaaff1bf27.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug-visual-studio/.cmake/api/v1/reply/target-exercise00-Debug-d717ea1f0d960014c290.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug-visual-studio/.cmake/api/v1/reply/target-exercise00-MinSizeRel-0f11d952d596356a6351.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug-visual-studio/.cmake/api/v1/reply/target-exercise00-RelWithDebInfo-e7a98c50d62816127cc5.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug-visual-studio/.cmake/api/v1/reply/target-exercise00-Release-f16a05bcbd043fbe9b9e.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug-visual-studio/.cmake/api/v1/reply/target-exercise01-Debug-18cd74ae5cc3d74cc229.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug-visual-studio/.cmake/api/v1/reply/target-exercise01-MinSizeRel-82bf9c57c39a8a19d5c1.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug-visual-studio/.cmake/api/v1/reply/target-exercise01-RelWithDebInfo-661dd3b5cce93a0574a1.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug-visual-studio/.cmake/api/v1/reply/target-exercise01-Release-6a0111445340f1e56f73.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug-visual-studio/.cmake/api/v1/reply/target-exercise02-Debug-5965566c8137f844877e.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug-visual-studio/.cmake/api/v1/reply/target-exercise02-MinSizeRel-582bc55b193f00ee718e.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug-visual-studio/.cmake/api/v1/reply/target-exercise02-RelWithDebInfo-b23f74aef53978179596.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug-visual-studio/.cmake/api/v1/reply/target-exercise02-Release-573cd653b56e5e2dac0d.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug-visual-studio/.cmake/api/v1/reply/target-exercise03-Debug-cb296b2aa9ea9977f9eb.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug-visual-studio/.cmake/api/v1/reply/target-exercise03-MinSizeRel-203e2930e29241c5ac22.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug-visual-studio/.cmake/api/v1/reply/target-exercise03-RelWithDebInfo-a65c6857aa550d24d972.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug-visual-studio/.cmake/api/v1/reply/target-exercise03-Release-18709b60176eb6865564.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug-visual-studio/ALL_BUILD.vcxproj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-visual-studio/ALL_BUILD.vcxproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug-visual-studio/CMakeFiles/clion-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-visual-studio/CMakeFiles/clion-log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug-visual-studio/CMakeFiles/generate.stamp.depend" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-visual-studio/CMakeFiles/generate.stamp.depend" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug-visual-studio/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-visual-studio/Testing/Temporary/LastTest.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug-visual-studio/ZERO_CHECK.vcxproj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-visual-studio/ZERO_CHECK.vcxproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug-visual-studio/exercises/exercise03/Debug/exercise03.exe" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-visual-studio/exercises/exercise03/Debug/exercise03.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug-visual-studio/exercises/exercise03/Debug/exercise03.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-visual-studio/exercises/exercise03/Debug/exercise03.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug-visual-studio/exercises/exercise03/exercise03.dir/Debug/GearsApplication.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-visual-studio/exercises/exercise03/exercise03.dir/Debug/GearsApplication.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug-visual-studio/exercises/exercise03/exercise03.dir/Debug/exercise03.ilk" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-visual-studio/exercises/exercise03/exercise03.dir/Debug/exercise03.ilk" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug-visual-studio/exercises/exercise03/exercise03.dir/Debug/exercise03.tlog/link.read.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-visual-studio/exercises/exercise03/exercise03.dir/Debug/exercise03.tlog/link.read.1.tlog" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug-visual-studio/exercises/exercise03/exercise03.dir/Debug/main.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-visual-studio/exercises/exercise03/exercise03.dir/Debug/main.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug-visual-studio/exercises/exercise03/exercise03.dir/Debug/vc142.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-visual-studio/exercises/exercise03/exercise03.dir/Debug/vc142.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug-visual-studio/libraries/glad/Debug/glad.lib" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-visual-studio/libraries/glad/Debug/glad.lib" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug-visual-studio/libraries/glfw/ALL_BUILD.vcxproj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-visual-studio/libraries/glfw/ALL_BUILD.vcxproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug-visual-studio/libraries/glfw/CMakeFiles/generate.stamp.depend" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-visual-studio/libraries/glfw/CMakeFiles/generate.stamp.depend" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug-visual-studio/libraries/glfw/src/Debug/glfw3.lib" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-visual-studio/libraries/glfw/src/Debug/glfw3.lib" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug-visual-studio/libraries/glfw/src/Debug/glfw3.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-visual-studio/libraries/glfw/src/Debug/glfw3.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug-visual-studio/libraries/glfw/src/glfw.dir/Debug/context.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-visual-studio/libraries/glfw/src/glfw.dir/Debug/context.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug-visual-studio/libraries/glfw/src/glfw.dir/Debug/egl_context.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-visual-studio/libraries/glfw/src/glfw.dir/Debug/egl_context.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug-visual-studio/libraries/glfw/src/glfw.dir/Debug/glfw.tlog/CL.command.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-visual-studio/libraries/glfw/src/glfw.dir/Debug/glfw.tlog/CL.command.1.tlog" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug-visual-studio/libraries/glfw/src/glfw.dir/Debug/glfw.tlog/CL.read.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-visual-studio/libraries/glfw/src/glfw.dir/Debug/glfw.tlog/CL.read.1.tlog" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug-visual-studio/libraries/glfw/src/glfw.dir/Debug/glfw.tlog/CL.write.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-visual-studio/libraries/glfw/src/glfw.dir/Debug/glfw.tlog/CL.write.1.tlog" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug-visual-studio/libraries/glfw/src/glfw.dir/Debug/init.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-visual-studio/libraries/glfw/src/glfw.dir/Debug/init.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug-visual-studio/libraries/glfw/src/glfw.dir/Debug/input.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-visual-studio/libraries/glfw/src/glfw.dir/Debug/input.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug-visual-studio/libraries/glfw/src/glfw.dir/Debug/monitor.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-visual-studio/libraries/glfw/src/glfw.dir/Debug/monitor.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug-visual-studio/libraries/glfw/src/glfw.dir/Debug/osmesa_context.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-visual-studio/libraries/glfw/src/glfw.dir/Debug/osmesa_context.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug-visual-studio/libraries/glfw/src/glfw.dir/Debug/vulkan.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-visual-studio/libraries/glfw/src/glfw.dir/Debug/vulkan.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug-visual-studio/libraries/glfw/src/glfw.dir/Debug/wgl_context.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-visual-studio/libraries/glfw/src/glfw.dir/Debug/wgl_context.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug-visual-studio/libraries/glfw/src/glfw.dir/Debug/win32_init.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-visual-studio/libraries/glfw/src/glfw.dir/Debug/win32_init.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug-visual-studio/libraries/glfw/src/glfw.dir/Debug/win32_joystick.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-visual-studio/libraries/glfw/src/glfw.dir/Debug/win32_joystick.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug-visual-studio/libraries/glfw/src/glfw.dir/Debug/win32_monitor.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-visual-studio/libraries/glfw/src/glfw.dir/Debug/win32_monitor.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug-visual-studio/libraries/glfw/src/glfw.dir/Debug/win32_thread.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-visual-studio/libraries/glfw/src/glfw.dir/Debug/win32_thread.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug-visual-studio/libraries/glfw/src/glfw.dir/Debug/win32_time.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-visual-studio/libraries/glfw/src/glfw.dir/Debug/win32_time.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug-visual-studio/libraries/glfw/src/glfw.dir/Debug/win32_window.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-visual-studio/libraries/glfw/src/glfw.dir/Debug/win32_window.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug-visual-studio/libraries/glfw/src/glfw.dir/Debug/window.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-visual-studio/libraries/glfw/src/glfw.dir/Debug/window.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug-visual-studio/libraries/glfw/uninstall.vcxproj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-visual-studio/libraries/glfw/uninstall.vcxproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug-visual-studio/libraries/itugl/Debug/itugl.lib" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-visual-studio/libraries/itugl/Debug/itugl.lib" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug-visual-studio/libraries/itugl/Debug/itugl.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-visual-studio/libraries/itugl/Debug/itugl.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug-visual-studio/libraries/itugl/itugl.dir/Debug/Camera.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-visual-studio/libraries/itugl/itugl.dir/Debug/Camera.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug-visual-studio/libraries/itugl/itugl.dir/Debug/Mesh.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-visual-studio/libraries/itugl/itugl.dir/Debug/Mesh.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug-visual-studio/libraries/itugl/itugl.dir/Debug/Shader.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-visual-studio/libraries/itugl/itugl.dir/Debug/Shader.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug-visual-studio/libraries/itugl/itugl.dir/Debug/ShaderProgram.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-visual-studio/libraries/itugl/itugl.dir/Debug/ShaderProgram.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug-visual-studio/libraries/itugl/itugl.dir/Debug/itugl.tlog/CL.command.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-visual-studio/libraries/itugl/itugl.dir/Debug/itugl.tlog/CL.command.1.tlog" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug-visual-studio/libraries/itugl/itugl.dir/Debug/itugl.tlog/CL.read.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-visual-studio/libraries/itugl/itugl.dir/Debug/itugl.tlog/CL.read.1.tlog" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug-visual-studio/libraries/itugl/itugl.dir/Debug/itugl.tlog/CL.write.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-visual-studio/libraries/itugl/itugl.dir/Debug/itugl.tlog/CL.write.1.tlog" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug-visual-studio/x64/Debug/ZERO_CHECK/ZERO_CHECK.tlog/CustomBuild.read.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-visual-studio/x64/Debug/ZERO_CHECK/ZERO_CHECK.tlog/CustomBuild.read.1.tlog" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercises/exercise03/GearsApplication.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/exercises/exercise03/GearsApplication.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercises/exercise03/shaders/basic.frag" beforeDir="false" afterPath="$PROJECT_DIR$/exercises/exercise03/shaders/basic.frag" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercises/exercise03/shaders/basic.vert" beforeDir="false" afterPath="$PROJECT_DIR$/exercises/exercise03/shaders/basic.vert" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug-Visual Studio" />
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectApplicationVersion">
+    <option name="ide" value="CLion" />
+    <option name="majorVersion" value="2022" />
+    <option name="minorVersion" value="2.3" />
+  </component>
+  <component name="ProjectId" id="2MMXqpNw08rYLfp58qoLejRC0Mk" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "cf.first.check.clang-format": "false",
+    "cidr.known.project.marker": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)"
+  }
+}]]></component>
+  <component name="RunManager" selected="CMake Application.exercise03">
+    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="exercise00" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ITU-graphics-programming" TARGET_NAME="exercise00" CONFIG_NAME="Debug-Visual Studio" RUN_TARGET_PROJECT_NAME="ITU-graphics-programming" RUN_TARGET_NAME="exercise00">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="exercise01" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ITU-graphics-programming" TARGET_NAME="exercise01" CONFIG_NAME="Debug-Visual Studio" RUN_TARGET_PROJECT_NAME="ITU-graphics-programming" RUN_TARGET_NAME="exercise01">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="exercise02" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ITU-graphics-programming" TARGET_NAME="exercise02" CONFIG_NAME="Debug-Visual Studio" RUN_TARGET_PROJECT_NAME="ITU-graphics-programming" RUN_TARGET_NAME="exercise02">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="exercise03" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" WORKING_DIR="file://$PROJECT_DIR$/exercises/exercise03" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ITU-graphics-programming" TARGET_NAME="exercise03" CONFIG_NAME="Debug-Visual Studio" RUN_TARGET_PROJECT_NAME="ITU-graphics-programming" RUN_TARGET_NAME="exercise03">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="glad" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ITU-graphics-programming" TARGET_NAME="glad" CONFIG_NAME="Debug-Visual Studio">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="glfw" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ITU-graphics-programming" TARGET_NAME="glfw" CONFIG_NAME="Debug-Visual Studio">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="itugl" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ITU-graphics-programming" TARGET_NAME="itugl" CONFIG_NAME="Debug-Visual Studio">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="uninstall" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ITU-graphics-programming" TARGET_NAME="uninstall" CONFIG_NAME="Debug-Visual Studio">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="CMake Application.exercise00" />
+      <item itemvalue="CMake Application.exercise01" />
+      <item itemvalue="CMake Application.exercise02" />
+      <item itemvalue="CMake Application.exercise03" />
+      <item itemvalue="CMake Application.glad" />
+      <item itemvalue="CMake Application.uninstall" />
+      <item itemvalue="CMake Application.glfw" />
+      <item itemvalue="CMake Application.itugl" />
+    </list>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b32bd480-0163-43cf-bab0-47c56b673b38" name="Changes" comment="" />
+      <created>1677578621037</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1677578621037</updated>
+      <workItem from="1677578624073" duration="1176000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

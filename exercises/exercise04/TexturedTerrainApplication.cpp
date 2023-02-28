@@ -66,7 +66,7 @@ void TexturedTerrainApplication::Render()
     GetDevice().Clear(true, Color(0.0f, 0.0f, 0.0f, 1.0f), true, 1.0f);
 
     // Terrain patches
-    DrawObject(m_terrainPatch, *m_defaultMaterial, glm::scale(glm::vec3(10.0f)));
+    DrawObject(m_terrainPatch, *m_terrainMaterial, glm::scale(glm::vec3(10.0f)));
 
     // (todo) 04.2: Add more patches here
     
@@ -79,7 +79,7 @@ void TexturedTerrainApplication::Render()
 void TexturedTerrainApplication::InitializeTextures()
 {
     m_defaultTexture = CreateDefaultTexture();
-
+    m_terrainTexture = CreateDefaultTexture();
     // (todo) 04.3: Load terrain textures here
 
 
@@ -100,9 +100,13 @@ void TexturedTerrainApplication::InitializeMaterials()
     m_defaultMaterial->SetUniformValue("Color", glm::vec4(1.0f));
 
     // (todo) 04.1: Add terrain shader and material here
+    Shader terrainVS = m_vertexShaderLoader.Load("shaders/terrain.vert");
+    Shader terrainFS = m_fragmentShaderLoader.Load("shaders/terrain.frag");
+    std::shared_ptr<ShaderProgram> terrainShaderProgram = std::make_shared<ShaderProgram>();
+    terrainShaderProgram->Build(terrainVS, terrainFS);
 
-
-
+    m_terrainMaterial= std::make_shared<Material>(terrainShaderProgram);
+    m_terrainMaterial->SetUniformValue("Color", glm::vec4(1.0f));
     // (todo) 04.5: Add water shader and material here
 
 
@@ -172,6 +176,7 @@ std::shared_ptr<Texture2DObject> TexturedTerrainApplication::CreateHeightMap(uns
         for (unsigned int i = 0; i < width; ++i)
         {
             // (todo) 04.1: Add pixel data
+            pixels.push_back(std::sin(0.1f * i) * 0.1f);
         }
     }
 

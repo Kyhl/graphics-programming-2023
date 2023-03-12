@@ -1,0 +1,204 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\itugl\src\ituGL\application\Application.cpp">
+      <Filter>application</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\itugl\src\ituGL\application\Window.cpp">
+      <Filter>application</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\itugl\src\ituGL\asset\AssetLoader.cpp">
+      <Filter>asset</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\itugl\src\ituGL\asset\ModelLoader.cpp">
+      <Filter>asset</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\itugl\src\ituGL\asset\ShaderLoader.cpp">
+      <Filter>asset</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\itugl\src\ituGL\asset\Texture2DLoader.cpp">
+      <Filter>asset</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\itugl\src\ituGL\asset\TextureLoader.cpp">
+      <Filter>asset</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\itugl\src\ituGL\camera\Camera.cpp">
+      <Filter>camera</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\itugl\src\ituGL\core\BufferObject.cpp">
+      <Filter>core</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\itugl\src\ituGL\core\Color.cpp">
+      <Filter>core</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\itugl\src\ituGL\core\Data.cpp">
+      <Filter>core</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\itugl\src\ituGL\core\DeviceGL.cpp">
+      <Filter>core</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\itugl\src\ituGL\core\Object.cpp">
+      <Filter>core</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\itugl\src\ituGL\geometry\Drawcall.cpp">
+      <Filter>geometry</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\itugl\src\ituGL\geometry\ElementBufferObject.cpp">
+      <Filter>geometry</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\itugl\src\ituGL\geometry\Mesh.cpp">
+      <Filter>geometry</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\itugl\src\ituGL\geometry\Model.cpp">
+      <Filter>geometry</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\itugl\src\ituGL\geometry\VertexArrayObject.cpp">
+      <Filter>geometry</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\itugl\src\ituGL\geometry\VertexAttribute.cpp">
+      <Filter>geometry</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\itugl\src\ituGL\geometry\VertexBufferObject.cpp">
+      <Filter>geometry</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\itugl\src\ituGL\geometry\VertexFormat.cpp">
+      <Filter>geometry</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\itugl\src\ituGL\shader\Material.cpp">
+      <Filter>shader</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\itugl\src\ituGL\shader\Shader.cpp">
+      <Filter>shader</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\itugl\src\ituGL\shader\ShaderProgram.cpp">
+      <Filter>shader</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\itugl\src\ituGL\shader\ShaderUniformCollection.cpp">
+      <Filter>shader</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\itugl\src\ituGL\texture\Texture2DObject.cpp">
+      <Filter>texture</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\itugl\src\ituGL\texture\TextureObject.cpp">
+      <Filter>texture</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\itugl\src\ituGL\utils\DearImGui.cpp">
+      <Filter>utils</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\itugl\include\ituGL\application\Application.h">
+      <Filter>application</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\itugl\include\ituGL\application\Window.h">
+      <Filter>application</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\itugl\include\ituGL\asset\AssetLoader.h">
+      <Filter>asset</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\itugl\include\ituGL\asset\ModelLoader.h">
+      <Filter>asset</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\itugl\include\ituGL\asset\ShaderLoader.h">
+      <Filter>asset</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\itugl\include\ituGL\asset\Texture2DLoader.h">
+      <Filter>asset</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\itugl\include\ituGL\asset\TextureLoader.h">
+      <Filter>asset</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\itugl\include\ituGL\camera\Camera.h">
+      <Filter>camera</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\itugl\include\ituGL\core\BufferObject.h">
+      <Filter>core</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\itugl\include\ituGL\core\Color.h">
+      <Filter>core</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\itugl\include\ituGL\core\Data.h">
+      <Filter>core</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\itugl\include\ituGL\core\DeviceGL.h">
+      <Filter>core</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\itugl\include\ituGL\core\Object.h">
+      <Filter>core</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\itugl\include\ituGL\geometry\Drawcall.h">
+      <Filter>geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\itugl\include\ituGL\geometry\ElementBufferObject.h">
+      <Filter>geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\itugl\include\ituGL\geometry\Mesh.h">
+      <Filter>geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\itugl\include\ituGL\geometry\Model.h">
+      <Filter>geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\itugl\include\ituGL\geometry\VertexArrayObject.h">
+      <Filter>geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\itugl\include\ituGL\geometry\VertexAttribute.h">
+      <Filter>geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\itugl\include\ituGL\geometry\VertexBufferObject.h">
+      <Filter>geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\itugl\include\ituGL\geometry\VertexFormat.h">
+      <Filter>geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\itugl\include\ituGL\shader\Material.h">
+      <Filter>shader</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\itugl\include\ituGL\shader\Shader.h">
+      <Filter>shader</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\itugl\include\ituGL\shader\ShaderProgram.h">
+      <Filter>shader</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\itugl\include\ituGL\shader\ShaderUniformCollection.h">
+      <Filter>shader</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\itugl\include\ituGL\texture\Texture2DObject.h">
+      <Filter>texture</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\itugl\include\ituGL\texture\TextureObject.h">
+      <Filter>texture</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\itugl\include\ituGL\utils\DearImGui.h">
+      <Filter>utils</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\itugl\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="application">
+      <UniqueIdentifier>{3EE2BC69-1A89-3957-9484-94B787CBFD56}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="asset">
+      <UniqueIdentifier>{2080EAA0-50FD-3F7C-AC61-9901E83A0329}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="camera">
+      <UniqueIdentifier>{22E5D6A2-457F-32A3-9766-7B6A558D7A17}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="core">
+      <UniqueIdentifier>{1E81AEED-5EB2-3D5B-AF77-8A45C9190151}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="geometry">
+      <UniqueIdentifier>{FC956AEE-B0FB-3C19-A5AA-E21845739CD8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="shader">
+      <UniqueIdentifier>{857FBA7E-3DBB-38C6-BF7D-AA77B364B099}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="texture">
+      <UniqueIdentifier>{3FA0ABF5-E0E3-30E1-92A4-16A9A27F2470}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="utils">
+      <UniqueIdentifier>{CB0F80BC-7B41-39DB-B045-E74C0BECE6EF}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

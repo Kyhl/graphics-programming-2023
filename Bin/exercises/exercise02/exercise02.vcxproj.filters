@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\exercises\exercise02\ParticlesApplication.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\exercises\exercise02\main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="D:\GraphicsProgramming\graphics-programming-2023\exercises\exercise02\ParticlesApplication.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="D:\GraphicsProgramming\graphics-programming-2023\exercises\exercise02\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="D:\GraphicsProgramming\graphics-programming-2023\exercises\exercise02\shaders\particles.frag">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="D:\GraphicsProgramming\graphics-programming-2023\exercises\exercise02\shaders\particles.vert">
+      <Filter>Shaders</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{2DD6DBE6-EA08-32A2-89B0-55F3062974A7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shaders">
+      <UniqueIdentifier>{F5DDFC14-E356-3CF3-9371-6E5D470FEA11}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{EAE31667-55C0-3F45-950C-DBDD558BB870}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,101 @@
+﻿  Building Custom Rule D:/GraphicsProgramming/graphics-programming-2023/libraries/assimp/CMakeLists.txt
+  Assimp.cpp
+  BaseImporter.cpp
+D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\contrib\utf8cpp\source\utf8/checked.h(268,34): warning C4996: 'std::iterator<std::bidirectional_iterator_tag,utf8::uint32_t,ptrdiff_t,utf8::uint32_t *,utf8::uint32_t &>': warning STL4015: The std::iterator class template (used as a base class to provide typedefs) is deprecated in C++17. (The <iterator> header is NOT deprecated.) The C++ Standard has never required user-defined iterators to derive from std::iterator. To fix this warning, stop deriving from std::iterator and start providing publicly accessible typedefs named iterator_category, value_type, difference_type, pointer, and reference. Note that value_type is required to be non-const, even for constant iterators. You can define _SILENCE_CXX17_ITERATOR_BASE_CLASS_DEPRECATION_WARNING or _SILENCE_ALL_CXX17_DEPRECATION_WARNINGS to acknowledge that you have received this warning.
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\xutility(5959,1): message : see declaration of 'std::iterator'
+D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\contrib\utf8cpp\source\utf8/checked.h(321): message : see reference to class template instantiation 'utf8::iterator<octet_iterator>' being compiled
+D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\contrib\utf8cpp\source\utf8/unchecked.h(179,40): warning C4996: 'std::iterator<std::bidirectional_iterator_tag,utf8::uint32_t,ptrdiff_t,utf8::uint32_t *,utf8::uint32_t &>': warning STL4015: The std::iterator class template (used as a base class to provide typedefs) is deprecated in C++17. (The <iterator> header is NOT deprecated.) The C++ Standard has never required user-defined iterators to derive from std::iterator. To fix this warning, stop deriving from std::iterator and start providing publicly accessible typedefs named iterator_category, value_type, difference_type, pointer, and reference. Note that value_type is required to be non-const, even for constant iterators. You can define _SILENCE_CXX17_ITERATOR_BASE_CLASS_DEPRECATION_WARNING or _SILENCE_ALL_CXX17_DEPRECATION_WARNINGS to acknowledge that you have received this warning.
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\xutility(5959,1): message : see declaration of 'std::iterator'
+D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\contrib\utf8cpp\source\utf8/unchecked.h(221): message : see reference to class template instantiation 'utf8::unchecked::iterator<octet_iterator>' being compiled
+  BaseProcess.cpp
+  Bitmap.cpp
+  CreateAnimMesh.cpp
+  DefaultIOStream.cpp
+  DefaultIOSystem.cpp
+D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\code\Common\DefaultIOSystem.cpp(111,14): warning C4996: '_wfopen': This function or variable may be unsafe. Consider using _wfopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  DefaultLogger.cpp
+D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\code\Common\DefaultLogger.cpp(388,11): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  Exporter.cpp
+  Importer.cpp
+  ImporterRegistry.cpp
+  PostStepRegistry.cpp
+  RemoveComments.cpp
+  SGSpatialSort.cpp
+  SceneCombiner.cpp
+  ScenePreprocessor.cpp
+  SkeletonMeshBuilder.cpp
+  SpatialSort.cpp
+  SplitByBoneCountProcess.cpp
+  StandardShapes.cpp
+  Generating Code...
+  Compiling...
+  Subdivision.cpp
+  TargetAnimation.cpp
+  Version.cpp
+  VertexTriangleAdjacency.cpp
+  scene.cpp
+  simd.cpp
+  FBXAnimation.cpp
+  FBXBinaryTokenizer.cpp
+  FBXConverter.cpp
+  FBXDeformer.cpp
+  FBXDocument.cpp
+  FBXDocumentUtil.cpp
+  FBXExportNode.cpp
+  FBXExportProperty.cpp
+  FBXExporter.cpp
+  FBXImporter.cpp
+  FBXMaterial.cpp
+  FBXMeshGeometry.cpp
+  FBXModel.cpp
+  FBXNodeAttribute.cpp
+  Generating Code...
+  Compiling...
+  FBXParser.cpp
+  FBXProperties.cpp
+  FBXTokenizer.cpp
+  FBXUtil.cpp
+  MaterialSystem.cpp
+D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\code\Material\MaterialSystem.cpp(507,40): warning C4267: '=': conversion from 'size_t' to 'ai_uint32', possible loss of data
+D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\code\Material\MaterialSystem.cpp(509,5): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  ObjExporter.cpp
+  ObjFileImporter.cpp
+  ObjFileMtlImporter.cpp
+  ObjFileParser.cpp
+  ArmaturePopulate.cpp
+  CalcTangentsProcess.cpp
+  ComputeUVMappingProcess.cpp
+  ConvertToLHProcess.cpp
+  DeboneProcess.cpp
+  DropFaceNormalsProcess.cpp
+  EmbedTexturesProcess.cpp
+D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\code\PostProcessing\EmbedTexturesProcess.cpp(148,7): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  FindDegenerates.cpp
+  FindInstancesProcess.cpp
+  FindInvalidDataProcess.cpp
+  FixNormalsStep.cpp
+  Generating Code...
+  Compiling...
+  GenBoundingBoxesProcess.cpp
+  GenFaceNormalsProcess.cpp
+  GenVertexNormalsProcess.cpp
+  ImproveCacheLocality.cpp
+  JoinVerticesProcess.cpp
+  LimitBoneWeightsProcess.cpp
+  MakeVerboseFormat.cpp
+  OptimizeGraph.cpp
+  OptimizeMeshes.cpp
+  PretransformVertices.cpp
+  ProcessHelper.cpp
+  RemoveRedundantMaterials.cpp
+  RemoveVCProcess.cpp
+  ScaleProcess.cpp
+  SortByPTypeProcess.cpp
+  SplitLargeMeshes.cpp
+  TextureTransform.cpp
+  TriangulateProcess.cpp
+  ValidateDataStructure.cpp
+D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\code\PostProcessing\ValidateDataStructure.cpp(87,22): warning C4996: 'vsprintf': This function or variable may be unsafe. Consider using vsprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\code\PostProcessing\ValidateDataStructure.cpp(103,22): warning C4996: 'vsprintf': This function or variable may be unsafe. Consider using vsprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  Generating Code...
+  assimp.vcxproj -> D:\GraphicsProgramming\graphics-programming-2023\Bin\libraries\assimp\Debug\assimp.lib

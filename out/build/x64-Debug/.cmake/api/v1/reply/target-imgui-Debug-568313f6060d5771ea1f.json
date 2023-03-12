@@ -1,0 +1,205 @@
+{
+	"archive" : 
+	{
+		"commandFragments" : 
+		[
+			{
+				"fragment" : "/machine:x64",
+				"role" : "flags"
+			}
+		]
+	},
+	"artifacts" : 
+	[
+		{
+			"path" : "libraries/imgui/imgui.lib"
+		}
+	],
+	"backtrace" : 1,
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"add_library",
+			"include_directories"
+		],
+		"files" : 
+		[
+			"libraries/imgui/CMakeLists.txt",
+			"CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 8,
+				"parent" : 0
+			},
+			{
+				"file" : 1
+			},
+			{
+				"command" : 1,
+				"file" : 1,
+				"line" : 46,
+				"parent" : 2
+			},
+			{
+				"command" : 1,
+				"file" : 0,
+				"line" : 2,
+				"parent" : 0
+			}
+		]
+	},
+	"compileGroups" : 
+	[
+		{
+			"compileCommandFragments" : 
+			[
+				{
+					"fragment" : "/DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1"
+				},
+				{
+					"fragment" : "-std:c++latest"
+				}
+			],
+			"includes" : 
+			[
+				{
+					"backtrace" : 3,
+					"path" : "D:/GraphicsProgramming/graphics-programming-2023/libraries/glad/include"
+				},
+				{
+					"backtrace" : 3,
+					"path" : "D:/GraphicsProgramming/graphics-programming-2023/libraries/glfw/include"
+				},
+				{
+					"backtrace" : 3,
+					"path" : "D:/GraphicsProgramming/graphics-programming-2023/libraries/imgui/include"
+				},
+				{
+					"backtrace" : 3,
+					"path" : "D:/GraphicsProgramming/graphics-programming-2023/libraries/glm/include"
+				},
+				{
+					"backtrace" : 3,
+					"path" : "D:/GraphicsProgramming/graphics-programming-2023/libraries/stb/include"
+				},
+				{
+					"backtrace" : 3,
+					"path" : "D:/GraphicsProgramming/graphics-programming-2023/libraries/assimp/include"
+				},
+				{
+					"backtrace" : 3,
+					"path" : "D:/GraphicsProgramming/graphics-programming-2023/libraries/assimp"
+				},
+				{
+					"backtrace" : 3,
+					"path" : "D:/GraphicsProgramming/graphics-programming-2023/libraries/itugl/include"
+				},
+				{
+					"backtrace" : 4,
+					"path" : "/glad/include"
+				},
+				{
+					"backtrace" : 4,
+					"path" : "/glfw/include"
+				}
+			],
+			"language" : "CXX",
+			"languageStandard" : 
+			{
+				"backtraces" : 
+				[
+					1
+				],
+				"standard" : "20"
+			},
+			"sourceIndexes" : 
+			[
+				0,
+				1,
+				2,
+				3,
+				4,
+				5,
+				6
+			]
+		}
+	],
+	"id" : "imgui::@136c5ea3e61728afbd98",
+	"name" : "imgui",
+	"nameOnDisk" : "imgui.lib",
+	"paths" : 
+	{
+		"build" : "libraries/imgui",
+		"source" : "libraries/imgui"
+	},
+	"sourceGroups" : 
+	[
+		{
+			"name" : "Source Files",
+			"sourceIndexes" : 
+			[
+				0,
+				1,
+				2,
+				3,
+				4,
+				5,
+				6
+			]
+		}
+	],
+	"sources" : 
+	[
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "libraries/imgui/src/imgui.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "libraries/imgui/src/imgui_demo.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "libraries/imgui/src/imgui_draw.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "libraries/imgui/src/imgui_impl_glfw.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "libraries/imgui/src/imgui_impl_opengl3.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "libraries/imgui/src/imgui_tables.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "libraries/imgui/src/imgui_widgets.cpp",
+			"sourceGroupIndex" : 0
+		}
+	],
+	"type" : "STATIC_LIBRARY"
+}

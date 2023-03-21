@@ -18,6 +18,8 @@ D:/GraphicsProgramming/graphics-programming-2023/Bin/libraries/itugl/CMakeFiles/
 D:/GraphicsProgramming/graphics-programming-2023/Bin/libraries/itugl/CMakeFiles/INSTALL.dir
 D:/GraphicsProgramming/graphics-programming-2023/Bin/libraries/stb/CMakeFiles/INSTALL.dir
 D:/GraphicsProgramming/graphics-programming-2023/Bin/exercises/CMakeFiles/INSTALL.dir
+D:/GraphicsProgramming/graphics-programming-2023/Bin/exercises/Exam/CMakeFiles/Exam.dir
+D:/GraphicsProgramming/graphics-programming-2023/Bin/exercises/Exam/CMakeFiles/INSTALL.dir
 D:/GraphicsProgramming/graphics-programming-2023/Bin/exercises/exercise00/CMakeFiles/exercise00.dir
 D:/GraphicsProgramming/graphics-programming-2023/Bin/exercises/exercise00/CMakeFiles/INSTALL.dir
 D:/GraphicsProgramming/graphics-programming-2023/Bin/exercises/exercise01/CMakeFiles/exercise01.dir
@@ -30,3 +32,4 @@ D:/GraphicsProgramming/graphics-programming-2023/Bin/exercises/exercise04/CMakeF
 D:/GraphicsProgramming/graphics-programming-2023/Bin/exercises/exercise04/CMakeFiles/INSTALL.dir
 D:/GraphicsProgramming/graphics-programming-2023/Bin/exercises/exercise05/CMakeFiles/exercise05.dir
 D:/GraphicsProgramming/graphics-programming-2023/Bin/exercises/exercise05/CMakeFiles/INSTALL.dir
+D:/GraphicsProgramming/graphics-programming-2023/Bin/exercises/exercise06/CMakeFiles/INSTALL.dir

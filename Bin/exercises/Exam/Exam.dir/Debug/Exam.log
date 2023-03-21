@@ -1,0 +1,46 @@
+﻿  main.cpp
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\utility(186,48): warning C4267: 'initializing': conversion from 'size_t' to '_Ty2', possible loss of data
+          with
+          [
+              _Ty2=Index
+          ]
+D:\GraphicsProgramming\graphics-programming-2023\exercises\Exam\main.cpp(180): message : see reference to function template instantiation 'std::pair<const std::pair<Index,Index>,Index>::pair<std::pair<Index,Index>&,unsigned __int64,0>(_Other1,_Other2 &&) noexcept' being compiled
+          with
+          [
+              _Other1=std::pair<Index,Index> &,
+              _Other2=unsigned __int64
+          ]
+D:\GraphicsProgramming\graphics-programming-2023\exercises\Exam\main.cpp(180): message : see reference to function template instantiation 'std::pair<const std::pair<Index,Index>,Index>::pair<std::pair<Index,Index>&,unsigned __int64,0>(_Other1,_Other2 &&) noexcept' being compiled
+          with
+          [
+              _Other1=std::pair<Index,Index> &,
+              _Other2=unsigned __int64
+          ]
+D:\GraphicsProgramming\graphics-programming-2023\exercises\Exam\main.cpp(242): message : see reference to function template instantiation 'Index vertex_for_edge<ColorVertexList>(Lookup &,VertexList &,Index,Index)' being compiled
+          with
+          [
+              VertexList=ColorVertexList
+          ]
+SDL2main.lib(SDL_windows_main.obj) : error LNK2005: WinMain already defined in main.obj
+main.obj : error LNK2019: unresolved external symbol __imp_glClearColor referenced in function "void __cdecl Render<class std::vector<struct ColorPosition,class std::allocator<struct ColorPosition> > >(float,class std::vector<struct ColorPosition,class std::allocator<struct ColorPosition> > const &,class std::vector<struct Triangle,class std::allocator<struct Triangle> > const &)" (??$Render@V?$vector@UColorPosition@@V?$allocator@UColorPosition@@@std@@@std@@@@YAXMAEBV?$vector@UColorPosition@@V?$allocator@UColorPosition@@@std@@@std@@AEBV?$vector@UTriangle@@V?$allocator@UTriangle@@@std@@@1@@Z)
+main.obj : error LNK2019: unresolved external symbol __imp_glClear referenced in function "void __cdecl Render<class std::vector<struct ColorPosition,class std::allocator<struct ColorPosition> > >(float,class std::vector<struct ColorPosition,class std::allocator<struct ColorPosition> > const &,class std::vector<struct Triangle,class std::allocator<struct Triangle> > const &)" (??$Render@V?$vector@UColorPosition@@V?$allocator@UColorPosition@@@std@@@std@@@@YAXMAEBV?$vector@UColorPosition@@V?$allocator@UColorPosition@@@std@@@std@@AEBV?$vector@UTriangle@@V?$allocator@UTriangle@@@std@@@1@@Z)
+main.obj : error LNK2019: unresolved external symbol __imp_glCullFace referenced in function "void __cdecl InitGL(void)" (?InitGL@@YAXXZ)
+main.obj : error LNK2019: unresolved external symbol __imp_glPolygonMode referenced in function "void __cdecl InitGL(void)" (?InitGL@@YAXXZ)
+main.obj : error LNK2019: unresolved external symbol __imp_glEnable referenced in function "void __cdecl InitGL(void)" (?InitGL@@YAXXZ)
+main.obj : error LNK2019: unresolved external symbol __imp_glHint referenced in function "void __cdecl InitGL(void)" (?InitGL@@YAXXZ)
+main.obj : error LNK2019: unresolved external symbol __imp_glClearDepth referenced in function "void __cdecl InitGL(void)" (?InitGL@@YAXXZ)
+main.obj : error LNK2019: unresolved external symbol __imp_glDepthFunc referenced in function "void __cdecl InitGL(void)" (?InitGL@@YAXXZ)
+main.obj : error LNK2019: unresolved external symbol __imp_glMatrixMode referenced in function "int __cdecl SetupViewport(int,int)" (?SetupViewport@@YAHHH@Z)
+main.obj : error LNK2019: unresolved external symbol __imp_glViewport referenced in function "int __cdecl SetupViewport(int,int)" (?SetupViewport@@YAHHH@Z)
+main.obj : error LNK2019: unresolved external symbol __imp_glLoadIdentity referenced in function "int __cdecl SetupViewport(int,int)" (?SetupViewport@@YAHHH@Z)
+main.obj : error LNK2019: unresolved external symbol __imp_glRotatef referenced in function "void __cdecl Render<class std::vector<struct ColorPosition,class std::allocator<struct ColorPosition> > >(float,class std::vector<struct ColorPosition,class std::allocator<struct ColorPosition> > const &,class std::vector<struct Triangle,class std::allocator<struct Triangle> > const &)" (??$Render@V?$vector@UColorPosition@@V?$allocator@UColorPosition@@@std@@@std@@@@YAXMAEBV?$vector@UColorPosition@@V?$allocator@UColorPosition@@@std@@@std@@AEBV?$vector@UTriangle@@V?$allocator@UTriangle@@@std@@@1@@Z)
+main.obj : error LNK2019: unresolved external symbol __imp_glTranslatef referenced in function "void __cdecl Render<class std::vector<struct ColorPosition,class std::allocator<struct ColorPosition> > >(float,class std::vector<struct ColorPosition,class std::allocator<struct ColorPosition> > const &,class std::vector<struct Triangle,class std::allocator<struct Triangle> > const &)" (??$Render@V?$vector@UColorPosition@@V?$allocator@UColorPosition@@@std@@@std@@@@YAXMAEBV?$vector@UColorPosition@@V?$allocator@UColorPosition@@@std@@@std@@AEBV?$vector@UTriangle@@V?$allocator@UTriangle@@@std@@@1@@Z)
+main.obj : error LNK2019: unresolved external symbol __imp_glBegin referenced in function "void __cdecl RenderMesh(class std::vector<struct v3,class std::allocator<struct v3> > const &,class std::vector<struct Triangle,class std::allocator<struct Triangle> > const &)" (?RenderMesh@@YAXAEBV?$vector@Uv3@@V?$allocator@Uv3@@@std@@@std@@AEBV?$vector@UTriangle@@V?$allocator@UTriangle@@@std@@@2@@Z)
+main.obj : error LNK2019: unresolved external symbol __imp_glEnd referenced in function "void __cdecl RenderMesh(class std::vector<struct v3,class std::allocator<struct v3> > const &,class std::vector<struct Triangle,class std::allocator<struct Triangle> > const &)" (?RenderMesh@@YAXAEBV?$vector@Uv3@@V?$allocator@Uv3@@@std@@@std@@AEBV?$vector@UTriangle@@V?$allocator@UTriangle@@@std@@@2@@Z)
+main.obj : error LNK2019: unresolved external symbol __imp_glVertex3fv referenced in function "void __cdecl RenderMesh(class std::vector<struct v3,class std::allocator<struct v3> > const &,class std::vector<struct Triangle,class std::allocator<struct Triangle> > const &)" (?RenderMesh@@YAXAEBV?$vector@Uv3@@V?$allocator@Uv3@@@std@@@std@@AEBV?$vector@UTriangle@@V?$allocator@UTriangle@@@std@@@2@@Z)
+main.obj : error LNK2019: unresolved external symbol __imp_glColor3f referenced in function "void __cdecl Render<class std::vector<struct ColorPosition,class std::allocator<struct ColorPosition> > >(float,class std::vector<struct ColorPosition,class std::allocator<struct ColorPosition> > const &,class std::vector<struct Triangle,class std::allocator<struct Triangle> > const &)" (??$Render@V?$vector@UColorPosition@@V?$allocator@UColorPosition@@@std@@@std@@@@YAXMAEBV?$vector@UColorPosition@@V?$allocator@UColorPosition@@@std@@@std@@AEBV?$vector@UTriangle@@V?$allocator@UTriangle@@@std@@@1@@Z)
+main.obj : error LNK2019: unresolved external symbol __imp_glColor3fv referenced in function "void __cdecl RenderMesh(class std::vector<struct ColorPosition,class std::allocator<struct ColorPosition> > const &,class std::vector<struct Triangle,class std::allocator<struct Triangle> > const &)" (?RenderMesh@@YAXAEBV?$vector@UColorPosition@@V?$allocator@UColorPosition@@@std@@@std@@AEBV?$vector@UTriangle@@V?$allocator@UTriangle@@@std@@@2@@Z)
+main.obj : error LNK2019: unresolved external symbol __imp_glShadeModel referenced in function "void __cdecl InitGL(void)" (?InitGL@@YAXXZ)
+main.obj : error LNK2019: unresolved external symbol gluPerspective referenced in function "int __cdecl SetupViewport(int,int)" (?SetupViewport@@YAHHH@Z)
+SDL2main.lib(SDL_windows_main.obj) : error LNK2019: unresolved external symbol SDL_main referenced in function main_getcmdline
+D:\GraphicsProgramming\graphics-programming-2023\Bin\exercises\Exam\Debug\Exam.exe : fatal error LNK1120: 21 unresolved externals

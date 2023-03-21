@@ -1,10 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\exercises\Exam\SphereCube.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\exercises\Exam\TexturedTerrainApplication.cpp">
+    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\exercises\Exam\TerrainApplication.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\exercises\Exam\main.cpp">
@@ -12,10 +9,7 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="D:\GraphicsProgramming\graphics-programming-2023\exercises\Exam\SphereCube.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="D:\GraphicsProgramming\graphics-programming-2023\exercises\Exam\TexturedTerrainApplication.h">
+    <ClInclude Include="D:\GraphicsProgramming\graphics-programming-2023\exercises\Exam\TerrainApplication.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

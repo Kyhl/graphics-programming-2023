@@ -321,10 +321,8 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="D:\GraphicsProgramming\graphics-programming-2023\exercises\Exam\SphereCube.h" />
-    <ClInclude Include="D:\GraphicsProgramming\graphics-programming-2023\exercises\Exam\TexturedTerrainApplication.h" />
-    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\exercises\Exam\SphereCube.cpp" />
-    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\exercises\Exam\TexturedTerrainApplication.cpp" />
+    <ClInclude Include="D:\GraphicsProgramming\graphics-programming-2023\exercises\Exam\TerrainApplication.h" />
+    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\exercises\Exam\TerrainApplication.cpp" />
     <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\exercises\Exam\main.cpp" />
     <None Include="D:\GraphicsProgramming\graphics-programming-2023\exercises\Exam\shaders\default.frag">
     </None>

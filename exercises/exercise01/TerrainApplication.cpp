@@ -70,70 +70,79 @@ void TerrainApplication::Initialize()
     unsigned int rowCount = m_gridY + 1;
 
     // Iterate over each VERTEX
-    for (unsigned int j = 0; j < rowCount; ++j)
+    for (unsigned int u = 0; u < columnCount; u++)
     {
-        for (unsigned int i = 0; i < columnCount; ++i)
+
+
+        for (unsigned int j = 0; j < rowCount; ++j)
         {
-            // Vertex data for this vertex only
-            Vertex& vertex = vertices.emplace_back();
-            float x = i * scale.x - 0.5f;
-            float y = j * scale.y - 0.5f;
-            float z = stb_perlin_fbm_noise3(x * 2, y * 2, 0.0f, 1.9f, 0.5f, 8) * 0.5f;
-            vertex.position = Vector3(x, y, z);
-            vertex.texCoord = Vector2(static_cast<float>(i), static_cast<float>(j));
-            vertex.color = GetColorFromHeight(z);
-            vertex.normal = Vector3(0.0f, 0.0f, 1.0f); // Actual value computed after all vertices are created
-
-            // Index data for quad formed by previous vertices and current
-            if (i > 0 && j > 0)
+            for (unsigned int i = 0; i < columnCount; ++i)
             {
-                unsigned int top_right = j * columnCount + i; // Current vertex
-                unsigned int top_left = top_right - 1;
-                unsigned int bottom_right = top_right - columnCount;
-                unsigned int bottom_left = bottom_right - 1;
+                // Vertex data for this vertex only
+                Vertex& vertex = vertices.emplace_back();
+                float x = i * scale.x - 0.5f;
+                float y = j * scale.y - 0.5f;
+                //float z = stb_perlin_fbm_noise3(x * 2, y * 2, 0.0f, 1.9f, 0.5f, 8) * 0.5f;
+                float z = u * scale.y - 0.5f;
+                vertex.position = Vector3(x, y, z);
+                vertex.texCoord = Vector2(static_cast<float>(i), static_cast<float>(j));
+                vertex.color = GetColorFromHeight(z);
+                vertex.normal = Vector3(0.0f, 0.0f, 1.0f); // Actual value computed after all vertices are created
 
-                //Triangle 1
-                indices.push_back(bottom_left);
-                indices.push_back(bottom_right);
-                indices.push_back(top_left);
+                // Index data for quad formed by previous vertices and current
+                if (i > 0 && j > 0 && u > 0)
+                {
+                    unsigned int top_right = j * columnCount + i; // Current vertex
+                    unsigned int top_left = top_right - 1;
+                    unsigned int bottom_right = top_right - columnCount;
+                    unsigned int bottom_left = bottom_right - 1;
 
-                //Triangle 2
-                indices.push_back(bottom_right);
-                indices.push_back(top_left);
-                indices.push_back(top_right);
+                    //Triangle 1
+                    indices.push_back(bottom_left);
+                    indices.push_back(bottom_right);
+                    indices.push_back(top_left);
+
+                    //Triangle 2
+                    indices.push_back(bottom_right);
+                    indices.push_back(top_left);
+                    indices.push_back(top_right);
+                }
             }
         }
     }
 
     // Compute normals when we have the positions of all the vertices
     // Iterate AGAIN over each vertex
-    for (unsigned int j = 0; j < rowCount; ++j)
-    {
-        for (unsigned int i = 0; i < columnCount; ++i)
+
+        for (unsigned int j = 0; j < rowCount; ++j)
         {
-            // Get the vertex at (i, j)
-            int index = j * columnCount + i;
-            Vertex& vertex = vertices[index];
+            for (unsigned int i = 0; i < columnCount; ++i)
+            {
+                // Get the vertex at (i, j)
+                int index = j * columnCount + i;
+                Vertex& vertex = vertices[index];
 
-            // Compute the delta in X
-            unsigned int prevX = i > 0 ? index - 1 : index;
-            unsigned int nextX = i < m_gridX ? index + 1 : index;
-            float deltaHeightX = vertices[nextX].position.z - vertices[prevX].position.z;
-            float deltaX = vertices[nextX].position.x - vertices[prevX].position.x;
-            float x = deltaHeightX / deltaX;
+                // Compute the delta in X
+                unsigned int prevX = i > 0 ? index - 1 : index;
+                unsigned int nextX = i < m_gridX ? index + 1 : index;
+                float deltaHeightX = vertices[nextX].position.z - vertices[prevX].position.z;
+                float deltaX = vertices[nextX].position.x - vertices[prevX].position.x;
+                float x = deltaHeightX / deltaX;
 
-            // Compute the delta in Y
-            int prevY = j > 0 ? index - columnCount : index;
-            int nextY = j < m_gridY ? index + columnCount : index;
-            float deltaHeightY = vertices[nextY].position.z - vertices[prevY].position.z;
-            float deltaY = vertices[nextY].position.y - vertices[prevY].position.y;
-            float y = deltaHeightY / deltaY;
+                // Compute the delta in Y
+                int prevY = j > 0 ? index - columnCount : index;
+                int nextY = j < m_gridY ? index + columnCount : index;
+                float deltaHeightY = vertices[nextY].position.z - vertices[prevY].position.z;
+                float deltaY = vertices[nextY].position.y - vertices[prevY].position.y;
+                float y = deltaHeightY / deltaY;
 
-            // Compute the normal
-            vertex.normal = Vector3(x, y, 1.0f).Normalize();
+
+
+                // Compute the normal
+                vertex.normal = Vector3(x, y, 1.0f).Normalize();
+            }
         }
-    }
-
+    
     // Declare attributes
     VertexAttribute positionAttribute(Data::Type::Float, 3);
     VertexAttribute texCoordAttribute(Data::Type::Float, 2);
@@ -199,7 +208,7 @@ void TerrainApplication::Render()
     m_vao.Bind();
 
     // Draw the grid (m_gridX * m_gridY quads, 6 vertices per quad)
-    glDrawElements(GL_TRIANGLES, m_gridX * m_gridY * 6, GL_UNSIGNED_INT, nullptr);
+    glDrawElements(GL_TRIANGLES, (m_gridX * m_gridY *m_gridY* 6), GL_UNSIGNED_INT, nullptr);
 
     // No need to unbind every time
     //VertexArrayObject::Unbind();

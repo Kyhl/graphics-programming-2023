@@ -290,20 +290,8 @@ ITU-graphics-programming_IS_TOP_LEVEL:STATIC=ON
 //Value Computed by CMake
 ITU-graphics-programming_SOURCE_DIR:STATIC=D:/GraphicsProgramming/graphics-programming-2023
 
-//The directory containing a CMake configuration file for SDL2.
-SDL2_DIR:PATH=SDL2_DIR-NOTFOUND
-
 //Use MSVC runtime library DLL
 USE_MSVC_RUNTIME_LIBRARY_DLL:BOOL=ON
-
-//Value Computed by CMake
-gltest_BINARY_DIR:STATIC=D:/GraphicsProgramming/graphics-programming-2023/Bin/exercises/Exam
-
-//Value Computed by CMake
-gltest_IS_TOP_LEVEL:STATIC=OFF
-
-//Value Computed by CMake
-gltest_SOURCE_DIR:STATIC=D:/GraphicsProgramming/graphics-programming-2023/exercises/Exam
 
 
 ########################

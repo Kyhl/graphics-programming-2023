@@ -1,0 +1,10 @@
+^D:\GRAPHICSPROGRAMMING\GRAPHICS-PROGRAMMING-2023\EXERCISES\EXERCISE00\CMAKELISTS.TXT
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SD:/GraphicsProgramming/graphics-programming-2023 -BD:/GraphicsProgramming/graphics-programming-2023/Bin --check-stamp-file D:/GraphicsProgramming/graphics-programming-2023/Bin/exercises/exercise00/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

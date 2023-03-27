@@ -1,24 +1,2 @@
-﻿  TexturedTerrainApplication.cpp
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\utility(186,48): warning C4267: 'initializing': conversion from 'size_t' to '_Ty2', possible loss of data
-          with
-          [
-              _Ty2=Index
-          ]
-D:\GraphicsProgramming\graphics-programming-2023\exercises\Exam\TexturedTerrainApplication.cpp(198): message : see reference to function template instantiation 'std::pair<const std::pair<Index,Index>,Index>::pair<std::pair<Index,Index>&,unsigned __int64,0>(_Other1,_Other2 &&) noexcept' being compiled
-          with
-          [
-              _Other1=std::pair<Index,Index> &,
-              _Other2=unsigned __int64
-          ]
-D:\GraphicsProgramming\graphics-programming-2023\exercises\Exam\TexturedTerrainApplication.cpp(198): message : see reference to function template instantiation 'std::pair<const std::pair<Index,Index>,Index>::pair<std::pair<Index,Index>&,unsigned __int64,0>(_Other1,_Other2 &&) noexcept' being compiled
-          with
-          [
-              _Other1=std::pair<Index,Index> &,
-              _Other2=unsigned __int64
-          ]
-D:\GraphicsProgramming\graphics-programming-2023\exercises\Exam\TexturedTerrainApplication.cpp(260): message : see reference to function template instantiation 'Index vertex_for_edge<ColorVertexList>(Lookup &,VertexList &,Index,Index)' being compiled
-          with
-          [
-              VertexList=ColorVertexList
-          ]
+﻿  TerrainApplication.cpp
   Exam.vcxproj -> D:\GraphicsProgramming\graphics-programming-2023\Bin\exercises\Exam\Debug\Exam.exe

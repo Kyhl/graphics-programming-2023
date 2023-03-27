@@ -64,8 +64,7 @@ void TerrainApplication::Initialize()
     unsigned int rowCount = m_gridY + 1;
 
     // Iterate over each VERTEX
-    for (unsigned int u = 0; u < columnCount; u++)
-    {
+   
 
 
         for (unsigned int j = 0; j < rowCount; ++j)
@@ -77,14 +76,14 @@ void TerrainApplication::Initialize()
                 float x = i * scale.x - 0.5f;
                 float y = j * scale.y - 0.5f;
                 //float z = stb_perlin_fbm_noise3(x * 2, y * 2, 0.0f, 1.9f, 0.5f, 8) * 0.5f;
-                float z = u * scale.y - 0.5f;
+                float z = 0.0f;
                 vertex.position = vec3(x, y, z);
                 vertex.texCoord = vec2(static_cast<float>(i), static_cast<float>(j));
                 vertex.color = GetColorFromHeight(z);
                 vertex.normal = vec3(0.0f, 0.0f, 1.0f); // Actual value computed after all vertices are created
 
                 // Index data for quad formed by previous vertices and current
-                if (i > 0 && j > 0 && u > 0)
+                if (i > 0 && j > 0)
                 {
                     unsigned int top_right = j * columnCount + i; // Current vertex
                     unsigned int top_left = top_right - 1;
@@ -103,7 +102,44 @@ void TerrainApplication::Initialize()
                 }
             }
         }
-    }
+
+        for (unsigned int j = 0; j < rowCount; ++j)
+        {
+            for (unsigned int i = 0; i < columnCount; ++i)
+            {
+                // Vertex data for this vertex only
+                Vertex& vertex = vertices.emplace_back();
+                float x = i * scale.x - 0.5f;
+                float y = j * scale.y - 0.5f;
+                //float z = stb_perlin_fbm_noise3(x * 2, y * 2, 0.0f, 1.9f, 0.5f, 8) * 0.5f;
+                float z = 0.0f;
+                vertex.position = vec3(x, z, y);
+                vertex.texCoord = vec2(static_cast<float>(i), static_cast<float>(j));
+                vertex.color = GetColorFromHeight(z);
+                vertex.normal = vec3(0.0f, 1.0f, 0.0f); // Actual value computed after all vertices are created
+
+                // Index data for quad formed by previous vertices and current
+                if (i > 0 && j > 0)
+                {
+                    int offset = rowCount;
+                    unsigned int top_right = j * columnCount + i+ offset; // Current vertex
+                    unsigned int top_left = top_right - 1+ offset;
+                    unsigned int bottom_right = top_right - columnCount+ offset;
+                    unsigned int bottom_left = bottom_right - 1+ offset;
+
+                    //Triangle 1
+                    indices.push_back(bottom_left);
+                    indices.push_back(bottom_right);
+                    indices.push_back(top_left);
+
+                    //Triangle 2
+                    indices.push_back(bottom_right);
+                    indices.push_back(top_left);
+                    indices.push_back(top_right);
+                }
+            }
+        }
+    
 
     // Compute normals when we have the positions of all the vertices
     // Iterate AGAIN over each vertex
@@ -136,6 +172,36 @@ void TerrainApplication::Initialize()
                 vertex.normal = glm::normalize(vec3(x, y, 1.0f));
             }
         }
+        for (unsigned int j = rowCount-1; j < (rowCount-1)*2; ++j)
+        {
+            for (unsigned int i = columnCount-1; i < (columnCount - 1) * 2; ++i)
+            {
+                // Get the vertex at (i, j)
+                int index = j * columnCount + i;
+                Vertex& vertex = vertices[index];
+
+                // Compute the delta in X
+                unsigned int prevX = i > 0 ? index - 1 : index;
+                unsigned int nextX = i < m_gridX ? index + 1 : index;
+                float deltaHeightX = vertices[nextX].position.y - vertices[prevX].position.y;
+                float deltaX = vertices[nextX].position.x - vertices[prevX].position.x;
+                float x = deltaHeightX / deltaX;
+
+                // Compute the delta in Y
+                int prevY = j > 0 ? index - columnCount : index;
+                int nextY = j < m_gridY ? index + columnCount : index;
+                float deltaHeightY = vertices[nextY].position.y - vertices[prevY].position.y;
+                float deltaY = vertices[nextY].position.z - vertices[prevY].position.z;
+                float y = deltaHeightY / deltaY;
+
+
+
+                // Compute the normal
+                vertex.normal = glm::normalize(vec3(x, 1.0f, y));
+            }
+        }
+        
+
     
     // Declare attributes
     VertexAttribute positionAttribute(Data::Type::Float, 3);
@@ -184,7 +250,15 @@ void TerrainApplication::Initialize()
 void TerrainApplication::Update()
 {
     Application::Update();
+    const Window& window = GetMainWindow();
 
+    glm::vec2 mousePosition = window.GetMousePosition(true);
+    m_camera.SetViewMatrix(glm::vec3(0.0f, 10.0f, 10.0f), glm::vec3(mousePosition, 0.0f));
+
+    int width, height;
+    window.GetDimensions(width, height);
+    float aspectRatio = static_cast<float>(width) / height;
+    m_camera.SetPerspectiveProjectionMatrix(1.0f, aspectRatio, -10.1f, 200.0f);
     UpdateOutputMode();
 }
 
@@ -202,7 +276,7 @@ void TerrainApplication::Render()
     m_vao.Bind();
 
     // Draw the grid (m_gridX * m_gridY quads, 6 vertices per quad)
-    glDrawElements(GL_TRIANGLES, ((m_gridX+1) * (m_gridY+1) * 6), GL_UNSIGNED_INT, nullptr);
+    glDrawElements(GL_TRIANGLES, (m_gridX * m_gridY)* 6 * m_gridY, GL_UNSIGNED_INT, nullptr);
 
     // No need to unbind every time
     //VertexArrayObject::Unbind();

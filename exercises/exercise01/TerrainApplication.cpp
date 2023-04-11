@@ -70,7 +70,7 @@ void TerrainApplication::Initialize()
     unsigned int rowCount = m_gridY + 1;
 
     // Iterate over each VERTEX
-    for (unsigned int u = 0; u < 4; u++)
+    for (unsigned int u = 0; u < 6; u++)
     {
         for (unsigned int j = 0; j < rowCount; ++j)
         {
@@ -83,21 +83,38 @@ void TerrainApplication::Initialize()
                 float z = 0.0f;
                 switch (u) 
                 {
-                case 1:
-                    vertex.position = Vector3(x, y,z+1.0f);
+                case 5:
+                    vertex.position = Vector3(z-0.5f, x, y);
+                    vertex.texCoord = Vector2(static_cast<float>(i), static_cast<float>(j));
+                    vertex.color = GetColorFromHeight(z - 1.0f);
+                    vertex.normal = Vector3(0.0f, 1.0f, 0.0f);
+                    break;
+                case 4:
+                    vertex.position = Vector3(z+0.5f, x, y);
+                    vertex.texCoord = Vector2(static_cast<float>(i), static_cast<float>(j));
+                    vertex.color = GetColorFromHeight(z - 1.0f);
+                    vertex.normal = Vector3(0.0f, 1.0f, 0.0f);
+                    break;
+                case 3:
+                    vertex.position = Vector3(x, z + 0.5f, y);
+                    vertex.texCoord = Vector2(static_cast<float>(i), static_cast<float>(j));
+                    vertex.color = GetColorFromHeight(z);
+                    vertex.normal = Vector3(0.0f, 1.0f, 0.0f);
+                    break;
+                case 2:
+                    vertex.position = Vector3(x, y,z-0.5f);
                     vertex.texCoord = Vector2(static_cast<float>(i), static_cast<float>(j));
                     vertex.color = GetColorFromHeight(z-1.0f);
                     vertex.normal = Vector3(0.0f, 1.0f, 0.0f);
                     break;
-                /*case 1:
-                    vertex.position = Vector3(x, z - 0.5f, y - 0.5);
+                case 1:
+                    vertex.position = Vector3(x, z - 0.5f, y);
                     vertex.texCoord = Vector2(static_cast<float>(i), static_cast<float>(j));
                     vertex.color = GetColorFromHeight(z);
                     vertex.normal = Vector3(0.0f, 1.0f, 0.0f);
-                    break;*/
+                    break;
                 case 0:
-                    
-                    vertex.position = Vector3(x, y, z);
+                    vertex.position = Vector3(x, y, z+0.5f);
                     vertex.texCoord = Vector2(static_cast<float>(i), static_cast<float>(j));
                     vertex.color = GetColorFromHeight(z);
                     vertex.normal = Vector3(0.0f, 0.0f, 1.0f);
@@ -110,7 +127,7 @@ void TerrainApplication::Initialize()
                     unsigned int offset = (((rowCount) * (columnCount)))*u;
                     unsigned int top_right = (j * columnCount + i) + offset; // Current vertex
                     unsigned int top_left = (top_right - 1);
-                    unsigned int bottom_right = (top_right - columnCount) + offset;
+                    unsigned int bottom_right = (top_right - columnCount);
                     unsigned int bottom_left = (bottom_right - 1);
 
                     //Triangle 1
@@ -224,7 +241,7 @@ void TerrainApplication::Render()
     m_vao.Bind();
 
     // Draw the grid (m_gridX * m_gridY quads, 6 vertices per quad)
-    glDrawElements(GL_TRIANGLES, (m_gridX * m_gridY * 6)*6, GL_UNSIGNED_INT, nullptr);
+    glDrawElements(GL_TRIANGLES, (m_gridX * m_gridY *6)*6, GL_UNSIGNED_INT, nullptr);
 
     // No need to unbind every time
     //VertexArrayObject::Unbind();

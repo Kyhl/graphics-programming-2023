@@ -34,13 +34,13 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("D:/GraphicsProgramming/graphics-programming-2023/Bin/libraries/assimp/cmake_install.cmake")
-  include("D:/GraphicsProgramming/graphics-programming-2023/Bin/libraries/glad/cmake_install.cmake")
-  include("D:/GraphicsProgramming/graphics-programming-2023/Bin/libraries/glfw/cmake_install.cmake")
-  include("D:/GraphicsProgramming/graphics-programming-2023/Bin/libraries/glm/cmake_install.cmake")
-  include("D:/GraphicsProgramming/graphics-programming-2023/Bin/libraries/imgui/cmake_install.cmake")
-  include("D:/GraphicsProgramming/graphics-programming-2023/Bin/libraries/itugl/cmake_install.cmake")
-  include("D:/GraphicsProgramming/graphics-programming-2023/Bin/libraries/stb/cmake_install.cmake")
+  include("D:/GraphicsProgramming/graphics-programming-2023/bin/libraries/assimp/cmake_install.cmake")
+  include("D:/GraphicsProgramming/graphics-programming-2023/bin/libraries/glad/cmake_install.cmake")
+  include("D:/GraphicsProgramming/graphics-programming-2023/bin/libraries/glfw/cmake_install.cmake")
+  include("D:/GraphicsProgramming/graphics-programming-2023/bin/libraries/glm/cmake_install.cmake")
+  include("D:/GraphicsProgramming/graphics-programming-2023/bin/libraries/imgui/cmake_install.cmake")
+  include("D:/GraphicsProgramming/graphics-programming-2023/bin/libraries/itugl/cmake_install.cmake")
+  include("D:/GraphicsProgramming/graphics-programming-2023/bin/libraries/stb/cmake_install.cmake")
 
 endif()
 

@@ -110,9 +110,9 @@ void TerrainApplication::Initialize()
                 // Vertex data for this vertex only
                 Vertex& vertex = vertices.emplace_back();
                 float x = i * scale.x - 0.5f;
-                float y = j * scale.y - 0.5f;
+                float y = j * scale.y;
                 //float z = stb_perlin_fbm_noise3(x * 2, y * 2, 0.0f, 1.9f, 0.5f, 8) * 0.5f;
-                float z = 0.0f;
+                float z = -0.5f;
                 vertex.position = vec3(x, z, y);
                 vertex.texCoord = vec2(static_cast<float>(i), static_cast<float>(j));
                 vertex.color = GetColorFromHeight(z);
@@ -121,11 +121,11 @@ void TerrainApplication::Initialize()
                 // Index data for quad formed by previous vertices and current
                 if (i > 0 && j > 0)
                 {
-                    int offset = rowCount;
-                    unsigned int top_right = j * columnCount + i+ offset; // Current vertex
-                    unsigned int top_left = top_right - 1+ offset;
-                    unsigned int bottom_right = top_right - columnCount+ offset;
-                    unsigned int bottom_left = bottom_right - 1+ offset;
+                    int offset = ((rowCount)*(columnCount));
+                    unsigned int top_right = j * columnCount + i + offset; // Current vertex
+                    unsigned int top_left = top_right - 1 + offset;
+                    unsigned int bottom_right = top_right - columnCount + offset;
+                    unsigned int bottom_left = bottom_right - 1 + offset;
 
                     //Triangle 1
                     indices.push_back(bottom_left);
@@ -139,7 +139,42 @@ void TerrainApplication::Initialize()
                 }
             }
         }
-    
+        for (unsigned int j = 0; j < rowCount; ++j)
+        {
+            for (unsigned int i = 0; i < columnCount; ++i)
+            {
+                // Vertex data for this vertex only
+                Vertex& vertex = vertices.emplace_back();
+                float x = i * scale.x - 0.5f;
+                float y = j * scale.y;
+                //float z = stb_perlin_fbm_noise3(x * 2, y * 2, 0.0f, 1.9f, 0.5f, 8) * 0.5f;
+                float z = -0.5f;
+                vertex.position = vec3(x, z, y);
+                vertex.texCoord = vec2(static_cast<float>(i), static_cast<float>(j));
+                vertex.color = GetColorFromHeight(z);
+                vertex.normal = vec3(0.0f, 1.0f, 0.0f); // Actual value computed after all vertices are created
+
+                // Index data for quad formed by previous vertices and current
+                if (i > 0 && j > 0)
+                {
+                    int offset = ((rowCount) * (columnCount));
+                    unsigned int top_right = j * columnCount + i + offset; // Current vertex
+                    unsigned int top_left = top_right - 1 + offset;
+                    unsigned int bottom_right = top_right - columnCount + offset;
+                    unsigned int bottom_left = bottom_right - 1 + offset;
+
+                    //Triangle 1
+                    indices.push_back(bottom_left);
+                    indices.push_back(bottom_right);
+                    indices.push_back(top_left);
+
+                    //Triangle 2
+                    indices.push_back(bottom_right);
+                    indices.push_back(top_left);
+                    indices.push_back(top_right);
+                }
+            }
+        }
 
     // Compute normals when we have the positions of all the vertices
     // Iterate AGAIN over each vertex
@@ -276,7 +311,7 @@ void TerrainApplication::Render()
     m_vao.Bind();
 
     // Draw the grid (m_gridX * m_gridY quads, 6 vertices per quad)
-    glDrawElements(GL_TRIANGLES, (m_gridX * m_gridY)* 6 * m_gridY, GL_UNSIGNED_INT, nullptr);
+    glDrawElements(GL_TRIANGLES, ((m_gridX * m_gridY)* 6) * 6, GL_UNSIGNED_INT, nullptr);
 
     // No need to unbind every time
     //VertexArrayObject::Unbind();

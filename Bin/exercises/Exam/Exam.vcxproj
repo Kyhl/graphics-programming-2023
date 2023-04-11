@@ -22,7 +22,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{E9762F6D-BC73-32EB-A61F-E3762E976C49}</ProjectGuid>
+    <ProjectGuid>{F2C62178-3AAA-3B01-B3C9-8D8FE06ABF70}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <WindowsTargetPlatformVersion>10.0.19041.0</WindowsTargetPlatformVersion>
     <Platform>x64</Platform>
@@ -59,28 +59,28 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup>
     <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\GraphicsProgramming\graphics-programming-2023\Bin\exercises\Exam\Debug\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\GraphicsProgramming\graphics-programming-2023\bin\exercises\Exam\Debug\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Exam.dir\Debug\</IntDir>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Exam</TargetName>
     <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.exe</TargetExt>
     <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</LinkIncremental>
     <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</GenerateManifest>
     <LocalDebuggerWorkingDirectory Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:/GraphicsProgramming/graphics-programming-2023/exercises/Exam</LocalDebuggerWorkingDirectory>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\GraphicsProgramming\graphics-programming-2023\Bin\exercises\Exam\Release\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\GraphicsProgramming\graphics-programming-2023\bin\exercises\Exam\Release\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Exam.dir\Release\</IntDir>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Exam</TargetName>
     <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.exe</TargetExt>
     <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkIncremental>
     <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</GenerateManifest>
     <LocalDebuggerWorkingDirectory Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:/GraphicsProgramming/graphics-programming-2023/exercises/Exam</LocalDebuggerWorkingDirectory>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">D:\GraphicsProgramming\graphics-programming-2023\Bin\exercises\Exam\MinSizeRel\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">D:\GraphicsProgramming\graphics-programming-2023\bin\exercises\Exam\MinSizeRel\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Exam.dir\MinSizeRel\</IntDir>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Exam</TargetName>
     <TargetExt Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">.exe</TargetExt>
     <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkIncremental>
     <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">true</GenerateManifest>
     <LocalDebuggerWorkingDirectory Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">D:/GraphicsProgramming/graphics-programming-2023/exercises/Exam</LocalDebuggerWorkingDirectory>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">D:\GraphicsProgramming\graphics-programming-2023\Bin\exercises\Exam\RelWithDebInfo\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">D:\GraphicsProgramming\graphics-programming-2023\bin\exercises\Exam\RelWithDebInfo\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Exam.dir\RelWithDebInfo\</IntDir>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Exam</TargetName>
     <TargetExt Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">.exe</TargetExt>
@@ -124,8 +124,8 @@
       <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
-      <ImportLibrary>D:/GraphicsProgramming/graphics-programming-2023/Bin/exercises/Exam/Debug/Exam.lib</ImportLibrary>
-      <ProgramDataBaseFile>D:/GraphicsProgramming/graphics-programming-2023/Bin/exercises/Exam/Debug/Exam.pdb</ProgramDataBaseFile>
+      <ImportLibrary>D:/GraphicsProgramming/graphics-programming-2023/bin/exercises/Exam/Debug/Exam.lib</ImportLibrary>
+      <ProgramDataBaseFile>D:/GraphicsProgramming/graphics-programming-2023/bin/exercises/Exam/Debug/Exam.pdb</ProgramDataBaseFile>
       <SubSystem>Console</SubSystem>
     </Link>
     <ProjectReference>
@@ -168,8 +168,8 @@
       <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
       <GenerateDebugInformation>false</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
-      <ImportLibrary>D:/GraphicsProgramming/graphics-programming-2023/Bin/exercises/Exam/Release/Exam.lib</ImportLibrary>
-      <ProgramDataBaseFile>D:/GraphicsProgramming/graphics-programming-2023/Bin/exercises/Exam/Release/Exam.pdb</ProgramDataBaseFile>
+      <ImportLibrary>D:/GraphicsProgramming/graphics-programming-2023/bin/exercises/Exam/Release/Exam.lib</ImportLibrary>
+      <ProgramDataBaseFile>D:/GraphicsProgramming/graphics-programming-2023/bin/exercises/Exam/Release/Exam.pdb</ProgramDataBaseFile>
       <SubSystem>Console</SubSystem>
     </Link>
     <ProjectReference>
@@ -212,8 +212,8 @@
       <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
       <GenerateDebugInformation>false</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
-      <ImportLibrary>D:/GraphicsProgramming/graphics-programming-2023/Bin/exercises/Exam/MinSizeRel/Exam.lib</ImportLibrary>
-      <ProgramDataBaseFile>D:/GraphicsProgramming/graphics-programming-2023/Bin/exercises/Exam/MinSizeRel/Exam.pdb</ProgramDataBaseFile>
+      <ImportLibrary>D:/GraphicsProgramming/graphics-programming-2023/bin/exercises/Exam/MinSizeRel/Exam.lib</ImportLibrary>
+      <ProgramDataBaseFile>D:/GraphicsProgramming/graphics-programming-2023/bin/exercises/Exam/MinSizeRel/Exam.pdb</ProgramDataBaseFile>
       <SubSystem>Console</SubSystem>
     </Link>
     <ProjectReference>
@@ -255,8 +255,8 @@
       <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
-      <ImportLibrary>D:/GraphicsProgramming/graphics-programming-2023/Bin/exercises/Exam/RelWithDebInfo/Exam.lib</ImportLibrary>
-      <ProgramDataBaseFile>D:/GraphicsProgramming/graphics-programming-2023/Bin/exercises/Exam/RelWithDebInfo/Exam.pdb</ProgramDataBaseFile>
+      <ImportLibrary>D:/GraphicsProgramming/graphics-programming-2023/bin/exercises/Exam/RelWithDebInfo/Exam.lib</ImportLibrary>
+      <ProgramDataBaseFile>D:/GraphicsProgramming/graphics-programming-2023/bin/exercises/Exam/RelWithDebInfo/Exam.pdb</ProgramDataBaseFile>
       <SubSystem>Console</SubSystem>
     </Link>
     <ProjectReference>
@@ -268,7 +268,7 @@
       <UseUtf8Encoding>Always</UseUtf8Encoding>
       <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule D:/GraphicsProgramming/graphics-programming-2023/exercises/Exam/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -SD:/GraphicsProgramming/graphics-programming-2023 -BD:/GraphicsProgramming/graphics-programming-2023/Bin --check-stamp-file D:/GraphicsProgramming/graphics-programming-2023/Bin/exercises/Exam/CMakeFiles/generate.stamp
+"C:\Program Files\CMake\bin\cmake.exe" -SD:/GraphicsProgramming/graphics-programming-2023 -BD:/GraphicsProgramming/graphics-programming-2023/bin --check-stamp-file D:/GraphicsProgramming/graphics-programming-2023/bin/exercises/Exam/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -277,11 +277,11 @@ exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\GraphicsProgramming\graphics-programming-2023\Bin\exercises\Exam\CMakeFiles\generate.stamp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\GraphicsProgramming\graphics-programming-2023\bin\exercises\Exam\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
       <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule D:/GraphicsProgramming/graphics-programming-2023/exercises/Exam/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -SD:/GraphicsProgramming/graphics-programming-2023 -BD:/GraphicsProgramming/graphics-programming-2023/Bin --check-stamp-file D:/GraphicsProgramming/graphics-programming-2023/Bin/exercises/Exam/CMakeFiles/generate.stamp
+"C:\Program Files\CMake\bin\cmake.exe" -SD:/GraphicsProgramming/graphics-programming-2023 -BD:/GraphicsProgramming/graphics-programming-2023/bin --check-stamp-file D:/GraphicsProgramming/graphics-programming-2023/bin/exercises/Exam/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -290,11 +290,11 @@ exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\GraphicsProgramming\graphics-programming-2023\Bin\exercises\Exam\CMakeFiles\generate.stamp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\GraphicsProgramming\graphics-programming-2023\bin\exercises\Exam\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
       <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule D:/GraphicsProgramming/graphics-programming-2023/exercises/Exam/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -SD:/GraphicsProgramming/graphics-programming-2023 -BD:/GraphicsProgramming/graphics-programming-2023/Bin --check-stamp-file D:/GraphicsProgramming/graphics-programming-2023/Bin/exercises/Exam/CMakeFiles/generate.stamp
+"C:\Program Files\CMake\bin\cmake.exe" -SD:/GraphicsProgramming/graphics-programming-2023 -BD:/GraphicsProgramming/graphics-programming-2023/bin --check-stamp-file D:/GraphicsProgramming/graphics-programming-2023/bin/exercises/Exam/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -303,11 +303,11 @@ exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">D:\GraphicsProgramming\graphics-programming-2023\Bin\exercises\Exam\CMakeFiles\generate.stamp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">D:\GraphicsProgramming\graphics-programming-2023\bin\exercises\Exam\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
       <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule D:/GraphicsProgramming/graphics-programming-2023/exercises/Exam/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -SD:/GraphicsProgramming/graphics-programming-2023 -BD:/GraphicsProgramming/graphics-programming-2023/Bin --check-stamp-file D:/GraphicsProgramming/graphics-programming-2023/Bin/exercises/Exam/CMakeFiles/generate.stamp
+"C:\Program Files\CMake\bin\cmake.exe" -SD:/GraphicsProgramming/graphics-programming-2023 -BD:/GraphicsProgramming/graphics-programming-2023/bin --check-stamp-file D:/GraphicsProgramming/graphics-programming-2023/bin/exercises/Exam/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -316,7 +316,7 @@ exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">D:\GraphicsProgramming\graphics-programming-2023\Bin\exercises\Exam\CMakeFiles\generate.stamp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">D:\GraphicsProgramming\graphics-programming-2023\bin\exercises\Exam\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
     </CustomBuild>
   </ItemGroup>
@@ -338,22 +338,22 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="D:\GraphicsProgramming\graphics-programming-2023\Bin\ZERO_CHECK.vcxproj">
-      <Project>{30215E9F-DA56-3C71-8A12-541D6440EE4F}</Project>
+    <ProjectReference Include="D:\GraphicsProgramming\graphics-programming-2023\bin\ZERO_CHECK.vcxproj">
+      <Project>{6A54F654-3646-3027-9D6D-C4039BEFE6ED}</Project>
       <Name>ZERO_CHECK</Name>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </ProjectReference>
-    <ProjectReference Include="D:\GraphicsProgramming\graphics-programming-2023\Bin\libraries\glad\glad.vcxproj">
-      <Project>{E55920F7-6F0B-398E-94FD-C6F76BC1E259}</Project>
+    <ProjectReference Include="D:\GraphicsProgramming\graphics-programming-2023\bin\libraries\glad\glad.vcxproj">
+      <Project>{00632718-6804-3228-8755-2BA6D817F66A}</Project>
       <Name>glad</Name>
     </ProjectReference>
-    <ProjectReference Include="D:\GraphicsProgramming\graphics-programming-2023\Bin\libraries\glfw\src\glfw.vcxproj">
-      <Project>{CE8551CF-FFDE-33C7-99EA-4B9FA8F5E187}</Project>
+    <ProjectReference Include="D:\GraphicsProgramming\graphics-programming-2023\bin\libraries\glfw\src\glfw.vcxproj">
+      <Project>{13A5002B-2FB6-3605-8790-6CE2E603C3AE}</Project>
       <Name>glfw</Name>
     </ProjectReference>
-    <ProjectReference Include="D:\GraphicsProgramming\graphics-programming-2023\Bin\libraries\itugl\itugl.vcxproj">
-      <Project>{F8D629A1-22A0-38F2-B78D-2395B85AF954}</Project>
+    <ProjectReference Include="D:\GraphicsProgramming\graphics-programming-2023\bin\libraries\itugl\itugl.vcxproj">
+      <Project>{8A04D6E3-B60B-36F3-AD46-1FAC8F266FAB}</Project>
       <Name>itugl</Name>
     </ProjectReference>
   </ItemGroup>

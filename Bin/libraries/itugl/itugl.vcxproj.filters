@@ -177,28 +177,28 @@
   </ItemGroup>
   <ItemGroup>
     <Filter Include="application">
-      <UniqueIdentifier>{3EE2BC69-1A89-3957-9484-94B787CBFD56}</UniqueIdentifier>
+      <UniqueIdentifier>{9FA97B1B-7ACE-3AE8-B679-A04421CF29DE}</UniqueIdentifier>
     </Filter>
     <Filter Include="asset">
-      <UniqueIdentifier>{2080EAA0-50FD-3F7C-AC61-9901E83A0329}</UniqueIdentifier>
+      <UniqueIdentifier>{C1FBFA53-7B27-33F6-8ED4-637A3E03D115}</UniqueIdentifier>
     </Filter>
     <Filter Include="camera">
-      <UniqueIdentifier>{22E5D6A2-457F-32A3-9766-7B6A558D7A17}</UniqueIdentifier>
+      <UniqueIdentifier>{82DE2FB7-1E34-3718-B894-BDDBBC50A8F0}</UniqueIdentifier>
     </Filter>
     <Filter Include="core">
-      <UniqueIdentifier>{1E81AEED-5EB2-3D5B-AF77-8A45C9190151}</UniqueIdentifier>
+      <UniqueIdentifier>{F7D3FCEB-F1B6-393F-B6EE-1C4D580F05B5}</UniqueIdentifier>
     </Filter>
     <Filter Include="geometry">
-      <UniqueIdentifier>{FC956AEE-B0FB-3C19-A5AA-E21845739CD8}</UniqueIdentifier>
+      <UniqueIdentifier>{FAA2F50D-1599-35A0-935C-3F9D3816E80B}</UniqueIdentifier>
     </Filter>
     <Filter Include="shader">
-      <UniqueIdentifier>{857FBA7E-3DBB-38C6-BF7D-AA77B364B099}</UniqueIdentifier>
+      <UniqueIdentifier>{5CA07FA2-DF25-3BC7-A263-0C6A5A86D8C8}</UniqueIdentifier>
     </Filter>
     <Filter Include="texture">
-      <UniqueIdentifier>{3FA0ABF5-E0E3-30E1-92A4-16A9A27F2470}</UniqueIdentifier>
+      <UniqueIdentifier>{11BBCA88-7449-382A-8091-8A06EFCB61A3}</UniqueIdentifier>
     </Filter>
     <Filter Include="utils">
-      <UniqueIdentifier>{CB0F80BC-7B41-39DB-B045-E74C0BECE6EF}</UniqueIdentifier>
+      <UniqueIdentifier>{C3F30D31-F046-39D2-BCA3-C85040E71662}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

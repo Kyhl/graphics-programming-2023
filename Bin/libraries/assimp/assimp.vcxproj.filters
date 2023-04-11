@@ -1,250 +1,250 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\code\Common\Assimp.cpp">
+    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\assimp\code\Common\Assimp.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\code\Common\BaseImporter.cpp">
+    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\assimp\code\Common\BaseImporter.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\code\Common\BaseProcess.cpp">
+    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\assimp\code\Common\BaseProcess.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\code\Common\Bitmap.cpp">
+    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\assimp\code\Common\Bitmap.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\code\Common\CreateAnimMesh.cpp">
+    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\assimp\code\Common\CreateAnimMesh.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\code\Common\DefaultIOStream.cpp">
+    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\assimp\code\Common\DefaultIOStream.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\code\Common\DefaultIOSystem.cpp">
+    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\assimp\code\Common\DefaultIOSystem.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\code\Common\DefaultLogger.cpp">
+    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\assimp\code\Common\DefaultLogger.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\code\Common\Exporter.cpp">
+    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\assimp\code\Common\Exporter.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\code\Common\Importer.cpp">
+    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\assimp\code\Common\Importer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\code\Common\ImporterRegistry.cpp">
+    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\assimp\code\Common\ImporterRegistry.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\code\Common\PostStepRegistry.cpp">
+    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\assimp\code\Common\PostStepRegistry.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\code\Common\RemoveComments.cpp">
+    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\assimp\code\Common\RemoveComments.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\code\Common\SGSpatialSort.cpp">
+    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\assimp\code\Common\SGSpatialSort.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\code\Common\SceneCombiner.cpp">
+    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\assimp\code\Common\SceneCombiner.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\code\Common\ScenePreprocessor.cpp">
+    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\assimp\code\Common\ScenePreprocessor.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\code\Common\SkeletonMeshBuilder.cpp">
+    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\assimp\code\Common\SkeletonMeshBuilder.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\code\Common\SpatialSort.cpp">
+    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\assimp\code\Common\SpatialSort.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\code\Common\SplitByBoneCountProcess.cpp">
+    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\assimp\code\Common\SplitByBoneCountProcess.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\code\Common\StandardShapes.cpp">
+    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\assimp\code\Common\StandardShapes.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\code\Common\Subdivision.cpp">
+    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\assimp\code\Common\Subdivision.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\code\Common\TargetAnimation.cpp">
+    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\assimp\code\Common\TargetAnimation.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\code\Common\Version.cpp">
+    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\assimp\code\Common\Version.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\code\Common\VertexTriangleAdjacency.cpp">
+    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\assimp\code\Common\VertexTriangleAdjacency.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\code\Common\scene.cpp">
+    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\assimp\code\Common\scene.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\code\Common\simd.cpp">
+    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\assimp\code\Common\simd.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\code\FBX\FBXAnimation.cpp">
+    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\assimp\code\FBX\FBXAnimation.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\code\FBX\FBXBinaryTokenizer.cpp">
+    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\assimp\code\FBX\FBXBinaryTokenizer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\code\FBX\FBXConverter.cpp">
+    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\assimp\code\FBX\FBXConverter.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\code\FBX\FBXDeformer.cpp">
+    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\assimp\code\FBX\FBXDeformer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\code\FBX\FBXDocument.cpp">
+    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\assimp\code\FBX\FBXDocument.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\code\FBX\FBXDocumentUtil.cpp">
+    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\assimp\code\FBX\FBXDocumentUtil.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\code\FBX\FBXExportNode.cpp">
+    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\assimp\code\FBX\FBXExportNode.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\code\FBX\FBXExportProperty.cpp">
+    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\assimp\code\FBX\FBXExportProperty.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\code\FBX\FBXExporter.cpp">
+    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\assimp\code\FBX\FBXExporter.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\code\FBX\FBXImporter.cpp">
+    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\assimp\code\FBX\FBXImporter.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\code\FBX\FBXMaterial.cpp">
+    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\assimp\code\FBX\FBXMaterial.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\code\FBX\FBXMeshGeometry.cpp">
+    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\assimp\code\FBX\FBXMeshGeometry.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\code\FBX\FBXModel.cpp">
+    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\assimp\code\FBX\FBXModel.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\code\FBX\FBXNodeAttribute.cpp">
+    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\assimp\code\FBX\FBXNodeAttribute.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\code\FBX\FBXParser.cpp">
+    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\assimp\code\FBX\FBXParser.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\code\FBX\FBXProperties.cpp">
+    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\assimp\code\FBX\FBXProperties.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\code\FBX\FBXTokenizer.cpp">
+    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\assimp\code\FBX\FBXTokenizer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\code\FBX\FBXUtil.cpp">
+    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\assimp\code\FBX\FBXUtil.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\code\Material\MaterialSystem.cpp">
+    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\assimp\code\Material\MaterialSystem.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\code\Obj\ObjExporter.cpp">
+    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\assimp\code\Obj\ObjExporter.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\code\Obj\ObjFileImporter.cpp">
+    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\assimp\code\Obj\ObjFileImporter.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\code\Obj\ObjFileMtlImporter.cpp">
+    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\assimp\code\Obj\ObjFileMtlImporter.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\code\Obj\ObjFileParser.cpp">
+    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\assimp\code\Obj\ObjFileParser.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\code\PostProcessing\ArmaturePopulate.cpp">
+    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\assimp\code\PostProcessing\ArmaturePopulate.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\code\PostProcessing\CalcTangentsProcess.cpp">
+    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\assimp\code\PostProcessing\CalcTangentsProcess.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\code\PostProcessing\ComputeUVMappingProcess.cpp">
+    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\assimp\code\PostProcessing\ComputeUVMappingProcess.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\code\PostProcessing\ConvertToLHProcess.cpp">
+    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\assimp\code\PostProcessing\ConvertToLHProcess.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\code\PostProcessing\DeboneProcess.cpp">
+    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\assimp\code\PostProcessing\DeboneProcess.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\code\PostProcessing\DropFaceNormalsProcess.cpp">
+    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\assimp\code\PostProcessing\DropFaceNormalsProcess.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\code\PostProcessing\EmbedTexturesProcess.cpp">
+    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\assimp\code\PostProcessing\EmbedTexturesProcess.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\code\PostProcessing\FindDegenerates.cpp">
+    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\assimp\code\PostProcessing\FindDegenerates.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\code\PostProcessing\FindInstancesProcess.cpp">
+    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\assimp\code\PostProcessing\FindInstancesProcess.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\code\PostProcessing\FindInvalidDataProcess.cpp">
+    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\assimp\code\PostProcessing\FindInvalidDataProcess.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\code\PostProcessing\FixNormalsStep.cpp">
+    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\assimp\code\PostProcessing\FixNormalsStep.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\code\PostProcessing\GenBoundingBoxesProcess.cpp">
+    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\assimp\code\PostProcessing\GenBoundingBoxesProcess.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\code\PostProcessing\GenFaceNormalsProcess.cpp">
+    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\assimp\code\PostProcessing\GenFaceNormalsProcess.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\code\PostProcessing\GenVertexNormalsProcess.cpp">
+    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\assimp\code\PostProcessing\GenVertexNormalsProcess.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\code\PostProcessing\ImproveCacheLocality.cpp">
+    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\assimp\code\PostProcessing\ImproveCacheLocality.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\code\PostProcessing\JoinVerticesProcess.cpp">
+    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\assimp\code\PostProcessing\JoinVerticesProcess.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\code\PostProcessing\LimitBoneWeightsProcess.cpp">
+    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\assimp\code\PostProcessing\LimitBoneWeightsProcess.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\code\PostProcessing\MakeVerboseFormat.cpp">
+    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\assimp\code\PostProcessing\MakeVerboseFormat.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\code\PostProcessing\OptimizeGraph.cpp">
+    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\assimp\code\PostProcessing\OptimizeGraph.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\code\PostProcessing\OptimizeMeshes.cpp">
+    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\assimp\code\PostProcessing\OptimizeMeshes.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\code\PostProcessing\PretransformVertices.cpp">
+    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\assimp\code\PostProcessing\PretransformVertices.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\code\PostProcessing\ProcessHelper.cpp">
+    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\assimp\code\PostProcessing\ProcessHelper.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\code\PostProcessing\RemoveRedundantMaterials.cpp">
+    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\assimp\code\PostProcessing\RemoveRedundantMaterials.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\code\PostProcessing\RemoveVCProcess.cpp">
+    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\assimp\code\PostProcessing\RemoveVCProcess.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\code\PostProcessing\ScaleProcess.cpp">
+    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\assimp\code\PostProcessing\ScaleProcess.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\code\PostProcessing\SortByPTypeProcess.cpp">
+    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\assimp\code\PostProcessing\SortByPTypeProcess.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\code\PostProcessing\SplitLargeMeshes.cpp">
+    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\assimp\code\PostProcessing\SplitLargeMeshes.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\code\PostProcessing\TextureTransform.cpp">
+    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\assimp\code\PostProcessing\TextureTransform.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\code\PostProcessing\TriangulateProcess.cpp">
+    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\assimp\code\PostProcessing\TriangulateProcess.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\code\PostProcessing\ValidateDataStructure.cpp">
+    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\assimp\code\PostProcessing\ValidateDataStructure.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <CustomBuild Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\CMakeLists.txt" />
+    <CustomBuild Include="C:\UnityFiles\graphics-programming-2023\libraries\assimp\CMakeLists.txt" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Source Files">
-      <UniqueIdentifier>{EAE31667-55C0-3F45-950C-DBDD558BB870}</UniqueIdentifier>
+      <UniqueIdentifier>{1161C1DE-5027-30E9-959B-5F602847D71E}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

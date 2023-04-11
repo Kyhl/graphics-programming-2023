@@ -22,7 +22,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{CE8551CF-FFDE-33C7-99EA-4B9FA8F5E187}</ProjectGuid>
+    <ProjectGuid>{C04CDDAE-93E1-3ABA-BD94-763A55BEA0A4}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <WindowsTargetPlatformVersion>10.0.19041.0</WindowsTargetPlatformVersion>
     <Platform>x64</Platform>
@@ -59,26 +59,26 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup>
     <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\GraphicsProgramming\graphics-programming-2023\Bin\libraries\glfw\src\Debug\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\UnityFiles\graphics-programming-2023\Bin\libraries\glfw\src\Debug\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">glfw.dir\Debug\</IntDir>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">glfw3</TargetName>
     <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.lib</TargetExt>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\GraphicsProgramming\graphics-programming-2023\Bin\libraries\glfw\src\Release\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\UnityFiles\graphics-programming-2023\Bin\libraries\glfw\src\Release\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">glfw.dir\Release\</IntDir>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">glfw3</TargetName>
     <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.lib</TargetExt>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">D:\GraphicsProgramming\graphics-programming-2023\Bin\libraries\glfw\src\MinSizeRel\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\UnityFiles\graphics-programming-2023\Bin\libraries\glfw\src\MinSizeRel\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">glfw.dir\MinSizeRel\</IntDir>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">glfw3</TargetName>
     <TargetExt Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">.lib</TargetExt>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">D:\GraphicsProgramming\graphics-programming-2023\Bin\libraries\glfw\src\RelWithDebInfo\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\UnityFiles\graphics-programming-2023\Bin\libraries\glfw\src\RelWithDebInfo\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">glfw.dir\RelWithDebInfo\</IntDir>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">glfw3</TargetName>
     <TargetExt Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">.lib</TargetExt>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>D:\GraphicsProgramming\graphics-programming-2023\libraries\glad\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\glfw\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\imgui\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\glm\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\stb\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp;D:\GraphicsProgramming\graphics-programming-2023\libraries\itugl\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\glfw\src;D:\GraphicsProgramming\graphics-programming-2023\Bin\libraries\glfw\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\UnityFiles\graphics-programming-2023\libraries\glad\include;C:\UnityFiles\graphics-programming-2023\libraries\glfw\include;C:\UnityFiles\graphics-programming-2023\libraries\imgui\include;C:\UnityFiles\graphics-programming-2023\libraries\glm\include;C:\UnityFiles\graphics-programming-2023\libraries\stb\include;C:\UnityFiles\graphics-programming-2023\libraries\assimp\include;C:\UnityFiles\graphics-programming-2023\libraries\assimp;C:\UnityFiles\graphics-programming-2023\libraries\itugl\include;C:\UnityFiles\graphics-programming-2023\libraries\glfw\src;C:\UnityFiles\graphics-programming-2023\Bin\libraries\glfw\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
@@ -95,10 +95,10 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_DEBUG;_WINDOWS;_GLFW_USE_CONFIG_H;_UNICODE;_CRT_SECURE_NO_WARNINGS;CMAKE_INTDIR=\"Debug\"</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>D:\GraphicsProgramming\graphics-programming-2023\libraries\glad\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\glfw\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\imgui\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\glm\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\stb\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp;D:\GraphicsProgramming\graphics-programming-2023\libraries\itugl\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\glfw\src;D:\GraphicsProgramming\graphics-programming-2023\Bin\libraries\glfw\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\UnityFiles\graphics-programming-2023\libraries\glad\include;C:\UnityFiles\graphics-programming-2023\libraries\glfw\include;C:\UnityFiles\graphics-programming-2023\libraries\imgui\include;C:\UnityFiles\graphics-programming-2023\libraries\glm\include;C:\UnityFiles\graphics-programming-2023\libraries\stb\include;C:\UnityFiles\graphics-programming-2023\libraries\assimp\include;C:\UnityFiles\graphics-programming-2023\libraries\assimp;C:\UnityFiles\graphics-programming-2023\libraries\itugl\include;C:\UnityFiles\graphics-programming-2023\libraries\glfw\src;C:\UnityFiles\graphics-programming-2023\Bin\libraries\glfw\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>D:\GraphicsProgramming\graphics-programming-2023\libraries\glad\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\glfw\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\imgui\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\glm\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\stb\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp;D:\GraphicsProgramming\graphics-programming-2023\libraries\itugl\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\glfw\src;D:\GraphicsProgramming\graphics-programming-2023\Bin\libraries\glfw\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\UnityFiles\graphics-programming-2023\libraries\glad\include;C:\UnityFiles\graphics-programming-2023\libraries\glfw\include;C:\UnityFiles\graphics-programming-2023\libraries\imgui\include;C:\UnityFiles\graphics-programming-2023\libraries\glm\include;C:\UnityFiles\graphics-programming-2023\libraries\stb\include;C:\UnityFiles\graphics-programming-2023\libraries\assimp\include;C:\UnityFiles\graphics-programming-2023\libraries\assimp;C:\UnityFiles\graphics-programming-2023\libraries\itugl\include;C:\UnityFiles\graphics-programming-2023\libraries\glfw\src;C:\UnityFiles\graphics-programming-2023\Bin\libraries\glfw\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -111,7 +111,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>D:\GraphicsProgramming\graphics-programming-2023\libraries\glad\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\glfw\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\imgui\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\glm\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\stb\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp;D:\GraphicsProgramming\graphics-programming-2023\libraries\itugl\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\glfw\src;D:\GraphicsProgramming\graphics-programming-2023\Bin\libraries\glfw\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\UnityFiles\graphics-programming-2023\libraries\glad\include;C:\UnityFiles\graphics-programming-2023\libraries\glfw\include;C:\UnityFiles\graphics-programming-2023\libraries\imgui\include;C:\UnityFiles\graphics-programming-2023\libraries\glm\include;C:\UnityFiles\graphics-programming-2023\libraries\stb\include;C:\UnityFiles\graphics-programming-2023\libraries\assimp\include;C:\UnityFiles\graphics-programming-2023\libraries\assimp;C:\UnityFiles\graphics-programming-2023\libraries\itugl\include;C:\UnityFiles\graphics-programming-2023\libraries\glfw\src;C:\UnityFiles\graphics-programming-2023\Bin\libraries\glfw\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <ExceptionHandling>
       </ExceptionHandling>
@@ -128,10 +128,10 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;_GLFW_USE_CONFIG_H;_UNICODE;_CRT_SECURE_NO_WARNINGS;CMAKE_INTDIR=\"Release\"</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>D:\GraphicsProgramming\graphics-programming-2023\libraries\glad\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\glfw\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\imgui\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\glm\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\stb\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp;D:\GraphicsProgramming\graphics-programming-2023\libraries\itugl\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\glfw\src;D:\GraphicsProgramming\graphics-programming-2023\Bin\libraries\glfw\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\UnityFiles\graphics-programming-2023\libraries\glad\include;C:\UnityFiles\graphics-programming-2023\libraries\glfw\include;C:\UnityFiles\graphics-programming-2023\libraries\imgui\include;C:\UnityFiles\graphics-programming-2023\libraries\glm\include;C:\UnityFiles\graphics-programming-2023\libraries\stb\include;C:\UnityFiles\graphics-programming-2023\libraries\assimp\include;C:\UnityFiles\graphics-programming-2023\libraries\assimp;C:\UnityFiles\graphics-programming-2023\libraries\itugl\include;C:\UnityFiles\graphics-programming-2023\libraries\glfw\src;C:\UnityFiles\graphics-programming-2023\Bin\libraries\glfw\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>D:\GraphicsProgramming\graphics-programming-2023\libraries\glad\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\glfw\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\imgui\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\glm\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\stb\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp;D:\GraphicsProgramming\graphics-programming-2023\libraries\itugl\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\glfw\src;D:\GraphicsProgramming\graphics-programming-2023\Bin\libraries\glfw\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\UnityFiles\graphics-programming-2023\libraries\glad\include;C:\UnityFiles\graphics-programming-2023\libraries\glfw\include;C:\UnityFiles\graphics-programming-2023\libraries\imgui\include;C:\UnityFiles\graphics-programming-2023\libraries\glm\include;C:\UnityFiles\graphics-programming-2023\libraries\stb\include;C:\UnityFiles\graphics-programming-2023\libraries\assimp\include;C:\UnityFiles\graphics-programming-2023\libraries\assimp;C:\UnityFiles\graphics-programming-2023\libraries\itugl\include;C:\UnityFiles\graphics-programming-2023\libraries\glfw\src;C:\UnityFiles\graphics-programming-2023\Bin\libraries\glfw\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -144,7 +144,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>D:\GraphicsProgramming\graphics-programming-2023\libraries\glad\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\glfw\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\imgui\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\glm\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\stb\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp;D:\GraphicsProgramming\graphics-programming-2023\libraries\itugl\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\glfw\src;D:\GraphicsProgramming\graphics-programming-2023\Bin\libraries\glfw\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\UnityFiles\graphics-programming-2023\libraries\glad\include;C:\UnityFiles\graphics-programming-2023\libraries\glfw\include;C:\UnityFiles\graphics-programming-2023\libraries\imgui\include;C:\UnityFiles\graphics-programming-2023\libraries\glm\include;C:\UnityFiles\graphics-programming-2023\libraries\stb\include;C:\UnityFiles\graphics-programming-2023\libraries\assimp\include;C:\UnityFiles\graphics-programming-2023\libraries\assimp;C:\UnityFiles\graphics-programming-2023\libraries\itugl\include;C:\UnityFiles\graphics-programming-2023\libraries\glfw\src;C:\UnityFiles\graphics-programming-2023\Bin\libraries\glfw\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <ExceptionHandling>
       </ExceptionHandling>
@@ -161,10 +161,10 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;_GLFW_USE_CONFIG_H;_UNICODE;_CRT_SECURE_NO_WARNINGS;CMAKE_INTDIR=\"MinSizeRel\"</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>D:\GraphicsProgramming\graphics-programming-2023\libraries\glad\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\glfw\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\imgui\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\glm\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\stb\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp;D:\GraphicsProgramming\graphics-programming-2023\libraries\itugl\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\glfw\src;D:\GraphicsProgramming\graphics-programming-2023\Bin\libraries\glfw\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\UnityFiles\graphics-programming-2023\libraries\glad\include;C:\UnityFiles\graphics-programming-2023\libraries\glfw\include;C:\UnityFiles\graphics-programming-2023\libraries\imgui\include;C:\UnityFiles\graphics-programming-2023\libraries\glm\include;C:\UnityFiles\graphics-programming-2023\libraries\stb\include;C:\UnityFiles\graphics-programming-2023\libraries\assimp\include;C:\UnityFiles\graphics-programming-2023\libraries\assimp;C:\UnityFiles\graphics-programming-2023\libraries\itugl\include;C:\UnityFiles\graphics-programming-2023\libraries\glfw\src;C:\UnityFiles\graphics-programming-2023\Bin\libraries\glfw\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>D:\GraphicsProgramming\graphics-programming-2023\libraries\glad\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\glfw\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\imgui\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\glm\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\stb\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp;D:\GraphicsProgramming\graphics-programming-2023\libraries\itugl\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\glfw\src;D:\GraphicsProgramming\graphics-programming-2023\Bin\libraries\glfw\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\UnityFiles\graphics-programming-2023\libraries\glad\include;C:\UnityFiles\graphics-programming-2023\libraries\glfw\include;C:\UnityFiles\graphics-programming-2023\libraries\imgui\include;C:\UnityFiles\graphics-programming-2023\libraries\glm\include;C:\UnityFiles\graphics-programming-2023\libraries\stb\include;C:\UnityFiles\graphics-programming-2023\libraries\assimp\include;C:\UnityFiles\graphics-programming-2023\libraries\assimp;C:\UnityFiles\graphics-programming-2023\libraries\itugl\include;C:\UnityFiles\graphics-programming-2023\libraries\glfw\src;C:\UnityFiles\graphics-programming-2023\Bin\libraries\glfw\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -177,7 +177,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>D:\GraphicsProgramming\graphics-programming-2023\libraries\glad\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\glfw\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\imgui\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\glm\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\stb\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp;D:\GraphicsProgramming\graphics-programming-2023\libraries\itugl\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\glfw\src;D:\GraphicsProgramming\graphics-programming-2023\Bin\libraries\glfw\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\UnityFiles\graphics-programming-2023\libraries\glad\include;C:\UnityFiles\graphics-programming-2023\libraries\glfw\include;C:\UnityFiles\graphics-programming-2023\libraries\imgui\include;C:\UnityFiles\graphics-programming-2023\libraries\glm\include;C:\UnityFiles\graphics-programming-2023\libraries\stb\include;C:\UnityFiles\graphics-programming-2023\libraries\assimp\include;C:\UnityFiles\graphics-programming-2023\libraries\assimp;C:\UnityFiles\graphics-programming-2023\libraries\itugl\include;C:\UnityFiles\graphics-programming-2023\libraries\glfw\src;C:\UnityFiles\graphics-programming-2023\Bin\libraries\glfw\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <ExceptionHandling>
@@ -193,10 +193,10 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;_GLFW_USE_CONFIG_H;_UNICODE;_CRT_SECURE_NO_WARNINGS;CMAKE_INTDIR=\"RelWithDebInfo\"</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>D:\GraphicsProgramming\graphics-programming-2023\libraries\glad\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\glfw\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\imgui\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\glm\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\stb\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp;D:\GraphicsProgramming\graphics-programming-2023\libraries\itugl\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\glfw\src;D:\GraphicsProgramming\graphics-programming-2023\Bin\libraries\glfw\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\UnityFiles\graphics-programming-2023\libraries\glad\include;C:\UnityFiles\graphics-programming-2023\libraries\glfw\include;C:\UnityFiles\graphics-programming-2023\libraries\imgui\include;C:\UnityFiles\graphics-programming-2023\libraries\glm\include;C:\UnityFiles\graphics-programming-2023\libraries\stb\include;C:\UnityFiles\graphics-programming-2023\libraries\assimp\include;C:\UnityFiles\graphics-programming-2023\libraries\assimp;C:\UnityFiles\graphics-programming-2023\libraries\itugl\include;C:\UnityFiles\graphics-programming-2023\libraries\glfw\src;C:\UnityFiles\graphics-programming-2023\Bin\libraries\glfw\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>D:\GraphicsProgramming\graphics-programming-2023\libraries\glad\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\glfw\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\imgui\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\glm\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\stb\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp;D:\GraphicsProgramming\graphics-programming-2023\libraries\itugl\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\glfw\src;D:\GraphicsProgramming\graphics-programming-2023\Bin\libraries\glfw\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\UnityFiles\graphics-programming-2023\libraries\glad\include;C:\UnityFiles\graphics-programming-2023\libraries\glfw\include;C:\UnityFiles\graphics-programming-2023\libraries\imgui\include;C:\UnityFiles\graphics-programming-2023\libraries\glm\include;C:\UnityFiles\graphics-programming-2023\libraries\stb\include;C:\UnityFiles\graphics-programming-2023\libraries\assimp\include;C:\UnityFiles\graphics-programming-2023\libraries\assimp;C:\UnityFiles\graphics-programming-2023\libraries\itugl\include;C:\UnityFiles\graphics-programming-2023\libraries\glfw\src;C:\UnityFiles\graphics-programming-2023\Bin\libraries\glfw\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -208,11 +208,11 @@
     </Lib>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <CustomBuild Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\glfw\src\CMakeLists.txt">
+    <CustomBuild Include="C:\UnityFiles\graphics-programming-2023\libraries\glfw\src\CMakeLists.txt">
       <UseUtf8Encoding>Always</UseUtf8Encoding>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule D:/GraphicsProgramming/graphics-programming-2023/libraries/glfw/src/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule C:/UnityFiles/graphics-programming-2023/libraries/glfw/src/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -SD:/GraphicsProgramming/graphics-programming-2023 -BD:/GraphicsProgramming/graphics-programming-2023/Bin --check-stamp-file D:/GraphicsProgramming/graphics-programming-2023/Bin/libraries/glfw/src/CMakeFiles/generate.stamp
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/UnityFiles/graphics-programming-2023 -BC:/UnityFiles/graphics-programming-2023/Bin --check-stamp-file C:/UnityFiles/graphics-programming-2023/Bin/libraries/glfw/src/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -221,11 +221,11 @@ exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\GraphicsProgramming\graphics-programming-2023\Bin\libraries\glfw\src\CMakeFiles\generate.stamp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\UnityFiles\graphics-programming-2023\Bin\libraries\glfw\src\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule D:/GraphicsProgramming/graphics-programming-2023/libraries/glfw/src/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule C:/UnityFiles/graphics-programming-2023/libraries/glfw/src/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -SD:/GraphicsProgramming/graphics-programming-2023 -BD:/GraphicsProgramming/graphics-programming-2023/Bin --check-stamp-file D:/GraphicsProgramming/graphics-programming-2023/Bin/libraries/glfw/src/CMakeFiles/generate.stamp
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/UnityFiles/graphics-programming-2023 -BC:/UnityFiles/graphics-programming-2023/Bin --check-stamp-file C:/UnityFiles/graphics-programming-2023/Bin/libraries/glfw/src/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -234,11 +234,11 @@ exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\GraphicsProgramming\graphics-programming-2023\Bin\libraries\glfw\src\CMakeFiles\generate.stamp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\UnityFiles\graphics-programming-2023\Bin\libraries\glfw\src\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
-      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule D:/GraphicsProgramming/graphics-programming-2023/libraries/glfw/src/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule C:/UnityFiles/graphics-programming-2023/libraries/glfw/src/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -SD:/GraphicsProgramming/graphics-programming-2023 -BD:/GraphicsProgramming/graphics-programming-2023/Bin --check-stamp-file D:/GraphicsProgramming/graphics-programming-2023/Bin/libraries/glfw/src/CMakeFiles/generate.stamp
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/UnityFiles/graphics-programming-2023 -BC:/UnityFiles/graphics-programming-2023/Bin --check-stamp-file C:/UnityFiles/graphics-programming-2023/Bin/libraries/glfw/src/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -247,11 +247,11 @@ exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">D:\GraphicsProgramming\graphics-programming-2023\Bin\libraries\glfw\src\CMakeFiles\generate.stamp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\UnityFiles\graphics-programming-2023\Bin\libraries\glfw\src\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
-      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule D:/GraphicsProgramming/graphics-programming-2023/libraries/glfw/src/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule C:/UnityFiles/graphics-programming-2023/libraries/glfw/src/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -SD:/GraphicsProgramming/graphics-programming-2023 -BD:/GraphicsProgramming/graphics-programming-2023/Bin --check-stamp-file D:/GraphicsProgramming/graphics-programming-2023/Bin/libraries/glfw/src/CMakeFiles/generate.stamp
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/UnityFiles/graphics-programming-2023 -BC:/UnityFiles/graphics-programming-2023/Bin --check-stamp-file C:/UnityFiles/graphics-programming-2023/Bin/libraries/glfw/src/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -260,40 +260,40 @@ exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">D:\GraphicsProgramming\graphics-programming-2023\Bin\libraries\glfw\src\CMakeFiles\generate.stamp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\UnityFiles\graphics-programming-2023\Bin\libraries\glfw\src\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\glfw\src\context.c" />
-    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\glfw\src\init.c" />
-    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\glfw\src\input.c" />
-    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\glfw\src\monitor.c" />
-    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\glfw\src\vulkan.c" />
-    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\glfw\src\window.c" />
-    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\glfw\src\win32_init.c" />
-    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\glfw\src\win32_joystick.c" />
-    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\glfw\src\win32_monitor.c" />
-    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\glfw\src\win32_time.c" />
-    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\glfw\src\win32_thread.c" />
-    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\glfw\src\win32_window.c" />
-    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\glfw\src\wgl_context.c" />
-    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\glfw\src\egl_context.c" />
-    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\glfw\src\osmesa_context.c" />
-    <ClInclude Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\glfw\src\internal.h" />
-    <ClInclude Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\glfw\src\mappings.h" />
-    <ClInclude Include="D:\GraphicsProgramming\graphics-programming-2023\Bin\libraries\glfw\src\glfw_config.h" />
-    <ClInclude Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\glfw\include\GLFW\glfw3.h" />
-    <ClInclude Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\glfw\include\GLFW\glfw3native.h" />
-    <ClInclude Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\glfw\src\win32_platform.h" />
-    <ClInclude Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\glfw\src\win32_joystick.h" />
-    <ClInclude Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\glfw\src\wgl_context.h" />
-    <ClInclude Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\glfw\src\egl_context.h" />
-    <ClInclude Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\glfw\src\osmesa_context.h" />
+    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\glfw\src\context.c" />
+    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\glfw\src\init.c" />
+    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\glfw\src\input.c" />
+    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\glfw\src\monitor.c" />
+    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\glfw\src\vulkan.c" />
+    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\glfw\src\window.c" />
+    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\glfw\src\win32_init.c" />
+    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\glfw\src\win32_joystick.c" />
+    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\glfw\src\win32_monitor.c" />
+    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\glfw\src\win32_time.c" />
+    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\glfw\src\win32_thread.c" />
+    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\glfw\src\win32_window.c" />
+    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\glfw\src\wgl_context.c" />
+    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\glfw\src\egl_context.c" />
+    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\glfw\src\osmesa_context.c" />
+    <ClInclude Include="C:\UnityFiles\graphics-programming-2023\libraries\glfw\src\internal.h" />
+    <ClInclude Include="C:\UnityFiles\graphics-programming-2023\libraries\glfw\src\mappings.h" />
+    <ClInclude Include="C:\UnityFiles\graphics-programming-2023\Bin\libraries\glfw\src\glfw_config.h" />
+    <ClInclude Include="C:\UnityFiles\graphics-programming-2023\libraries\glfw\include\GLFW\glfw3.h" />
+    <ClInclude Include="C:\UnityFiles\graphics-programming-2023\libraries\glfw\include\GLFW\glfw3native.h" />
+    <ClInclude Include="C:\UnityFiles\graphics-programming-2023\libraries\glfw\src\win32_platform.h" />
+    <ClInclude Include="C:\UnityFiles\graphics-programming-2023\libraries\glfw\src\win32_joystick.h" />
+    <ClInclude Include="C:\UnityFiles\graphics-programming-2023\libraries\glfw\src\wgl_context.h" />
+    <ClInclude Include="C:\UnityFiles\graphics-programming-2023\libraries\glfw\src\egl_context.h" />
+    <ClInclude Include="C:\UnityFiles\graphics-programming-2023\libraries\glfw\src\osmesa_context.h" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="D:\GraphicsProgramming\graphics-programming-2023\Bin\ZERO_CHECK.vcxproj">
-      <Project>{30215E9F-DA56-3C71-8A12-541D6440EE4F}</Project>
+    <ProjectReference Include="C:\UnityFiles\graphics-programming-2023\Bin\ZERO_CHECK.vcxproj">
+      <Project>{E9ECF176-4261-365A-846B-49A9250BDC5A}</Project>
       <Name>ZERO_CHECK</Name>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>

@@ -276,7 +276,7 @@ void TerrainApplication::Render()
     m_vao.Bind();
 
     // Draw the grid (m_gridX * m_gridY quads, 6 vertices per quad)
-    glDrawElements(GL_TRIANGLES, (m_gridX * m_gridY)* 6 * m_gridY, GL_UNSIGNED_INT, nullptr);
+    glDrawElements(GL_TRIANGLES, (m_gridX * m_gridY)* 6 * 6, GL_UNSIGNED_INT, nullptr);
 
     // No need to unbind every time
     //VertexArrayObject::Unbind();

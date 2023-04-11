@@ -1,38 +1,38 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\exercises\exercise03\GearsApplication.cpp">
+    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\exercises\exercise03\GearsApplication.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\exercises\exercise03\main.cpp">
+    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\exercises\exercise03\main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="D:\GraphicsProgramming\graphics-programming-2023\exercises\exercise03\GearsApplication.h">
+    <ClInclude Include="C:\UnityFiles\graphics-programming-2023\exercises\exercise03\GearsApplication.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <CustomBuild Include="D:\GraphicsProgramming\graphics-programming-2023\exercises\exercise03\CMakeLists.txt" />
+    <CustomBuild Include="C:\UnityFiles\graphics-programming-2023\exercises\exercise03\CMakeLists.txt" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="D:\GraphicsProgramming\graphics-programming-2023\exercises\exercise03\shaders\basic.frag">
+    <None Include="C:\UnityFiles\graphics-programming-2023\exercises\exercise03\shaders\basic.frag">
       <Filter>Shaders</Filter>
     </None>
-    <None Include="D:\GraphicsProgramming\graphics-programming-2023\exercises\exercise03\shaders\basic.vert">
+    <None Include="C:\UnityFiles\graphics-programming-2023\exercises\exercise03\shaders\basic.vert">
       <Filter>Shaders</Filter>
     </None>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Header Files">
-      <UniqueIdentifier>{2DD6DBE6-EA08-32A2-89B0-55F3062974A7}</UniqueIdentifier>
+      <UniqueIdentifier>{16C8EA6D-F51E-3B49-8915-47636A1B82C5}</UniqueIdentifier>
     </Filter>
     <Filter Include="Shaders">
-      <UniqueIdentifier>{F5DDFC14-E356-3CF3-9371-6E5D470FEA11}</UniqueIdentifier>
+      <UniqueIdentifier>{0B35AA16-ACA2-367B-9F6D-E430E58E463E}</UniqueIdentifier>
     </Filter>
     <Filter Include="Source Files">
-      <UniqueIdentifier>{EAE31667-55C0-3F45-950C-DBDD558BB870}</UniqueIdentifier>
+      <UniqueIdentifier>{1161C1DE-5027-30E9-959B-5F602847D71E}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

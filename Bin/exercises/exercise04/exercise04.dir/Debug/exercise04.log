@@ -1,2 +1,6 @@
-﻿  TexturedTerrainApplication.cpp
-  exercise04.vcxproj -> D:\GraphicsProgramming\graphics-programming-2023\Bin\exercises\exercise04\Debug\exercise04.exe
+﻿  Building Custom Rule C:/UnityFiles/graphics-programming-2023/exercises/exercise04/CMakeLists.txt
+  TexturedTerrainApplication.cpp
+  main.cpp
+  Generating Code...
+  LINK : C:\UnityFiles\graphics-programming-2023\Bin\exercises\exercise04\Debug\exercise04.exe not found or not built by the last incremental link; performing full link
+  exercise04.vcxproj -> C:\UnityFiles\graphics-programming-2023\Bin\exercises\exercise04\Debug\exercise04.exe

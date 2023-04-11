@@ -1,16 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\exercises\exercise00\main.cpp">
+    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\exercises\exercise00\main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <CustomBuild Include="D:\GraphicsProgramming\graphics-programming-2023\exercises\exercise00\CMakeLists.txt" />
+    <CustomBuild Include="C:\UnityFiles\graphics-programming-2023\exercises\exercise00\CMakeLists.txt" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Source Files">
-      <UniqueIdentifier>{EAE31667-55C0-3F45-950C-DBDD558BB870}</UniqueIdentifier>
+      <UniqueIdentifier>{1161C1DE-5027-30E9-959B-5F602847D71E}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

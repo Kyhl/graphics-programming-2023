@@ -1,4 +1,4 @@
-# Install script for directory: D:/GraphicsProgramming/graphics-programming-2023/libraries/stb
+# Install script for directory: C:/UnityFiles/graphics-programming-2023/libraries/stb
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

@@ -1,2 +1,6 @@
-﻿  TerrainApplication.cpp
-  exercise01.vcxproj -> D:\GraphicsProgramming\graphics-programming-2023\Bin\exercises\exercise01\Debug\exercise01.exe
+﻿  Building Custom Rule C:/UnityFiles/graphics-programming-2023/exercises/exercise01/CMakeLists.txt
+  TerrainApplication.cpp
+  main.cpp
+  Generating Code...
+  LINK : C:\UnityFiles\graphics-programming-2023\Bin\exercises\exercise01\Debug\exercise01.exe not found or not built by the last incremental link; performing full link
+  exercise01.vcxproj -> C:\UnityFiles\graphics-programming-2023\Bin\exercises\exercise01\Debug\exercise01.exe

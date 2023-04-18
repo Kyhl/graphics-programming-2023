@@ -8,46 +8,51 @@
 #include <vector>
 #include <cmath>
 #include <iostream>
+#include <ituGL/geometry/VertexFormat.h>
+#include <ituGL/texture/Texture2DObject.h>
 
-// Helper structures. Declared here only for this exercise
-struct Vector2
-{
-    Vector2() : Vector2(0.f, 0.f) {}
-    Vector2(float x, float y) : x(x), y(y) {}
-    float x, y;
-};
+#include <glm/gtx/transform.hpp>  // for matrix transformations
 
-struct Vector3
-{
-    Vector3() : Vector3(0.f,0.f,0.f) {}
-    Vector3(float x, float y, float z) : x(x), y(y), z(z) {}
-    float x, y, z;
 
-    Vector3 Normalize() const
-    {
-        float length = std::sqrt(1 + x * x + y * y);
-        return Vector3(x / length, y / length, z / length);
-    }
-};
+#define STB_IMAGE_IMPLEMENTATION
+#include <stb_image.h>
 
-// Helper struct with the vertex format
+#include <cmath>
+#include <iostream>
+#include <numbers>  // for PI constant
+using namespace glm;
+using namespace std;
+
+
+
+
 struct Vertex
 {
-    Vector3 position;
-    Vector2 texCoord;
-    Vector3 color;
-    Vector3 normal;
+    vec3 position;
+    vec2 texCoord;
+    vec3 color;
+    vec3 normal;
 };
 
-
 // Forward declare helper function
-Vector3 GetColorFromHeight(float height);
+vec3 GetColorFromHeight(float height);
 
 
 TerrainApplication::TerrainApplication()
-    : Application(1024, 1024, "Terrain demo"), m_gridX(256), m_gridY(256), m_shaderProgram(0)
+    : Application(1024, 1024, "Terrain demo"), m_gridX(4), m_gridY(4), m_gridZ(4), m_shaderProgram(0)
 {
 }
+
+unsigned int SetQuad(std::vector<unsigned int>& triangles, unsigned int i, unsigned int v00, unsigned int v10, unsigned int v01, unsigned int v11)
+{
+    triangles[i] = v00;
+    triangles[i + 1] = triangles[i + 4] = v01;
+    triangles[i + 2] = triangles[i + 3] = v10;
+    triangles[i + 5] = v11;
+    return i + 6;
+}
+
+
 
 void TerrainApplication::Initialize()
 {
@@ -60,122 +65,261 @@ void TerrainApplication::Initialize()
     std::vector<Vertex> vertices;
 
     // Create container for the element data
-    std::vector<unsigned int> indices;
+    std::vector<unsigned int> indices(((m_gridX * m_gridY + m_gridX * m_gridZ + m_gridY * m_gridZ)*2u)*6u);
 
     // Grid scale to convert the entire grid to size 1x1
-    Vector2 scale(1.0f / m_gridX, 1.0f / m_gridY);
+    vec2 scale(1.0f / m_gridX, 1.0f / m_gridY);
 
     // Number of columns and rows
     unsigned int columnCount = m_gridX + 1;
     unsigned int rowCount = m_gridY + 1;
-
-    // Iterate over each VERTEX
-    for (unsigned int u = 0; u < 6; u++)
+    int index = 0;
+    for (float j = 0; j <= rowCount; j++)
     {
-        for (unsigned int j = 0; j < rowCount; ++j)
+        float y = j * scale.y;
+        for (float i = 0; i <= m_gridX; i++)
         {
-            for (unsigned int i = 0; i < columnCount; ++i)
-            {
-                Vertex& vertex = vertices.emplace_back();
-                float x = i * scale.x - 0.5f;
-                float y = j * scale.y - 0.5f;
-                //float z = stb_perlin_fbm_noise3(x * 2, y * 2, 0.0f, 1.9f, 0.5f, 8) * 0.5f;
-                float z = 0.0f;
-                switch (u) 
-                {
-                case 5:
-                    vertex.position = Vector3(z-0.5f, x, y);
-                    vertex.texCoord = Vector2(static_cast<float>(i), static_cast<float>(j));
-                    vertex.color = GetColorFromHeight(z - 1.0f);
-                    vertex.normal = Vector3(0.0f, 1.0f, 0.0f);
-                    break;
-                case 4:
-                    vertex.position = Vector3(z+0.5f, x, y);
-                    vertex.texCoord = Vector2(static_cast<float>(i), static_cast<float>(j));
-                    vertex.color = GetColorFromHeight(z - 1.0f);
-                    vertex.normal = Vector3(0.0f, 1.0f, 0.0f);
-                    break;
-                case 3:
-                    vertex.position = Vector3(x, z + 0.5f, y);
-                    vertex.texCoord = Vector2(static_cast<float>(i), static_cast<float>(j));
-                    vertex.color = GetColorFromHeight(z);
-                    vertex.normal = Vector3(0.0f, 1.0f, 0.0f);
-                    break;
-                case 2:
-                    vertex.position = Vector3(x, y,z-0.5f);
-                    vertex.texCoord = Vector2(static_cast<float>(i), static_cast<float>(j));
-                    vertex.color = GetColorFromHeight(z-1.0f);
-                    vertex.normal = Vector3(0.0f, 1.0f, 0.0f);
-                    break;
-                case 1:
-                    vertex.position = Vector3(x, z - 0.5f, y);
-                    vertex.texCoord = Vector2(static_cast<float>(i), static_cast<float>(j));
-                    vertex.color = GetColorFromHeight(z);
-                    vertex.normal = Vector3(0.0f, 1.0f, 0.0f);
-                    break;
-                case 0:
-                    vertex.position = Vector3(x, y, z+0.5f);
-                    vertex.texCoord = Vector2(static_cast<float>(i), static_cast<float>(j));
-                    vertex.color = GetColorFromHeight(z);
-                    vertex.normal = Vector3(0.0f, 0.0f, 1.0f);
-                    break;
-                }
-
-                // Index data for quad formed by previous vertices and current
-                if (i > 0 && j > 0)
-                {
-                    unsigned int offset = (((rowCount) * (columnCount)))*u;
-                    unsigned int top_right = (j * columnCount + i) + offset; // Current vertex
-                    unsigned int top_left = (top_right - 1);
-                    unsigned int bottom_right = (top_right - columnCount);
-                    unsigned int bottom_left = (bottom_right - 1);
-
-                    //Triangle 1
-                    indices.push_back(bottom_left);
-                    indices.push_back(bottom_right);
-                    indices.push_back(top_left);
-
-                    //Triangle 2
-                    indices.push_back(bottom_right);
-                    indices.push_back(top_left);
-                    indices.push_back(top_right);
-                }
-            }
+            float x = i * scale.x;
+            Vertex& vertex = vertices.emplace_back();
+            //float color = stb_perlin_fbm_noise3(x * 2, y * 2, 0.0f, 1.9f, 0.5f, 8) * 0.5f;
+            float color = 0.0f;
+            vertex.position = vec3(x, y, 0);
+            vertex.texCoord = vec2(static_cast<float>(x), static_cast<float>(y));
+            vertex.color = GetColorFromHeight(color);
+            vertex.normal = vec3(0.0f, 0.0f, 1.0f);
+        }
+        for (float u = 1; u <= m_gridZ; u++)
+        {
+            float z = u * scale.x;
+            //float color = stb_perlin_fbm_noise3(z * 2, y * 2, 0.0f, 1.9f, 0.5f, 8) * 0.5f;
+            float color = 0.0f;
+            Vertex& vertex = vertices.emplace_back();
+            vertex.position = vec3(m_gridX, y, z);
+            vertex.texCoord = vec2(static_cast<float>(z), static_cast<float>(y));
+            vertex.color = GetColorFromHeight(color);
+            vertex.normal = vec3(1.0f, 0.0f, 0.0f);
+        }
+        for (int i = m_gridX - 1; i >= 0; i--)
+        {
+            float x = i * scale.x;
+            //float color = stb_perlin_fbm_noise3(x * 2, y * 2, 0.0f, 1.9f, 0.5f, 8) * 0.5f;
+            float color = 0.0f;
+            Vertex& vertex = vertices.emplace_back();
+            vertex.position = vec3(x, y, m_gridX);
+            vertex.texCoord = vec2(static_cast<float>(x), static_cast<float>(y));
+            vertex.color = GetColorFromHeight(color);
+            vertex.normal = vec3(0.0f, 0.0f, 1.0f);
+        }
+        for (int u = m_gridZ - 1; u >= 0; u--)
+        {
+            float z = u * scale.x;
+            //float color = stb_perlin_fbm_noise3(z * 2, y * 2, 0.0f, 1.9f, 0.5f, 8) * 0.5f;
+            float color = 0.0f;
+            Vertex& vertex = vertices.emplace_back();
+            vertex.position = vec3(0, y, z);
+            vertex.texCoord = vec2(static_cast<float>(z), static_cast<float>(y));
+            vertex.color = GetColorFromHeight(color);
+            vertex.normal = vec3(0.0f, 0.0f, 1.0f);
         }
     }
-
-    // Compute normals when we have the positions of all the vertices
-    // Iterate AGAIN over each vertex
-
-        for (unsigned int j = 0; j < (rowCount*2)-1; ++j)
+    for (int u = 1; u < m_gridZ; u++)
+    {
+        float z = u * scale.x;
+        for (int i = 1; i < m_gridX; i++)
         {
-            for (unsigned int i = 0; i < (columnCount*2)-1; ++i)
-            {
-                // Get the vertex at (i, j)
-                int index = j * columnCount + i;
-                Vertex& vertex = vertices[index];
-
-                // Compute the delta in X
-                unsigned int prevX = i > 0 ? index - 1 : index;
-                unsigned int nextX = i < m_gridX ? index + 1 : index;
-                float deltaHeightX = vertices[nextX].position.z - vertices[prevX].position.z;
-                float deltaX = vertices[nextX].position.x - vertices[prevX].position.x;
-                float x = deltaHeightX / deltaX;
-
-                // Compute the delta in Y
-                int prevY = j > 0 ? index - columnCount : index;
-                int nextY = j < m_gridY ? index + columnCount : index;
-                float deltaHeightY = vertices[nextY].position.z - vertices[prevY].position.z;
-                float deltaY = vertices[nextY].position.y - vertices[prevY].position.y;
-                float y = deltaHeightY / deltaY;
-
-
-
-                // Compute the normal
-                vertex.normal = Vector3(x, y, 1.0f).Normalize();
-            }
+            float x = i * scale.x;
+            //float color = stb_perlin_fbm_noise3(x * 2, y * 2, 0.0f, 1.9f, 0.5f, 8) * 0.5f;
+            float color = 0.0f;
+            Vertex& vertex = vertices.emplace_back();
+            vertex.position = vec3(x, m_gridY, z);
+            vertex.texCoord = vec2(static_cast<float>(x), static_cast<float>(z));
+            vertex.color = GetColorFromHeight(color);
+            vertex.normal = vec3(0.0f, 0.0f, 1.0f);
         }
+    }
+    for (int u = 1; u < m_gridZ; u++)
+    {
+        float z = u * scale.x;
+        for (int i = 1; i < m_gridX; i++)
+        {
+            float x = i * scale.x;
+            //float color = stb_perlin_fbm_noise3(x * 2, y * 2, 0.0f, 1.9f, 0.5f, 8) * 0.5f;
+            float color = 0.0f;
+            Vertex& vertex = vertices.emplace_back();
+            vertex.position = vec3(x, 0, z);
+            vertex.texCoord = vec2(static_cast<float>(x), static_cast<float>(z));
+            vertex.color = GetColorFromHeight(color);
+            vertex.normal = vec3(0.0f, 0.0f, 1.0f);
+        }
+    }
+    //////for (int y = 0; y <= m_gridY; y++)
+    //////{
+    //////    for (int x = 0; x <= m_gridX; x++)
+    //////    {
+    //////        float sx = x * scale.x;
+    //////        //float color = stb_perlin_fbm_noise3(x * 2, y * 2, 0.0f, 1.9f, 0.5f, 8) * 0.5f;
+    //////        float color = 0.0f;
+    //////        Vertex& vertex = vertices.emplace_back();
+    //////        vertex.position = vec3(x, y, 0);
+    //////        vertex.texCoord = vec2(static_cast<float>(x), static_cast<float>(y));
+    //////        vertex.color = GetColorFromHeight(color);
+    //////        vertex.normal = vec3(0.0f, 0.0f, 1.0f);
+    //////    }
+    //////}
+
+    /*SetQuad(int[] triangles, int i, int v00, int v10, int v01, int v11) {
+        triangles[i] = v00;
+        triangles[i + 1] = triangles[i + 4] = v01;
+        triangles[i + 2] = triangles[i + 3] = v10;
+        triangles[i + 5] = v11;
+        return i + 6;
+    }*/
+    int ring = (m_gridX + m_gridZ) * 2;
+    int t = 0, v = 0;
+
+    for (int q = 0; q < m_gridX; q++, v++) {
+        SetQuad(indices, t, v, v + 1, v + ring, v + ring + 1);
+    }
+
+    /*for (int y = 0; y < m_gridY; y++, v++) {
+        for (int q = 0; q < ring - 1; q++, v++) {
+            t = SetQuad(indices, t, v, v + 1, v + ring, v + ring + 1);
+        }
+        t = SetQuad(indices, t, v, v - ring + 1, v + ring, v + 1);
+    }
+    int v1 = ring * m_gridY;
+    for (int x = 0; x < m_gridX - 1; x++, v1++) {
+        t = SetQuad(indices, t, v1, v1 + 1, v1 + ring - 1, v1 + ring);
+    }
+    t = SetQuad(indices, t, v1, v1 + 1, v1 + ring - 1, v1 + 2);*/
+
+
+    /*for (unsigned int ti = 0, vi = 0, y = 0; y < 5; y++, vi++)
+    {
+        for (unsigned int x = 0; x < m_gridX; x++, ti += 6, vi++)
+        {
+            indices[ti] = vi;
+            indices[(ti + 3u)] = indices[(ti + 2)] = vi + 1;
+            indices[(ti + 4u)] = indices[(ti + 1)] = vi + m_gridX + 1;
+            indices[(ti + 5u)] = vi + m_gridX + 2;
+        }
+    }*/
+    // Iterate over each VERTEX
+    //for (unsigned int u = 0; u < 6; u++)
+    //{
+    //    for (unsigned int j = 0; j < rowCount; ++j)
+    //    {
+    //        for (unsigned int i = 0; i < columnCount; ++i)
+    //        {
+    //            /*if (u > 0 && (j < 1 && i < 1))
+    //            {
+    //                continue;
+    //            }*/
+    //            Vertex& vertex = vertices.emplace_back();
+    //            float x = i * scale.x - 0.5f;
+    //            float y = j * scale.y - 0.5f;
+    //            //float z = stb_perlin_fbm_noise3(x * 2, y * 2, 0.0f, 1.9f, 0.5f, 8) * 0.5f;
+    //            float z = 0.0f;
+    //            switch (u)
+    //            {
+    //            case 5:
+    //                vertex.position = vec3(z - 0.5f, x, y);
+    //                vertex.texCoord = vec2(static_cast<float>(i), static_cast<float>(j));
+    //                vertex.color = GetColorFromHeight(z * -1);
+    //                vertex.normal = vec3(0.0f, 1.0f, 0.0f);
+    //                break;
+    //            case 4:
+    //                vertex.position = vec3(z + 0.5f, x, y);
+    //                vertex.texCoord = vec2(static_cast<float>(i), static_cast<float>(j));
+    //                vertex.color = GetColorFromHeight(z);
+    //                vertex.normal = vec3(0.0f, 1.0f, 0.0f);
+    //                break;
+    //            case 3:
+    //                vertex.position = vec3(x, z + 0.5f, y);
+    //                vertex.texCoord = vec2(static_cast<float>(i), static_cast<float>(j));
+    //                vertex.color = GetColorFromHeight(z);
+    //                vertex.normal = vec3(0.0f, 1.0f, 0.0f);
+    //                break;
+    //            case 2:
+    //                vertex.position = vec3(x, z - 0.5f, y);
+    //                vertex.texCoord = vec2(static_cast<float>(i), static_cast<float>(j));
+    //                vertex.color = GetColorFromHeight(z * -1);
+    //                vertex.normal = vec3(0.0f, 1.0f, 0.0f);
+    //                break;
+    //            case 1:
+    //                vertex.position = vec3(x, y, (z * -1) - 0.5f);
+    //                vertex.texCoord = vec2(static_cast<float>(i), static_cast<float>(j));
+    //                vertex.color = GetColorFromHeight(z * -1);
+    //                vertex.normal = vec3(0.0f, 1.0f, 0.0f);
+    //                break;
+    //            case 0:
+    //                vertex.position = vec3(x, y, z + 0.5f);
+    //                vertex.texCoord = vec2(static_cast<float>(i), static_cast<float>(j));
+    //                vertex.color = GetColorFromHeight(z);
+    //                vertex.normal = vec3(0.0f, 0.0f, 1.0f);
+    //                break;
+    //            }
+
+    //            // Index data for quad formed by previous vertices and current
+    //            if (i > 0 && j > 0)
+    //            {
+    //                unsigned int offset = (rowCount * columnCount) * u;
+    //                unsigned int top_right = (j * columnCount + i) + offset; // Current vertex
+    //                unsigned int top_left = (top_right - 1);
+    //                unsigned int bottom_right = (top_right - columnCount);
+    //                unsigned int bottom_left = (bottom_right - 1);
+
+    //                //Triangle 1
+    //                indices.push_back(bottom_left);
+    //                indices.push_back(bottom_right);
+    //                indices.push_back(top_left);
+
+    //                //Triangle 2
+    //                indices.push_back(bottom_right);
+    //                indices.push_back(top_left);
+    //                indices.push_back(top_right);
+    //            }
+    //        }
+    //    }
+    //}
+
+    //// Compute normals when we have the positions of all the vertices
+    //// Iterate AGAIN over each vertex
+    //for (unsigned int u = 0; u < 6; u++)
+    //{
+    //    for (unsigned int j = 0; j < rowCount; ++j)
+    //    {
+    //        for (unsigned int i = 0; i < columnCount; ++i)
+    //        {
+    //            // Get the vertex at (i, j)
+    //            unsigned int offset = (rowCount * columnCount) * u;
+    //            int index = j * columnCount + i + offset;
+    //            Vertex& vertex = vertices[index];
+
+    //            // Compute the delta in X
+    //            unsigned int prevX = i > 0 ? index - 1 : index;
+    //            unsigned int nextX = i < m_gridX ? index + 1 : index;
+    //            float deltaHeightX = vertices[nextX].position.z - vertices[prevX].position.z;
+    //            float deltaX = vertices[nextX].position.x - vertices[prevX].position.x;
+    //            float x = deltaHeightX / deltaX;
+
+    //            // Compute the delta in Y
+    //            int prevY = j > 0 ? index - columnCount : index;
+    //            int nextY = j < m_gridY ? index + columnCount : index;
+    //            float deltaHeightY = vertices[nextY].position.z - vertices[prevY].position.z;
+    //            float deltaY = vertices[nextY].position.y - vertices[prevY].position.y;
+    //            float y = deltaHeightY / deltaY;
+
+
+
+    //            // Compute the normal
+    //            vertex.normal = glm::normalize(vec3(x, y, 1.0f));
+    //        }
+    //    }
+    //}
     
+
+
     // Declare attributes
     VertexAttribute positionAttribute(Data::Type::Float, 3);
     VertexAttribute texCoordAttribute(Data::Type::Float, 2);
@@ -223,7 +367,15 @@ void TerrainApplication::Initialize()
 void TerrainApplication::Update()
 {
     Application::Update();
+    const Window& window = GetMainWindow();
 
+    glm::vec2 mousePosition = window.GetMousePosition(true);
+    //m_camera.SetViewMatrix(glm::vec3(0.0f, 10.0f, 10.0f), glm::vec3(mousePosition, 0.0f));
+
+    int width, height;
+    window.GetDimensions(width, height);
+    float aspectRatio = static_cast<float>(width) / height;
+    //m_camera.SetPerspectiveProjectionMatrix(1.0f, aspectRatio, -10.1f, 200.0f);
     UpdateOutputMode();
 }
 
@@ -241,7 +393,7 @@ void TerrainApplication::Render()
     m_vao.Bind();
 
     // Draw the grid (m_gridX * m_gridY quads, 6 vertices per quad)
-    glDrawElements(GL_TRIANGLES, (m_gridX * m_gridY *6)*6, GL_UNSIGNED_INT, nullptr);
+    glDrawElements(GL_TRIANGLES, ((m_gridX * m_gridY) * 6) * 6, GL_UNSIGNED_INT, nullptr);
 
     // No need to unbind every time
     //VertexArrayObject::Unbind();
@@ -252,27 +404,27 @@ void TerrainApplication::Cleanup()
     Application::Cleanup();
 }
 
-Vector3 GetColorFromHeight(float height)
+vec3 GetColorFromHeight(float height)
 {
     if (height > 0.3f)
     {
-        return Vector3(1.0f, 1.0f, 1.0f); // Snow
+        return vec3(1.0f, 1.0f, 1.0f); // Snow
     }
     else if (height > 0.1f)
     {
-        return Vector3(0.3f, 0.3f, 0.35f); // Rock
+        return vec3(0.3f, 0.3f, 0.35f); // Rock
     }
     else if (height > -0.05f)
     {
-        return Vector3(0.1f, 0.4f, 0.15f); // Grass
+        return vec3(0.1f, 0.4f, 0.15f); // Grass
     }
     else if (height > -0.1f)
     {
-        return Vector3(0.6f, 0.5f, 0.4f); // Sand
+        return vec3(0.6f, 0.5f, 0.4f); // Sand
     }
     else
     {
-        return Vector3(0.1f, 0.1f, 0.3f); // Water
+        return vec3(0.1f, 0.1f, 0.3f); // Water
     }
 }
 

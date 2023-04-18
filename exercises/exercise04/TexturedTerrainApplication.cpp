@@ -14,6 +14,8 @@
 #include <cmath>
 #include <iostream>
 #include <numbers>  // for PI constant
+using namespace glm;
+
 
 TexturedTerrainApplication::TexturedTerrainApplication()
     : Application(1024, 1024, "Textures demo")
@@ -273,34 +275,56 @@ void TexturedTerrainApplication::CreateTerrainMesh(Mesh& mesh, unsigned int grid
     unsigned int rowCount = gridY;
 
     // Iterate over each VERTEX
-    for (unsigned int h = 0; h < 3; ++h)
+    for (unsigned int u = 0; u < 6; u++)
     {
         for (unsigned int j = 0; j < rowCount; ++j)
         {
             for (unsigned int i = 0; i < columnCount; ++i)
             {
-                // Vertex data for this vertex only
-                switch (h)
+                Vertex& vertex = vertices.emplace_back();
+                float x = i * scale.x - 0.5f;
+                float y = j * scale.y - 0.5f;
+                float z = stb_perlin_fbm_noise3(x * 2, y * 2, 0.0f, 1.9f, 0.5f, 8) * 0.5f;
+                //float z = 0.0f;
+                switch (u)
                 {
-                case 1:
-                    glm::vec3 position(i * scale.x, 0.0f, j * scale.y);
-                    glm::vec3 normal(0.0f, 1.0f, 0.0f);
-                    glm::vec2 texCoord(i, j);
-                    vertices.emplace_back(position, normal, texCoord);
+                case 5:
+                    vertex.position = vec3(z - 0.5f, x, y);
+                    vertex.texCoord = vec2(static_cast<float>(i), static_cast<float>(j));
+                    vertex.normal = vec3(0.0f, 1.0f, 0.0f);
+                    break;
+                case 4:
+                    vertex.position = vec3(z + 0.5f, x, y);
+                    vertex.texCoord = vec2(static_cast<float>(i), static_cast<float>(j));
+                    vertex.normal = vec3(0.0f, 1.0f, 0.0f);
+                    break;
+                case 3:
+                    vertex.position = vec3(x, z + 0.5f, y);
+                    vertex.texCoord = vec2(static_cast<float>(i), static_cast<float>(j));
+                    vertex.normal = vec3(0.0f, 1.0f, 0.0f);
                     break;
                 case 2:
-                    glm::vec3 position1(i * scale.x, 3.0f, j * scale.y);
-                    glm::vec3 normal1(0.0f, 1.0f, 0.0f);
-                    glm::vec2 texCoord1(i, j);
-                    vertices.emplace_back(position1, normal1, texCoord1);
+                    vertex.position = vec3(x, z - 0.5f, y);
+                    vertex.texCoord = vec2(static_cast<float>(i), static_cast<float>(j));
+                    vertex.normal = vec3(0.0f, 1.0f, 0.0f);
                     break;
-
-                    
+                case 1:
+                    vertex.position = vec3(x, y, (z * -1) - 0.5f);
+                    vertex.texCoord = vec2(static_cast<float>(i), static_cast<float>(j));
+                    vertex.normal = vec3(0.0f, 1.0f, 0.0f);
+                    break;
+                case 0:
+                    vertex.position = vec3(x, y, z + 0.5f);
+                    vertex.texCoord = vec2(static_cast<float>(i), static_cast<float>(j));
+                    vertex.normal = vec3(0.0f, 0.0f, 1.0f);
+                    break;
                 }
+
                 // Index data for quad formed by previous vertices and current
                 if (i > 0 && j > 0)
                 {
-                    unsigned int top_right = j * columnCount + i; // Current vertex
+                    unsigned int offset = (((rowCount) * (columnCount))) * u;
+                    unsigned int top_right = (j * columnCount + i) + offset; // Current vertex
                     unsigned int top_left = top_right - 1;
                     unsigned int bottom_right = top_right - columnCount;
                     unsigned int bottom_left = bottom_right - 1;
@@ -317,8 +341,55 @@ void TexturedTerrainApplication::CreateTerrainMesh(Mesh& mesh, unsigned int grid
                 }
             }
         }
-        
     }
+
+
+    //for (unsigned int h = 0; h < 3; ++h)
+    //{
+    //    for (unsigned int j = 0; j < rowCount; ++j)
+    //    {
+    //        for (unsigned int i = 0; i < columnCount; ++i)
+    //        {
+    //            // Vertex data for this vertex only
+    //            switch (h)
+    //            {
+    //            case 1:
+    //                glm::vec3 position(i * scale.x, 0.0f, j * scale.y);
+    //                glm::vec3 normal(0.0f, 1.0f, 0.0f);
+    //                glm::vec2 texCoord(i, j);
+    //                vertices.emplace_back(position, normal, texCoord);
+    //                break;
+    //            case 2:
+    //                glm::vec3 position1(i * scale.x, 3.0f, j * scale.y);
+    //                glm::vec3 normal1(0.0f, 1.0f, 0.0f);
+    //                glm::vec2 texCoord1(i, j);
+    //                vertices.emplace_back(position1, normal1, texCoord1);
+    //                break;
+
+    //                
+    //            }
+    //            // Index data for quad formed by previous vertices and current
+    //            if (i > 0 && j > 0)
+    //            {
+    //                unsigned int top_right = j * columnCount + i; // Current vertex
+    //                unsigned int top_left = top_right - 1;
+    //                unsigned int bottom_right = top_right - columnCount;
+    //                unsigned int bottom_left = bottom_right - 1;
+
+    //                //Triangle 1
+    //                indices.push_back(bottom_left);
+    //                indices.push_back(bottom_right);
+    //                indices.push_back(top_left);
+
+    //                //Triangle 2
+    //                indices.push_back(bottom_right);
+    //                indices.push_back(top_left);
+    //                indices.push_back(top_right);
+    //            }
+    //        }
+    //    }
+    //    
+    //}
     mesh.AddSubmesh<Vertex, unsigned int, VertexFormat::LayoutIterator>(Drawcall::Primitive::Triangles, vertices, indices,
         vertexFormat.LayoutBegin(static_cast<int>(vertices.size()), true /* interleaved */), vertexFormat.LayoutEnd());
     

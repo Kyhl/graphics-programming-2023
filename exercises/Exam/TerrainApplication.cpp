@@ -39,7 +39,7 @@ vec3 GetColorFromHeight(float height);
 
 
 TerrainApplication::TerrainApplication()
-    : Application(1024, 1024, "Terrain demo"), m_gridX(256), m_gridY(256), m_shaderProgram(0)
+    : Application(1024, 1024, "Terrain demo"), m_gridX(5), m_gridY(5), m_shaderProgram(0)
 {
 }
 
@@ -62,9 +62,11 @@ void TerrainApplication::Initialize()
     // Number of columns and rows
     unsigned int columnCount = m_gridX + 1;
     unsigned int rowCount = m_gridY + 1;
-
+    float xSize = columnCount * scale.x;
+    float ySize = rowCount * scale.y;
+    float roundness = 4 * scale.y;
     // Iterate over each VERTEX
-    for (unsigned int u = 0; u < 6; u++)
+    for (unsigned int u = 0; u < 4; u++)
     {
         for (unsigned int j = 0; j < rowCount; ++j)
         {
@@ -78,47 +80,98 @@ void TerrainApplication::Initialize()
                 switch (u)
                 {
                 case 5:
+                    //Back
                     vertex.position = vec3(z - 0.5f, x, y);
                     vertex.texCoord = vec2(static_cast<float>(i), static_cast<float>(j));
-                    vertex.color = GetColorFromHeight(z);
                     vertex.normal = vec3(0.0f, 1.0f, 0.0f);
                     break;
                 case 4:
+                    //Front
                     vertex.position = vec3(z + 0.5f, x, y);
                     vertex.texCoord = vec2(static_cast<float>(i), static_cast<float>(j));
-                    vertex.color = GetColorFromHeight(z);
                     vertex.normal = vec3(0.0f, 1.0f, 0.0f);
                     break;
                 case 3:
-                    vertex.position = vec3(x, z + 0.5f, y);
+                    //Left
+                    vertex.position = vec3(x, z - 0.5f, y);
                     vertex.texCoord = vec2(static_cast<float>(i), static_cast<float>(j));
-                    vertex.color = GetColorFromHeight(z);
                     vertex.normal = vec3(0.0f, 1.0f, 0.0f);
+                    
                     break;
                 case 2:
-                    vertex.position = vec3(x, y, z - 0.5f);
+                    //Bottom
+                    vertex.position = vec3(1-x-1, 1-y-1, (z * -1) - 0.5f);
                     vertex.texCoord = vec2(static_cast<float>(i), static_cast<float>(j));
-                    vertex.color = GetColorFromHeight(z);
                     vertex.normal = vec3(0.0f, 1.0f, 0.0f);
                     break;
                 case 1:
-                    vertex.position = vec3(x, z - 0.5f, y);
+                    /*if(j>=columnCount-2)
+                    {
+                    }
+                    else
+                    {*/
+
+                    //Right
+                    vertex.position = vec3(x, z + 0.5f, 1-y-1);
                     vertex.texCoord = vec2(static_cast<float>(i), static_cast<float>(j));
-                    vertex.color = GetColorFromHeight(z);
                     vertex.normal = vec3(0.0f, 1.0f, 0.0f);
+                    //}
                     break;
                 case 0:
+                    
+                    /*if(j>=columnCount-2)
+                    {
+                    }
+                    else 
+                    {*/
+
+                    //Top
                     vertex.position = vec3(x, y, z + 0.5f);
                     vertex.texCoord = vec2(static_cast<float>(i), static_cast<float>(j));
-                    vertex.color = GetColorFromHeight(z);
                     vertex.normal = vec3(0.0f, 0.0f, 1.0f);
+                    //}
                     break;
                 }
+                //if (u > 0 && j==0)
+                //{
+                //    switch (u)
+                //    {
+                //    case 5:
+                //        break;
+                //    case 4:
+                //        break;
+                //    case 3:
+                //        break;
+                //    case 2:
+                //        break;
+                //    case 1:
+                //        
+                //        unsigned int top_right = (j * columnCount + i); // Current vertex
+                //        unsigned int top_left = (top_right - 1);
+                //        unsigned int bottom_right = (top_right - columnCount);
+                //        unsigned int bottom_left = (bottom_right - 1);
 
+                //        //Triangle 1
+                //        indices.push_back(bottom_left);
+                //        indices.push_back(bottom_right);
+                //        indices.push_back(top_left);
+
+                //        //Triangle 2
+                //        indices.push_back(bottom_right);
+                //        indices.push_back(top_left);
+                //        indices.push_back(top_right);
+                //        break;
+                //    }
+                //}
                 // Index data for quad formed by previous vertices and current
-                if (i > 0 && j > 0)
+                if (u == 0 && !(i > 0 && j > 0))
                 {
-                    unsigned int offset = (((rowCount) * (columnCount))) * u;
+
+                }
+                else
+                {
+                    
+                    unsigned int offset = (rowCount * columnCount) * u;
                     unsigned int top_right = (j * columnCount + i) + offset; // Current vertex
                     unsigned int top_left = (top_right - 1);
                     unsigned int bottom_right = (top_right - columnCount);
@@ -140,35 +193,38 @@ void TerrainApplication::Initialize()
 
     // Compute normals when we have the positions of all the vertices
     // Iterate AGAIN over each vertex
+    //for (unsigned int u = 0; u < 5; u++)
+    //{
+    //    for (unsigned int j = 0; j < rowCount; ++j)
+    //    {
+    //        for (unsigned int i = 0; i < columnCount; ++i)
+    //        {
+    //            // Get the vertex at (i, j)
+    //            unsigned int offset = (rowCount * columnCount) * u;
+    //            int index = j * columnCount + i+ offset;
+    //            Vertex& vertex = vertices[index];
 
-    for (unsigned int j = 0; j < (rowCount * 5) - 1; ++j)
-    {
-        for (unsigned int i = 0; i < (columnCount * 5) - 1; ++i)
-        {
-            // Get the vertex at (i, j)
-            int index = j * columnCount + i;
-            Vertex& vertex = vertices[index];
+    //            // Compute the delta in X
+    //            unsigned int prevX = i > 0 ? index - 1 : index;
+    //            unsigned int nextX = i < m_gridX ? index + 1 : index;
+    //            float deltaHeightX = vertices[nextX].position.z - vertices[prevX].position.z;
+    //            float deltaX = vertices[nextX].position.x - vertices[prevX].position.x;
+    //            float x = deltaHeightX / deltaX;
 
-            // Compute the delta in X
-            unsigned int prevX = i > 0 ? index - 1 : index;
-            unsigned int nextX = i < m_gridX ? index + 1 : index;
-            float deltaHeightX = vertices[nextX].position.z - vertices[prevX].position.z;
-            float deltaX = vertices[nextX].position.x - vertices[prevX].position.x;
-            float x = deltaHeightX / deltaX;
-
-            // Compute the delta in Y
-            int prevY = j > 0 ? index - columnCount : index;
-            int nextY = j < m_gridY ? index + columnCount : index;
-            float deltaHeightY = vertices[nextY].position.z - vertices[prevY].position.z;
-            float deltaY = vertices[nextY].position.y - vertices[prevY].position.y;
-            float y = deltaHeightY / deltaY;
+    //            // Compute the delta in Y
+    //            int prevY = j > 0 ? index - columnCount : index;
+    //            int nextY = j < m_gridY ? index + columnCount : index;
+    //            float deltaHeightY = vertices[nextY].position.z - vertices[prevY].position.z;
+    //            float deltaY = vertices[nextY].position.y - vertices[prevY].position.y;
+    //            float y = deltaHeightY / deltaY;
 
 
 
-            // Compute the normal
-            vertex.normal = glm::normalize(vec3(x, y, 1.0f));
-        }
-    }
+    //            // Compute the normal
+    //            vertex.normal = glm::normalize(vec3(x, y, 1.0f));
+    //        }
+    //    }
+    //}
         
 
     

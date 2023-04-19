@@ -39,7 +39,7 @@ vec3 GetColorFromHeight(float height);
 
 
 TerrainApplication::TerrainApplication()
-    : Application(1024, 1024, "Terrain demo"), m_gridX(5), m_gridY(5), m_shaderProgram(0)
+    : Application(1024, 1024, "Terrain demo"), m_gridX(8), m_gridY(8), m_shaderProgram(0)
 {
 }
 
@@ -64,9 +64,11 @@ void TerrainApplication::Initialize()
     unsigned int rowCount = m_gridY + 1;
     float xSize = columnCount * scale.x;
     float ySize = rowCount * scale.y;
-    float roundness = 4 * scale.y;
+    float roundness = 2 * scale.y;
+    float gridSize = m_gridX*scale.x;
+    float radius = 1.0f;
     // Iterate over each VERTEX
-    for (unsigned int u = 0; u < 4; u++)
+    for (unsigned int u = 0; u < 6; u++)
     {
         for (unsigned int j = 0; j < rowCount; ++j)
         {
@@ -164,18 +166,36 @@ void TerrainApplication::Initialize()
                 //    }
                 //}
                 // Index data for quad formed by previous vertices and current
-                if (u == 0 && !(i > 0 && j > 0))
-                {
+                //if (u == 0 && !(i > 0 && j > 0))
+                //{
 
-                }
-                else
+                //}
+                //else
+                //{
+                //    
+                //    unsigned int offset = (rowCount * columnCount) * u;
+                //    unsigned int top_right = (j * columnCount + i) + offset; // Current vertex
+                //    unsigned int top_left = (top_right - 1);
+                //    unsigned int bottom_right = (top_right - columnCount);
+                //    unsigned int bottom_left = (bottom_right - 1);
+
+                //    //Triangle 1
+                //    indices.push_back(bottom_left);
+                //    indices.push_back(bottom_right);
+                //    indices.push_back(top_left);
+
+                //    //Triangle 2
+                //    indices.push_back(bottom_right);
+                //    indices.push_back(top_left);
+                //    indices.push_back(top_right);
+                //}
+                if (i > 0 && j > 0)
                 {
-                    
-                    unsigned int offset = (rowCount * columnCount) * u;
+                    unsigned int offset = rowCount * columnCount * u;
                     unsigned int top_right = (j * columnCount + i) + offset; // Current vertex
-                    unsigned int top_left = (top_right - 1);
-                    unsigned int bottom_right = (top_right - columnCount);
-                    unsigned int bottom_left = (bottom_right - 1);
+                    unsigned int top_left = top_right - 1;
+                    unsigned int bottom_right = top_right - columnCount;
+                    unsigned int bottom_left = bottom_right - 1;
 
                     //Triangle 1
                     indices.push_back(bottom_left);
@@ -193,38 +213,62 @@ void TerrainApplication::Initialize()
 
     // Compute normals when we have the positions of all the vertices
     // Iterate AGAIN over each vertex
-    //for (unsigned int u = 0; u < 5; u++)
-    //{
-    //    for (unsigned int j = 0; j < rowCount; ++j)
-    //    {
-    //        for (unsigned int i = 0; i < columnCount; ++i)
-    //        {
-    //            // Get the vertex at (i, j)
-    //            unsigned int offset = (rowCount * columnCount) * u;
-    //            int index = j * columnCount + i+ offset;
-    //            Vertex& vertex = vertices[index];
+    for (unsigned int u = 0; u < 6; u++)
+    {
+        for (unsigned int j = 0; j < rowCount; ++j)
+        {
+            for (unsigned int i = 0; i < columnCount; ++i)
+            {
+                // Get the vertex at (i, j)
+                unsigned int offset = rowCount * columnCount * u;
+                int index = (j * columnCount + i)+ offset;
+                Vertex& vertex = vertices[index];
 
-    //            // Compute the delta in X
-    //            unsigned int prevX = i > 0 ? index - 1 : index;
-    //            unsigned int nextX = i < m_gridX ? index + 1 : index;
-    //            float deltaHeightX = vertices[nextX].position.z - vertices[prevX].position.z;
-    //            float deltaX = vertices[nextX].position.x - vertices[prevX].position.x;
-    //            float x = deltaHeightX / deltaX;
+                // Compute the delta in X
+                unsigned int prevX = i > 0 ? index - 1 : index;
+                unsigned int nextX = i < m_gridX ? index + 1 : index;
+                float deltaHeightX = vertices[nextX].position.z - vertices[prevX].position.z;
+                float deltaX = vertices[nextX].position.x - vertices[prevX].position.x;
+                float x = deltaHeightX / deltaX;
 
-    //            // Compute the delta in Y
-    //            int prevY = j > 0 ? index - columnCount : index;
-    //            int nextY = j < m_gridY ? index + columnCount : index;
-    //            float deltaHeightY = vertices[nextY].position.z - vertices[prevY].position.z;
-    //            float deltaY = vertices[nextY].position.y - vertices[prevY].position.y;
-    //            float y = deltaHeightY / deltaY;
+                // Compute the delta in Y
+                int prevY = j > 0 ? index - columnCount : index;
+                int nextY = j < m_gridY ? index + columnCount : index;
+                float deltaHeightY = vertices[nextY].position.z - vertices[prevY].position.z;
+                float deltaY = vertices[nextY].position.y - vertices[prevY].position.y;
+                float y = deltaHeightY / deltaY;
 
+                /*vec3 inner = vec3(vertex.position);
 
+                if (vertex.position.x < roundness) {
+                    inner.x = roundness;
+                }
+                else if (vertex.position.x > xSize - roundness) {
+                    inner.x = xSize - roundness;
+                }
+                if (vertex.position.y < roundness) {
+                    inner.y = roundness;
+                }
+                else if (vertex.position.y > ySize - roundness) {
+                    inner.y = ySize - roundness;
+                }
+                if (vertex.position.z < roundness) {
+                    inner.z = roundness;
+                }
+                else if (vertex.position.z > ySize - roundness) {
+                    inner.z = ySize - roundness;
+                }*/
+                // Compute the normal
+                vertex.normal = glm::normalize(vec3(x, y, 1.0f));
+                //vertex.normal = glm::normalize(vertex.position - inner);
+                //vertex.position = inner + vertex.normal * roundness;
 
-    //            // Compute the normal
-    //            vertex.normal = glm::normalize(vec3(x, y, 1.0f));
-    //        }
-    //    }
-    //}
+                /*vec3 inner = (vec3(vertex.position) * 2.0f) / gridSize - vec3(1.0f);
+                vertex.normal = glm::normalize(inner);
+                vertex.position = vertex.normal;*/
+            }
+        }
+    }
         
 
     

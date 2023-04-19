@@ -65,7 +65,7 @@ void TerrainApplication::Initialize()
     float xSize = columnCount * scale.x;
     float ySize = rowCount * scale.y;
     float roundness = 2 * scale.y;
-    float gridSize = m_gridX*scale.x;
+    float gridSize = 1*scale.x;
     float radius = 1.0f;
     // Iterate over each VERTEX
     for (unsigned int u = 0; u < 6; u++)
@@ -225,18 +225,18 @@ void TerrainApplication::Initialize()
                 Vertex& vertex = vertices[index];
 
                 // Compute the delta in X
-                unsigned int prevX = i > 0 ? index - 1 : index;
-                unsigned int nextX = i < m_gridX ? index + 1 : index;
-                float deltaHeightX = vertices[nextX].position.z - vertices[prevX].position.z;
-                float deltaX = vertices[nextX].position.x - vertices[prevX].position.x;
-                float x = deltaHeightX / deltaX;
+                //unsigned int prevX = i > 0 ? index - 1 : index;
+                //unsigned int nextX = i < m_gridX ? index + 1 : index;
+                //float deltaHeightX = vertices[nextX].position.z - vertices[prevX].position.z;
+                //float deltaX = vertices[nextX].position.x - vertices[prevX].position.x;
+                //float x = deltaHeightX / deltaX;
 
-                // Compute the delta in Y
-                int prevY = j > 0 ? index - columnCount : index;
-                int nextY = j < m_gridY ? index + columnCount : index;
-                float deltaHeightY = vertices[nextY].position.z - vertices[prevY].position.z;
-                float deltaY = vertices[nextY].position.y - vertices[prevY].position.y;
-                float y = deltaHeightY / deltaY;
+                //// Compute the delta in Y
+                //int prevY = j > 0 ? index - columnCount : index;
+                //int nextY = j < m_gridY ? index + columnCount : index;
+                //float deltaHeightY = vertices[nextY].position.z - vertices[prevY].position.z;
+                //float deltaY = vertices[nextY].position.y - vertices[prevY].position.y;
+                //float y = deltaHeightY / deltaY;
 
                 /*vec3 inner = vec3(vertex.position);
 
@@ -259,13 +259,13 @@ void TerrainApplication::Initialize()
                     inner.z = ySize - roundness;
                 }*/
                 // Compute the normal
-                vertex.normal = glm::normalize(vec3(x, y, 1.0f));
+                //vertex.normal = glm::normalize(vec3(x, y, 1.0f));
                 //vertex.normal = glm::normalize(vertex.position - inner);
                 //vertex.position = inner + vertex.normal * roundness;
 
-                /*vec3 inner = (vec3(vertex.position) * 2.0f) / gridSize - vec3(1.0f);
+                vec3 inner = (vec3(vertex.position) * 2.0f) / scale.x - vec3(1.0f);
                 vertex.normal = glm::normalize(inner);
-                vertex.position = vertex.normal;*/
+                vertex.position = vertex.normal;
             }
         }
     }

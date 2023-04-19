@@ -29,7 +29,7 @@ private:
     void UpdateOutputMode();
 
 private:
-    unsigned int m_gridX, m_gridY;
+    unsigned int m_grid;
     unsigned int m_shaderProgram;
     Camera m_camera;
     VertexBufferObject m_vbo;

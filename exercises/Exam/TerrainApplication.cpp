@@ -39,7 +39,7 @@ vec3 GetColorFromHeight(float height);
 
 
 TerrainApplication::TerrainApplication()
-    : Application(1024, 1024, "Terrain demo"), m_gridX(8), m_gridY(8), m_shaderProgram(0)
+    : Application(1024, 1024, "Terrain demo"), m_grid(8), m_shaderProgram(0)
 {
 }
 
@@ -57,16 +57,12 @@ void TerrainApplication::Initialize()
     std::vector<unsigned int> indices;
 
     // Grid scale to convert the entire grid to size 1x1
-    vec2 scale(1.0f / m_gridX, 1.0f / m_gridY);
+    float scale = 1.0f / m_grid;
 
     // Number of columns and rows
-    unsigned int columnCount = m_gridX + 1;
-    unsigned int rowCount = m_gridY + 1;
-    float xSize = columnCount * scale.x;
-    float ySize = rowCount * scale.y;
-    float roundness = 2 * scale.y;
-    float gridSize = 1*scale.x;
-    float radius = 1.0f;
+    unsigned int columnCount = m_grid + 1;
+    unsigned int rowCount = m_grid + 1;
+    float gridSize = 1*scale;
     // Iterate over each VERTEX
     for (unsigned int u = 0; u < 6; u++)
     {
@@ -75,8 +71,8 @@ void TerrainApplication::Initialize()
             for (unsigned int i = 0; i < columnCount; ++i)
             {
                 Vertex& vertex = vertices.emplace_back();
-                float x = i * scale.x - 0.5f;
-                float y = j * scale.y - 0.5f;
+                float x = i * scale - 0.5f;
+                float y = j * scale - 0.5f;
                 //float z = stb_perlin_fbm_noise3(x * 2, y * 2, 0.0f, 1.9f, 0.5f, 8) * 0.5f;
                 float z = 0.0f;
                 switch (u)
@@ -97,8 +93,7 @@ void TerrainApplication::Initialize()
                     //Left
                     vertex.position = vec3(x, z - 0.5f, y);
                     vertex.texCoord = vec2(static_cast<float>(i), static_cast<float>(j));
-                    vertex.normal = vec3(0.0f, 1.0f, 0.0f);
-                    
+                    vertex.normal = vec3(0.0f, 1.0f, 0.0f); 
                     break;
                 case 2:
                     //Bottom
@@ -107,12 +102,6 @@ void TerrainApplication::Initialize()
                     vertex.normal = vec3(0.0f, 1.0f, 0.0f);
                     break;
                 case 1:
-                    /*if(j>=columnCount-2)
-                    {
-                    }
-                    else
-                    {*/
-
                     //Right
                     vertex.position = vec3(x, z + 0.5f, 1-y-1);
                     vertex.texCoord = vec2(static_cast<float>(i), static_cast<float>(j));
@@ -120,75 +109,13 @@ void TerrainApplication::Initialize()
                     //}
                     break;
                 case 0:
-                    
-                    /*if(j>=columnCount-2)
-                    {
-                    }
-                    else 
-                    {*/
-
                     //Top
                     vertex.position = vec3(x, y, z + 0.5f);
                     vertex.texCoord = vec2(static_cast<float>(i), static_cast<float>(j));
                     vertex.normal = vec3(0.0f, 0.0f, 1.0f);
-                    //}
                     break;
                 }
-                //if (u > 0 && j==0)
-                //{
-                //    switch (u)
-                //    {
-                //    case 5:
-                //        break;
-                //    case 4:
-                //        break;
-                //    case 3:
-                //        break;
-                //    case 2:
-                //        break;
-                //    case 1:
-                //        
-                //        unsigned int top_right = (j * columnCount + i); // Current vertex
-                //        unsigned int top_left = (top_right - 1);
-                //        unsigned int bottom_right = (top_right - columnCount);
-                //        unsigned int bottom_left = (bottom_right - 1);
 
-                //        //Triangle 1
-                //        indices.push_back(bottom_left);
-                //        indices.push_back(bottom_right);
-                //        indices.push_back(top_left);
-
-                //        //Triangle 2
-                //        indices.push_back(bottom_right);
-                //        indices.push_back(top_left);
-                //        indices.push_back(top_right);
-                //        break;
-                //    }
-                //}
-                // Index data for quad formed by previous vertices and current
-                //if (u == 0 && !(i > 0 && j > 0))
-                //{
-
-                //}
-                //else
-                //{
-                //    
-                //    unsigned int offset = (rowCount * columnCount) * u;
-                //    unsigned int top_right = (j * columnCount + i) + offset; // Current vertex
-                //    unsigned int top_left = (top_right - 1);
-                //    unsigned int bottom_right = (top_right - columnCount);
-                //    unsigned int bottom_left = (bottom_right - 1);
-
-                //    //Triangle 1
-                //    indices.push_back(bottom_left);
-                //    indices.push_back(bottom_right);
-                //    indices.push_back(top_left);
-
-                //    //Triangle 2
-                //    indices.push_back(bottom_right);
-                //    indices.push_back(top_left);
-                //    indices.push_back(top_right);
-                //}
                 if (i > 0 && j > 0)
                 {
                     unsigned int offset = rowCount * columnCount * u;
@@ -224,46 +151,7 @@ void TerrainApplication::Initialize()
                 int index = (j * columnCount + i)+ offset;
                 Vertex& vertex = vertices[index];
 
-                // Compute the delta in X
-                //unsigned int prevX = i > 0 ? index - 1 : index;
-                //unsigned int nextX = i < m_gridX ? index + 1 : index;
-                //float deltaHeightX = vertices[nextX].position.z - vertices[prevX].position.z;
-                //float deltaX = vertices[nextX].position.x - vertices[prevX].position.x;
-                //float x = deltaHeightX / deltaX;
-
-                //// Compute the delta in Y
-                //int prevY = j > 0 ? index - columnCount : index;
-                //int nextY = j < m_gridY ? index + columnCount : index;
-                //float deltaHeightY = vertices[nextY].position.z - vertices[prevY].position.z;
-                //float deltaY = vertices[nextY].position.y - vertices[prevY].position.y;
-                //float y = deltaHeightY / deltaY;
-
-                /*vec3 inner = vec3(vertex.position);
-
-                if (vertex.position.x < roundness) {
-                    inner.x = roundness;
-                }
-                else if (vertex.position.x > xSize - roundness) {
-                    inner.x = xSize - roundness;
-                }
-                if (vertex.position.y < roundness) {
-                    inner.y = roundness;
-                }
-                else if (vertex.position.y > ySize - roundness) {
-                    inner.y = ySize - roundness;
-                }
-                if (vertex.position.z < roundness) {
-                    inner.z = roundness;
-                }
-                else if (vertex.position.z > ySize - roundness) {
-                    inner.z = ySize - roundness;
-                }*/
-                // Compute the normal
-                //vertex.normal = glm::normalize(vec3(x, y, 1.0f));
-                //vertex.normal = glm::normalize(vertex.position - inner);
-                //vertex.position = inner + vertex.normal * roundness;
-
-                vec3 inner = (vec3(vertex.position) * 2.0f) / scale.x - vec3(1.0f);
+                vec3 inner = (vec3(vertex.position) * 2.0f) / scale - vec3(1.0f);
                 vertex.normal = glm::normalize(inner);
                 vertex.position = vertex.normal;
             }
@@ -345,7 +233,7 @@ void TerrainApplication::Render()
     m_vao.Bind();
 
     // Draw the grid (m_gridX * m_gridY quads, 6 vertices per quad)
-    glDrawElements(GL_TRIANGLES, ((m_gridX * m_gridY)* 6) * 6, GL_UNSIGNED_INT, nullptr);
+    glDrawElements(GL_TRIANGLES, ((m_grid * m_grid)* 6) * 6, GL_UNSIGNED_INT, nullptr);
 
     // No need to unbind every time
     //VertexArrayObject::Unbind();

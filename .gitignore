@@ -6,3 +6,6 @@ exercises/exercise06/UserSettings
 *.db
 Bin/.vs/ITU-graphics-programming/v16/.suo
 *.log
+*.opendb
+*.db-shm
+/bin/.vs/ITU-graphics-programming/

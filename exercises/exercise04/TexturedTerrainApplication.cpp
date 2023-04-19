@@ -19,7 +19,7 @@ using namespace glm;
 
 TexturedTerrainApplication::TexturedTerrainApplication()
     : Application(1024, 1024, "Textures demo")
-    , m_gridX(128), m_gridY(128)
+    , m_grid(128)
     , m_vertexShaderLoader(Shader::Type::VertexShader)
     , m_fragmentShaderLoader(Shader::Type::FragmentShader)
 {
@@ -90,10 +90,10 @@ void TexturedTerrainApplication::InitializeTextures()
     m_rockTexture = LoadTexture("textures/rock.jpg");
     m_snowTexture = LoadTexture("textures/snow.jpg");
 
-    m_heightmapTexture00 = CreateHeightMap(m_gridX, m_gridY, glm::ivec2(0, 0));
-    m_heightmapTexture10 = CreateHeightMap(m_gridX, m_gridY, glm::ivec2(-1, 0));
-    m_heightmapTexture01 = CreateHeightMap(m_gridX, m_gridY, glm::ivec2(0, -1));
-    m_heightmapTexture11 = CreateHeightMap(m_gridX, m_gridY, glm::ivec2(-1, -1));
+    m_heightmapTexture00 = CreateHeightMap(m_grid, m_grid, glm::ivec2(0, 0));
+    m_heightmapTexture10 = CreateHeightMap(m_grid, m_grid, glm::ivec2(-1, 0));
+    m_heightmapTexture01 = CreateHeightMap(m_grid, m_grid, glm::ivec2(0, -1));
+    m_heightmapTexture11 = CreateHeightMap(m_grid, m_grid, glm::ivec2(-1, -1));
 
     // Load water texture here
     m_waterTexture = LoadTexture("textures/water.png");
@@ -156,7 +156,7 @@ void TexturedTerrainApplication::InitializeMaterials()
 
 void TexturedTerrainApplication::InitializeMeshes()
 {
-    CreateTerrainMesh(m_terrainPatch, m_gridX, m_gridY);
+    CreateTerrainMesh(m_terrainPatch, m_grid);
 }
 
 std::shared_ptr<Texture2DObject> TexturedTerrainApplication::CreateDefaultTexture()
@@ -242,7 +242,7 @@ void TexturedTerrainApplication::DrawObject(const Mesh& mesh, Material& material
     mesh.DrawSubmesh(0);
 }
 
-void TexturedTerrainApplication::CreateTerrainMesh(Mesh& mesh, unsigned int gridX, unsigned int gridY)
+void TexturedTerrainApplication::CreateTerrainMesh(Mesh& mesh, unsigned int grid)
 {
     // Define the vertex structure
     struct Vertex
@@ -268,11 +268,11 @@ void TexturedTerrainApplication::CreateTerrainMesh(Mesh& mesh, unsigned int grid
     std::vector<unsigned int> indices;
 
     // Grid scale to convert the entire grid to size 1x1
-    glm::vec2 scale(1.0f / (gridX - 1), 1.0f / (gridY - 1));
+    float scale = 1.0f / (grid - 1);
 
     // Number of columns and rows
-    unsigned int columnCount = gridX;
-    unsigned int rowCount = gridY;
+    unsigned int columnCount = grid;
+    unsigned int rowCount = grid;
 
     // Iterate over each VERTEX
     for (unsigned int u = 0; u < 6; u++)
@@ -282,48 +282,64 @@ void TexturedTerrainApplication::CreateTerrainMesh(Mesh& mesh, unsigned int grid
             for (unsigned int i = 0; i < columnCount; ++i)
             {
                 Vertex& vertex = vertices.emplace_back();
-                float x = i * scale.x - 0.5f;
-                float y = j * scale.y - 0.5f;
-                float z = stb_perlin_fbm_noise3(x * 2, y * 2, 0.0f, 1.9f, 0.5f, 8) * 0.5f;
-                //float z = 0.0f;
+                float x = i * scale - 0.5f;
+                float y = j * scale - 0.5f;
+                //float z = stb_perlin_fbm_noise3(x * 2, y * 2, 0.0f, 1.9f, 0.5f, 8) * 0.5f;
+                float z = 0.0f;
                 switch (u)
                 {
                 case 5:
-                    vertex.position = vec3(z - 0.5f, x, y);
+                    //Back
+                    //vertex.position = vec3(z - 0.5f, x, y);
                     vertex.texCoord = vec2(static_cast<float>(i), static_cast<float>(j));
-                    vertex.normal = vec3(0.0f, 1.0f, 0.0f);
+                    //vertex.color = GetColorFromHeight(z);
+                    vertex.normal = glm::normalize((vec3(z - 0.5f, x, y) * 2.0f) / scale - vec3(1.0f)) * 0.5f;
+                    vertex.position = vertex.normal;
                     break;
                 case 4:
-                    vertex.position = vec3(z + 0.5f, x, y);
+                    //Front
+                    //vertex.position = vec3(z + 0.5f, x, y);
                     vertex.texCoord = vec2(static_cast<float>(i), static_cast<float>(j));
-                    vertex.normal = vec3(0.0f, 1.0f, 0.0f);
+                    //vertex.color = GetColorFromHeight(z);
+                    vertex.normal = glm::normalize((vec3(z + 0.5f, x, y) * 2.0f) / scale - vec3(1.0f)) * 0.5f;
+                    vertex.position = vertex.normal;
                     break;
                 case 3:
-                    vertex.position = vec3(x, z + 0.5f, y);
+                    //Left
+                    //vertex.position = vec3(x, z - 0.5f, y);
                     vertex.texCoord = vec2(static_cast<float>(i), static_cast<float>(j));
-                    vertex.normal = vec3(0.0f, 1.0f, 0.0f);
+                   // vertex.color = GetColorFromHeight(z);
+                    vertex.normal = glm::normalize((vec3(x, z - 0.5f, y) * 2.0f) / scale - vec3(1.0f)) * 0.5f;
+                    vertex.position = vertex.normal;
                     break;
                 case 2:
-                    vertex.position = vec3(x, z - 0.5f, y);
+                    //Bottom
+                    //vertex.position = vec3(1-x-1, 1-y-1, (z * -1) - 0.5f);
                     vertex.texCoord = vec2(static_cast<float>(i), static_cast<float>(j));
-                    vertex.normal = vec3(0.0f, 1.0f, 0.0f);
+                    //vertex.color = GetColorFromHeight(z);
+                    vertex.normal = glm::normalize((vec3(x, y, (z * -1) - 0.5f) * 2.0f) / scale - vec3(1.0f)) * 0.5f;
+                    vertex.position = vertex.normal;
                     break;
                 case 1:
-                    vertex.position = vec3(x, y, (z * -1) - 0.5f);
+                    //Right
                     vertex.texCoord = vec2(static_cast<float>(i), static_cast<float>(j));
-                    vertex.normal = vec3(0.0f, 1.0f, 0.0f);
+                    //vertex.color = GetColorFromHeight(z);
+                    vertex.normal = glm::normalize((vec3(x, z + 0.5f, y) * 2.0f) / scale - vec3(1.0f)) * 0.5f;
+                    vertex.position = vertex.normal;
+                    //}
                     break;
                 case 0:
-                    vertex.position = vec3(x, y, z + 0.5f);
+                    //Top
                     vertex.texCoord = vec2(static_cast<float>(i), static_cast<float>(j));
-                    vertex.normal = vec3(0.0f, 0.0f, 1.0f);
+                    //vertex.color = GetColorFromHeight(z);
+                    vertex.normal = glm::normalize((vec3(x, y, z + 0.5f) * 2.0f) / scale - vec3(1.0f)) * 0.5f;
+                    vertex.position = vertex.normal;
                     break;
                 }
 
-                // Index data for quad formed by previous vertices and current
                 if (i > 0 && j > 0)
                 {
-                    unsigned int offset = (((rowCount) * (columnCount))) * u;
+                    unsigned int offset = rowCount * columnCount * u;
                     unsigned int top_right = (j * columnCount + i) + offset; // Current vertex
                     unsigned int top_left = top_right - 1;
                     unsigned int bottom_right = top_right - columnCount;

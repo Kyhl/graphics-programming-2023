@@ -79,40 +79,50 @@ void TerrainApplication::Initialize()
                 {
                 case 5:
                     //Back
-                    vertex.position = vec3(z - 0.5f, x, y);
+                    //vertex.position = vec3(z - 0.5f, x, y);
                     vertex.texCoord = vec2(static_cast<float>(i), static_cast<float>(j));
-                    vertex.normal = vec3(0.0f, 1.0f, 0.0f);
+                    vertex.color = GetColorFromHeight(z);
+                    vertex.normal = glm::normalize((vec3(z - 0.5f, x, y) * 2.0f) / scale - vec3(1.0f)) * 0.5f;
+                    vertex.position = vertex.normal;
                     break;
                 case 4:
                     //Front
-                    vertex.position = vec3(z + 0.5f, x, y);
+                    //vertex.position = vec3(z + 0.5f, x, y);
                     vertex.texCoord = vec2(static_cast<float>(i), static_cast<float>(j));
-                    vertex.normal = vec3(0.0f, 1.0f, 0.0f);
+                    vertex.color = GetColorFromHeight(z);
+                    vertex.normal = glm::normalize((vec3(z + 0.5f, x, y) * 2.0f) / scale - vec3(1.0f)) * 0.5f;
+                    vertex.position = vertex.normal;
                     break;
                 case 3:
                     //Left
-                    vertex.position = vec3(x, z - 0.5f, y);
+                    //vertex.position = vec3(x, z - 0.5f, y);
                     vertex.texCoord = vec2(static_cast<float>(i), static_cast<float>(j));
-                    vertex.normal = vec3(0.0f, 1.0f, 0.0f); 
+                    vertex.color = GetColorFromHeight(z);
+                    vertex.normal = glm::normalize((vec3(x, z - 0.5f, y) * 2.0f) / scale - vec3(1.0f)) * 0.5f;
+                    vertex.position = vertex.normal;
                     break;
                 case 2:
                     //Bottom
-                    vertex.position = vec3(1-x-1, 1-y-1, (z * -1) - 0.5f);
+                    //vertex.position = vec3(1-x-1, 1-y-1, (z * -1) - 0.5f);
                     vertex.texCoord = vec2(static_cast<float>(i), static_cast<float>(j));
-                    vertex.normal = vec3(0.0f, 1.0f, 0.0f);
+                    vertex.color = GetColorFromHeight(z);
+                    vertex.normal = glm::normalize((vec3(x,  y, (z * -1) - 0.5f) * 2.0f) / scale - vec3(1.0f)) * 0.5f;
+                    vertex.position = vertex.normal;
                     break;
                 case 1:
                     //Right
-                    vertex.position = vec3(x, z + 0.5f, 1-y-1);
                     vertex.texCoord = vec2(static_cast<float>(i), static_cast<float>(j));
-                    vertex.normal = vec3(0.0f, 1.0f, 0.0f);
+                    vertex.color = GetColorFromHeight(z);
+                    vertex.normal = glm::normalize((vec3(x, z + 0.5f, y) * 2.0f) / scale - vec3(1.0f)) * 0.5f;
+                    vertex.position = vertex.normal;
                     //}
                     break;
                 case 0:
                     //Top
-                    vertex.position = vec3(x, y, z + 0.5f);
                     vertex.texCoord = vec2(static_cast<float>(i), static_cast<float>(j));
-                    vertex.normal = vec3(0.0f, 0.0f, 1.0f);
+                    vertex.color = GetColorFromHeight(z);
+                    vertex.normal = glm::normalize((vec3(x, y, z + 0.5f) * 2.0f) / scale - vec3(1.0f)) * 0.5f;
+                    vertex.position = vertex.normal;
                     break;
                 }
 
@@ -140,23 +150,23 @@ void TerrainApplication::Initialize()
 
     // Compute normals when we have the positions of all the vertices
     // Iterate AGAIN over each vertex
-    for (unsigned int u = 0; u < 6; u++)
-    {
-        for (unsigned int j = 0; j < rowCount; ++j)
-        {
-            for (unsigned int i = 0; i < columnCount; ++i)
-            {
-                // Get the vertex at (i, j)
-                unsigned int offset = rowCount * columnCount * u;
-                int index = (j * columnCount + i)+ offset;
-                Vertex& vertex = vertices[index];
+    //for (unsigned int u = 0; u < 6; u++)
+    //{
+    //    for (unsigned int j = 0; j < rowCount; ++j)
+    //    {
+    //        for (unsigned int i = 0; i < columnCount; ++i)
+    //        {
+    //            // Get the vertex at (i, j)
+    //            unsigned int offset = rowCount * columnCount * u;
+    //            int index = (j * columnCount + i)+ offset;
+    //            Vertex& vertex = vertices[index];
 
-                vec3 inner = (vec3(vertex.position) * 2.0f) / scale - vec3(1.0f);
-                vertex.normal = glm::normalize(inner);
-                vertex.position = vertex.normal;
-            }
-        }
-    }
+    //            vec3 inner = (vec3(vertex.position) * 2.0f) / scale - vec3(1.0f);
+    //            vertex.normal = glm::normalize(inner) * 0.5f;
+    //            vertex.position = vertex.normal ;
+    //        }
+    //    }
+    //}
         
 
     

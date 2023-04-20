@@ -39,7 +39,7 @@ vec3 GetColorFromHeight(float height);
 
 
 TerrainApplication::TerrainApplication()
-    : Application(1024, 1024, "Terrain demo"), m_grid(8), m_shaderProgram(0)
+    : Application(1024, 1024, "Terrain demo"), m_grid(80), m_shaderProgram(0)
 {
 }
 
@@ -62,7 +62,8 @@ void TerrainApplication::Initialize()
     // Number of columns and rows
     unsigned int columnCount = m_grid + 1;
     unsigned int rowCount = m_grid + 1;
-    float gridSize = 1*scale;
+    float gridSize = 1.0f*scale;
+    float maxHeight = 0.15f;
     // Iterate over each VERTEX
     for (unsigned int u = 0; u < 6; u++)
     {
@@ -73,56 +74,63 @@ void TerrainApplication::Initialize()
                 Vertex& vertex = vertices.emplace_back();
                 float x = i * scale - 0.5f;
                 float y = j * scale - 0.5f;
-                //float z = stb_perlin_fbm_noise3(x * 2, y * 2, 0.0f, 1.9f, 0.5f, 8) * 0.5f;
+                float noise;
                 float z = 0.0f;
                 switch (u)
                 {
                 case 5:
                     //Back
-                    //vertex.position = vec3(z - 0.5f, x, y);
                     vertex.texCoord = vec2(static_cast<float>(i), static_cast<float>(j));
-                    vertex.color = GetColorFromHeight(z);
-                    vertex.normal = glm::normalize((vec3(z - 0.5f, x, y) * 2.0f) / scale - vec3(1.0f)) * 0.5f;
-                    vertex.position = vertex.normal;
+                    vertex.normal = vec3(1.0f, 0.0f, 0.0f);
+                    vertex.position = glm::normalize((vec3(z - 0.5f, x, y) * 2.0f) / scale - vec3(1.0f))*0.5f;
+                    noise = stb_perlin_fbm_noise3(vertex.position.x * 2.0f, vertex.position.y * 2.0f, vertex.position.z*2.0f, 1.9f, 0.5f, 8);
+                    vertex.color = GetColorFromHeight(noise);
+                    vertex.position += vertex.position*2.0f*noise*maxHeight;
                     break;
                 case 4:
                     //Front
-                    //vertex.position = vec3(z + 0.5f, x, y);
                     vertex.texCoord = vec2(static_cast<float>(i), static_cast<float>(j));
-                    vertex.color = GetColorFromHeight(z);
-                    vertex.normal = glm::normalize((vec3(z + 0.5f, x, y) * 2.0f) / scale - vec3(1.0f)) * 0.5f;
-                    vertex.position = vertex.normal;
+                    vertex.normal = vec3(1.0f, 0.0f, 0.0f);
+                    vertex.position = glm::normalize((vec3(z + 0.5f, x, y) * 2.0f) / scale - vec3(1.0f)) * 0.5f;
+                    noise = stb_perlin_fbm_noise3(vertex.position.x * 2.0f, vertex.position.y * 2.0f, vertex.position.z * 2.0f, 1.9f, 0.5f, 8);
+                    vertex.color = GetColorFromHeight(noise);
+                    vertex.position += vertex.position * 2.0f * noise * maxHeight;
                     break;
                 case 3:
                     //Left
-                    //vertex.position = vec3(x, z - 0.5f, y);
                     vertex.texCoord = vec2(static_cast<float>(i), static_cast<float>(j));
-                    vertex.color = GetColorFromHeight(z);
-                    vertex.normal = glm::normalize((vec3(x, z - 0.5f, y) * 2.0f) / scale - vec3(1.0f)) * 0.5f;
-                    vertex.position = vertex.normal;
+                    vertex.normal = vec3(0.0f, 1.0f, 0.0f);
+                    vertex.position = glm::normalize((vec3(x, z - 0.5f, y) * 2.0f) / scale - vec3(1.0f)) * 0.5f;
+                    noise = stb_perlin_fbm_noise3(vertex.position.x * 2.0f, vertex.position.y * 2.0f, vertex.position.z * 2.0f, 1.9f, 0.5f, 8);
+                    vertex.color = GetColorFromHeight(noise);
+                    vertex.position += vertex.position * 2.0f * noise * maxHeight;
                     break;
                 case 2:
                     //Bottom
-                    //vertex.position = vec3(1-x-1, 1-y-1, (z * -1) - 0.5f);
                     vertex.texCoord = vec2(static_cast<float>(i), static_cast<float>(j));
-                    vertex.color = GetColorFromHeight(z);
-                    vertex.normal = glm::normalize((vec3(x,  y, (z * -1) - 0.5f) * 2.0f) / scale - vec3(1.0f)) * 0.5f;
-                    vertex.position = vertex.normal;
+                    vertex.normal = vec3(0.0f, 0.0f, 1.0f);
+                    vertex.position = glm::normalize((vec3(x, y, (z * -1) - 0.5f) * 2.0f) / scale - vec3(1.0f)) * 0.5f;
+                    noise = stb_perlin_fbm_noise3(vertex.position.x * 2.0f, vertex.position.y * 2.0f, vertex.position.z * 2.0f, 1.9f, 0.5f, 8);
+                    vertex.color = GetColorFromHeight(noise);
+                    vertex.position += vertex.position * 2.0f * noise * maxHeight;
                     break;
                 case 1:
                     //Right
                     vertex.texCoord = vec2(static_cast<float>(i), static_cast<float>(j));
-                    vertex.color = GetColorFromHeight(z);
-                    vertex.normal = glm::normalize((vec3(x, z + 0.5f, y) * 2.0f) / scale - vec3(1.0f)) * 0.5f;
-                    vertex.position = vertex.normal;
-                    //}
+                    vertex.normal = vec3(0.0f, 1.0f, 0.0f);
+                    vertex.position = glm::normalize((vec3(x, z + 0.5f, y) * 2.0f) / scale - vec3(1.0f)) * 0.5f;
+                    noise = stb_perlin_fbm_noise3(vertex.position.x * 2.0f, vertex.position.y * 2.0f, vertex.position.z * 2.0f, 1.9f, 0.5f, 8);
+                    vertex.color = GetColorFromHeight(noise);
+                    vertex.position += vertex.position * 2.0f * noise * maxHeight;
                     break;
                 case 0:
                     //Top
                     vertex.texCoord = vec2(static_cast<float>(i), static_cast<float>(j));
-                    vertex.color = GetColorFromHeight(z);
-                    vertex.normal = glm::normalize((vec3(x, y, z + 0.5f) * 2.0f) / scale - vec3(1.0f)) * 0.5f;
-                    vertex.position = vertex.normal;
+                    vertex.normal = vec3(0.0f, 0.0f, 1.0f);
+                    vertex.position = glm::normalize((vec3(x, y, z + 0.5f) * 2.0f) / scale - vec3(1.0f)) * 0.5f;
+                    noise = stb_perlin_fbm_noise3(vertex.position.x * 2.0f, vertex.position.y * 2.0f, vertex.position.z * 2.0f, 1.9f, 0.5f, 8);
+                    vertex.color = GetColorFromHeight(noise);
+                    vertex.position += vertex.position * 2.0f * noise * maxHeight;
                     break;
                 }
 
@@ -147,7 +155,64 @@ void TerrainApplication::Initialize()
             }
         }
     }
+    for (unsigned int u = 0; u < 6; u++)
+    {
+        for (unsigned int j = 0; j < rowCount; ++j)
+        {
+            for (unsigned int i = 0; i < columnCount; ++i)
+            {
+                // Get the vertex at (i, j)
+                unsigned int offset = (rowCount * columnCount) * u;
+                int index = j * columnCount + i + offset;
+                Vertex& vertex = vertices[index];
 
+                // Compute the delta in X
+                unsigned int prevX = i > 0 ? index - 1 : index;
+                unsigned int nextX = i < m_grid ? index + 1 : index;
+                float deltaHeightX = vertices[nextX].position.z - vertices[prevX].position.z;
+                float deltaX = vertices[nextX].position.x - vertices[prevX].position.x;
+                float x = deltaHeightX / deltaX;
+
+                // Compute the delta in Y
+                int prevY = j > 0 ? index - columnCount : index;
+                int nextY = j < m_grid ? index + columnCount : index;
+                float deltaHeightY = vertices[nextY].position.z - vertices[prevY].position.z;
+                float deltaY = vertices[nextY].position.y - vertices[prevY].position.y;
+                float y = deltaHeightY / deltaY;
+
+                switch (u)
+                {
+                case 5:
+                    //Back
+                    vertex.normal = glm::normalize(vec3(1.0f, x, y));
+                    break;
+                case 4:
+                    //Front
+                    vertex.normal = glm::normalize(vec3(1.0f, x, y));
+                    break;
+                case 3:
+                    //Left
+                    vertex.normal = glm::normalize(vec3(x, 1.0f, y));
+                    break;
+                case 2:
+                    //Bottom
+                    vertex.normal = glm::normalize(vec3(x, y, 1.0f));
+                    break;
+                case 1:
+                    //Right
+                    vertex.normal = glm::normalize(vec3(x, 1.0f, y));
+                    break;
+                case 0:
+                    //Top
+                    vertex.normal = glm::normalize(vec3(x, y, 1.0f));
+                    break;
+                }
+
+                // Compute the normal
+               
+            }
+        }
+    }
     // Compute normals when we have the positions of all the vertices
     // Iterate AGAIN over each vertex
     //for (unsigned int u = 0; u < 6; u++)

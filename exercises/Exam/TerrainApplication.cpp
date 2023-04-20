@@ -39,7 +39,7 @@ vec3 GetColorFromHeight(float height);
 
 
 TerrainApplication::TerrainApplication()
-    : Application(1024, 1024, "Terrain demo"), m_grid(256), m_shaderProgram(0)
+    : Application(1024, 1024, "Terrain demo"), m_grid(1024), m_shaderProgram(0)
 {
 }
 
@@ -63,7 +63,7 @@ void TerrainApplication::Initialize()
     unsigned int columnCount = m_grid + 1;
     unsigned int rowCount = m_grid + 1;
     float gridSize = 1.0f*scale;
-    float maxHeight = 0.15f;
+    float maxHeight = 0.05f;
     // Iterate over each VERTEX
     for (unsigned int u = 0; u < 6; u++)
     {
@@ -176,7 +176,12 @@ void TerrainApplication::Initialize()
 
                 vec3 deltaX = normalize(vertices[nextX].position - vertices[prevX].position);
                 vec3 deltaY = normalize(vertices[nextY].position - vertices[prevY].position);
+                
                 vertex.normal = cross(deltaX, deltaY);
+                if (sign(dot(vertex.position, vertex.normal))<0)
+                {
+                    vertex.normal = cross(deltaY, deltaX);
+                }
             }
         }
     }

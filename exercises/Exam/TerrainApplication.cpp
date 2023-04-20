@@ -39,7 +39,7 @@ vec3 GetColorFromHeight(float height);
 
 
 TerrainApplication::TerrainApplication()
-    : Application(1024, 1024, "Terrain demo"), m_grid(80), m_shaderProgram(0)
+    : Application(1024, 1024, "Terrain demo"), m_grid(256), m_shaderProgram(0)
 {
 }
 
@@ -169,45 +169,47 @@ void TerrainApplication::Initialize()
                 // Compute the delta in X
                 unsigned int prevX = i > 0 ? index - 1 : index;
                 unsigned int nextX = i < m_grid ? index + 1 : index;
-                float deltaHeightX = vertices[nextX].position.z - vertices[prevX].position.z;
+                /*float deltaHeightX = vertices[nextX].position.z - vertices[prevX].position.z;
                 float deltaX = vertices[nextX].position.x - vertices[prevX].position.x;
-                float x = deltaHeightX / deltaX;
+                float x = deltaHeightX / deltaX;*/
 
                 // Compute the delta in Y
                 int prevY = j > 0 ? index - columnCount : index;
                 int nextY = j < m_grid ? index + columnCount : index;
-                float deltaHeightY = vertices[nextY].position.z - vertices[prevY].position.z;
+                /*float deltaHeightY = vertices[nextY].position.z - vertices[prevY].position.z;
                 float deltaY = vertices[nextY].position.y - vertices[prevY].position.y;
-                float y = deltaHeightY / deltaY;
-
-                switch (u)
-                {
-                case 5:
-                    //Back
-                    vertex.normal = glm::normalize(vec3(1.0f, x, y));
-                    break;
-                case 4:
-                    //Front
-                    vertex.normal = glm::normalize(vec3(1.0f, x, y));
-                    break;
-                case 3:
-                    //Left
-                    vertex.normal = glm::normalize(vec3(x, 1.0f, y));
-                    break;
-                case 2:
-                    //Bottom
-                    vertex.normal = glm::normalize(vec3(x, y, 1.0f));
-                    break;
-                case 1:
-                    //Right
-                    vertex.normal = glm::normalize(vec3(x, 1.0f, y));
-                    break;
-                case 0:
-                    //Top
-                    vertex.normal = glm::normalize(vec3(x, y, 1.0f));
-                    break;
-                }
-
+                float y = deltaHeightY / deltaY;*/
+                vec3 deltaX = normalize(vertices[nextX].position - vertices[prevX].position);
+                vec3 deltaY = normalize(vertices[nextY].position - vertices[prevY].position);
+                vertex.normal = cross(deltaX, deltaY);
+                //switch (u)
+                //{
+                //case 5:
+                //    //Back
+                //    vertex.normal = glm::normalize(vec3(1.0f, x, y));
+                //    break;
+                //case 4:
+                //    //Front
+                //    vertex.normal = glm::normalize(vec3(1.0f, x, y));
+                //    break;
+                //case 3:
+                //    //Left
+                //    vertex.normal = glm::normalize(vec3(x, 1.0f, y));
+                //    break;
+                //case 2:
+                //    //Bottom
+                //    vertex.normal = glm::normalize(vec3(x, y, 1.0f));
+                //    break;
+                //case 1:
+                //    //Right
+                //    vertex.normal = glm::normalize(vec3(x, 1.0f, y));
+                //    break;
+                //case 0:
+                //    //Top
+                //    vertex.normal = glm::normalize(vec3(x, y, 1.0f));
+                //    break;
+                //}
+                //vertex.normal = glm::normalize(vec3(x, y, 1.0f));
                 // Compute the normal
                
             }

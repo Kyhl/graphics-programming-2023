@@ -169,73 +169,17 @@ void TerrainApplication::Initialize()
                 // Compute the delta in X
                 unsigned int prevX = i > 0 ? index - 1 : index;
                 unsigned int nextX = i < m_grid ? index + 1 : index;
-                /*float deltaHeightX = vertices[nextX].position.z - vertices[prevX].position.z;
-                float deltaX = vertices[nextX].position.x - vertices[prevX].position.x;
-                float x = deltaHeightX / deltaX;*/
 
                 // Compute the delta in Y
                 int prevY = j > 0 ? index - columnCount : index;
                 int nextY = j < m_grid ? index + columnCount : index;
-                /*float deltaHeightY = vertices[nextY].position.z - vertices[prevY].position.z;
-                float deltaY = vertices[nextY].position.y - vertices[prevY].position.y;
-                float y = deltaHeightY / deltaY;*/
+
                 vec3 deltaX = normalize(vertices[nextX].position - vertices[prevX].position);
                 vec3 deltaY = normalize(vertices[nextY].position - vertices[prevY].position);
                 vertex.normal = cross(deltaX, deltaY);
-                //switch (u)
-                //{
-                //case 5:
-                //    //Back
-                //    vertex.normal = glm::normalize(vec3(1.0f, x, y));
-                //    break;
-                //case 4:
-                //    //Front
-                //    vertex.normal = glm::normalize(vec3(1.0f, x, y));
-                //    break;
-                //case 3:
-                //    //Left
-                //    vertex.normal = glm::normalize(vec3(x, 1.0f, y));
-                //    break;
-                //case 2:
-                //    //Bottom
-                //    vertex.normal = glm::normalize(vec3(x, y, 1.0f));
-                //    break;
-                //case 1:
-                //    //Right
-                //    vertex.normal = glm::normalize(vec3(x, 1.0f, y));
-                //    break;
-                //case 0:
-                //    //Top
-                //    vertex.normal = glm::normalize(vec3(x, y, 1.0f));
-                //    break;
-                //}
-                //vertex.normal = glm::normalize(vec3(x, y, 1.0f));
-                // Compute the normal
-               
             }
         }
     }
-    // Compute normals when we have the positions of all the vertices
-    // Iterate AGAIN over each vertex
-    //for (unsigned int u = 0; u < 6; u++)
-    //{
-    //    for (unsigned int j = 0; j < rowCount; ++j)
-    //    {
-    //        for (unsigned int i = 0; i < columnCount; ++i)
-    //        {
-    //            // Get the vertex at (i, j)
-    //            unsigned int offset = rowCount * columnCount * u;
-    //            int index = (j * columnCount + i)+ offset;
-    //            Vertex& vertex = vertices[index];
-
-    //            vec3 inner = (vec3(vertex.position) * 2.0f) / scale - vec3(1.0f);
-    //            vertex.normal = glm::normalize(inner) * 0.5f;
-    //            vertex.position = vertex.normal ;
-    //        }
-    //    }
-    //}
-        
-
     
     // Declare attributes
     VertexAttribute positionAttribute(Data::Type::Float, 3);

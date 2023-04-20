@@ -64,6 +64,11 @@ void TerrainApplication::Initialize()
     unsigned int rowCount = m_grid + 1;
     float gridSize = 1.0f*scale;
     float maxHeight = 0.05f;
+    float lacunarity = 1.9f;
+    float gain = 0.55f;
+    float octaves = 8;
+    float minVal = -0.2f;
+    float maxVal = 1.0f;
     // Iterate over each VERTEX
     for (unsigned int u = 0; u < 6; u++)
     {
@@ -83,7 +88,7 @@ void TerrainApplication::Initialize()
                     vertex.texCoord = vec2(static_cast<float>(i), static_cast<float>(j));
                     vertex.normal = vec3(1.0f, 0.0f, 0.0f);
                     vertex.position = glm::normalize((vec3(z - 0.5f, x, y) * 2.0f) / scale - vec3(1.0f))*0.5f;
-                    noise = stb_perlin_fbm_noise3(vertex.position.x * 2.0f, vertex.position.y * 2.0f, vertex.position.z*2.0f, 1.9f, 0.5f, 8);
+                    noise = clamp(stb_perlin_fbm_noise3(vertex.position.x * 2.0f, vertex.position.y * 2.0f, vertex.position.z*2.0f, lacunarity, gain, octaves), minVal, maxVal);
                     vertex.color = GetColorFromHeight(noise);
                     vertex.position += vertex.position*2.0f*noise*maxHeight;
                     break;
@@ -92,7 +97,7 @@ void TerrainApplication::Initialize()
                     vertex.texCoord = vec2(static_cast<float>(i), static_cast<float>(j));
                     vertex.normal = vec3(1.0f, 0.0f, 0.0f);
                     vertex.position = glm::normalize((vec3(z + 0.5f, x, y) * 2.0f) / scale - vec3(1.0f)) * 0.5f;
-                    noise = stb_perlin_fbm_noise3(vertex.position.x * 2.0f, vertex.position.y * 2.0f, vertex.position.z * 2.0f, 1.9f, 0.5f, 8);
+                    noise = clamp(stb_perlin_fbm_noise3(vertex.position.x * 2.0f, vertex.position.y * 2.0f, vertex.position.z * 2.0f, lacunarity, gain, octaves), minVal, maxVal);
                     vertex.color = GetColorFromHeight(noise);
                     vertex.position += vertex.position * 2.0f * noise * maxHeight;
                     break;
@@ -101,7 +106,7 @@ void TerrainApplication::Initialize()
                     vertex.texCoord = vec2(static_cast<float>(i), static_cast<float>(j));
                     vertex.normal = vec3(0.0f, 1.0f, 0.0f);
                     vertex.position = glm::normalize((vec3(x, z - 0.5f, y) * 2.0f) / scale - vec3(1.0f)) * 0.5f;
-                    noise = stb_perlin_fbm_noise3(vertex.position.x * 2.0f, vertex.position.y * 2.0f, vertex.position.z * 2.0f, 1.9f, 0.5f, 8);
+                    noise = clamp(stb_perlin_fbm_noise3(vertex.position.x * 2.0f, vertex.position.y * 2.0f, vertex.position.z * 2.0f, lacunarity, gain, octaves), minVal, maxVal);
                     vertex.color = GetColorFromHeight(noise);
                     vertex.position += vertex.position * 2.0f * noise * maxHeight;
                     break;
@@ -110,7 +115,7 @@ void TerrainApplication::Initialize()
                     vertex.texCoord = vec2(static_cast<float>(i), static_cast<float>(j));
                     vertex.normal = vec3(0.0f, 0.0f, 1.0f);
                     vertex.position = glm::normalize((vec3(x, y, (z * -1) - 0.5f) * 2.0f) / scale - vec3(1.0f)) * 0.5f;
-                    noise = stb_perlin_fbm_noise3(vertex.position.x * 2.0f, vertex.position.y * 2.0f, vertex.position.z * 2.0f, 1.9f, 0.5f, 8);
+                    noise = clamp(stb_perlin_fbm_noise3(vertex.position.x * 2.0f, vertex.position.y * 2.0f, vertex.position.z * 2.0f, lacunarity, gain, octaves), minVal, maxVal);
                     vertex.color = GetColorFromHeight(noise);
                     vertex.position += vertex.position * 2.0f * noise * maxHeight;
                     break;
@@ -119,7 +124,7 @@ void TerrainApplication::Initialize()
                     vertex.texCoord = vec2(static_cast<float>(i), static_cast<float>(j));
                     vertex.normal = vec3(0.0f, 1.0f, 0.0f);
                     vertex.position = glm::normalize((vec3(x, z + 0.5f, y) * 2.0f) / scale - vec3(1.0f)) * 0.5f;
-                    noise = stb_perlin_fbm_noise3(vertex.position.x * 2.0f, vertex.position.y * 2.0f, vertex.position.z * 2.0f, 1.9f, 0.5f, 8);
+                    noise = clamp(stb_perlin_fbm_noise3(vertex.position.x * 2.0f, vertex.position.y * 2.0f, vertex.position.z * 2.0f, lacunarity, gain, octaves), minVal, maxVal);
                     vertex.color = GetColorFromHeight(noise);
                     vertex.position += vertex.position * 2.0f * noise * maxHeight;
                     break;
@@ -128,7 +133,7 @@ void TerrainApplication::Initialize()
                     vertex.texCoord = vec2(static_cast<float>(i), static_cast<float>(j));
                     vertex.normal = vec3(0.0f, 0.0f, 1.0f);
                     vertex.position = glm::normalize((vec3(x, y, z + 0.5f) * 2.0f) / scale - vec3(1.0f)) * 0.5f;
-                    noise = stb_perlin_fbm_noise3(vertex.position.x * 2.0f, vertex.position.y * 2.0f, vertex.position.z * 2.0f, 1.9f, 0.5f, 8);
+                    noise = clamp(stb_perlin_fbm_noise3(vertex.position.x * 2.0f, vertex.position.y * 2.0f, vertex.position.z * 2.0f, lacunarity, gain, octaves), minVal, maxVal);
                     vertex.color = GetColorFromHeight(noise);
                     vertex.position += vertex.position * 2.0f * noise * maxHeight;
                     break;
@@ -272,19 +277,19 @@ void TerrainApplication::Cleanup()
 
 vec3 GetColorFromHeight(float height)
 {
-    if (height > 0.3f)
+    if (height > 0.47f)
     {
         return vec3(1.0f, 1.0f, 1.0f); // Snow
     }
-    else if (height > 0.1f)
+    else if (height > 0.15f)
     {
         return vec3(0.3f, 0.3f, 0.35f); // Rock
     }
-    else if (height > -0.05f)
+    else if (height > -0.08f)
     {
         return vec3(0.1f, 0.4f, 0.15f); // Grass
     }
-    else if (height > -0.1f)
+    else if (height > -0.12f)
     {
         return vec3(0.6f, 0.5f, 0.4f); // Sand
     }

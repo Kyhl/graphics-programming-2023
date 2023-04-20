@@ -1,2 +1,8 @@
 ﻿  TerrainApplication.cpp
+D:\GraphicsProgramming\graphics-programming-2023\exercises\Exam\TerrainApplication.cpp(91,151): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+D:\GraphicsProgramming\graphics-programming-2023\exercises\Exam\TerrainApplication.cpp(100,153): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+D:\GraphicsProgramming\graphics-programming-2023\exercises\Exam\TerrainApplication.cpp(109,153): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+D:\GraphicsProgramming\graphics-programming-2023\exercises\Exam\TerrainApplication.cpp(118,153): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+D:\GraphicsProgramming\graphics-programming-2023\exercises\Exam\TerrainApplication.cpp(127,153): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+D:\GraphicsProgramming\graphics-programming-2023\exercises\Exam\TerrainApplication.cpp(136,153): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
   Exam.vcxproj -> D:\GraphicsProgramming\graphics-programming-2023\bin\exercises\Exam\Debug\Exam.exe

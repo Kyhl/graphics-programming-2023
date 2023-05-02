@@ -1,20 +1,20 @@
-#version 330 core
+#version 330 core  
 
-layout (location = 0) in vec3 VertexPosition;
-layout (location = 1) in vec3 VertexNormal;
-layout (location = 2) in vec2 VertexTexCoord;
+layout (location = 0) in vec3 aPos;  
+layout (location = 1) in vec2 aTexCoord;  
+layout (location = 2) in vec3 aColor;  
+layout (location = 3) in vec3 aNormal;  
 
-out vec3 WorldPosition;
-out vec3 WorldNormal;
-out vec2 TexCoord;
+uniform mat4 Matrix = mat4(1);  
 
-uniform mat4 WorldMatrix;
-uniform mat4 ViewProjMatrix;
+out vec2 texCoord;  
+out vec3 color;  
+out vec3 normal;  
 
-void main()
-{
-	WorldPosition = (WorldMatrix * vec4(VertexPosition, 1.0)).xyz;
-	WorldNormal = (WorldMatrix * vec4(VertexNormal, 0.0)).xyz;
-	TexCoord = VertexTexCoord;
-	gl_Position = ViewProjMatrix * vec4(WorldPosition, 1.0);
+void main()  
+{  
+	texCoord = aTexCoord;  
+	color = aColor;  
+	normal = aNormal;  
+	gl_Position = Matrix * vec4(aPos.x, aPos.y, aPos.z, 1.0);  
 }

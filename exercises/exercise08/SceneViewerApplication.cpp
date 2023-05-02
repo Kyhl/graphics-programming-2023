@@ -200,8 +200,8 @@ void SceneViewerApplication::InitializeModels()
     loader.SetMaterialProperty(ModelLoader::MaterialProperty::SpecularTexture, "SpecularTexture");
 
     // Load models
-    std::shared_ptr<Model> chestModel = loader.LoadShared("models/treasure_chest/treasure_chest.obj");
-    m_scene.AddSceneNode(std::make_shared<SceneModel>("treasure chest", chestModel));
+    //std::shared_ptr<Model> chestModel = loader.LoadShared("models/treasure_chest/treasure_chest.obj");
+    //m_scene.AddSceneNode(std::make_shared<SceneModel>("treasure chest", chestModel));
 
     //std::shared_ptr<Model> cameraModel = loader.LoadShared("models/camera/camera.obj");
     //m_scene.AddSceneNode(std::make_shared<SceneModel>("camera model", cameraModel));

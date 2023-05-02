@@ -6,7 +6,7 @@
 #include <ituGL/geometry/VertexArrayObject.h>
 #include <ituGL/geometry/ElementBufferObject.h>
 #include <ituGL/application/Application.h>
-
+#include <ituGL/shader/ShaderProgram.h>
 #include <ituGL/asset/ShaderLoader.h>
 #include <ituGL/geometry/Mesh.h>
 #include <ituGL/camera/Camera.h>
@@ -27,11 +27,14 @@ protected:
 private:
     void BuildShaders();
     void UpdateOutputMode();
-
+    void LoadAndCompileShader(Shader& shader, const char* path);
 private:
     unsigned int m_grid;
-    unsigned int m_shaderProgram;
+    ShaderProgram m_shaderProgram;
+    ShaderProgram::Location m_Mode;
+    ShaderProgram::Location m_Matrix;
     Camera m_camera;
+
     VertexBufferObject m_vbo;
     VertexArrayObject m_vao;
     ElementBufferObject m_ebo;

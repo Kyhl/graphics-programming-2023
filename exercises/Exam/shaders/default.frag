@@ -1,14 +1,32 @@
-#version 330 core
+#version 330 core  
 
-in vec3 WorldPosition;
-in vec3 WorldNormal;
-in vec2 TexCoord;
+uniform uint Mode = 0u;  
 
-out vec4 FragColor;
+in vec2 texCoord;  
+in vec3 color;  
+in vec3 normal;  
 
-uniform vec4 Color;
+out vec4 FragColor;  
 
-void main()
-{
-	FragColor = Color;
+void main()  
+{  
+    switch (Mode)  
+    {  
+    default:  
+    case 0u:  
+        FragColor = vec4(1.0f, 1.0f, 1.0f, 1.0f);  
+        break;  
+    case 1u:  
+        FragColor = vec4(fract(texCoord), 0.0f, 1.0f);  
+        break;  
+    case 2u:  
+        FragColor = vec4(color, 1.0f);  
+        break;  
+    case 3u:  
+        FragColor = vec4(normalize(normal), 1.0f);  
+        break;  
+    case 4u:  
+        FragColor = vec4(color * max(dot(normalize(normal), normalize(vec3(1,0,1))), 0.2f), 1.0f);  
+        break;  
+    }  
 }

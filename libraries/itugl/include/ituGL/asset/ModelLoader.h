@@ -1,8 +1,10 @@
 #pragma once
 
 #include <ituGL/asset/AssetLoader.h>
+
 #include <ituGL/geometry/Model.h>
 #include <ituGL/geometry/Mesh.h>
+#include <ituGL/asset/Texture2DLoader.h>
 #include <vector>
 
 struct aiMesh;
@@ -13,6 +15,10 @@ class VertexFormat;
 class ModelLoader : public AssetLoader<Model>
 {
 public:
+    // Enum to read material properties from the file
+    enum class MaterialProperty;
+
+public:
     ModelLoader(std::shared_ptr<Material> referenceMaterial = nullptr);
 
     std::shared_ptr<Material> GetReferenceMaterial() const;
@@ -21,11 +27,17 @@ public:
     bool GetCreateMaterials() const;
     void SetCreateMaterials(bool createMaterials);
 
+    Texture2DLoader& GetTexture2DLoader();
+    const Texture2DLoader& GetTexture2DLoader() const;
+
     // Load the model from the path
     Model Load(const char* path) override;
 
     // Maps a semantic to an attribute in the shader program used by the material
     bool SetMaterialAttribute(VertexAttribute::Semantic semantic, const char* attributeName);
+
+    // Maps a material property to a uniform in the shader program used by the material
+    bool SetMaterialProperty(MaterialProperty materialProperty, const char* uniformName);
 
 private:
     // Generate a submesh from the loaded mesh data
@@ -33,6 +45,10 @@ private:
 
     // Generate a material from the loaded material data
     std::shared_ptr<Material> GenerateMaterial(const aiMaterial& materialData);
+
+    // Load a texture of the specific type in the location
+    void LoadTexture(const aiMaterial& materialData, int textureType, Material& material, ShaderProgram::Location location,
+        TextureObject::Format format, TextureObject::InternalFormat internalFormat) const;
 
     // Build the vertex data from the mesh data
     static std::vector<GLubyte> CollectVertexData(const aiMesh& meshData, VertexFormat& vertexFormat, bool interleaved);
@@ -51,12 +67,32 @@ private:
     static Drawcall::Primitive GetPrimitiveType(int elementCount);
 
 private:
+    // Path to the base folder where we are loading the current model
+    std::string m_baseFolder;
+
     // Pointer to the reference material
     std::shared_ptr<Material> m_referenceMaterial;
 
     // Maps the semantic to attributes in the reference material
     Mesh::SemanticMap m_materialAttributeMap;
 
+    // Maps material properties to uniforms in the reference material
+    std::unordered_map <MaterialProperty, ShaderProgram::Location> m_materialPropertyMap;
+
     // Should create new materials for each submesh or use the reference material
     bool m_createMaterials;
+
+    // Texture loader to cache already loaded shared textures
+    mutable Texture2DLoader m_textureLoader;
+};
+
+enum class ModelLoader::MaterialProperty
+{
+    AmbientColor,
+    DiffuseColor,
+    SpecularColor,
+    SpecularExponent,
+    DiffuseTexture,
+    NormalTexture,
+    SpecularTexture,
 };

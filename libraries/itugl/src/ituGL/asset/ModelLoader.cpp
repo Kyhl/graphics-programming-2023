@@ -2,6 +2,7 @@
 
 #include <ituGL/geometry/VertexFormat.h>
 #include <ituGL/shader/Material.h>
+#include <ituGL/asset/Texture2DLoader.h>
 #include <assimp/Importer.hpp>
 #include <assimp/scene.h>
 #include <assimp/postprocess.h>
@@ -11,6 +12,7 @@ ModelLoader::ModelLoader(std::shared_ptr<Material> referenceMaterial)
     : m_referenceMaterial(referenceMaterial)
     , m_createMaterials(false)
 {
+    m_textureLoader.SetGenerateMipmap(true);
 }
 
 std::shared_ptr<Material> ModelLoader::GetReferenceMaterial() const
@@ -36,6 +38,16 @@ void ModelLoader::SetCreateMaterials(bool createMaterials)
     m_createMaterials = createMaterials;
 }
 
+Texture2DLoader& ModelLoader::GetTexture2DLoader()
+{
+    return m_textureLoader;
+}
+
+const Texture2DLoader& ModelLoader::GetTexture2DLoader() const
+{
+    return m_textureLoader;
+}
+
 bool ModelLoader::SetMaterialAttribute(VertexAttribute::Semantic semantic, const char* attributeName)
 {
     bool found = false;
@@ -43,6 +55,18 @@ bool ModelLoader::SetMaterialAttribute(VertexAttribute::Semantic semantic, const
     if (location != -1)
     {
         m_materialAttributeMap.insert(std::make_pair(semantic, location));
+        found = true;
+    }
+    return found;
+}
+
+bool ModelLoader::SetMaterialProperty(MaterialProperty materialProperty, const char* uniformName)
+{
+    bool found = false;
+    ShaderProgram::Location location = m_referenceMaterial->GetUniformLocation(uniformName);
+    if (location != -1)
+    {
+        m_materialPropertyMap.insert(std::make_pair(materialProperty, location));
         found = true;
     }
     return found;
@@ -56,6 +80,9 @@ Model ModelLoader::Load(const char* path)
     Assimp::Importer importer;
     const aiScene* scene = importer.ReadFile(path,
         aiProcess_CalcTangentSpace | aiProcess_GenNormals | aiProcess_Triangulate | aiProcess_JoinIdenticalVertices | aiProcess_SortByPType);
+
+    m_baseFolder = path;
+    m_baseFolder.resize(m_baseFolder.rfind('/') + 1);
 
     // If the file was loaded, load all the meshes as submeshes
     if (scene)
@@ -109,10 +136,71 @@ void ModelLoader::GenerateSubmesh(Mesh& mesh, const aiMesh& meshData)
 
 std::shared_ptr<Material> ModelLoader::GenerateMaterial(const aiMaterial& materialData)
 {
-    // For now, we don't read any properties from the file
-    return std::make_shared<Material>(*m_referenceMaterial);
+    std::shared_ptr<Material> material = std::make_shared<Material>(*m_referenceMaterial);
+    float value;
+    for (auto& materialPropertyPair : m_materialPropertyMap)
+    {
+        aiColor3D color;
+        MaterialProperty materialProperty = materialPropertyPair.first;
+        ShaderProgram::Location location = materialPropertyPair.second;
+        switch (materialProperty)
+        {
+        case MaterialProperty::AmbientColor:
+            if (materialData.Get(AI_MATKEY_COLOR_AMBIENT, color) == aiReturn_SUCCESS)
+            {
+                material->SetUniformValue(location, glm::vec3(color.r, color.g, color.b));
+            }
+            break;
+        case MaterialProperty::DiffuseColor:
+            if (materialData.Get(AI_MATKEY_COLOR_DIFFUSE, color) == aiReturn_SUCCESS)
+            {
+                material->SetUniformValue(location, glm::vec3(color.r, color.g, color.b));
+            }
+            break;
+        case MaterialProperty::SpecularColor:
+            if (materialData.Get(AI_MATKEY_COLOR_SPECULAR, color) == aiReturn_SUCCESS)
+            {
+                material->SetUniformValue(location, glm::vec3(color.r, color.g, color.b));
+            }
+            break;
+        case MaterialProperty::SpecularExponent:
+            if (materialData.Get(AI_MATKEY_SHININESS, value) == aiReturn_SUCCESS)
+            {
+                material->SetUniformValue(location, value);
+            }
+            break;
+        case MaterialProperty::DiffuseTexture:
+            LoadTexture(materialData, aiTextureType_DIFFUSE, *material, location, TextureObject::FormatRGB, TextureObject::InternalFormatSRGB8);
+            break;
+        case MaterialProperty::NormalTexture:
+            LoadTexture(materialData, aiTextureType_NORMALS, *material, location, TextureObject::FormatRGB, TextureObject::InternalFormatRGB8);
+            break;
+        case MaterialProperty::SpecularTexture:
+            LoadTexture(materialData, aiTextureType_SHININESS, *material, location, TextureObject::FormatRGB, TextureObject::InternalFormatSRGB8);
+            break;
+        }
+    }
+    return material;
 }
 
+void ModelLoader::LoadTexture(const aiMaterial& materialData, int textureTypeValue, Material& material, ShaderProgram::Location location,
+    TextureObject::Format format, TextureObject::InternalFormat internalFormat) const
+{
+    aiTextureType textureType = static_cast<aiTextureType>(textureTypeValue);
+    if (materialData.GetTextureCount(textureType) > 0)
+    {
+        assert(materialData.GetTextureCount(textureType) == 1);
+        aiString texturePath;
+        if (materialData.GetTexture(textureType, 0, &texturePath) == aiReturn_SUCCESS)
+        {
+            texturePath = m_baseFolder + texturePath.C_Str();
+            m_textureLoader.SetFormat(format);
+            m_textureLoader.SetInternalFormat(internalFormat);
+            std::shared_ptr<Texture2DObject> texture = m_textureLoader.LoadShared(texturePath.C_Str());
+            material.SetUniformValue(location, texture);
+        }
+    }
+}
 
 std::vector<GLubyte> ModelLoader::CollectVertexData(const aiMesh& meshData, VertexFormat& vertexFormat, bool interleaved)
 {

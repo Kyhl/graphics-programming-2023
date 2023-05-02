@@ -18,6 +18,7 @@ Material::Material(std::shared_ptr<ShaderProgram> shaderProgram, const NameSet& 
     , m_stencilDepthPass{ StencilOperation::Keep, StencilOperation::Keep }
     , m_blendEquations{ BlendEquation::None }
     , m_blendParams{ BlendParam::One, BlendParam::Zero, BlendParam::One, BlendParam::Zero }
+    , m_cullMode(CullMode::Back)
 {
 }
 
@@ -26,9 +27,19 @@ void Material::SetShaderSetupFunction(ShaderSetupFunction shaderSetupFunction)
     m_shaderSetupFunction = shaderSetupFunction;
 }
 
+Material::TestFunction Material::GetDepthTestFunction() const
+{
+    return m_depthTestFunction;
+}
+
 void Material::SetDepthTestFunction(TestFunction function)
 {
     m_depthTestFunction = function;
+}
+
+bool Material::GetDepthWrite() const
+{
+    return m_depthWrite;
 }
 
 void Material::SetDepthWrite(bool depthWrite)
@@ -42,11 +53,25 @@ void Material::SetStencilTestFunction(TestFunction function, int refValue, unsig
     SetStencilBackTestFunction(function, refValue, mask);
 }
 
+Material::TestFunction Material::GetStencilFrontTestFunction(int &refValue, unsigned int &mask) const
+{
+    refValue = m_stencilRefValues[0];
+    mask = m_stencilMasks[0];
+    return m_stencilTestFunctions[0];
+}
+
 void Material::SetStencilFrontTestFunction(TestFunction function, int refValue, unsigned int mask)
 {
     m_stencilTestFunctions[0] = function;
     m_stencilRefValues[0] = refValue;
     m_stencilMasks[0] = mask;
+}
+
+Material::TestFunction Material::GetStencilBackTestFunction(int& refValue, unsigned int& mask) const
+{
+    refValue = m_stencilRefValues[1];
+    mask = m_stencilMasks[1];
+    return m_stencilTestFunctions[1];
 }
 
 void Material::SetStencilBackTestFunction(TestFunction function, int refValue, unsigned int mask)
@@ -62,6 +87,13 @@ void Material::SetStencilOperations(StencilOperation stencilFail, StencilOperati
     SetStencilBackOperations(stencilFail, depthFail, depthPass);
 }
 
+void Material::GetStencilFrontOperations(StencilOperation& stencilFail, StencilOperation& depthFail, StencilOperation& depthPass) const
+{
+    stencilFail = m_stencilFail[0];
+    depthFail = m_stencilDepthFail[0];
+    depthPass = m_stencilDepthPass[0];
+}
+
 void Material::SetStencilFrontOperations(StencilOperation stencilFail, StencilOperation depthFail, StencilOperation depthPass)
 {
     m_stencilFail[0] = stencilFail;
@@ -69,11 +101,28 @@ void Material::SetStencilFrontOperations(StencilOperation stencilFail, StencilOp
     m_stencilDepthPass[0] = depthPass;
 }
 
+void Material::GetStencilBackOperations(StencilOperation& stencilFail, StencilOperation& depthFail, StencilOperation& depthPass) const
+{
+    stencilFail = m_stencilFail[1];
+    depthFail = m_stencilDepthFail[1];
+    depthPass = m_stencilDepthPass[1];
+}
+
 void Material::SetStencilBackOperations(StencilOperation stencilFail, StencilOperation depthFail, StencilOperation depthPass)
 {
     m_stencilFail[1] = stencilFail;
     m_stencilDepthFail[1] = depthFail;
     m_stencilDepthPass[1] = depthPass;
+}
+
+Material::BlendEquation Material::GetBlendEquationColor() const
+{
+    return m_blendEquations[0];
+}
+
+Material::BlendEquation Material::GetBlendEquationAlpha() const
+{
+    return m_blendEquations[1];
 }
 
 void Material::SetBlendEquation(BlendEquation blendEquation)
@@ -122,6 +171,16 @@ void Material::SetBlendColor(Color blendColor)
     m_blendColor = blendColor;
 }
 
+Material::CullMode Material::GetCullMode() const
+{
+    return m_cullMode;
+}
+
+void Material::SetCullMode(CullMode cullmode)
+{
+    m_cullMode = cullmode;
+}
+
 void Material::Use(OverrideFlags overrideFlags) const
 {
     assert(m_shaderProgram);
@@ -154,6 +213,12 @@ void Material::Use(OverrideFlags overrideFlags) const
     if ((overrideFlags & OverrideFlags::OverrideBlend) == 0)
     {
         UseBlend();
+    }
+
+    // If not skipped, set the blend settings
+    if ((overrideFlags & OverrideFlags::OverrideCulling) == 0)
+    {
+        UseCulling();
     }
 }
 
@@ -193,6 +258,11 @@ void Material::UseStencilTest() const
         glStencilFuncSeparate(GL_FRONT, static_cast<GLenum>(m_stencilTestFunctions[0]), m_stencilRefValues[0], m_stencilMasks[0]);
         glStencilFuncSeparate(GL_BACK, static_cast<GLenum>(m_stencilTestFunctions[1]), m_stencilRefValues[1], m_stencilMasks[1]);
     }
+}
+
+void Material::UseCulling() const
+{
+    glCullFace(static_cast<GLenum>(m_cullMode));
 }
 
 void Material::UseBlend() const

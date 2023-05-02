@@ -16,7 +16,8 @@ public:
         NoOverride = 0,
         OverrideBlend = 1 << 0,
         OverrideDepthTest = 1 << 1,
-        OverrideStencilTest = 1 << 2
+        OverrideStencilTest = 1 << 2,
+        OverrideCulling = 1 << 3
     };
 
     // Different conditions for depth and stencil tests
@@ -32,6 +33,9 @@ public:
     // source color, destination color, source alpha, destination alpha
     enum class BlendParam : GLenum;
 
+    // Which faces will be culled
+    enum class CullMode : GLenum;
+
     // Function pointer to prepare the shader used by the material that is being rendered
     using ShaderSetupFunction = std::function<void(ShaderProgram&)>;
 
@@ -41,14 +45,16 @@ public:
     Material(std::shared_ptr<ShaderProgram> shaderProgram, const NameSet& filteredUniforms = NameSet());
 
 
-    // Set the function that will be executed for additional shader program setup
+    // The function that will be executed for additional shader program setup
     void SetShaderSetupFunction(ShaderSetupFunction shaderSetupFunction);
 
 
-    // Set the test function for the depth test, if depth test is enabled
+    // The test function for the depth test, if depth test is enabled
+    TestFunction GetDepthTestFunction() const;
     void SetDepthTestFunction(TestFunction function);
 
-    // Set if the geometry should write to depth buffer, if depth test is enabled
+    // If the geometry should write to depth buffer, if depth test is enabled
+    bool GetDepthWrite() const;
     void SetDepthWrite(bool depthWrite);
 
 
@@ -58,21 +64,27 @@ public:
     void SetStencilTestFunction(TestFunction function, int refValue, unsigned int mask);
 
     // Set the test function to use for stencil, only for front faces
+    TestFunction GetStencilFrontTestFunction(int& refValue, unsigned int& mask) const;
     void SetStencilFrontTestFunction(TestFunction function, int refValue, unsigned int mask);
 
     // Set the test function to use for stencil, only for back faces
+    TestFunction GetStencilBackTestFunction(int& refValue, unsigned int& mask) const;
     void SetStencilBackTestFunction(TestFunction function, int refValue, unsigned int mask);
 
     // Set the stencil operations, front and back
     void SetStencilOperations(StencilOperation stencilFail, StencilOperation depthFail, StencilOperation depthPass);
 
     // Set the stencil operations, only for front faces
+    void GetStencilFrontOperations(StencilOperation &stencilFail, StencilOperation &depthFail, StencilOperation &depthPass) const;
     void SetStencilFrontOperations(StencilOperation stencilFail, StencilOperation depthFail, StencilOperation depthPass);
 
     // Set the stencil operations, only for back faces
+    void GetStencilBackOperations(StencilOperation& stencilFail, StencilOperation& depthFail, StencilOperation& depthPass) const;
     void SetStencilBackOperations(StencilOperation stencilFail, StencilOperation depthFail, StencilOperation depthPass);
 
     // Set the same blend equation for color and alpha. By default and most common: Add
+    BlendEquation GetBlendEquationColor() const;
+    BlendEquation GetBlendEquationAlpha() const;
     void SetBlendEquation(BlendEquation blendEquation);
 
     // Set separate blend equation for color and alpha. By default and most common: Add
@@ -93,6 +105,9 @@ public:
     // Set the blend color to use with ConstantColor param
     void SetBlendColor(Color blendColor);
 
+    // Set the face culling mode
+    CullMode GetCullMode() const;
+    void SetCullMode(CullMode cullmode);
 
     // Use the shader program, set all uniforms, set depth properties, stencil properties, and blending
     // You can skip depth, stencil or blending using the override flags
@@ -107,6 +122,9 @@ private:
 
     // Set all the properties relative to blending
     void UseBlend() const;
+
+    // Set all the properties relative to face culling
+    void UseCulling() const;
 
 private:
     // Function pointer to prepare the shader used by the material
@@ -142,6 +160,9 @@ private:
     // Blend parameters for source color, destination color, source alpha and destination alpha
     // Default: One, Zero, One, Zero
     std::array<BlendParam, 4> m_blendParams;
+
+    // Set face culling mode
+    CullMode m_cullMode;
 
     // Blend color to use with ConstantColor or ConstantAlpha parameters. Default: white
     Color m_blendColor;
@@ -210,4 +231,12 @@ enum class Material::BlendParam : GLenum
     OneMinusConstantColor = GL_ONE_MINUS_CONSTANT_COLOR,
     ConstantAlpha = GL_CONSTANT_ALPHA,
     OneMinusConstantAlpha = GL_ONE_MINUS_CONSTANT_ALPHA
+};
+
+enum class Material::CullMode : GLenum
+{
+    None = GL_NONE,
+    Back = GL_BACK,
+    Front = GL_FRONT,
+    Both = GL_FRONT_AND_BACK
 };

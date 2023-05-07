@@ -1,27 +1,33 @@
 #include "TerrainApplication.h"
 
-#include <ituGL/geometry/VertexAttribute.h>
+#include <ituGL/asset/TextureCubemapLoader.h>
+#include <ituGL/asset/ShaderLoader.h>
+#include <ituGL/asset/ModelLoader.h>
 
+#include <ituGL/camera/Camera.h>
+#include <ituGL/scene/SceneCamera.h>
+
+#include <ituGL/lighting/DirectionalLight.h>
+#include <ituGL/lighting/PointLight.h>
+#include <ituGL/scene/SceneLight.h>
+
+#include <ituGL/shader/ShaderUniformCollection.h>
+#include <ituGL/shader/Material.h>
+#include <ituGL/geometry/Model.h>
+#include <ituGL/scene/SceneModel.h>
+
+#include <ituGL/renderer/SkyboxRenderPass.h>
+#include <ituGL/renderer/ForwardRenderPass.h>
+#include <ituGL/scene/RendererSceneVisitor.h>
+
+#include <ituGL/scene/ImGuiSceneVisitor.h>
+#include <imgui.h>
 #define STB_PERLIN_IMPLEMENTATION
 #include <stb_perlin.h>
 
-#include <vector>
-#include <cmath>
-#include <iostream>
-#include <ituGL/geometry/VertexFormat.h>
-#include <ituGL/texture/Texture2DObject.h>
 
-#include <glm/gtx/transform.hpp>  // for matrix transformations
-
-#include <ituGL/shader/Shader.h>
-#include <ituGL/geometry/VertexAttribute.h>
-#include <cassert>
-#include <array>
 #include <fstream>
 #include <sstream>
-#include <iostream>
-#define STB_IMAGE_IMPLEMENTATION
-#include <stb_image.h>
 
 #include <cmath>
 #include <iostream>
@@ -46,7 +52,7 @@ vec3 GetColorFromHeight(float height);
 
 TerrainApplication::TerrainApplication()
     : Application(1024, 1024, "Exam kaky")
-    , m_grid(256)
+    , m_grid(128)
     , m_Mode(0)
     , m_Matrix(0)
 {
@@ -55,12 +61,90 @@ TerrainApplication::TerrainApplication()
 void TerrainApplication::Initialize()
 {
     Application::Initialize();
+    // Initialize DearImGUI
+    m_imGui.Initialize(GetMainWindow());
 
+    InitializeCamera();
     // Build shaders and store in m_shaderProgram
     BuildShaders();
 
-   
+    //InitializePlanet(vec3(0.0f), 1.0f);
 
+    InitializePlanet(vec3(1.0f), 0.9f);
+
+
+}
+
+void TerrainApplication::Update()
+{
+    Application::Update();
+    /*const Window& window = GetMainWindow();
+
+    glm::vec2 mousePosition = window.GetMousePosition(true);
+    m_camera.SetViewMatrix(glm::vec3(0.0f, 10.0f, 10.0f), glm::vec3(mousePosition, 0.0f));
+
+    int width, height;
+    window.GetDimensions(width, height);
+    float aspectRatio = static_cast<float>(width) / height;
+    m_camera.SetPerspectiveProjectionMatrix(1.0f, aspectRatio, -10.1f, 200.0f);*/
+    // Update camera controller
+    m_cameraController.Update(GetMainWindow(), GetDeltaTime());
+
+    // Add the scene nodes to the renderer
+   /* RendererSceneVisitor rendererSceneVisitor(m_renderer);
+    m_scene.AcceptVisitor(rendererSceneVisitor);*/
+    UpdateOutputMode();
+}
+void TerrainApplication::Render()
+{
+    Application::Render();
+
+    // Clear color and depth
+    GetDevice().Clear(true, Color(0.0f, 0.0f, 0.0f, 1.0f), true, 1.0f);
+
+    // Set shader to be used
+    m_shaderProgram.Use();
+
+    // Bind the grid VAO
+    m_vao.Bind();
+
+    // Draw the grid (m_gridX * m_gridY quads, 6 vertices per quad)
+    glDrawElements(GL_TRIANGLES, ((m_grid * m_grid) * 6) * 6, GL_UNSIGNED_INT, nullptr);
+
+    RenderGUI();
+    // No need to unbind every time
+    //VertexArrayObject::Unbind();
+}
+void TerrainApplication::Cleanup()
+{
+    // Cleanup DearImGUI
+    m_imGui.Cleanup();
+
+    Application::Cleanup();
+}
+
+void TerrainApplication::InitializeCamera()
+{
+    const Window& window = GetMainWindow();
+    // Create the main camera
+    std::shared_ptr<Camera> camera = std::make_shared<Camera>();
+    camera->SetViewMatrix(glm::vec3(0, 10.0f, 10.0f), glm::vec3(0, 0, 0), glm::vec3(0, 1, 0));
+    int width, height;
+    window.GetDimensions(width, height);
+    float aspectRatio = static_cast<float>(width) / height;
+    camera->SetPerspectiveProjectionMatrix(1.0f, aspectRatio, -10.1f, 200.0f);
+
+    // Create a scene node for the camera
+    std::shared_ptr<SceneCamera> sceneCamera = std::make_shared<SceneCamera>("camera", camera);
+
+    // Add the camera node to the scene
+    m_scene.AddSceneNode(sceneCamera);
+
+    // Set the camera scene node to be controlled by the camera controller
+    m_cameraController.SetCamera(sceneCamera);
+}
+void TerrainApplication::InitializePlanet(vec3 offset, float scaleSize)
+{
     // Create containers for the vertex data
     std::vector<Vertex> vertices;
 
@@ -68,12 +152,11 @@ void TerrainApplication::Initialize()
     std::vector<unsigned int> indices;
 
     // Grid scale to convert the entire grid to size 1x1
-    float scale = 1.0f / m_grid;
+    float scale = (1.0f / m_grid);
 
     // Number of columns and rows
     unsigned int columnCount = m_grid + 1;
     unsigned int rowCount = m_grid + 1;
-    float gridSize = 1.0f*scale;
     float maxHeight = 0.05f;
     float lacunarity = 1.9f;
     float gain = 0.55f;
@@ -88,8 +171,9 @@ void TerrainApplication::Initialize()
             for (unsigned int i = 0; i < columnCount; ++i)
             {
                 Vertex& vertex = vertices.emplace_back();
-                float x = i * scale - 0.5f;
-                float y = j * scale - 0.5f;
+                // -0.5f is the offset
+                float x = i * scale  - 0.5f;
+                float y = j * scale  - 0.5f;
                 float noise;
                 float z = 0.0f;
                 switch (u)
@@ -98,10 +182,11 @@ void TerrainApplication::Initialize()
                     //Back
                     vertex.texCoord = vec2(static_cast<float>(i), static_cast<float>(j));
                     vertex.normal = vec3(1.0f, 0.0f, 0.0f);
-                    vertex.position = glm::normalize((vec3(z - 0.5f, x, y) * 2.0f) / scale - vec3(1.0f))*0.5f;
-                    noise = clamp(stb_perlin_fbm_noise3(vertex.position.x * 2.0f, vertex.position.y * 2.0f, vertex.position.z*2.0f, lacunarity, gain, octaves), minVal, maxVal);
+                    //the *0.5f is the scale
+                    vertex.position = glm::normalize((vec3(z - 0.5f, x, y) * 2.0f) / scale - vec3(1.0f)) * 0.5f;
+                    noise = clamp(stb_perlin_fbm_noise3(vertex.position.x * 2.0f, vertex.position.y * 2.0f, vertex.position.z * 2.0f, lacunarity, gain, octaves), minVal, maxVal);
                     vertex.color = GetColorFromHeight(noise);
-                    vertex.position += vertex.position*2.0f*noise*maxHeight;
+                    vertex.position += vertex.position * 2.0f * noise * maxHeight;
                     break;
                 case 4:
                     //Front
@@ -192,16 +277,143 @@ void TerrainApplication::Initialize()
 
                 vec3 deltaX = normalize(vertices[nextX].position - vertices[prevX].position);
                 vec3 deltaY = normalize(vertices[nextY].position - vertices[prevY].position);
-                
+
                 vertex.normal = cross(deltaX, deltaY);
-                if (sign(dot(vertex.position, vertex.normal))<0)
+                if (sign(dot(vertex.position, vertex.normal)) < 0)
                 {
                     vertex.normal = cross(deltaY, deltaX);
                 }
             }
         }
     }
-    
+
+
+    //Second planet
+    for (unsigned int u = 0; u < 6; u++)
+    {
+        for (unsigned int j = 0; j < rowCount; ++j)
+        {
+            for (unsigned int i = 0; i < columnCount; ++i)
+            {
+                Vertex& vertex = vertices.emplace_back();
+                float x = i * scale - 0.5f + offset.x;
+                float y = j * scale - 0.5f + offset.y;
+                float noise;
+                float z = 0.0f;
+                switch (u)
+                {
+                case 5:
+                    //Back
+                    vertex.texCoord = vec2(static_cast<float>(i), static_cast<float>(j));
+                    vertex.normal = vec3(1.0f, 0.0f, 0.0f);
+                    vertex.position = glm::normalize((vec3(z - 0.5f, x, y) * 2.0f) / scale - vec3(1.0f)) * 0.5f;
+                    noise = clamp(stb_perlin_fbm_noise3(vertex.position.x * 2.0f, vertex.position.y * 2.0f, vertex.position.z * 2.0f, lacunarity, gain, octaves), minVal, maxVal);
+                    vertex.color = GetColorFromHeight(noise);
+                    vertex.position += vertex.position * 2.0f * noise * maxHeight;
+                    break;
+                case 4:
+                    //Front
+                    vertex.texCoord = vec2(static_cast<float>(i), static_cast<float>(j));
+                    vertex.normal = vec3(1.0f, 0.0f, 0.0f);
+                    vertex.position = glm::normalize((vec3(z + 0.5f, x, y) * 2.0f) / scale - vec3(1.0f)) * 0.5f;
+                    noise = clamp(stb_perlin_fbm_noise3(vertex.position.x * 2.0f, vertex.position.y * 2.0f, vertex.position.z * 2.0f, lacunarity, gain, octaves), minVal, maxVal);
+                    vertex.color = GetColorFromHeight(noise);
+                    vertex.position += vertex.position * 2.0f * noise * maxHeight;
+                    break;
+                case 3:
+                    //Left
+                    vertex.texCoord = vec2(static_cast<float>(i), static_cast<float>(j));
+                    vertex.normal = vec3(0.0f, 1.0f, 0.0f);
+                    vertex.position = glm::normalize((vec3(x, z - 0.5f, y) * 2.0f) / scale - vec3(1.0f)) * 0.5f;
+                    noise = clamp(stb_perlin_fbm_noise3(vertex.position.x * 2.0f, vertex.position.y * 2.0f, vertex.position.z * 2.0f, lacunarity, gain, octaves), minVal, maxVal);
+                    vertex.color = GetColorFromHeight(noise);
+                    vertex.position += vertex.position * 2.0f * noise * maxHeight;
+                    break;
+                case 2:
+                    //Bottom
+                    vertex.texCoord = vec2(static_cast<float>(i), static_cast<float>(j));
+                    vertex.normal = vec3(0.0f, 0.0f, 1.0f);
+                    vertex.position = glm::normalize((vec3(x, y, (z * -1) - 0.5f) * 2.0f) / scale - vec3(1.0f)) * 0.5f;
+                    noise = clamp(stb_perlin_fbm_noise3(vertex.position.x * 2.0f, vertex.position.y * 2.0f, vertex.position.z * 2.0f, lacunarity, gain, octaves), minVal, maxVal);
+                    vertex.color = GetColorFromHeight(noise);
+                    vertex.position += vertex.position * 2.0f * noise * maxHeight;
+                    break;
+                case 1:
+                    //Right
+                    vertex.texCoord = vec2(static_cast<float>(i), static_cast<float>(j));
+                    vertex.normal = vec3(0.0f, 1.0f, 0.0f);
+                    vertex.position = glm::normalize((vec3(x, z + 0.5f, y) * 2.0f) / scale - vec3(1.0f)) * 0.5f;
+                    noise = clamp(stb_perlin_fbm_noise3(vertex.position.x * 2.0f, vertex.position.y * 2.0f, vertex.position.z * 2.0f, lacunarity, gain, octaves), minVal, maxVal);
+                    vertex.color = GetColorFromHeight(noise);
+                    vertex.position += vertex.position * 2.0f * noise * maxHeight;
+                    break;
+                case 0:
+                    //Top
+                    vertex.texCoord = vec2(static_cast<float>(i), static_cast<float>(j));
+                    vertex.normal = vec3(0.0f, 0.0f, 1.0f);
+                    vertex.position = glm::normalize((vec3(x, y, z + 0.5f) * 2.0f) / scale - vec3(1.0f)) * 0.5f;
+                    noise = clamp(stb_perlin_fbm_noise3(vertex.position.x * 2.0f, vertex.position.y * 2.0f, vertex.position.z * 2.0f, lacunarity, gain, octaves), minVal, maxVal);
+                    vertex.color = GetColorFromHeight(noise);
+                    vertex.position += vertex.position * 2.0f * noise * maxHeight;
+                    break;
+                }
+
+                if (i > 0 && j > 0)
+                {
+                    unsigned int offset = rowCount * columnCount * u;
+                    unsigned int top_right = (j * columnCount + i) + offset; // Current vertex
+                    unsigned int top_left = top_right - 1;
+                    unsigned int bottom_right = top_right - columnCount;
+                    unsigned int bottom_left = bottom_right - 1;
+
+                    //Triangle 1
+                    indices.push_back(bottom_left);
+                    indices.push_back(bottom_right);
+                    indices.push_back(top_left);
+
+                    //Triangle 2
+                    indices.push_back(bottom_right);
+                    indices.push_back(top_left);
+                    indices.push_back(top_right);
+                }
+            }
+        }
+    }
+    for (unsigned int u = 0; u < 6; u++)
+    {
+        for (unsigned int j = 0; j < rowCount; ++j)
+        {
+            for (unsigned int i = 0; i < columnCount; ++i)
+            {
+                // Get the vertex at (i, j)
+                unsigned int offset = (rowCount * columnCount) * u;
+                int index = j * columnCount + i + offset;
+                Vertex& vertex = vertices[index];
+
+                // Compute the delta in X
+                unsigned int prevX = i > 0 ? index - 1 : index;
+                unsigned int nextX = i < m_grid ? index + 1 : index;
+
+                // Compute the delta in Y
+                int prevY = j > 0 ? index - columnCount : index;
+                int nextY = j < m_grid ? index + columnCount : index;
+
+                vec3 deltaX = normalize(vertices[nextX].position - vertices[prevX].position);
+                vec3 deltaY = normalize(vertices[nextY].position - vertices[prevY].position);
+
+                vertex.normal = cross(deltaX, deltaY);
+                if (sign(dot(vertex.position, vertex.normal)) < 0)
+                {
+                    vertex.normal = cross(deltaY, deltaX);
+                }
+            }
+        }
+    }
+
+
+
+
+
     // Declare attributes
     VertexAttribute positionAttribute(Data::Type::Float, 3);
     VertexAttribute texCoordAttribute(Data::Type::Float, 2);
@@ -238,54 +450,13 @@ void TerrainApplication::Initialize()
 
     // Unbind EBO (when VAO is no longer bound)
     ElementBufferObject::Unbind();
-   
+
     // Enable wireframe mode
     //glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
 
     // Enable depth buffer
     glEnable(GL_DEPTH_TEST);
 }
-
-void TerrainApplication::Update()
-{
-    Application::Update();
-    const Window& window = GetMainWindow();
-
-    glm::vec2 mousePosition = window.GetMousePosition(true);
-    m_camera.SetViewMatrix(glm::vec3(0.0f, 10.0f, 10.0f), glm::vec3(mousePosition, 0.0f));
-
-    int width, height;
-    window.GetDimensions(width, height);
-    float aspectRatio = static_cast<float>(width) / height;
-    m_camera.SetPerspectiveProjectionMatrix(1.0f, aspectRatio, -10.1f, 200.0f);
-    UpdateOutputMode();
-}
-
-void TerrainApplication::Render()
-{
-   
-
-    // Clear color and depth
-    GetDevice().Clear(true, Color(0.0f, 0.0f, 0.0f, 1.0f), true, 1.0f);
-
-    // Set shader to be used
-    m_shaderProgram.Use();
-
-    // Bind the grid VAO
-    m_vao.Bind();
-
-    // Draw the grid (m_gridX * m_gridY quads, 6 vertices per quad)
-    glDrawElements(GL_TRIANGLES, ((m_grid * m_grid)* 6) * 6, GL_UNSIGNED_INT, nullptr);
-    Application::Render();
-    // No need to unbind every time
-    //VertexArrayObject::Unbind();
-}
-
-void TerrainApplication::Cleanup()
-{
-    Application::Cleanup();
-}
-
 vec3 GetColorFromHeight(float height)
 {
     if (height > 0.47f)
@@ -462,4 +633,17 @@ void TerrainApplication::UpdateOutputMode()
         //m_shaderProgram.SetUniform(m_Matrix, projMatrix);
         //glUniformMatrix4fv(matrixLocation, 1, false, projMatrix);
     }
+}
+void TerrainApplication::RenderGUI()
+{
+    m_imGui.BeginFrame();
+
+    // Draw GUI for scene nodes, using the visitor pattern
+    ImGuiSceneVisitor imGuiVisitor(m_imGui, "Scene");
+    m_scene.AcceptVisitor(imGuiVisitor);
+
+    // Draw GUI for camera controller
+    m_cameraController.DrawGUI(m_imGui);
+
+    m_imGui.EndFrame();
 }

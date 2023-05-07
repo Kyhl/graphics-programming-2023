@@ -1,6 +1,6 @@
 #version 330 core  
 
-uniform uint Mode = 0u;  
+uniform uint Mode = 4u;  
 
 in vec2 texCoord;  
 in vec3 color;  

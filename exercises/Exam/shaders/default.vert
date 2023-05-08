@@ -10,11 +10,14 @@ uniform mat4 Matrix = mat4(1);
 out vec2 texCoord;  
 out vec3 color;  
 out vec3 normal;  
+out vec3 worldPos;
 
 void main()  
 {  
 	texCoord = aTexCoord;  
 	color = aColor;  
 	normal = aNormal;  
+	
 	gl_Position = Matrix * vec4(aPos.x, aPos.y, aPos.z, 1.0);  
+	worldPos = normalize(aPos);
 }

@@ -566,12 +566,8 @@ void TerrainApplication::BuildShaders()
     //}
 
     // Load and compile vertex shader
-    Shader vertexShader(Shader::VertexShader);
-    LoadAndCompileShader(vertexShader, "shaders/default.vert");
-
-    // Load and compile fragment shader
-    Shader fragmentShader(Shader::FragmentShader);
-    LoadAndCompileShader(fragmentShader, "shaders/default.frag");
+    Shader vertexShader = ShaderLoader(Shader::VertexShader).Load("shaders/default.vert");
+    Shader fragmentShader = ShaderLoader(Shader::FragmentShader).Load("shaders/default.frag");
 
     // Attach shaders and link
     if (!m_shaderProgram.Build(vertexShader, fragmentShader))

@@ -116,7 +116,7 @@ void SceneViewerApplication::InitializeLights()
     std::shared_ptr<DirectionalLight> directionalLight = std::make_shared<DirectionalLight>();
     directionalLight->SetDirection(glm::vec3(-0.3f, -1.0f, -0.3f)); // It will be normalized inside the function
     directionalLight->SetIntensity(3.0f);
-    m_scene.AddSceneNode(std::make_shared<SceneLight>("directional light", directionalLight));
+    //m_scene.AddSceneNode(std::make_shared<SceneLight>("directional light", directionalLight));
 
     // Create a point light and add it to the scene
     //std::shared_ptr<PointLight> pointLight = std::make_shared<PointLight>();
@@ -193,7 +193,21 @@ void SceneViewerApplication::InitializeMaterial()
     std::shared_ptr<ShaderProgram> planetShaderProgramPtr = std::make_shared<ShaderProgram>();
     planetShaderProgramPtr->Build(planetVertexShader, planetFragmentShader);
 
-    m_renderer.RegisterShaderProgram(planetShaderProgramPtr, {}, {});
+    ShaderProgram::Location planetModeLocation = planetShaderProgramPtr->GetUniformLocation("Mode");
+    ShaderProgram::Location planetWorldMatrixLocation = planetShaderProgramPtr->GetUniformLocation("WorldMatrix");
+    ShaderProgram::Location planetViewProjLocation = planetShaderProgramPtr->GetUniformLocation("ViewProjMatrix");
+    m_renderer.RegisterShaderProgram(planetShaderProgramPtr, [=](const ShaderProgram& shaderProgram, const glm::mat4& worldMatrix, const Camera& camera, bool cameraChanged)
+        {
+            if (cameraChanged)
+            {
+                //shaderProgram.SetUniform(cameraPositionLocation, camera.ExtractTranslation());
+                shaderProgram.SetUniform(planetViewProjLocation, camera.GetViewProjectionMatrix());
+            }
+
+            shaderProgram.SetUniform(planetWorldMatrixLocation, worldMatrix);
+            shaderProgram.SetUniform(planetModeLocation, 4u);
+        }, 
+        m_renderer.GetDefaultUpdateLightsFunction(*planetShaderProgramPtr));
 
     assert(planetShaderProgramPtr);
     m_planetMaterial = std::make_shared<Material>(planetShaderProgramPtr);
@@ -222,34 +236,7 @@ vec3 GetColorFromHeight(float height)
         return vec3(0.1f, 0.1f, 0.3f); // Water
     }
 }
-void LoadAndCompileShader(Shader& shader, const char* path)
-{
-    // Open the file for reading
-    std::ifstream file(path);
-    if (!file.is_open())
-    {
-        std::cout << "Can't find file: " << path << std::endl;
-        std::cout << "Is your working directory properly set?" << std::endl;
-        return;
-    }
 
-    // Dump the contents into a string
-    std::stringstream stringStream;
-    stringStream << file.rdbuf() << '\0';
-
-    // Set the source code from the string
-    shader.SetSource(stringStream.str().c_str());
-
-    // Try to compile
-    if (!shader.Compile())
-    {
-        // Get errors in case of failure
-        std::array<char, 256> errors;
-        shader.GetCompilationErrors(errors);
-        std::cout << "Error compiling shader: " << path << std::endl;
-        std::cout << errors.data() << std::endl;
-    }
-}
 void SceneViewerApplication::InitializeModels()
 {
     m_skyboxTexture = TextureCubemapLoader::LoadTextureShared("models/skybox/spaceSkybox.png", TextureObject::FormatRGB, TextureObject::InternalFormatSRGB8);
@@ -316,7 +303,7 @@ void SceneViewerApplication::InitializeModels()
 
     // Create container for the element data
     std::vector<unsigned int> indices;
-    int m_grid = 256;
+    unsigned int m_grid = 256u;
     // Grid scale to convert the entire grid to size 1x1
     float scale = (1.0f / m_grid);
 
@@ -351,56 +338,59 @@ void SceneViewerApplication::InitializeModels()
                 case 5:
                     //Back
                     vertex.texCoord = vec2(static_cast<float>(i), static_cast<float>(j));
-                    vertex.normal = vec3(1.0f, 0.0f, 0.0f);
                     //the *0.5f is the scale
                     vertex.position = glm::normalize((vec3(z - 0.5f, x, y) * 2.0f) / scale - vec3(1.0f)) * 0.5f;
                     noise = clamp(stb_perlin_fbm_noise3(vertex.position.x * 2.0f, vertex.position.y * 2.0f, vertex.position.z * 2.0f, lacunarity, gain, octaves), minVal, maxVal);
                     vertex.color = GetColorFromHeight(noise);
+                    vertex.normal = vertex.position;
                     vertex.position += vertex.position * 2.0f * noise * maxHeight - offset;
                     break;
                 case 4:
                     //Front
                     vertex.texCoord = vec2(static_cast<float>(i), static_cast<float>(j));
-                    vertex.normal = vec3(1.0f, 0.0f, 0.0f);
                     vertex.position = glm::normalize((vec3(z + 0.5f, x, y) * 2.0f) / scale - vec3(1.0f)) * 0.5f;
                     noise = clamp(stb_perlin_fbm_noise3(vertex.position.x * 2.0f, vertex.position.y * 2.0f, vertex.position.z * 2.0f, lacunarity, gain, octaves), minVal, maxVal);
                     vertex.color = GetColorFromHeight(noise);
+                    vertex.normal = vertex.position;
                     vertex.position += vertex.position * 2.0f * noise * maxHeight - offset;
                     break;
                 case 3:
                     //Left
                     vertex.texCoord = vec2(static_cast<float>(i), static_cast<float>(j));
-                    vertex.normal = vec3(0.0f, 1.0f, 0.0f);
                     vertex.position = glm::normalize((vec3(x, z - 0.5f, y) * 2.0f) / scale - vec3(1.0f)) * 0.5f;
                     noise = clamp(stb_perlin_fbm_noise3(vertex.position.x * 2.0f, vertex.position.y * 2.0f, vertex.position.z * 2.0f, lacunarity, gain, octaves), minVal, maxVal);
                     vertex.color = GetColorFromHeight(noise);
+                    vertex.normal = vertex.position;
                     vertex.position += vertex.position * 2.0f * noise * maxHeight - offset;
                     break;
                 case 2:
                     //Bottom
                     vertex.texCoord = vec2(static_cast<float>(i), static_cast<float>(j));
-                    vertex.normal = vec3(0.0f, 0.0f, 1.0f);
+                    
                     vertex.position = glm::normalize((vec3(x, y, (z * -1) - 0.5f) * 2.0f) / scale - vec3(1.0f)) * 0.5f;
                     noise = clamp(stb_perlin_fbm_noise3(vertex.position.x * 2.0f, vertex.position.y * 2.0f, vertex.position.z * 2.0f, lacunarity, gain, octaves), minVal, maxVal);
                     vertex.color = GetColorFromHeight(noise);
+                    vertex.normal = vertex.position;
                     vertex.position += vertex.position * 2.0f * noise * maxHeight - offset;
                     break;
                 case 1:
                     //Right
                     vertex.texCoord = vec2(static_cast<float>(i), static_cast<float>(j));
-                    vertex.normal = vec3(0.0f, 1.0f, 0.0f);
+                    
                     vertex.position = glm::normalize((vec3(x, z + 0.5f, y) * 2.0f) / scale - vec3(1.0f)) * 0.5f;
                     noise = clamp(stb_perlin_fbm_noise3(vertex.position.x * 2.0f, vertex.position.y * 2.0f, vertex.position.z * 2.0f, lacunarity, gain, octaves), minVal, maxVal);
                     vertex.color = GetColorFromHeight(noise);
+                    vertex.normal = vertex.position;
                     vertex.position += vertex.position * 2.0f * noise * maxHeight - offset;
                     break;
                 case 0:
                     //Top
                     vertex.texCoord = vec2(static_cast<float>(i), static_cast<float>(j));
-                    vertex.normal = vec3(0.0f, 0.0f, 1.0f);
+                    
                     vertex.position = glm::normalize((vec3(x, y, z + 0.5f) * 2.0f) / scale - vec3(1.0f)) * 0.5f;
                     noise = clamp(stb_perlin_fbm_noise3(vertex.position.x * 2.0f, vertex.position.y * 2.0f, vertex.position.z * 2.0f, lacunarity, gain, octaves), minVal, maxVal);
                     vertex.color = GetColorFromHeight(noise);
+                    vertex.normal = vertex.position;
                     vertex.position += vertex.position * 2.0f * noise * maxHeight - offset;
                     break;
                 }
@@ -413,15 +403,42 @@ void SceneViewerApplication::InitializeModels()
                     unsigned int bottom_right = top_right - columnCount;
                     unsigned int bottom_left = bottom_right - 1;
 
-                    //Triangle 1
-                    indices.push_back(bottom_left);
-                    indices.push_back(bottom_right);
-                    indices.push_back(top_left);
+                    vec3 facing = cross((vertices[bottom_left].position - vertices[bottom_right].position), (vertices[top_left].position - vertices[bottom_right].position));
 
-                    //Triangle 2
-                    indices.push_back(bottom_right);
-                    indices.push_back(top_left);
-                    indices.push_back(top_right);
+                    if (sign(dot(vertex.normal, facing)) > 0)
+                    {
+
+
+                        //Triangle 1
+                        indices.push_back(top_left);
+                        indices.push_back(top_right);
+                        indices.push_back(bottom_right);
+                        
+
+                        //Triangle 2
+                        indices.push_back(bottom_right);
+                        indices.push_back(bottom_left);
+                        indices.push_back(top_left);
+                        
+                    }
+                    else
+                    {
+                        //Triangle 2
+                        indices.push_back(top_left);
+                        indices.push_back(bottom_right);
+                        indices.push_back(top_right);
+                        
+                        //Triangle 1
+                        indices.push_back(bottom_right);
+                        indices.push_back(top_left);
+                        indices.push_back(bottom_left);
+                        
+
+                        
+                    }
+                    
+
+                    
                 }
             }
         }
@@ -456,7 +473,7 @@ void SceneViewerApplication::InitializeModels()
             }
         }
     }
-    planetModel->AddMaterial(m_defaultMaterial);
+    planetModel->AddMaterial(m_planetMaterial);
     planetModel->GetMesh().AddSubmesh<Vertex, unsigned int, VertexFormat::LayoutIterator>(Drawcall::Primitive::Triangles, vertices, indices,
         vertexFormat.LayoutBegin(static_cast<int>(vertices.size()), true /* interleaved */), vertexFormat.LayoutEnd());
     //    std::shared_ptr<Material> planetMaterial = std::make_shared<Material>();
@@ -533,16 +550,38 @@ void SceneViewerApplication::InitializeModels()
                     unsigned int top_left = top_right - 1;
                     unsigned int bottom_right = top_right - columnCount;
                     unsigned int bottom_left = bottom_right - 1;
+                    
+                    vec3 facing = cross((sunVertices[bottom_left].position - sunVertices[bottom_right].position), (sunVertices[top_left].position - sunVertices[bottom_right].position));
 
-                    //Triangle 1
-                    sunIndices.push_back(bottom_left);
-                    sunIndices.push_back(bottom_right);
-                    sunIndices.push_back(top_left);
+                    if (sign(dot(vertex.position, facing)) < 0)
+                    {
+                        
 
-                    //Triangle 2
-                    sunIndices.push_back(bottom_right);
-                    sunIndices.push_back(top_left);
-                    sunIndices.push_back(top_right);
+                        //Triangle 1
+                        sunIndices.push_back(bottom_right);
+                        sunIndices.push_back(top_right);
+                        sunIndices.push_back(top_left);
+
+                        //Triangle 2
+                        sunIndices.push_back(top_left);
+                        sunIndices.push_back(bottom_left);
+                        sunIndices.push_back(bottom_right);
+                    }
+                    else
+                    {
+                        //Triangle 1
+                        sunIndices.push_back(bottom_right);
+                        sunIndices.push_back(bottom_left);
+                        sunIndices.push_back(top_left);
+
+                        //Triangle 2
+                        sunIndices.push_back(top_left);
+                        sunIndices.push_back(top_right);
+                        sunIndices.push_back(bottom_right);
+                    }
+                    
+                    
+                    
                 }
             }
         }
@@ -569,11 +608,12 @@ void SceneViewerApplication::InitializeModels()
                 vec3 deltaX = normalize(sunVertices[nextX].position - sunVertices[prevX].position);
                 vec3 deltaY = normalize(sunVertices[nextY].position - sunVertices[prevY].position);
 
-                vertex.normal = cross(deltaX, deltaY);
+                /*vertex.normal = cross(deltaX, deltaY);
                 if (sign(dot(vertex.position, vertex.normal)) < 0)
                 {
                     vertex.normal = cross(deltaY, deltaX);
-                }
+                }*/
+                vertex.normal = normalize(vertex.position);
             }
         }
     }

@@ -5,8 +5,8 @@ layout (location = 1) in vec2 aTexCoord;
 layout (location = 2) in vec3 aColor;  
 layout (location = 3) in vec3 aNormal;  
 
-uniform mat4 Matrix = mat4(1);  
-
+uniform mat4 WorldMatrix;  
+uniform mat4 ViewProjMatrix;
 out vec2 texCoord;  
 out vec3 color;  
 out vec3 normal;  
@@ -14,10 +14,10 @@ out vec3 worldPos;
 
 void main()  
 {  
+	worldPos = (WorldMatrix * vec4(aPos, 1.0)).xyz;
 	texCoord = aTexCoord;  
 	color = aColor;  
 	normal = aNormal;  
-	
-	gl_Position = Matrix * vec4(aPos.x, aPos.y, aPos.z, 1.0);  
-	worldPos = normalize(aPos);
+	gl_Position = ViewProjMatrix * vec4(worldPos, 1.0);
+
 }

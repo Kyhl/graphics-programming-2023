@@ -1,24 +1,24 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\glad\src\glad.c">
+    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\glad\src\glad.c">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="C:\UnityFiles\graphics-programming-2023\libraries\glad\include\glad\glad.h">
+    <ClInclude Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\glad\include\glad\glad.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <CustomBuild Include="C:\UnityFiles\graphics-programming-2023\libraries\glad\CMakeLists.txt" />
+    <CustomBuild Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\glad\CMakeLists.txt" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Header Files">
-      <UniqueIdentifier>{16C8EA6D-F51E-3B49-8915-47636A1B82C5}</UniqueIdentifier>
+      <UniqueIdentifier>{3378DBF5-1BCA-3A3E-84DA-82AB77AEDA8E}</UniqueIdentifier>
     </Filter>
     <Filter Include="Source Files">
-      <UniqueIdentifier>{1161C1DE-5027-30E9-959B-5F602847D71E}</UniqueIdentifier>
+      <UniqueIdentifier>{B118B8BD-CB6A-3871-85B7-2B0494A28BA4}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

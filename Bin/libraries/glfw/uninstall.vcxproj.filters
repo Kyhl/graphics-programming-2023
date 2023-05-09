@@ -1,17 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <CustomBuild Include="C:\UnityFiles\graphics-programming-2023\Bin\CMakeFiles\d15e337104afde6cd22661de40babb06\uninstall.rule">
+    <CustomBuild Include="D:\GraphicsProgramming\graphics-programming-2023\bin\CMakeFiles\37a6abd8539c5c2f004b9f4280cc2bfd\uninstall.rule">
       <Filter>CMake Rules</Filter>
     </CustomBuild>
-    <CustomBuild Include="C:\UnityFiles\graphics-programming-2023\libraries\glfw\CMakeLists.txt" />
+    <CustomBuild Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\glfw\CMakeLists.txt" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="C:\UnityFiles\graphics-programming-2023\Bin\libraries\glfw\CMakeFiles\uninstall" />
+    <None Include="D:\GraphicsProgramming\graphics-programming-2023\bin\libraries\glfw\CMakeFiles\uninstall" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="CMake Rules">
-      <UniqueIdentifier>{604E7588-C565-3783-B760-3962053E9240}</UniqueIdentifier>
+      <UniqueIdentifier>{C6E36432-B7A0-3C11-9D89-296B07A4951E}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

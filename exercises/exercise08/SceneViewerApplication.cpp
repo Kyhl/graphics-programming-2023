@@ -195,9 +195,37 @@ vec3 GetColorFromHeight(float height)
         return vec3(0.1f, 0.1f, 0.3f); // Water
     }
 }
+void LoadAndCompileShader(Shader& shader, const char* path)
+{
+    // Open the file for reading
+    std::ifstream file(path);
+    if (!file.is_open())
+    {
+        std::cout << "Can't find file: " << path << std::endl;
+        std::cout << "Is your working directory properly set?" << std::endl;
+        return;
+    }
+
+    // Dump the contents into a string
+    std::stringstream stringStream;
+    stringStream << file.rdbuf() << '\0';
+
+    // Set the source code from the string
+    shader.SetSource(stringStream.str().c_str());
+
+    // Try to compile
+    if (!shader.Compile())
+    {
+        // Get errors in case of failure
+        std::array<char, 256> errors;
+        shader.GetCompilationErrors(errors);
+        std::cout << "Error compiling shader: " << path << std::endl;
+        std::cout << errors.data() << std::endl;
+    }
+}
 void SceneViewerApplication::InitializeModels()
 {
-    m_skyboxTexture = TextureCubemapLoader::LoadTextureShared("models/skybox/defaultCubemap.png", TextureObject::FormatRGB, TextureObject::InternalFormatSRGB8);
+    m_skyboxTexture = TextureCubemapLoader::LoadTextureShared("models/skybox/spaceSkybox.png", TextureObject::FormatRGB, TextureObject::InternalFormatSRGB8);
 
     m_skyboxTexture->Bind();
     float maxLod;
@@ -248,8 +276,8 @@ void SceneViewerApplication::InitializeModels()
     struct Vertex
     {
         Vertex() = default;
-        Vertex(const glm::vec3& position, const glm::vec3& normal, const glm::vec2 texCoord)
-            : position(position), normal(normal), texCoord(texCoord) {}
+        Vertex(const glm::vec3& position, const glm::vec2 texCoord, const vec3 color, const glm::vec3& normal)
+            : position(position), texCoord(texCoord), color(color), normal(normal)  {}
         glm::vec3 position;
         glm::vec2 texCoord;
         glm::vec3 color;
@@ -280,6 +308,10 @@ void SceneViewerApplication::InitializeModels()
     float octaves = 8;
     float minVal = -0.2f;
     float maxVal = 1.0f;
+
+    vec3 offset = vec3(3.5f, 0.0f, 0.0f);
+
+
     // Iterate over each VERTEX
     for (unsigned int u = 0; u < 6; u++)
     {
@@ -303,7 +335,7 @@ void SceneViewerApplication::InitializeModels()
                     vertex.position = glm::normalize((vec3(z - 0.5f, x, y) * 2.0f) / scale - vec3(1.0f)) * 0.5f;
                     noise = clamp(stb_perlin_fbm_noise3(vertex.position.x * 2.0f, vertex.position.y * 2.0f, vertex.position.z * 2.0f, lacunarity, gain, octaves), minVal, maxVal);
                     vertex.color = GetColorFromHeight(noise);
-                    vertex.position += vertex.position * 2.0f * noise * maxHeight;
+                    vertex.position += vertex.position * 2.0f * noise * maxHeight - offset;
                     break;
                 case 4:
                     //Front
@@ -312,7 +344,7 @@ void SceneViewerApplication::InitializeModels()
                     vertex.position = glm::normalize((vec3(z + 0.5f, x, y) * 2.0f) / scale - vec3(1.0f)) * 0.5f;
                     noise = clamp(stb_perlin_fbm_noise3(vertex.position.x * 2.0f, vertex.position.y * 2.0f, vertex.position.z * 2.0f, lacunarity, gain, octaves), minVal, maxVal);
                     vertex.color = GetColorFromHeight(noise);
-                    vertex.position += vertex.position * 2.0f * noise * maxHeight;
+                    vertex.position += vertex.position * 2.0f * noise * maxHeight - offset;
                     break;
                 case 3:
                     //Left
@@ -321,7 +353,7 @@ void SceneViewerApplication::InitializeModels()
                     vertex.position = glm::normalize((vec3(x, z - 0.5f, y) * 2.0f) / scale - vec3(1.0f)) * 0.5f;
                     noise = clamp(stb_perlin_fbm_noise3(vertex.position.x * 2.0f, vertex.position.y * 2.0f, vertex.position.z * 2.0f, lacunarity, gain, octaves), minVal, maxVal);
                     vertex.color = GetColorFromHeight(noise);
-                    vertex.position += vertex.position * 2.0f * noise * maxHeight;
+                    vertex.position += vertex.position * 2.0f * noise * maxHeight - offset;
                     break;
                 case 2:
                     //Bottom
@@ -330,7 +362,7 @@ void SceneViewerApplication::InitializeModels()
                     vertex.position = glm::normalize((vec3(x, y, (z * -1) - 0.5f) * 2.0f) / scale - vec3(1.0f)) * 0.5f;
                     noise = clamp(stb_perlin_fbm_noise3(vertex.position.x * 2.0f, vertex.position.y * 2.0f, vertex.position.z * 2.0f, lacunarity, gain, octaves), minVal, maxVal);
                     vertex.color = GetColorFromHeight(noise);
-                    vertex.position += vertex.position * 2.0f * noise * maxHeight;
+                    vertex.position += vertex.position * 2.0f * noise * maxHeight - offset;
                     break;
                 case 1:
                     //Right
@@ -339,7 +371,7 @@ void SceneViewerApplication::InitializeModels()
                     vertex.position = glm::normalize((vec3(x, z + 0.5f, y) * 2.0f) / scale - vec3(1.0f)) * 0.5f;
                     noise = clamp(stb_perlin_fbm_noise3(vertex.position.x * 2.0f, vertex.position.y * 2.0f, vertex.position.z * 2.0f, lacunarity, gain, octaves), minVal, maxVal);
                     vertex.color = GetColorFromHeight(noise);
-                    vertex.position += vertex.position * 2.0f * noise * maxHeight;
+                    vertex.position += vertex.position * 2.0f * noise * maxHeight - offset;
                     break;
                 case 0:
                     //Top
@@ -348,7 +380,7 @@ void SceneViewerApplication::InitializeModels()
                     vertex.position = glm::normalize((vec3(x, y, z + 0.5f) * 2.0f) / scale - vec3(1.0f)) * 0.5f;
                     noise = clamp(stb_perlin_fbm_noise3(vertex.position.x * 2.0f, vertex.position.y * 2.0f, vertex.position.z * 2.0f, lacunarity, gain, octaves), minVal, maxVal);
                     vertex.color = GetColorFromHeight(noise);
-                    vertex.position += vertex.position * 2.0f * noise * maxHeight;
+                    vertex.position += vertex.position * 2.0f * noise * maxHeight - offset;
                     break;
                 }
 
@@ -403,6 +435,171 @@ void SceneViewerApplication::InitializeModels()
             }
         }
     }
+
+    //Sun
+    std::vector<Vertex> sunVertices;
+
+    // Create container for the element data
+    std::vector<unsigned int> sunIndices;
+    // Iterate over each VERTEX
+
+    
+    float sunScale = 1.0f;
+
+    for (unsigned int u = 0; u < 6; u++)
+    {
+        for (unsigned int j = 0; j < rowCount; ++j)
+        {
+            for (unsigned int i = 0; i < columnCount; ++i)
+            {
+                Vertex& vertex = sunVertices.emplace_back();
+                vertex.color = vec3(0.969, 0.839, 0.408);
+                // -0.5f is the offset
+                float x = i * scale - 0.5f;
+                float y = j * scale - 0.5f;
+                float noise;
+                float z = 0.0f;
+                switch (u)
+                {
+                case 5:
+                    //Back
+                    vertex.texCoord = vec2(static_cast<float>(i), static_cast<float>(j));
+                    vertex.normal = vec3(1.0f, 0.0f, 0.0f);
+                    //the *0.5f is the scale
+                    vertex.position = glm::normalize((vec3(z - 0.5f, x, y) * 2.0f) / scale - vec3(1.0f)) * sunScale;
+                    break;
+                case 4:
+                    //Front
+                    vertex.texCoord = vec2(static_cast<float>(i), static_cast<float>(j));
+                    vertex.normal = vec3(1.0f, 0.0f, 0.0f);
+                    vertex.position = glm::normalize((vec3(z + 0.5f, x, y) * 2.0f) / scale - vec3(1.0f)) * sunScale;
+                    break;
+                case 3:
+                    //Left
+                    vertex.texCoord = vec2(static_cast<float>(i), static_cast<float>(j));
+                    vertex.normal = vec3(0.0f, 1.0f, 0.0f);
+                    vertex.position = glm::normalize((vec3(x, z - 0.5f, y) * 2.0f) / scale - vec3(1.0f)) * sunScale;
+                    break;
+                case 2:
+                    //Bottom
+                    vertex.texCoord = vec2(static_cast<float>(i), static_cast<float>(j));
+                    vertex.normal = vec3(0.0f, 0.0f, 1.0f);
+                    vertex.position = glm::normalize((vec3(x, y, (z * -1) - 0.5f) * 2.0f) / scale - vec3(1.0f)) * sunScale;
+                    break;
+                case 1:
+                    //Right
+                    vertex.texCoord = vec2(static_cast<float>(i), static_cast<float>(j));
+                    vertex.normal = vec3(0.0f, 1.0f, 0.0f);
+                    vertex.position = glm::normalize((vec3(x, z + 0.5f, y) * 2.0f) / scale - vec3(1.0f)) * sunScale;
+                    break;
+                case 0:
+                    //Top
+                    vertex.texCoord = vec2(static_cast<float>(i), static_cast<float>(j));
+                    vertex.normal = vec3(0.0f, 0.0f, 1.0f);
+                    vertex.position = glm::normalize((vec3(x, y, z + 0.5f) * 2.0f) / scale - vec3(1.0f)) * sunScale;
+                    break;
+                }
+
+                if (i > 0 && j > 0)
+                {
+                    unsigned int offset = rowCount * columnCount * u;
+                    unsigned int top_right = (j * columnCount + i) + offset; // Current vertex
+                    unsigned int top_left = top_right - 1;
+                    unsigned int bottom_right = top_right - columnCount;
+                    unsigned int bottom_left = bottom_right - 1;
+
+                    //Triangle 1
+                    sunIndices.push_back(bottom_left);
+                    sunIndices.push_back(bottom_right);
+                    sunIndices.push_back(top_left);
+
+                    //Triangle 2
+                    sunIndices.push_back(bottom_right);
+                    sunIndices.push_back(top_left);
+                    sunIndices.push_back(top_right);
+                }
+            }
+        }
+    }
+    for (unsigned int u = 0; u < 6; u++)
+    {
+        for (unsigned int j = 0; j < rowCount; ++j)
+        {
+            for (unsigned int i = 0; i < columnCount; ++i)
+            {
+                // Get the vertex at (i, j)
+                unsigned int offset = (rowCount * columnCount) * u;
+                int index = j * columnCount + i + offset;
+                Vertex& vertex = sunVertices[index];
+
+                // Compute the delta in X
+                unsigned int prevX = i > 0 ? index - 1 : index;
+                unsigned int nextX = i < m_grid ? index + 1 : index;
+
+                // Compute the delta in Y
+                int prevY = j > 0 ? index - columnCount : index;
+                int nextY = j < m_grid ? index + columnCount : index;
+
+                vec3 deltaX = normalize(sunVertices[nextX].position - sunVertices[prevX].position);
+                vec3 deltaY = normalize(sunVertices[nextY].position - sunVertices[prevY].position);
+
+                vertex.normal = cross(deltaX, deltaY);
+                if (sign(dot(vertex.position, vertex.normal)) < 0)
+                {
+                    vertex.normal = cross(deltaY, deltaX);
+                }
+            }
+        }
+    }
+
+    std::shared_ptr<Model> sunModel = std::make_shared<Model>(make_shared<Mesh>());
+
+    sunModel->GetMesh().AddSubmesh<Vertex, unsigned int, VertexFormat::LayoutIterator>(Drawcall::Primitive::Triangles, sunVertices, sunIndices,
+        vertexFormat.LayoutBegin(static_cast<int>(sunVertices.size()), true /* interleaved */), vertexFormat.LayoutEnd());
+    //    std::shared_ptr<Material> planetMaterial = std::make_shared<Material>();
+    sunModel->AddMaterial(m_defaultMaterial);
+    m_scene.AddSceneNode(std::make_shared<SceneModel>("Sun", sunModel));
+
+    /*std::vector<const char*> vertexShaderPaths;
+    vertexShaderPaths.push_back("shaders/version330.glsl");
+    vertexShaderPaths.push_back("shaders/planet/default.vert");
+    Shader vertexShader = ShaderLoader(Shader::VertexShader).Load(vertexShaderPaths);
+
+    std::vector<const char*> fragmentShaderPaths;
+    fragmentShaderPaths.push_back("shaders/version330.glsl");
+    fragmentShaderPaths.push_back("shaders/planet/default.frag");
+    Shader fragmentShader = ShaderLoader(Shader::FragmentShader).Load(fragmentShaderPaths);
+
+    std::shared_ptr<ShaderProgram> shaderProgramPtr = std::make_shared<ShaderProgram>();
+    shaderProgramPtr->Build(vertexShader, fragmentShader);
+    m_renderer.RegisterShaderProgram(shaderProgramPtr,
+        [=](const ShaderProgram& shaderProgram, const glm::mat4& worldMatrix, const Camera& camera, bool cameraChanged)
+        {
+            
+        },
+        m_renderer.GetDefaultUpdateLightsFunction(*shaderProgramPtr)
+    );*/
+    Shader vertexShader(Shader::VertexShader);
+    LoadAndCompileShader(vertexShader, "shaders/planet/default.vert");
+
+    // Load and compile fragment shader
+    Shader fragmentShader(Shader::FragmentShader);
+    LoadAndCompileShader(fragmentShader, "shaders/planet/default.frag");
+
+    std::shared_ptr<ShaderProgram> shaderProgramPtr = std::make_shared<ShaderProgram>();
+    if (!shaderProgramPtr->Build(vertexShader, fragmentShader))
+    {
+        std::cout << "Error linking shaders" << std::endl;
+    }
+    m_renderer.RegisterShaderProgram(shaderProgramPtr,
+        [=](const ShaderProgram& shaderProgram, const glm::mat4& worldMatrix, const Camera& camera, bool cameraChanged)
+        {
+
+        },
+        m_renderer.GetDefaultUpdateLightsFunction(*shaderProgramPtr)
+    );
+    std::shared_ptr<Material> planetMaterial = std::make_shared<Material>(shaderProgramPtr);
+
     std::shared_ptr<Model> planetModel = std::make_shared<Model>(make_shared<Mesh>());
 
     planetModel->GetMesh().AddSubmesh<Vertex, unsigned int, VertexFormat::LayoutIterator>(Drawcall::Primitive::Triangles, vertices, indices,

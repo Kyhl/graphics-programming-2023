@@ -1,4 +1,4 @@
-# Install script for directory: C:/UnityFiles/graphics-programming-2023/exercises/exercise04
+# Install script for directory: D:/GraphicsProgramming/graphics-programming-2023/exercises/exercise04
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

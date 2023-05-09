@@ -1,83 +1,83 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\exercises\exercise09\PostFXSceneViewerApplication.cpp">
+    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\exercises\exercise09\PostFXSceneViewerApplication.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\exercises\exercise09\main.cpp">
+    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\exercises\exercise09\main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="C:\UnityFiles\graphics-programming-2023\exercises\exercise09\PostFXSceneViewerApplication.h">
+    <ClInclude Include="D:\GraphicsProgramming\graphics-programming-2023\exercises\exercise09\PostFXSceneViewerApplication.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <CustomBuild Include="C:\UnityFiles\graphics-programming-2023\exercises\exercise09\CMakeLists.txt" />
+    <CustomBuild Include="D:\GraphicsProgramming\graphics-programming-2023\exercises\exercise09\CMakeLists.txt" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="C:\UnityFiles\graphics-programming-2023\exercises\exercise09\shaders\default.frag">
+    <None Include="D:\GraphicsProgramming\graphics-programming-2023\exercises\exercise09\shaders\default.frag">
       <Filter>Shaders</Filter>
     </None>
-    <None Include="C:\UnityFiles\graphics-programming-2023\exercises\exercise09\shaders\default.vert">
+    <None Include="D:\GraphicsProgramming\graphics-programming-2023\exercises\exercise09\shaders\default.vert">
       <Filter>Shaders</Filter>
     </None>
-    <None Include="C:\UnityFiles\graphics-programming-2023\exercises\exercise09\shaders\lambert-ggx.glsl">
+    <None Include="D:\GraphicsProgramming\graphics-programming-2023\exercises\exercise09\shaders\lambert-ggx.glsl">
       <Filter>Shaders</Filter>
     </None>
-    <None Include="C:\UnityFiles\graphics-programming-2023\exercises\exercise09\shaders\lighting.glsl">
+    <None Include="D:\GraphicsProgramming\graphics-programming-2023\exercises\exercise09\shaders\lighting.glsl">
       <Filter>Shaders</Filter>
     </None>
-    <None Include="C:\UnityFiles\graphics-programming-2023\exercises\exercise09\shaders\postfx\bloom.frag">
+    <None Include="D:\GraphicsProgramming\graphics-programming-2023\exercises\exercise09\shaders\postfx\bloom.frag">
       <Filter>Shaders</Filter>
     </None>
-    <None Include="C:\UnityFiles\graphics-programming-2023\exercises\exercise09\shaders\postfx\blur.frag">
+    <None Include="D:\GraphicsProgramming\graphics-programming-2023\exercises\exercise09\shaders\postfx\blur.frag">
       <Filter>Shaders</Filter>
     </None>
-    <None Include="C:\UnityFiles\graphics-programming-2023\exercises\exercise09\shaders\postfx\compose.frag">
+    <None Include="D:\GraphicsProgramming\graphics-programming-2023\exercises\exercise09\shaders\postfx\compose.frag">
       <Filter>Shaders</Filter>
     </None>
-    <None Include="C:\UnityFiles\graphics-programming-2023\exercises\exercise09\shaders\postfx\copy.frag">
+    <None Include="D:\GraphicsProgramming\graphics-programming-2023\exercises\exercise09\shaders\postfx\copy.frag">
       <Filter>Shaders</Filter>
     </None>
-    <None Include="C:\UnityFiles\graphics-programming-2023\exercises\exercise09\shaders\renderer\deferred.frag">
+    <None Include="D:\GraphicsProgramming\graphics-programming-2023\exercises\exercise09\shaders\renderer\deferred.frag">
       <Filter>Shaders</Filter>
     </None>
-    <None Include="C:\UnityFiles\graphics-programming-2023\exercises\exercise09\shaders\renderer\deferred.vert">
+    <None Include="D:\GraphicsProgramming\graphics-programming-2023\exercises\exercise09\shaders\renderer\deferred.vert">
       <Filter>Shaders</Filter>
     </None>
-    <None Include="C:\UnityFiles\graphics-programming-2023\exercises\exercise09\shaders\renderer\empty.frag">
+    <None Include="D:\GraphicsProgramming\graphics-programming-2023\exercises\exercise09\shaders\renderer\empty.frag">
       <Filter>Shaders</Filter>
     </None>
-    <None Include="C:\UnityFiles\graphics-programming-2023\exercises\exercise09\shaders\renderer\empty.vert">
+    <None Include="D:\GraphicsProgramming\graphics-programming-2023\exercises\exercise09\shaders\renderer\empty.vert">
       <Filter>Shaders</Filter>
     </None>
-    <None Include="C:\UnityFiles\graphics-programming-2023\exercises\exercise09\shaders\renderer\fullscreen.vert">
+    <None Include="D:\GraphicsProgramming\graphics-programming-2023\exercises\exercise09\shaders\renderer\fullscreen.vert">
       <Filter>Shaders</Filter>
     </None>
-    <None Include="C:\UnityFiles\graphics-programming-2023\exercises\exercise09\shaders\renderer\skybox.frag">
+    <None Include="D:\GraphicsProgramming\graphics-programming-2023\exercises\exercise09\shaders\renderer\skybox.frag">
       <Filter>Shaders</Filter>
     </None>
-    <None Include="C:\UnityFiles\graphics-programming-2023\exercises\exercise09\shaders\renderer\skybox.vert">
+    <None Include="D:\GraphicsProgramming\graphics-programming-2023\exercises\exercise09\shaders\renderer\skybox.vert">
       <Filter>Shaders</Filter>
     </None>
-    <None Include="C:\UnityFiles\graphics-programming-2023\exercises\exercise09\shaders\utils.glsl">
+    <None Include="D:\GraphicsProgramming\graphics-programming-2023\exercises\exercise09\shaders\utils.glsl">
       <Filter>Shaders</Filter>
     </None>
-    <None Include="C:\UnityFiles\graphics-programming-2023\exercises\exercise09\shaders\version330.glsl">
+    <None Include="D:\GraphicsProgramming\graphics-programming-2023\exercises\exercise09\shaders\version330.glsl">
       <Filter>Shaders</Filter>
     </None>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Header Files">
-      <UniqueIdentifier>{16C8EA6D-F51E-3B49-8915-47636A1B82C5}</UniqueIdentifier>
+      <UniqueIdentifier>{3378DBF5-1BCA-3A3E-84DA-82AB77AEDA8E}</UniqueIdentifier>
     </Filter>
     <Filter Include="Shaders">
-      <UniqueIdentifier>{0B35AA16-ACA2-367B-9F6D-E430E58E463E}</UniqueIdentifier>
+      <UniqueIdentifier>{BB3DA5E7-2DA1-3C97-A7D8-2557C6373DB1}</UniqueIdentifier>
     </Filter>
     <Filter Include="Source Files">
-      <UniqueIdentifier>{1161C1DE-5027-30E9-959B-5F602847D71E}</UniqueIdentifier>
+      <UniqueIdentifier>{B118B8BD-CB6A-3871-85B7-2B0494A28BA4}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

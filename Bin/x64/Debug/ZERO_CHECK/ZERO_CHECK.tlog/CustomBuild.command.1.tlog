@@ -1,6 +1,6 @@
-^C:\UNITYFILES\GRAPHICS-PROGRAMMING-2023\BIN\CMAKEFILES\EDADC6BCB5CEC3C2976055FF3DA67046\GENERATE.STAMP.RULE
+^D:\GRAPHICSPROGRAMMING\GRAPHICS-PROGRAMMING-2023\BIN\CMAKEFILES\0359F9011E995D5F0A1E2C7E55C655E1\GENERATE.STAMP.RULE
 setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -SC:/UnityFiles/graphics-programming-2023 -BC:/UnityFiles/graphics-programming-2023/Bin --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file C:/UnityFiles/graphics-programming-2023/Bin/ITU-graphics-programming.sln
+"C:\Program Files\CMake\bin\cmake.exe" -SD:/GraphicsProgramming/graphics-programming-2023 -BD:/GraphicsProgramming/graphics-programming-2023/bin --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file D:/GraphicsProgramming/graphics-programming-2023/bin/ITU-graphics-programming.sln
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone

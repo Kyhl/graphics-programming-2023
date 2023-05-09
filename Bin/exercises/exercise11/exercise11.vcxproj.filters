@@ -1,62 +1,62 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\exercises\exercise11\RaytracingApplication.cpp">
+    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\exercises\exercise11\RaytracingApplication.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\exercises\exercise11\main.cpp">
+    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\exercises\exercise11\main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="C:\UnityFiles\graphics-programming-2023\exercises\exercise11\RaytracingApplication.h">
+    <ClInclude Include="D:\GraphicsProgramming\graphics-programming-2023\exercises\exercise11\RaytracingApplication.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <CustomBuild Include="C:\UnityFiles\graphics-programming-2023\exercises\exercise11\CMakeLists.txt" />
+    <CustomBuild Include="D:\GraphicsProgramming\graphics-programming-2023\exercises\exercise11\CMakeLists.txt" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="C:\UnityFiles\graphics-programming-2023\exercises\exercise11\shaders\empty.glsl">
+    <None Include="D:\GraphicsProgramming\graphics-programming-2023\exercises\exercise11\shaders\empty.glsl">
       <Filter>Shaders</Filter>
     </None>
-    <None Include="C:\UnityFiles\graphics-programming-2023\exercises\exercise11\shaders\exercise11.glsl">
+    <None Include="D:\GraphicsProgramming\graphics-programming-2023\exercises\exercise11\shaders\exercise11.glsl">
       <Filter>Shaders</Filter>
     </None>
-    <None Include="C:\UnityFiles\graphics-programming-2023\exercises\exercise11\shaders\raylibrary.glsl">
+    <None Include="D:\GraphicsProgramming\graphics-programming-2023\exercises\exercise11\shaders\raylibrary.glsl">
       <Filter>Shaders</Filter>
     </None>
-    <None Include="C:\UnityFiles\graphics-programming-2023\exercises\exercise11\shaders\raytracer.glsl">
+    <None Include="D:\GraphicsProgramming\graphics-programming-2023\exercises\exercise11\shaders\raytracer.glsl">
       <Filter>Shaders</Filter>
     </None>
-    <None Include="C:\UnityFiles\graphics-programming-2023\exercises\exercise11\shaders\raytracing.frag">
+    <None Include="D:\GraphicsProgramming\graphics-programming-2023\exercises\exercise11\shaders\raytracing.frag">
       <Filter>Shaders</Filter>
     </None>
-    <None Include="C:\UnityFiles\graphics-programming-2023\exercises\exercise11\shaders\renderer\copy.frag">
+    <None Include="D:\GraphicsProgramming\graphics-programming-2023\exercises\exercise11\shaders\renderer\copy.frag">
       <Filter>Shaders</Filter>
     </None>
-    <None Include="C:\UnityFiles\graphics-programming-2023\exercises\exercise11\shaders\renderer\fullscreen.vert">
+    <None Include="D:\GraphicsProgramming\graphics-programming-2023\exercises\exercise11\shaders\renderer\fullscreen.vert">
       <Filter>Shaders</Filter>
     </None>
-    <None Include="C:\UnityFiles\graphics-programming-2023\exercises\exercise11\shaders\transform.glsl">
+    <None Include="D:\GraphicsProgramming\graphics-programming-2023\exercises\exercise11\shaders\transform.glsl">
       <Filter>Shaders</Filter>
     </None>
-    <None Include="C:\UnityFiles\graphics-programming-2023\exercises\exercise11\shaders\utils.glsl">
+    <None Include="D:\GraphicsProgramming\graphics-programming-2023\exercises\exercise11\shaders\utils.glsl">
       <Filter>Shaders</Filter>
     </None>
-    <None Include="C:\UnityFiles\graphics-programming-2023\exercises\exercise11\shaders\version330.glsl">
+    <None Include="D:\GraphicsProgramming\graphics-programming-2023\exercises\exercise11\shaders\version330.glsl">
       <Filter>Shaders</Filter>
     </None>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Header Files">
-      <UniqueIdentifier>{16C8EA6D-F51E-3B49-8915-47636A1B82C5}</UniqueIdentifier>
+      <UniqueIdentifier>{3378DBF5-1BCA-3A3E-84DA-82AB77AEDA8E}</UniqueIdentifier>
     </Filter>
     <Filter Include="Shaders">
-      <UniqueIdentifier>{0B35AA16-ACA2-367B-9F6D-E430E58E463E}</UniqueIdentifier>
+      <UniqueIdentifier>{BB3DA5E7-2DA1-3C97-A7D8-2557C6373DB1}</UniqueIdentifier>
     </Filter>
     <Filter Include="Source Files">
-      <UniqueIdentifier>{1161C1DE-5027-30E9-959B-5F602847D71E}</UniqueIdentifier>
+      <UniqueIdentifier>{B118B8BD-CB6A-3871-85B7-2B0494A28BA4}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

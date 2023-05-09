@@ -22,7 +22,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{FBDD6CD6-3292-39F0-B443-549327B74B1D}</ProjectGuid>
+    <ProjectGuid>{46841CA4-55A3-3A53-A0BA-68DDE2FF95AA}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <WindowsTargetPlatformVersion>10.0.19041.0</WindowsTargetPlatformVersion>
     <Platform>x64</Platform>
@@ -59,26 +59,26 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup>
     <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\UnityFiles\graphics-programming-2023\Bin\libraries\assimp\Debug\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\GraphicsProgramming\graphics-programming-2023\bin\libraries\assimp\Debug\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">assimp.dir\Debug\</IntDir>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">assimp</TargetName>
     <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.lib</TargetExt>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\UnityFiles\graphics-programming-2023\Bin\libraries\assimp\Release\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\GraphicsProgramming\graphics-programming-2023\bin\libraries\assimp\Release\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">assimp.dir\Release\</IntDir>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">assimp</TargetName>
     <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.lib</TargetExt>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\UnityFiles\graphics-programming-2023\Bin\libraries\assimp\MinSizeRel\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">D:\GraphicsProgramming\graphics-programming-2023\bin\libraries\assimp\MinSizeRel\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">assimp.dir\MinSizeRel\</IntDir>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">assimp</TargetName>
     <TargetExt Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">.lib</TargetExt>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\UnityFiles\graphics-programming-2023\Bin\libraries\assimp\RelWithDebInfo\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">D:\GraphicsProgramming\graphics-programming-2023\bin\libraries\assimp\RelWithDebInfo\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">assimp.dir\RelWithDebInfo\</IntDir>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">assimp</TargetName>
     <TargetExt Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">.lib</TargetExt>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>C:\UnityFiles\graphics-programming-2023\libraries\glad\include;C:\UnityFiles\graphics-programming-2023\libraries\glfw\include;C:\UnityFiles\graphics-programming-2023\libraries\imgui\include;C:\UnityFiles\graphics-programming-2023\libraries\glm\include;C:\UnityFiles\graphics-programming-2023\libraries\stb\include;C:\UnityFiles\graphics-programming-2023\libraries\assimp\include;C:\UnityFiles\graphics-programming-2023\libraries\assimp;C:\UnityFiles\graphics-programming-2023\libraries\itugl\include;\\\assimp;C:\UnityFiles\graphics-programming-2023\libraries\assimp\assimp;C:\UnityFiles\graphics-programming-2023\libraries\assimp\code;C:\UnityFiles\graphics-programming-2023\libraries\assimp\contrib\zlib;C:\UnityFiles\graphics-programming-2023\libraries\assimp\.;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\GraphicsProgramming\graphics-programming-2023\libraries\glad\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\glfw\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\imgui\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\glm\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\stb\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp;D:\GraphicsProgramming\graphics-programming-2023\libraries\itugl\include;\\\assimp;D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\assimp;D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\code;D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\contrib\zlib;D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\.;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
@@ -96,10 +96,10 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_DEBUG;_WINDOWS;ASSIMP_BUILD_BOOST_WORKAROUND;OPENDDLPARSER_BUILD;ASSIMP_BUILD_NO_OWN_ZLIB;ASSIMP_BUILD_NO_EXPORT;ASSIMP_BUILD_NO_X_IMPORTER;ASSIMP_BUILD_NO_AMF_IMPORTER;ASSIMP_BUILD_NO_3DS_IMPORTER;ASSIMP_BUILD_NO_MD3_IMPORTER;ASSIMP_BUILD_NO_MD5_IMPORTER;ASSIMP_BUILD_NO_MDL_IMPORTER;ASSIMP_BUILD_NO_MD2_IMPORTER;ASSIMP_BUILD_NO_PLY_IMPORTER;ASSIMP_BUILD_NO_ASE_IMPORTER;ASSIMP_BUILD_NO_HMP_IMPORTER;ASSIMP_BUILD_NO_SMD_IMPORTER;ASSIMP_BUILD_NO_MDC_IMPORTER;ASSIMP_BUILD_NO_STL_IMPORTER;ASSIMP_BUILD_NO_LWO_IMPORTER;ASSIMP_BUILD_NO_DXF_IMPORTER;ASSIMP_BUILD_NO_NFF_IMPORTER;ASSIMP_BUILD_NO_RAW_IMPORTER;ASSIMP_BUILD_NO_SIB_IMPORTER;ASSIMP_BUILD_NO_OFF_IMPORTER;ASSIMP_BUILD_NO_AC_IMPORTER;ASSIMP_BUILD_NO_BVH_IMPORTER;ASSIMP_BUILD_NO_IRRMESH_IMPORTER;ASSIMP_BUILD_NO_IRR_IMPORTER;ASSIMP_BUILD_NO_Q3D_IMPORTER;ASSIMP_BUILD_NO_B3D_IMPORTER;ASSIMP_BUILD_NO_COLLADA_IMPORTER;ASSIMP_BUILD_NO_TERRAGEN_IMPORTER;ASSIMP_BUILD_NO_CSM_IMPORTER;ASSIMP_BUILD_NO_3D_IMPORTER;ASSIMP_BUILD_NO_LWS_IMPORTER;ASSIMP_BUILD_NO_OGRE_IMPORTER;ASSIMP_BUILD_NO_OPENGEX_IMPORTER;ASSIMP_BUILD_NO_MS3D_IMPORTER;ASSIMP_BUILD_NO_COB_IMPORTER;ASSIMP_BUILD_NO_BLEND_IMPORTER;ASSIMP_BUILD_NO_Q3BSP_IMPORTER;ASSIMP_BUILD_NO_NDO_IMPORTER;ASSIMP_BUILD_NO_STEP_IMPORTER;ASSIMP_BUILD_NO_IFC_IMPORTER;ASSIMP_BUILD_NO_XGL_IMPORTER;ASSIMP_BUILD_NO_ASSBIN_IMPORTER;ASSIMP_BUILD_NO_C4D_IMPORTER;ASSIMP_BUILD_NO_3MF_IMPORTER;ASSIMP_BUILD_NO_X3D_IMPORTER;ASSIMP_BUILD_NO_GLTF_IMPORTER;ASSIMP_BUILD_NO_GLTF2_IMPORTER;ASSIMP_BUILD_SINGLETHREADED;ASSIMP_BUILD_NO_M3D_IMPORTER;ASSIMP_BUILD_NO_MMD_IMPORTER;PLATFORM_WINDOWS;PLATFORM=WINDOWS;ASSIMP_BUILD_NO_FBX_IMPORTER;CMAKE_INTDIR=\"Debug\"</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\UnityFiles\graphics-programming-2023\libraries\glad\include;C:\UnityFiles\graphics-programming-2023\libraries\glfw\include;C:\UnityFiles\graphics-programming-2023\libraries\imgui\include;C:\UnityFiles\graphics-programming-2023\libraries\glm\include;C:\UnityFiles\graphics-programming-2023\libraries\stb\include;C:\UnityFiles\graphics-programming-2023\libraries\assimp\include;C:\UnityFiles\graphics-programming-2023\libraries\assimp;C:\UnityFiles\graphics-programming-2023\libraries\itugl\include;\\\assimp;C:\UnityFiles\graphics-programming-2023\libraries\assimp\assimp;C:\UnityFiles\graphics-programming-2023\libraries\assimp\code;C:\UnityFiles\graphics-programming-2023\libraries\assimp\contrib\zlib;C:\UnityFiles\graphics-programming-2023\libraries\assimp\.;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\GraphicsProgramming\graphics-programming-2023\libraries\glad\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\glfw\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\imgui\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\glm\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\stb\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp;D:\GraphicsProgramming\graphics-programming-2023\libraries\itugl\include;\\\assimp;D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\assimp;D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\code;D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\contrib\zlib;D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\.;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>C:\UnityFiles\graphics-programming-2023\libraries\glad\include;C:\UnityFiles\graphics-programming-2023\libraries\glfw\include;C:\UnityFiles\graphics-programming-2023\libraries\imgui\include;C:\UnityFiles\graphics-programming-2023\libraries\glm\include;C:\UnityFiles\graphics-programming-2023\libraries\stb\include;C:\UnityFiles\graphics-programming-2023\libraries\assimp\include;C:\UnityFiles\graphics-programming-2023\libraries\assimp;C:\UnityFiles\graphics-programming-2023\libraries\itugl\include;\\\assimp;C:\UnityFiles\graphics-programming-2023\libraries\assimp\assimp;C:\UnityFiles\graphics-programming-2023\libraries\assimp\code;C:\UnityFiles\graphics-programming-2023\libraries\assimp\contrib\zlib;C:\UnityFiles\graphics-programming-2023\libraries\assimp\.;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\GraphicsProgramming\graphics-programming-2023\libraries\glad\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\glfw\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\imgui\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\glm\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\stb\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp;D:\GraphicsProgramming\graphics-programming-2023\libraries\itugl\include;\\\assimp;D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\assimp;D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\code;D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\contrib\zlib;D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\.;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -112,7 +112,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>C:\UnityFiles\graphics-programming-2023\libraries\glad\include;C:\UnityFiles\graphics-programming-2023\libraries\glfw\include;C:\UnityFiles\graphics-programming-2023\libraries\imgui\include;C:\UnityFiles\graphics-programming-2023\libraries\glm\include;C:\UnityFiles\graphics-programming-2023\libraries\stb\include;C:\UnityFiles\graphics-programming-2023\libraries\assimp\include;C:\UnityFiles\graphics-programming-2023\libraries\assimp;C:\UnityFiles\graphics-programming-2023\libraries\itugl\include;\\\assimp;C:\UnityFiles\graphics-programming-2023\libraries\assimp\assimp;C:\UnityFiles\graphics-programming-2023\libraries\assimp\code;C:\UnityFiles\graphics-programming-2023\libraries\assimp\contrib\zlib;C:\UnityFiles\graphics-programming-2023\libraries\assimp\.;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\GraphicsProgramming\graphics-programming-2023\libraries\glad\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\glfw\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\imgui\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\glm\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\stb\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp;D:\GraphicsProgramming\graphics-programming-2023\libraries\itugl\include;\\\assimp;D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\assimp;D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\code;D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\contrib\zlib;D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\.;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <ExceptionHandling>Sync</ExceptionHandling>
       <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
@@ -130,10 +130,10 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;ASSIMP_BUILD_BOOST_WORKAROUND;OPENDDLPARSER_BUILD;ASSIMP_BUILD_NO_OWN_ZLIB;ASSIMP_BUILD_NO_EXPORT;ASSIMP_BUILD_NO_X_IMPORTER;ASSIMP_BUILD_NO_AMF_IMPORTER;ASSIMP_BUILD_NO_3DS_IMPORTER;ASSIMP_BUILD_NO_MD3_IMPORTER;ASSIMP_BUILD_NO_MD5_IMPORTER;ASSIMP_BUILD_NO_MDL_IMPORTER;ASSIMP_BUILD_NO_MD2_IMPORTER;ASSIMP_BUILD_NO_PLY_IMPORTER;ASSIMP_BUILD_NO_ASE_IMPORTER;ASSIMP_BUILD_NO_HMP_IMPORTER;ASSIMP_BUILD_NO_SMD_IMPORTER;ASSIMP_BUILD_NO_MDC_IMPORTER;ASSIMP_BUILD_NO_STL_IMPORTER;ASSIMP_BUILD_NO_LWO_IMPORTER;ASSIMP_BUILD_NO_DXF_IMPORTER;ASSIMP_BUILD_NO_NFF_IMPORTER;ASSIMP_BUILD_NO_RAW_IMPORTER;ASSIMP_BUILD_NO_SIB_IMPORTER;ASSIMP_BUILD_NO_OFF_IMPORTER;ASSIMP_BUILD_NO_AC_IMPORTER;ASSIMP_BUILD_NO_BVH_IMPORTER;ASSIMP_BUILD_NO_IRRMESH_IMPORTER;ASSIMP_BUILD_NO_IRR_IMPORTER;ASSIMP_BUILD_NO_Q3D_IMPORTER;ASSIMP_BUILD_NO_B3D_IMPORTER;ASSIMP_BUILD_NO_COLLADA_IMPORTER;ASSIMP_BUILD_NO_TERRAGEN_IMPORTER;ASSIMP_BUILD_NO_CSM_IMPORTER;ASSIMP_BUILD_NO_3D_IMPORTER;ASSIMP_BUILD_NO_LWS_IMPORTER;ASSIMP_BUILD_NO_OGRE_IMPORTER;ASSIMP_BUILD_NO_OPENGEX_IMPORTER;ASSIMP_BUILD_NO_MS3D_IMPORTER;ASSIMP_BUILD_NO_COB_IMPORTER;ASSIMP_BUILD_NO_BLEND_IMPORTER;ASSIMP_BUILD_NO_Q3BSP_IMPORTER;ASSIMP_BUILD_NO_NDO_IMPORTER;ASSIMP_BUILD_NO_STEP_IMPORTER;ASSIMP_BUILD_NO_IFC_IMPORTER;ASSIMP_BUILD_NO_XGL_IMPORTER;ASSIMP_BUILD_NO_ASSBIN_IMPORTER;ASSIMP_BUILD_NO_C4D_IMPORTER;ASSIMP_BUILD_NO_3MF_IMPORTER;ASSIMP_BUILD_NO_X3D_IMPORTER;ASSIMP_BUILD_NO_GLTF_IMPORTER;ASSIMP_BUILD_NO_GLTF2_IMPORTER;ASSIMP_BUILD_SINGLETHREADED;ASSIMP_BUILD_NO_M3D_IMPORTER;ASSIMP_BUILD_NO_MMD_IMPORTER;PLATFORM_WINDOWS;PLATFORM=WINDOWS;ASSIMP_BUILD_NO_FBX_IMPORTER;CMAKE_INTDIR=\"Release\"</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\UnityFiles\graphics-programming-2023\libraries\glad\include;C:\UnityFiles\graphics-programming-2023\libraries\glfw\include;C:\UnityFiles\graphics-programming-2023\libraries\imgui\include;C:\UnityFiles\graphics-programming-2023\libraries\glm\include;C:\UnityFiles\graphics-programming-2023\libraries\stb\include;C:\UnityFiles\graphics-programming-2023\libraries\assimp\include;C:\UnityFiles\graphics-programming-2023\libraries\assimp;C:\UnityFiles\graphics-programming-2023\libraries\itugl\include;\\\assimp;C:\UnityFiles\graphics-programming-2023\libraries\assimp\assimp;C:\UnityFiles\graphics-programming-2023\libraries\assimp\code;C:\UnityFiles\graphics-programming-2023\libraries\assimp\contrib\zlib;C:\UnityFiles\graphics-programming-2023\libraries\assimp\.;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\GraphicsProgramming\graphics-programming-2023\libraries\glad\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\glfw\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\imgui\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\glm\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\stb\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp;D:\GraphicsProgramming\graphics-programming-2023\libraries\itugl\include;\\\assimp;D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\assimp;D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\code;D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\contrib\zlib;D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\.;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>C:\UnityFiles\graphics-programming-2023\libraries\glad\include;C:\UnityFiles\graphics-programming-2023\libraries\glfw\include;C:\UnityFiles\graphics-programming-2023\libraries\imgui\include;C:\UnityFiles\graphics-programming-2023\libraries\glm\include;C:\UnityFiles\graphics-programming-2023\libraries\stb\include;C:\UnityFiles\graphics-programming-2023\libraries\assimp\include;C:\UnityFiles\graphics-programming-2023\libraries\assimp;C:\UnityFiles\graphics-programming-2023\libraries\itugl\include;\\\assimp;C:\UnityFiles\graphics-programming-2023\libraries\assimp\assimp;C:\UnityFiles\graphics-programming-2023\libraries\assimp\code;C:\UnityFiles\graphics-programming-2023\libraries\assimp\contrib\zlib;C:\UnityFiles\graphics-programming-2023\libraries\assimp\.;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\GraphicsProgramming\graphics-programming-2023\libraries\glad\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\glfw\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\imgui\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\glm\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\stb\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp;D:\GraphicsProgramming\graphics-programming-2023\libraries\itugl\include;\\\assimp;D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\assimp;D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\code;D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\contrib\zlib;D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\.;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -146,7 +146,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>C:\UnityFiles\graphics-programming-2023\libraries\glad\include;C:\UnityFiles\graphics-programming-2023\libraries\glfw\include;C:\UnityFiles\graphics-programming-2023\libraries\imgui\include;C:\UnityFiles\graphics-programming-2023\libraries\glm\include;C:\UnityFiles\graphics-programming-2023\libraries\stb\include;C:\UnityFiles\graphics-programming-2023\libraries\assimp\include;C:\UnityFiles\graphics-programming-2023\libraries\assimp;C:\UnityFiles\graphics-programming-2023\libraries\itugl\include;\\\assimp;C:\UnityFiles\graphics-programming-2023\libraries\assimp\assimp;C:\UnityFiles\graphics-programming-2023\libraries\assimp\code;C:\UnityFiles\graphics-programming-2023\libraries\assimp\contrib\zlib;C:\UnityFiles\graphics-programming-2023\libraries\assimp\.;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\GraphicsProgramming\graphics-programming-2023\libraries\glad\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\glfw\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\imgui\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\glm\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\stb\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp;D:\GraphicsProgramming\graphics-programming-2023\libraries\itugl\include;\\\assimp;D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\assimp;D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\code;D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\contrib\zlib;D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\.;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <ExceptionHandling>Sync</ExceptionHandling>
       <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
@@ -164,10 +164,10 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;ASSIMP_BUILD_BOOST_WORKAROUND;OPENDDLPARSER_BUILD;ASSIMP_BUILD_NO_OWN_ZLIB;ASSIMP_BUILD_NO_EXPORT;ASSIMP_BUILD_NO_X_IMPORTER;ASSIMP_BUILD_NO_AMF_IMPORTER;ASSIMP_BUILD_NO_3DS_IMPORTER;ASSIMP_BUILD_NO_MD3_IMPORTER;ASSIMP_BUILD_NO_MD5_IMPORTER;ASSIMP_BUILD_NO_MDL_IMPORTER;ASSIMP_BUILD_NO_MD2_IMPORTER;ASSIMP_BUILD_NO_PLY_IMPORTER;ASSIMP_BUILD_NO_ASE_IMPORTER;ASSIMP_BUILD_NO_HMP_IMPORTER;ASSIMP_BUILD_NO_SMD_IMPORTER;ASSIMP_BUILD_NO_MDC_IMPORTER;ASSIMP_BUILD_NO_STL_IMPORTER;ASSIMP_BUILD_NO_LWO_IMPORTER;ASSIMP_BUILD_NO_DXF_IMPORTER;ASSIMP_BUILD_NO_NFF_IMPORTER;ASSIMP_BUILD_NO_RAW_IMPORTER;ASSIMP_BUILD_NO_SIB_IMPORTER;ASSIMP_BUILD_NO_OFF_IMPORTER;ASSIMP_BUILD_NO_AC_IMPORTER;ASSIMP_BUILD_NO_BVH_IMPORTER;ASSIMP_BUILD_NO_IRRMESH_IMPORTER;ASSIMP_BUILD_NO_IRR_IMPORTER;ASSIMP_BUILD_NO_Q3D_IMPORTER;ASSIMP_BUILD_NO_B3D_IMPORTER;ASSIMP_BUILD_NO_COLLADA_IMPORTER;ASSIMP_BUILD_NO_TERRAGEN_IMPORTER;ASSIMP_BUILD_NO_CSM_IMPORTER;ASSIMP_BUILD_NO_3D_IMPORTER;ASSIMP_BUILD_NO_LWS_IMPORTER;ASSIMP_BUILD_NO_OGRE_IMPORTER;ASSIMP_BUILD_NO_OPENGEX_IMPORTER;ASSIMP_BUILD_NO_MS3D_IMPORTER;ASSIMP_BUILD_NO_COB_IMPORTER;ASSIMP_BUILD_NO_BLEND_IMPORTER;ASSIMP_BUILD_NO_Q3BSP_IMPORTER;ASSIMP_BUILD_NO_NDO_IMPORTER;ASSIMP_BUILD_NO_STEP_IMPORTER;ASSIMP_BUILD_NO_IFC_IMPORTER;ASSIMP_BUILD_NO_XGL_IMPORTER;ASSIMP_BUILD_NO_ASSBIN_IMPORTER;ASSIMP_BUILD_NO_C4D_IMPORTER;ASSIMP_BUILD_NO_3MF_IMPORTER;ASSIMP_BUILD_NO_X3D_IMPORTER;ASSIMP_BUILD_NO_GLTF_IMPORTER;ASSIMP_BUILD_NO_GLTF2_IMPORTER;ASSIMP_BUILD_SINGLETHREADED;ASSIMP_BUILD_NO_M3D_IMPORTER;ASSIMP_BUILD_NO_MMD_IMPORTER;PLATFORM_WINDOWS;PLATFORM=WINDOWS;ASSIMP_BUILD_NO_FBX_IMPORTER;CMAKE_INTDIR=\"MinSizeRel\"</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\UnityFiles\graphics-programming-2023\libraries\glad\include;C:\UnityFiles\graphics-programming-2023\libraries\glfw\include;C:\UnityFiles\graphics-programming-2023\libraries\imgui\include;C:\UnityFiles\graphics-programming-2023\libraries\glm\include;C:\UnityFiles\graphics-programming-2023\libraries\stb\include;C:\UnityFiles\graphics-programming-2023\libraries\assimp\include;C:\UnityFiles\graphics-programming-2023\libraries\assimp;C:\UnityFiles\graphics-programming-2023\libraries\itugl\include;\\\assimp;C:\UnityFiles\graphics-programming-2023\libraries\assimp\assimp;C:\UnityFiles\graphics-programming-2023\libraries\assimp\code;C:\UnityFiles\graphics-programming-2023\libraries\assimp\contrib\zlib;C:\UnityFiles\graphics-programming-2023\libraries\assimp\.;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\GraphicsProgramming\graphics-programming-2023\libraries\glad\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\glfw\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\imgui\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\glm\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\stb\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp;D:\GraphicsProgramming\graphics-programming-2023\libraries\itugl\include;\\\assimp;D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\assimp;D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\code;D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\contrib\zlib;D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\.;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>C:\UnityFiles\graphics-programming-2023\libraries\glad\include;C:\UnityFiles\graphics-programming-2023\libraries\glfw\include;C:\UnityFiles\graphics-programming-2023\libraries\imgui\include;C:\UnityFiles\graphics-programming-2023\libraries\glm\include;C:\UnityFiles\graphics-programming-2023\libraries\stb\include;C:\UnityFiles\graphics-programming-2023\libraries\assimp\include;C:\UnityFiles\graphics-programming-2023\libraries\assimp;C:\UnityFiles\graphics-programming-2023\libraries\itugl\include;\\\assimp;C:\UnityFiles\graphics-programming-2023\libraries\assimp\assimp;C:\UnityFiles\graphics-programming-2023\libraries\assimp\code;C:\UnityFiles\graphics-programming-2023\libraries\assimp\contrib\zlib;C:\UnityFiles\graphics-programming-2023\libraries\assimp\.;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\GraphicsProgramming\graphics-programming-2023\libraries\glad\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\glfw\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\imgui\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\glm\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\stb\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp;D:\GraphicsProgramming\graphics-programming-2023\libraries\itugl\include;\\\assimp;D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\assimp;D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\code;D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\contrib\zlib;D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\.;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -180,7 +180,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>C:\UnityFiles\graphics-programming-2023\libraries\glad\include;C:\UnityFiles\graphics-programming-2023\libraries\glfw\include;C:\UnityFiles\graphics-programming-2023\libraries\imgui\include;C:\UnityFiles\graphics-programming-2023\libraries\glm\include;C:\UnityFiles\graphics-programming-2023\libraries\stb\include;C:\UnityFiles\graphics-programming-2023\libraries\assimp\include;C:\UnityFiles\graphics-programming-2023\libraries\assimp;C:\UnityFiles\graphics-programming-2023\libraries\itugl\include;\\\assimp;C:\UnityFiles\graphics-programming-2023\libraries\assimp\assimp;C:\UnityFiles\graphics-programming-2023\libraries\assimp\code;C:\UnityFiles\graphics-programming-2023\libraries\assimp\contrib\zlib;C:\UnityFiles\graphics-programming-2023\libraries\assimp\.;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\GraphicsProgramming\graphics-programming-2023\libraries\glad\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\glfw\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\imgui\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\glm\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\stb\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp;D:\GraphicsProgramming\graphics-programming-2023\libraries\itugl\include;\\\assimp;D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\assimp;D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\code;D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\contrib\zlib;D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\.;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <ExceptionHandling>Sync</ExceptionHandling>
@@ -197,10 +197,10 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;ASSIMP_BUILD_BOOST_WORKAROUND;OPENDDLPARSER_BUILD;ASSIMP_BUILD_NO_OWN_ZLIB;ASSIMP_BUILD_NO_EXPORT;ASSIMP_BUILD_NO_X_IMPORTER;ASSIMP_BUILD_NO_AMF_IMPORTER;ASSIMP_BUILD_NO_3DS_IMPORTER;ASSIMP_BUILD_NO_MD3_IMPORTER;ASSIMP_BUILD_NO_MD5_IMPORTER;ASSIMP_BUILD_NO_MDL_IMPORTER;ASSIMP_BUILD_NO_MD2_IMPORTER;ASSIMP_BUILD_NO_PLY_IMPORTER;ASSIMP_BUILD_NO_ASE_IMPORTER;ASSIMP_BUILD_NO_HMP_IMPORTER;ASSIMP_BUILD_NO_SMD_IMPORTER;ASSIMP_BUILD_NO_MDC_IMPORTER;ASSIMP_BUILD_NO_STL_IMPORTER;ASSIMP_BUILD_NO_LWO_IMPORTER;ASSIMP_BUILD_NO_DXF_IMPORTER;ASSIMP_BUILD_NO_NFF_IMPORTER;ASSIMP_BUILD_NO_RAW_IMPORTER;ASSIMP_BUILD_NO_SIB_IMPORTER;ASSIMP_BUILD_NO_OFF_IMPORTER;ASSIMP_BUILD_NO_AC_IMPORTER;ASSIMP_BUILD_NO_BVH_IMPORTER;ASSIMP_BUILD_NO_IRRMESH_IMPORTER;ASSIMP_BUILD_NO_IRR_IMPORTER;ASSIMP_BUILD_NO_Q3D_IMPORTER;ASSIMP_BUILD_NO_B3D_IMPORTER;ASSIMP_BUILD_NO_COLLADA_IMPORTER;ASSIMP_BUILD_NO_TERRAGEN_IMPORTER;ASSIMP_BUILD_NO_CSM_IMPORTER;ASSIMP_BUILD_NO_3D_IMPORTER;ASSIMP_BUILD_NO_LWS_IMPORTER;ASSIMP_BUILD_NO_OGRE_IMPORTER;ASSIMP_BUILD_NO_OPENGEX_IMPORTER;ASSIMP_BUILD_NO_MS3D_IMPORTER;ASSIMP_BUILD_NO_COB_IMPORTER;ASSIMP_BUILD_NO_BLEND_IMPORTER;ASSIMP_BUILD_NO_Q3BSP_IMPORTER;ASSIMP_BUILD_NO_NDO_IMPORTER;ASSIMP_BUILD_NO_STEP_IMPORTER;ASSIMP_BUILD_NO_IFC_IMPORTER;ASSIMP_BUILD_NO_XGL_IMPORTER;ASSIMP_BUILD_NO_ASSBIN_IMPORTER;ASSIMP_BUILD_NO_C4D_IMPORTER;ASSIMP_BUILD_NO_3MF_IMPORTER;ASSIMP_BUILD_NO_X3D_IMPORTER;ASSIMP_BUILD_NO_GLTF_IMPORTER;ASSIMP_BUILD_NO_GLTF2_IMPORTER;ASSIMP_BUILD_SINGLETHREADED;ASSIMP_BUILD_NO_M3D_IMPORTER;ASSIMP_BUILD_NO_MMD_IMPORTER;PLATFORM_WINDOWS;PLATFORM=WINDOWS;ASSIMP_BUILD_NO_FBX_IMPORTER;CMAKE_INTDIR=\"RelWithDebInfo\"</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\UnityFiles\graphics-programming-2023\libraries\glad\include;C:\UnityFiles\graphics-programming-2023\libraries\glfw\include;C:\UnityFiles\graphics-programming-2023\libraries\imgui\include;C:\UnityFiles\graphics-programming-2023\libraries\glm\include;C:\UnityFiles\graphics-programming-2023\libraries\stb\include;C:\UnityFiles\graphics-programming-2023\libraries\assimp\include;C:\UnityFiles\graphics-programming-2023\libraries\assimp;C:\UnityFiles\graphics-programming-2023\libraries\itugl\include;\\\assimp;C:\UnityFiles\graphics-programming-2023\libraries\assimp\assimp;C:\UnityFiles\graphics-programming-2023\libraries\assimp\code;C:\UnityFiles\graphics-programming-2023\libraries\assimp\contrib\zlib;C:\UnityFiles\graphics-programming-2023\libraries\assimp\.;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\GraphicsProgramming\graphics-programming-2023\libraries\glad\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\glfw\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\imgui\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\glm\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\stb\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp;D:\GraphicsProgramming\graphics-programming-2023\libraries\itugl\include;\\\assimp;D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\assimp;D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\code;D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\contrib\zlib;D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\.;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>C:\UnityFiles\graphics-programming-2023\libraries\glad\include;C:\UnityFiles\graphics-programming-2023\libraries\glfw\include;C:\UnityFiles\graphics-programming-2023\libraries\imgui\include;C:\UnityFiles\graphics-programming-2023\libraries\glm\include;C:\UnityFiles\graphics-programming-2023\libraries\stb\include;C:\UnityFiles\graphics-programming-2023\libraries\assimp\include;C:\UnityFiles\graphics-programming-2023\libraries\assimp;C:\UnityFiles\graphics-programming-2023\libraries\itugl\include;\\\assimp;C:\UnityFiles\graphics-programming-2023\libraries\assimp\assimp;C:\UnityFiles\graphics-programming-2023\libraries\assimp\code;C:\UnityFiles\graphics-programming-2023\libraries\assimp\contrib\zlib;C:\UnityFiles\graphics-programming-2023\libraries\assimp\.;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\GraphicsProgramming\graphics-programming-2023\libraries\glad\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\glfw\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\imgui\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\glm\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\stb\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp;D:\GraphicsProgramming\graphics-programming-2023\libraries\itugl\include;\\\assimp;D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\assimp;D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\code;D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\contrib\zlib;D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\.;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -212,11 +212,11 @@
     </Lib>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <CustomBuild Include="C:\UnityFiles\graphics-programming-2023\libraries\assimp\CMakeLists.txt">
+    <CustomBuild Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\CMakeLists.txt">
       <UseUtf8Encoding>Always</UseUtf8Encoding>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule C:/UnityFiles/graphics-programming-2023/libraries/assimp/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule D:/GraphicsProgramming/graphics-programming-2023/libraries/assimp/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -SC:/UnityFiles/graphics-programming-2023 -BC:/UnityFiles/graphics-programming-2023/Bin --check-stamp-file C:/UnityFiles/graphics-programming-2023/Bin/libraries/assimp/CMakeFiles/generate.stamp
+"C:\Program Files\CMake\bin\cmake.exe" -SD:/GraphicsProgramming/graphics-programming-2023 -BD:/GraphicsProgramming/graphics-programming-2023/bin --check-stamp-file D:/GraphicsProgramming/graphics-programming-2023/bin/libraries/assimp/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -225,11 +225,11 @@ exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\UnityFiles\graphics-programming-2023\Bin\libraries\assimp\CMakeFiles\generate.stamp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\GraphicsProgramming\graphics-programming-2023\bin\libraries\assimp\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule C:/UnityFiles/graphics-programming-2023/libraries/assimp/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule D:/GraphicsProgramming/graphics-programming-2023/libraries/assimp/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -SC:/UnityFiles/graphics-programming-2023 -BC:/UnityFiles/graphics-programming-2023/Bin --check-stamp-file C:/UnityFiles/graphics-programming-2023/Bin/libraries/assimp/CMakeFiles/generate.stamp
+"C:\Program Files\CMake\bin\cmake.exe" -SD:/GraphicsProgramming/graphics-programming-2023 -BD:/GraphicsProgramming/graphics-programming-2023/bin --check-stamp-file D:/GraphicsProgramming/graphics-programming-2023/bin/libraries/assimp/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -238,11 +238,11 @@ exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\UnityFiles\graphics-programming-2023\Bin\libraries\assimp\CMakeFiles\generate.stamp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\GraphicsProgramming\graphics-programming-2023\bin\libraries\assimp\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
-      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule C:/UnityFiles/graphics-programming-2023/libraries/assimp/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule D:/GraphicsProgramming/graphics-programming-2023/libraries/assimp/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -SC:/UnityFiles/graphics-programming-2023 -BC:/UnityFiles/graphics-programming-2023/Bin --check-stamp-file C:/UnityFiles/graphics-programming-2023/Bin/libraries/assimp/CMakeFiles/generate.stamp
+"C:\Program Files\CMake\bin\cmake.exe" -SD:/GraphicsProgramming/graphics-programming-2023 -BD:/GraphicsProgramming/graphics-programming-2023/bin --check-stamp-file D:/GraphicsProgramming/graphics-programming-2023/bin/libraries/assimp/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -251,11 +251,11 @@ exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\UnityFiles\graphics-programming-2023\Bin\libraries\assimp\CMakeFiles\generate.stamp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">D:\GraphicsProgramming\graphics-programming-2023\bin\libraries\assimp\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
-      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule C:/UnityFiles/graphics-programming-2023/libraries/assimp/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule D:/GraphicsProgramming/graphics-programming-2023/libraries/assimp/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -SC:/UnityFiles/graphics-programming-2023 -BC:/UnityFiles/graphics-programming-2023/Bin --check-stamp-file C:/UnityFiles/graphics-programming-2023/Bin/libraries/assimp/CMakeFiles/generate.stamp
+"C:\Program Files\CMake\bin\cmake.exe" -SD:/GraphicsProgramming/graphics-programming-2023 -BD:/GraphicsProgramming/graphics-programming-2023/bin --check-stamp-file D:/GraphicsProgramming/graphics-programming-2023/bin/libraries/assimp/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -264,94 +264,94 @@ exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\UnityFiles\graphics-programming-2023\Bin\libraries\assimp\CMakeFiles\generate.stamp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">D:\GraphicsProgramming\graphics-programming-2023\bin\libraries\assimp\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\assimp\code\Common\Assimp.cpp" />
-    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\assimp\code\Common\BaseImporter.cpp" />
-    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\assimp\code\Common\BaseProcess.cpp" />
-    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\assimp\code\Common\Bitmap.cpp" />
-    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\assimp\code\Common\CreateAnimMesh.cpp" />
-    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\assimp\code\Common\DefaultIOStream.cpp" />
-    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\assimp\code\Common\DefaultIOSystem.cpp" />
-    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\assimp\code\Common\DefaultLogger.cpp" />
-    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\assimp\code\Common\Exporter.cpp" />
-    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\assimp\code\Common\Importer.cpp" />
-    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\assimp\code\Common\ImporterRegistry.cpp" />
-    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\assimp\code\Common\PostStepRegistry.cpp" />
-    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\assimp\code\Common\RemoveComments.cpp" />
-    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\assimp\code\Common\SGSpatialSort.cpp" />
-    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\assimp\code\Common\SceneCombiner.cpp" />
-    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\assimp\code\Common\ScenePreprocessor.cpp" />
-    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\assimp\code\Common\SkeletonMeshBuilder.cpp" />
-    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\assimp\code\Common\SpatialSort.cpp" />
-    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\assimp\code\Common\SplitByBoneCountProcess.cpp" />
-    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\assimp\code\Common\StandardShapes.cpp" />
-    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\assimp\code\Common\Subdivision.cpp" />
-    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\assimp\code\Common\TargetAnimation.cpp" />
-    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\assimp\code\Common\Version.cpp" />
-    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\assimp\code\Common\VertexTriangleAdjacency.cpp" />
-    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\assimp\code\Common\scene.cpp" />
-    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\assimp\code\Common\simd.cpp" />
-    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\assimp\code\FBX\FBXAnimation.cpp" />
-    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\assimp\code\FBX\FBXBinaryTokenizer.cpp" />
-    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\assimp\code\FBX\FBXConverter.cpp" />
-    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\assimp\code\FBX\FBXDeformer.cpp" />
-    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\assimp\code\FBX\FBXDocument.cpp" />
-    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\assimp\code\FBX\FBXDocumentUtil.cpp" />
-    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\assimp\code\FBX\FBXExportNode.cpp" />
-    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\assimp\code\FBX\FBXExportProperty.cpp" />
-    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\assimp\code\FBX\FBXExporter.cpp" />
-    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\assimp\code\FBX\FBXImporter.cpp" />
-    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\assimp\code\FBX\FBXMaterial.cpp" />
-    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\assimp\code\FBX\FBXMeshGeometry.cpp" />
-    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\assimp\code\FBX\FBXModel.cpp" />
-    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\assimp\code\FBX\FBXNodeAttribute.cpp" />
-    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\assimp\code\FBX\FBXParser.cpp" />
-    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\assimp\code\FBX\FBXProperties.cpp" />
-    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\assimp\code\FBX\FBXTokenizer.cpp" />
-    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\assimp\code\FBX\FBXUtil.cpp" />
-    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\assimp\code\Material\MaterialSystem.cpp" />
-    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\assimp\code\Obj\ObjExporter.cpp" />
-    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\assimp\code\Obj\ObjFileImporter.cpp" />
-    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\assimp\code\Obj\ObjFileMtlImporter.cpp" />
-    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\assimp\code\Obj\ObjFileParser.cpp" />
-    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\assimp\code\PostProcessing\ArmaturePopulate.cpp" />
-    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\assimp\code\PostProcessing\CalcTangentsProcess.cpp" />
-    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\assimp\code\PostProcessing\ComputeUVMappingProcess.cpp" />
-    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\assimp\code\PostProcessing\ConvertToLHProcess.cpp" />
-    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\assimp\code\PostProcessing\DeboneProcess.cpp" />
-    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\assimp\code\PostProcessing\DropFaceNormalsProcess.cpp" />
-    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\assimp\code\PostProcessing\EmbedTexturesProcess.cpp" />
-    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\assimp\code\PostProcessing\FindDegenerates.cpp" />
-    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\assimp\code\PostProcessing\FindInstancesProcess.cpp" />
-    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\assimp\code\PostProcessing\FindInvalidDataProcess.cpp" />
-    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\assimp\code\PostProcessing\FixNormalsStep.cpp" />
-    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\assimp\code\PostProcessing\GenBoundingBoxesProcess.cpp" />
-    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\assimp\code\PostProcessing\GenFaceNormalsProcess.cpp" />
-    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\assimp\code\PostProcessing\GenVertexNormalsProcess.cpp" />
-    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\assimp\code\PostProcessing\ImproveCacheLocality.cpp" />
-    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\assimp\code\PostProcessing\JoinVerticesProcess.cpp" />
-    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\assimp\code\PostProcessing\LimitBoneWeightsProcess.cpp" />
-    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\assimp\code\PostProcessing\MakeVerboseFormat.cpp" />
-    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\assimp\code\PostProcessing\OptimizeGraph.cpp" />
-    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\assimp\code\PostProcessing\OptimizeMeshes.cpp" />
-    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\assimp\code\PostProcessing\PretransformVertices.cpp" />
-    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\assimp\code\PostProcessing\ProcessHelper.cpp" />
-    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\assimp\code\PostProcessing\RemoveRedundantMaterials.cpp" />
-    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\assimp\code\PostProcessing\RemoveVCProcess.cpp" />
-    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\assimp\code\PostProcessing\ScaleProcess.cpp" />
-    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\assimp\code\PostProcessing\SortByPTypeProcess.cpp" />
-    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\assimp\code\PostProcessing\SplitLargeMeshes.cpp" />
-    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\assimp\code\PostProcessing\TextureTransform.cpp" />
-    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\assimp\code\PostProcessing\TriangulateProcess.cpp" />
-    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\assimp\code\PostProcessing\ValidateDataStructure.cpp" />
+    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\code\Common\Assimp.cpp" />
+    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\code\Common\BaseImporter.cpp" />
+    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\code\Common\BaseProcess.cpp" />
+    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\code\Common\Bitmap.cpp" />
+    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\code\Common\CreateAnimMesh.cpp" />
+    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\code\Common\DefaultIOStream.cpp" />
+    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\code\Common\DefaultIOSystem.cpp" />
+    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\code\Common\DefaultLogger.cpp" />
+    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\code\Common\Exporter.cpp" />
+    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\code\Common\Importer.cpp" />
+    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\code\Common\ImporterRegistry.cpp" />
+    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\code\Common\PostStepRegistry.cpp" />
+    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\code\Common\RemoveComments.cpp" />
+    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\code\Common\SGSpatialSort.cpp" />
+    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\code\Common\SceneCombiner.cpp" />
+    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\code\Common\ScenePreprocessor.cpp" />
+    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\code\Common\SkeletonMeshBuilder.cpp" />
+    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\code\Common\SpatialSort.cpp" />
+    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\code\Common\SplitByBoneCountProcess.cpp" />
+    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\code\Common\StandardShapes.cpp" />
+    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\code\Common\Subdivision.cpp" />
+    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\code\Common\TargetAnimation.cpp" />
+    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\code\Common\Version.cpp" />
+    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\code\Common\VertexTriangleAdjacency.cpp" />
+    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\code\Common\scene.cpp" />
+    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\code\Common\simd.cpp" />
+    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\code\FBX\FBXAnimation.cpp" />
+    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\code\FBX\FBXBinaryTokenizer.cpp" />
+    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\code\FBX\FBXConverter.cpp" />
+    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\code\FBX\FBXDeformer.cpp" />
+    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\code\FBX\FBXDocument.cpp" />
+    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\code\FBX\FBXDocumentUtil.cpp" />
+    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\code\FBX\FBXExportNode.cpp" />
+    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\code\FBX\FBXExportProperty.cpp" />
+    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\code\FBX\FBXExporter.cpp" />
+    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\code\FBX\FBXImporter.cpp" />
+    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\code\FBX\FBXMaterial.cpp" />
+    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\code\FBX\FBXMeshGeometry.cpp" />
+    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\code\FBX\FBXModel.cpp" />
+    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\code\FBX\FBXNodeAttribute.cpp" />
+    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\code\FBX\FBXParser.cpp" />
+    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\code\FBX\FBXProperties.cpp" />
+    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\code\FBX\FBXTokenizer.cpp" />
+    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\code\FBX\FBXUtil.cpp" />
+    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\code\Material\MaterialSystem.cpp" />
+    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\code\Obj\ObjExporter.cpp" />
+    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\code\Obj\ObjFileImporter.cpp" />
+    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\code\Obj\ObjFileMtlImporter.cpp" />
+    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\code\Obj\ObjFileParser.cpp" />
+    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\code\PostProcessing\ArmaturePopulate.cpp" />
+    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\code\PostProcessing\CalcTangentsProcess.cpp" />
+    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\code\PostProcessing\ComputeUVMappingProcess.cpp" />
+    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\code\PostProcessing\ConvertToLHProcess.cpp" />
+    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\code\PostProcessing\DeboneProcess.cpp" />
+    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\code\PostProcessing\DropFaceNormalsProcess.cpp" />
+    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\code\PostProcessing\EmbedTexturesProcess.cpp" />
+    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\code\PostProcessing\FindDegenerates.cpp" />
+    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\code\PostProcessing\FindInstancesProcess.cpp" />
+    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\code\PostProcessing\FindInvalidDataProcess.cpp" />
+    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\code\PostProcessing\FixNormalsStep.cpp" />
+    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\code\PostProcessing\GenBoundingBoxesProcess.cpp" />
+    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\code\PostProcessing\GenFaceNormalsProcess.cpp" />
+    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\code\PostProcessing\GenVertexNormalsProcess.cpp" />
+    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\code\PostProcessing\ImproveCacheLocality.cpp" />
+    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\code\PostProcessing\JoinVerticesProcess.cpp" />
+    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\code\PostProcessing\LimitBoneWeightsProcess.cpp" />
+    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\code\PostProcessing\MakeVerboseFormat.cpp" />
+    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\code\PostProcessing\OptimizeGraph.cpp" />
+    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\code\PostProcessing\OptimizeMeshes.cpp" />
+    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\code\PostProcessing\PretransformVertices.cpp" />
+    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\code\PostProcessing\ProcessHelper.cpp" />
+    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\code\PostProcessing\RemoveRedundantMaterials.cpp" />
+    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\code\PostProcessing\RemoveVCProcess.cpp" />
+    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\code\PostProcessing\ScaleProcess.cpp" />
+    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\code\PostProcessing\SortByPTypeProcess.cpp" />
+    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\code\PostProcessing\SplitLargeMeshes.cpp" />
+    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\code\PostProcessing\TextureTransform.cpp" />
+    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\code\PostProcessing\TriangulateProcess.cpp" />
+    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\code\PostProcessing\ValidateDataStructure.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="C:\UnityFiles\graphics-programming-2023\Bin\ZERO_CHECK.vcxproj">
-      <Project>{E9ECF176-4261-365A-846B-49A9250BDC5A}</Project>
+    <ProjectReference Include="D:\GraphicsProgramming\graphics-programming-2023\bin\ZERO_CHECK.vcxproj">
+      <Project>{6A54F654-3646-3027-9D6D-C4039BEFE6ED}</Project>
       <Name>ZERO_CHECK</Name>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>

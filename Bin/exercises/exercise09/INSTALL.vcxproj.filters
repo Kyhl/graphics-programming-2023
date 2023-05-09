@@ -1,13 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <CustomBuild Include="C:\UnityFiles\graphics-programming-2023\Bin\CMakeFiles\1ea858e850c3d651a393dbbe188077d7\INSTALL_force.rule">
+    <CustomBuild Include="D:\GraphicsProgramming\graphics-programming-2023\bin\CMakeFiles\8eaafcd7729bac6ecf6118fea5e958f0\INSTALL_force.rule">
       <Filter>CMake Rules</Filter>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="CMake Rules">
-      <UniqueIdentifier>{604E7588-C565-3783-B760-3962053E9240}</UniqueIdentifier>
+      <UniqueIdentifier>{C6E36432-B7A0-3C11-9D89-296B07A4951E}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

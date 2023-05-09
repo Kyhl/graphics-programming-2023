@@ -48,4 +48,6 @@ private:
 
     // Default material
     std::shared_ptr<Material> m_defaultMaterial;
+
+    std::shared_ptr<Material> m_planetMaterial;
 };

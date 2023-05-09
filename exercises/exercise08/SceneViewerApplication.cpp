@@ -6,7 +6,7 @@
 #include <ituGL/geometry/VertexFormat.h>
 #include <ituGL/camera/Camera.h>
 #include <ituGL/scene/SceneCamera.h>
-
+#include <ituGL/asset/ShaderLoader.h>
 #include <ituGL/lighting/DirectionalLight.h>
 #include <ituGL/lighting/PointLight.h>
 #include <ituGL/scene/SceneLight.h>
@@ -35,11 +35,17 @@
 using namespace std;
 using namespace glm;
 SceneViewerApplication::SceneViewerApplication()
-    : Application(1024, 1024, "Scene Viewer demo")
+    : Application(1024, 1024, "Planet Scene Exam")
     , m_renderer(GetDevice())
 {
 }
-
+struct Vertex
+{
+    vec3 position;
+    vec2 texCoord;
+    vec3 color;
+    vec3 normal;
+};
 void SceneViewerApplication::Initialize()
 {
     Application::Initialize();
@@ -171,6 +177,27 @@ void SceneViewerApplication::InitializeMaterial()
     // Create reference material
     assert(shaderProgramPtr);
     m_defaultMaterial = std::make_shared<Material>(shaderProgramPtr, filteredUniforms);
+
+    
+    //Shader vertexShader(Shader::VertexShader);
+    //
+    //LoadAndCompileShader(vertexShader, "shaders/planet/default.vert");
+
+    //// Load and compile fragment shader
+    //Shader fragmentShader(Shader::FragmentShader);
+    //LoadAndCompileShader(fragmentShader, "shaders/planet/default.frag");
+
+    Shader planetVertexShader = ShaderLoader(Shader::VertexShader).Load("shaders/planet/default.vert");
+    Shader planetFragmentShader = ShaderLoader(Shader::FragmentShader).Load("shaders/planet/default.frag");
+
+    std::shared_ptr<ShaderProgram> planetShaderProgramPtr = std::make_shared<ShaderProgram>();
+    planetShaderProgramPtr->Build(planetVertexShader, planetFragmentShader);
+
+    m_renderer.RegisterShaderProgram(planetShaderProgramPtr, {}, {});
+
+    assert(planetShaderProgramPtr);
+    m_planetMaterial = std::make_shared<Material>(planetShaderProgramPtr);
+
 }
 vec3 GetColorFromHeight(float height)
 {
@@ -273,24 +300,18 @@ void SceneViewerApplication::InitializeModels()
     //std::shared_ptr<Model> clockModel = loader.LoadShared("models/alarm_clock/alarm_clock.obj");
     //m_scene.AddSceneNode(std::make_shared<SceneModel>("alarm clock", clockModel));
     // Create containers for the vertex data
-    struct Vertex
-    {
-        Vertex() = default;
-        Vertex(const glm::vec3& position, const glm::vec2 texCoord, const vec3 color, const glm::vec3& normal)
-            : position(position), texCoord(texCoord), color(color), normal(normal)  {}
-        glm::vec3 position;
-        glm::vec2 texCoord;
-        glm::vec3 color;
-        glm::vec3 normal;
 
-    };
+    
+
+    std::shared_ptr<Model> planetModel = std::make_shared<Model>(make_shared<Mesh>());
+
 
     // Define the vertex format (should match the vertex structure)
     VertexFormat vertexFormat;
     vertexFormat.AddVertexAttribute<float>(3, VertexAttribute::Semantic::Position);
-    vertexFormat.AddVertexAttribute<float>(2);
-    vertexFormat.AddVertexAttribute<float>(3);
-    vertexFormat.AddVertexAttribute<float>(3);
+    vertexFormat.AddVertexAttribute<float>(2, VertexAttribute::Semantic::TexCoord0);
+    vertexFormat.AddVertexAttribute<float>(3, VertexAttribute::Semantic::Color0);
+    vertexFormat.AddVertexAttribute<float>(3, VertexAttribute::Semantic::Normal);
     std::vector<Vertex> vertices;
 
     // Create container for the element data
@@ -435,6 +456,11 @@ void SceneViewerApplication::InitializeModels()
             }
         }
     }
+    planetModel->AddMaterial(m_defaultMaterial);
+    planetModel->GetMesh().AddSubmesh<Vertex, unsigned int, VertexFormat::LayoutIterator>(Drawcall::Primitive::Triangles, vertices, indices,
+        vertexFormat.LayoutBegin(static_cast<int>(vertices.size()), true /* interleaved */), vertexFormat.LayoutEnd());
+    //    std::shared_ptr<Material> planetMaterial = std::make_shared<Material>();
+    
 
     //Sun
     std::vector<Vertex> sunVertices;
@@ -553,11 +579,11 @@ void SceneViewerApplication::InitializeModels()
     }
 
     std::shared_ptr<Model> sunModel = std::make_shared<Model>(make_shared<Mesh>());
-
+    sunModel->AddMaterial(m_planetMaterial);
     sunModel->GetMesh().AddSubmesh<Vertex, unsigned int, VertexFormat::LayoutIterator>(Drawcall::Primitive::Triangles, sunVertices, sunIndices,
         vertexFormat.LayoutBegin(static_cast<int>(sunVertices.size()), true /* interleaved */), vertexFormat.LayoutEnd());
     //    std::shared_ptr<Material> planetMaterial = std::make_shared<Material>();
-    sunModel->AddMaterial(m_defaultMaterial);
+   
     m_scene.AddSceneNode(std::make_shared<SceneModel>("Sun", sunModel));
 
     /*std::vector<const char*> vertexShaderPaths;
@@ -579,33 +605,8 @@ void SceneViewerApplication::InitializeModels()
         },
         m_renderer.GetDefaultUpdateLightsFunction(*shaderProgramPtr)
     );*/
-    Shader vertexShader(Shader::VertexShader);
-    LoadAndCompileShader(vertexShader, "shaders/planet/default.vert");
+    
 
-    // Load and compile fragment shader
-    Shader fragmentShader(Shader::FragmentShader);
-    LoadAndCompileShader(fragmentShader, "shaders/planet/default.frag");
-
-    std::shared_ptr<ShaderProgram> shaderProgramPtr = std::make_shared<ShaderProgram>();
-    if (!shaderProgramPtr->Build(vertexShader, fragmentShader))
-    {
-        std::cout << "Error linking shaders" << std::endl;
-    }
-    m_renderer.RegisterShaderProgram(shaderProgramPtr,
-        [=](const ShaderProgram& shaderProgram, const glm::mat4& worldMatrix, const Camera& camera, bool cameraChanged)
-        {
-
-        },
-        m_renderer.GetDefaultUpdateLightsFunction(*shaderProgramPtr)
-    );
-    std::shared_ptr<Material> planetMaterial = std::make_shared<Material>(shaderProgramPtr);
-
-    std::shared_ptr<Model> planetModel = std::make_shared<Model>(make_shared<Mesh>());
-
-    planetModel->GetMesh().AddSubmesh<Vertex, unsigned int, VertexFormat::LayoutIterator>(Drawcall::Primitive::Triangles, vertices, indices,
-        vertexFormat.LayoutBegin(static_cast<int>(vertices.size()), true /* interleaved */), vertexFormat.LayoutEnd());
-//    std::shared_ptr<Material> planetMaterial = std::make_shared<Material>();
-    planetModel->AddMaterial(m_defaultMaterial);
     m_scene.AddSceneNode(std::make_shared<SceneModel>("Earth", planetModel));
 }
 

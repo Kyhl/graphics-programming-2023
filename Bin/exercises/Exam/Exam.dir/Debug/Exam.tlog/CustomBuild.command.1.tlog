@@ -1,6 +1,6 @@
-^D:\GRAPHICSPROGRAMMING\GRAPHICS-PROGRAMMING-2023\EXERCISES\EXAM\CMAKELISTS.TXT
+^C:\UNITYFILES\GRAPHICS-PROGRAMMING-2023\EXERCISES\EXAM\CMAKELISTS.TXT
 setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -SD:/GraphicsProgramming/graphics-programming-2023 -BD:/GraphicsProgramming/graphics-programming-2023/bin --check-stamp-file D:/GraphicsProgramming/graphics-programming-2023/bin/exercises/Exam/CMakeFiles/generate.stamp
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/UnityFiles/graphics-programming-2023 -BC:/UnityFiles/graphics-programming-2023/Bin --check-stamp-file C:/UnityFiles/graphics-programming-2023/Bin/exercises/Exam/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone

@@ -22,7 +22,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{8A04D6E3-B60B-36F3-AD46-1FAC8F266FAB}</ProjectGuid>
+    <ProjectGuid>{50886B97-E333-322B-9E96-7049A82316A6}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <WindowsTargetPlatformVersion>10.0.19041.0</WindowsTargetPlatformVersion>
     <Platform>x64</Platform>
@@ -59,26 +59,26 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup>
     <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\GraphicsProgramming\graphics-programming-2023\bin\libraries\itugl\Debug\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\UnityFiles\graphics-programming-2023\Bin\libraries\itugl\Debug\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">itugl.dir\Debug\</IntDir>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">itugl</TargetName>
     <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.lib</TargetExt>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\GraphicsProgramming\graphics-programming-2023\bin\libraries\itugl\Release\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\UnityFiles\graphics-programming-2023\Bin\libraries\itugl\Release\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">itugl.dir\Release\</IntDir>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">itugl</TargetName>
     <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.lib</TargetExt>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">D:\GraphicsProgramming\graphics-programming-2023\bin\libraries\itugl\MinSizeRel\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\UnityFiles\graphics-programming-2023\Bin\libraries\itugl\MinSizeRel\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">itugl.dir\MinSizeRel\</IntDir>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">itugl</TargetName>
     <TargetExt Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">.lib</TargetExt>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">D:\GraphicsProgramming\graphics-programming-2023\bin\libraries\itugl\RelWithDebInfo\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\UnityFiles\graphics-programming-2023\Bin\libraries\itugl\RelWithDebInfo\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">itugl.dir\RelWithDebInfo\</IntDir>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">itugl</TargetName>
     <TargetExt Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">.lib</TargetExt>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>D:\GraphicsProgramming\graphics-programming-2023\libraries\glad\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\glfw\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\imgui\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\glm\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\stb\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp;D:\GraphicsProgramming\graphics-programming-2023\libraries\itugl\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\UnityFiles\graphics-programming-2023\libraries\glad\include;C:\UnityFiles\graphics-programming-2023\libraries\glfw\include;C:\UnityFiles\graphics-programming-2023\libraries\imgui\include;C:\UnityFiles\graphics-programming-2023\libraries\glm\include;C:\UnityFiles\graphics-programming-2023\libraries\stb\include;C:\UnityFiles\graphics-programming-2023\libraries\assimp\include;C:\UnityFiles\graphics-programming-2023\libraries\assimp;C:\UnityFiles\graphics-programming-2023\libraries\itugl\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
@@ -96,10 +96,10 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_DEBUG;_WINDOWS;CMAKE_INTDIR=\"Debug\"</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>D:\GraphicsProgramming\graphics-programming-2023\libraries\glad\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\glfw\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\imgui\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\glm\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\stb\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp;D:\GraphicsProgramming\graphics-programming-2023\libraries\itugl\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\UnityFiles\graphics-programming-2023\libraries\glad\include;C:\UnityFiles\graphics-programming-2023\libraries\glfw\include;C:\UnityFiles\graphics-programming-2023\libraries\imgui\include;C:\UnityFiles\graphics-programming-2023\libraries\glm\include;C:\UnityFiles\graphics-programming-2023\libraries\stb\include;C:\UnityFiles\graphics-programming-2023\libraries\assimp\include;C:\UnityFiles\graphics-programming-2023\libraries\assimp;C:\UnityFiles\graphics-programming-2023\libraries\itugl\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>D:\GraphicsProgramming\graphics-programming-2023\libraries\glad\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\glfw\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\imgui\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\glm\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\stb\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp;D:\GraphicsProgramming\graphics-programming-2023\libraries\itugl\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\UnityFiles\graphics-programming-2023\libraries\glad\include;C:\UnityFiles\graphics-programming-2023\libraries\glfw\include;C:\UnityFiles\graphics-programming-2023\libraries\imgui\include;C:\UnityFiles\graphics-programming-2023\libraries\glm\include;C:\UnityFiles\graphics-programming-2023\libraries\stb\include;C:\UnityFiles\graphics-programming-2023\libraries\assimp\include;C:\UnityFiles\graphics-programming-2023\libraries\assimp;C:\UnityFiles\graphics-programming-2023\libraries\itugl\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -112,7 +112,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>D:\GraphicsProgramming\graphics-programming-2023\libraries\glad\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\glfw\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\imgui\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\glm\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\stb\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp;D:\GraphicsProgramming\graphics-programming-2023\libraries\itugl\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\UnityFiles\graphics-programming-2023\libraries\glad\include;C:\UnityFiles\graphics-programming-2023\libraries\glfw\include;C:\UnityFiles\graphics-programming-2023\libraries\imgui\include;C:\UnityFiles\graphics-programming-2023\libraries\glm\include;C:\UnityFiles\graphics-programming-2023\libraries\stb\include;C:\UnityFiles\graphics-programming-2023\libraries\assimp\include;C:\UnityFiles\graphics-programming-2023\libraries\assimp;C:\UnityFiles\graphics-programming-2023\libraries\itugl\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <ExceptionHandling>Sync</ExceptionHandling>
       <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
@@ -130,10 +130,10 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR=\"Release\"</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>D:\GraphicsProgramming\graphics-programming-2023\libraries\glad\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\glfw\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\imgui\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\glm\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\stb\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp;D:\GraphicsProgramming\graphics-programming-2023\libraries\itugl\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\UnityFiles\graphics-programming-2023\libraries\glad\include;C:\UnityFiles\graphics-programming-2023\libraries\glfw\include;C:\UnityFiles\graphics-programming-2023\libraries\imgui\include;C:\UnityFiles\graphics-programming-2023\libraries\glm\include;C:\UnityFiles\graphics-programming-2023\libraries\stb\include;C:\UnityFiles\graphics-programming-2023\libraries\assimp\include;C:\UnityFiles\graphics-programming-2023\libraries\assimp;C:\UnityFiles\graphics-programming-2023\libraries\itugl\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>D:\GraphicsProgramming\graphics-programming-2023\libraries\glad\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\glfw\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\imgui\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\glm\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\stb\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp;D:\GraphicsProgramming\graphics-programming-2023\libraries\itugl\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\UnityFiles\graphics-programming-2023\libraries\glad\include;C:\UnityFiles\graphics-programming-2023\libraries\glfw\include;C:\UnityFiles\graphics-programming-2023\libraries\imgui\include;C:\UnityFiles\graphics-programming-2023\libraries\glm\include;C:\UnityFiles\graphics-programming-2023\libraries\stb\include;C:\UnityFiles\graphics-programming-2023\libraries\assimp\include;C:\UnityFiles\graphics-programming-2023\libraries\assimp;C:\UnityFiles\graphics-programming-2023\libraries\itugl\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -146,7 +146,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>D:\GraphicsProgramming\graphics-programming-2023\libraries\glad\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\glfw\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\imgui\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\glm\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\stb\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp;D:\GraphicsProgramming\graphics-programming-2023\libraries\itugl\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\UnityFiles\graphics-programming-2023\libraries\glad\include;C:\UnityFiles\graphics-programming-2023\libraries\glfw\include;C:\UnityFiles\graphics-programming-2023\libraries\imgui\include;C:\UnityFiles\graphics-programming-2023\libraries\glm\include;C:\UnityFiles\graphics-programming-2023\libraries\stb\include;C:\UnityFiles\graphics-programming-2023\libraries\assimp\include;C:\UnityFiles\graphics-programming-2023\libraries\assimp;C:\UnityFiles\graphics-programming-2023\libraries\itugl\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <ExceptionHandling>Sync</ExceptionHandling>
       <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
@@ -164,10 +164,10 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR=\"MinSizeRel\"</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>D:\GraphicsProgramming\graphics-programming-2023\libraries\glad\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\glfw\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\imgui\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\glm\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\stb\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp;D:\GraphicsProgramming\graphics-programming-2023\libraries\itugl\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\UnityFiles\graphics-programming-2023\libraries\glad\include;C:\UnityFiles\graphics-programming-2023\libraries\glfw\include;C:\UnityFiles\graphics-programming-2023\libraries\imgui\include;C:\UnityFiles\graphics-programming-2023\libraries\glm\include;C:\UnityFiles\graphics-programming-2023\libraries\stb\include;C:\UnityFiles\graphics-programming-2023\libraries\assimp\include;C:\UnityFiles\graphics-programming-2023\libraries\assimp;C:\UnityFiles\graphics-programming-2023\libraries\itugl\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>D:\GraphicsProgramming\graphics-programming-2023\libraries\glad\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\glfw\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\imgui\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\glm\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\stb\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp;D:\GraphicsProgramming\graphics-programming-2023\libraries\itugl\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\UnityFiles\graphics-programming-2023\libraries\glad\include;C:\UnityFiles\graphics-programming-2023\libraries\glfw\include;C:\UnityFiles\graphics-programming-2023\libraries\imgui\include;C:\UnityFiles\graphics-programming-2023\libraries\glm\include;C:\UnityFiles\graphics-programming-2023\libraries\stb\include;C:\UnityFiles\graphics-programming-2023\libraries\assimp\include;C:\UnityFiles\graphics-programming-2023\libraries\assimp;C:\UnityFiles\graphics-programming-2023\libraries\itugl\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -180,7 +180,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>D:\GraphicsProgramming\graphics-programming-2023\libraries\glad\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\glfw\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\imgui\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\glm\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\stb\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp;D:\GraphicsProgramming\graphics-programming-2023\libraries\itugl\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\UnityFiles\graphics-programming-2023\libraries\glad\include;C:\UnityFiles\graphics-programming-2023\libraries\glfw\include;C:\UnityFiles\graphics-programming-2023\libraries\imgui\include;C:\UnityFiles\graphics-programming-2023\libraries\glm\include;C:\UnityFiles\graphics-programming-2023\libraries\stb\include;C:\UnityFiles\graphics-programming-2023\libraries\assimp\include;C:\UnityFiles\graphics-programming-2023\libraries\assimp;C:\UnityFiles\graphics-programming-2023\libraries\itugl\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <ExceptionHandling>Sync</ExceptionHandling>
@@ -197,10 +197,10 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR=\"RelWithDebInfo\"</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>D:\GraphicsProgramming\graphics-programming-2023\libraries\glad\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\glfw\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\imgui\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\glm\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\stb\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp;D:\GraphicsProgramming\graphics-programming-2023\libraries\itugl\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\UnityFiles\graphics-programming-2023\libraries\glad\include;C:\UnityFiles\graphics-programming-2023\libraries\glfw\include;C:\UnityFiles\graphics-programming-2023\libraries\imgui\include;C:\UnityFiles\graphics-programming-2023\libraries\glm\include;C:\UnityFiles\graphics-programming-2023\libraries\stb\include;C:\UnityFiles\graphics-programming-2023\libraries\assimp\include;C:\UnityFiles\graphics-programming-2023\libraries\assimp;C:\UnityFiles\graphics-programming-2023\libraries\itugl\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>D:\GraphicsProgramming\graphics-programming-2023\libraries\glad\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\glfw\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\imgui\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\glm\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\stb\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp\include;D:\GraphicsProgramming\graphics-programming-2023\libraries\assimp;D:\GraphicsProgramming\graphics-programming-2023\libraries\itugl\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\UnityFiles\graphics-programming-2023\libraries\glad\include;C:\UnityFiles\graphics-programming-2023\libraries\glfw\include;C:\UnityFiles\graphics-programming-2023\libraries\imgui\include;C:\UnityFiles\graphics-programming-2023\libraries\glm\include;C:\UnityFiles\graphics-programming-2023\libraries\stb\include;C:\UnityFiles\graphics-programming-2023\libraries\assimp\include;C:\UnityFiles\graphics-programming-2023\libraries\assimp;C:\UnityFiles\graphics-programming-2023\libraries\itugl\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -212,11 +212,11 @@
     </Lib>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <CustomBuild Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\itugl\CMakeLists.txt">
+    <CustomBuild Include="C:\UnityFiles\graphics-programming-2023\libraries\itugl\CMakeLists.txt">
       <UseUtf8Encoding>Always</UseUtf8Encoding>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule D:/GraphicsProgramming/graphics-programming-2023/libraries/itugl/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule C:/UnityFiles/graphics-programming-2023/libraries/itugl/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -SD:/GraphicsProgramming/graphics-programming-2023 -BD:/GraphicsProgramming/graphics-programming-2023/bin --check-stamp-file D:/GraphicsProgramming/graphics-programming-2023/bin/libraries/itugl/CMakeFiles/generate.stamp
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/UnityFiles/graphics-programming-2023 -BC:/UnityFiles/graphics-programming-2023/Bin --check-stamp-file C:/UnityFiles/graphics-programming-2023/Bin/libraries/itugl/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -225,11 +225,11 @@ exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\GraphicsProgramming\graphics-programming-2023\bin\libraries\itugl\CMakeFiles\generate.stamp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\UnityFiles\graphics-programming-2023\Bin\libraries\itugl\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule D:/GraphicsProgramming/graphics-programming-2023/libraries/itugl/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule C:/UnityFiles/graphics-programming-2023/libraries/itugl/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -SD:/GraphicsProgramming/graphics-programming-2023 -BD:/GraphicsProgramming/graphics-programming-2023/bin --check-stamp-file D:/GraphicsProgramming/graphics-programming-2023/bin/libraries/itugl/CMakeFiles/generate.stamp
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/UnityFiles/graphics-programming-2023 -BC:/UnityFiles/graphics-programming-2023/Bin --check-stamp-file C:/UnityFiles/graphics-programming-2023/Bin/libraries/itugl/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -238,11 +238,11 @@ exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\GraphicsProgramming\graphics-programming-2023\bin\libraries\itugl\CMakeFiles\generate.stamp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\UnityFiles\graphics-programming-2023\Bin\libraries\itugl\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
-      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule D:/GraphicsProgramming/graphics-programming-2023/libraries/itugl/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule C:/UnityFiles/graphics-programming-2023/libraries/itugl/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -SD:/GraphicsProgramming/graphics-programming-2023 -BD:/GraphicsProgramming/graphics-programming-2023/bin --check-stamp-file D:/GraphicsProgramming/graphics-programming-2023/bin/libraries/itugl/CMakeFiles/generate.stamp
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/UnityFiles/graphics-programming-2023 -BC:/UnityFiles/graphics-programming-2023/Bin --check-stamp-file C:/UnityFiles/graphics-programming-2023/Bin/libraries/itugl/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -251,11 +251,11 @@ exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">D:\GraphicsProgramming\graphics-programming-2023\bin\libraries\itugl\CMakeFiles\generate.stamp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\UnityFiles\graphics-programming-2023\Bin\libraries\itugl\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
-      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule D:/GraphicsProgramming/graphics-programming-2023/libraries/itugl/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule C:/UnityFiles/graphics-programming-2023/libraries/itugl/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -SD:/GraphicsProgramming/graphics-programming-2023 -BD:/GraphicsProgramming/graphics-programming-2023/bin --check-stamp-file D:/GraphicsProgramming/graphics-programming-2023/bin/libraries/itugl/CMakeFiles/generate.stamp
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/UnityFiles/graphics-programming-2023 -BC:/UnityFiles/graphics-programming-2023/Bin --check-stamp-file C:/UnityFiles/graphics-programming-2023/Bin/libraries/itugl/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -264,71 +264,123 @@ exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">D:\GraphicsProgramming\graphics-programming-2023\bin\libraries\itugl\CMakeFiles\generate.stamp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\UnityFiles\graphics-programming-2023\Bin\libraries\itugl\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\itugl\include\ituGL\application\Application.h" />
-    <ClInclude Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\itugl\include\ituGL\application\Window.h" />
-    <ClInclude Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\itugl\include\ituGL\asset\AssetLoader.h" />
-    <ClInclude Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\itugl\include\ituGL\asset\ModelLoader.h" />
-    <ClInclude Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\itugl\include\ituGL\asset\ShaderLoader.h" />
-    <ClInclude Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\itugl\include\ituGL\asset\Texture2DLoader.h" />
-    <ClInclude Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\itugl\include\ituGL\asset\TextureLoader.h" />
-    <ClInclude Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\itugl\include\ituGL\camera\Camera.h" />
-    <ClInclude Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\itugl\include\ituGL\core\BufferObject.h" />
-    <ClInclude Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\itugl\include\ituGL\core\Color.h" />
-    <ClInclude Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\itugl\include\ituGL\core\Data.h" />
-    <ClInclude Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\itugl\include\ituGL\core\DeviceGL.h" />
-    <ClInclude Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\itugl\include\ituGL\core\Object.h" />
-    <ClInclude Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\itugl\include\ituGL\geometry\Drawcall.h" />
-    <ClInclude Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\itugl\include\ituGL\geometry\ElementBufferObject.h" />
-    <ClInclude Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\itugl\include\ituGL\geometry\Mesh.h" />
-    <ClInclude Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\itugl\include\ituGL\geometry\Model.h" />
-    <ClInclude Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\itugl\include\ituGL\geometry\VertexArrayObject.h" />
-    <ClInclude Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\itugl\include\ituGL\geometry\VertexAttribute.h" />
-    <ClInclude Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\itugl\include\ituGL\geometry\VertexBufferObject.h" />
-    <ClInclude Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\itugl\include\ituGL\geometry\VertexFormat.h" />
-    <ClInclude Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\itugl\include\ituGL\shader\Material.h" />
-    <ClInclude Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\itugl\include\ituGL\shader\Shader.h" />
-    <ClInclude Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\itugl\include\ituGL\shader\ShaderProgram.h" />
-    <ClInclude Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\itugl\include\ituGL\shader\ShaderUniformCollection.h" />
-    <ClInclude Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\itugl\include\ituGL\texture\Texture2DObject.h" />
-    <ClInclude Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\itugl\include\ituGL\texture\TextureObject.h" />
-    <ClInclude Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\itugl\include\ituGL\utils\DearImGui.h" />
-    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\itugl\src\ituGL\application\Application.cpp" />
-    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\itugl\src\ituGL\application\Window.cpp" />
-    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\itugl\src\ituGL\asset\AssetLoader.cpp" />
-    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\itugl\src\ituGL\asset\ModelLoader.cpp" />
-    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\itugl\src\ituGL\asset\ShaderLoader.cpp" />
-    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\itugl\src\ituGL\asset\Texture2DLoader.cpp" />
-    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\itugl\src\ituGL\asset\TextureLoader.cpp" />
-    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\itugl\src\ituGL\camera\Camera.cpp" />
-    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\itugl\src\ituGL\core\BufferObject.cpp" />
-    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\itugl\src\ituGL\core\Color.cpp" />
-    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\itugl\src\ituGL\core\Data.cpp" />
-    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\itugl\src\ituGL\core\DeviceGL.cpp" />
-    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\itugl\src\ituGL\core\Object.cpp" />
-    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\itugl\src\ituGL\geometry\Drawcall.cpp" />
-    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\itugl\src\ituGL\geometry\ElementBufferObject.cpp" />
-    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\itugl\src\ituGL\geometry\Mesh.cpp" />
-    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\itugl\src\ituGL\geometry\Model.cpp" />
-    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\itugl\src\ituGL\geometry\VertexArrayObject.cpp" />
-    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\itugl\src\ituGL\geometry\VertexAttribute.cpp" />
-    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\itugl\src\ituGL\geometry\VertexBufferObject.cpp" />
-    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\itugl\src\ituGL\geometry\VertexFormat.cpp" />
-    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\itugl\src\ituGL\shader\Material.cpp" />
-    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\itugl\src\ituGL\shader\Shader.cpp" />
-    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\itugl\src\ituGL\shader\ShaderProgram.cpp" />
-    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\itugl\src\ituGL\shader\ShaderUniformCollection.cpp" />
-    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\itugl\src\ituGL\texture\Texture2DObject.cpp" />
-    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\itugl\src\ituGL\texture\TextureObject.cpp" />
-    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\libraries\itugl\src\ituGL\utils\DearImGui.cpp" />
+    <ClInclude Include="C:\UnityFiles\graphics-programming-2023\libraries\itugl\include\ituGL\application\Application.h" />
+    <ClInclude Include="C:\UnityFiles\graphics-programming-2023\libraries\itugl\include\ituGL\application\Window.h" />
+    <ClInclude Include="C:\UnityFiles\graphics-programming-2023\libraries\itugl\include\ituGL\asset\AssetLoader.h" />
+    <ClInclude Include="C:\UnityFiles\graphics-programming-2023\libraries\itugl\include\ituGL\asset\ModelLoader.h" />
+    <ClInclude Include="C:\UnityFiles\graphics-programming-2023\libraries\itugl\include\ituGL\asset\ShaderLoader.h" />
+    <ClInclude Include="C:\UnityFiles\graphics-programming-2023\libraries\itugl\include\ituGL\asset\Texture2DLoader.h" />
+    <ClInclude Include="C:\UnityFiles\graphics-programming-2023\libraries\itugl\include\ituGL\asset\TextureCubemapLoader.h" />
+    <ClInclude Include="C:\UnityFiles\graphics-programming-2023\libraries\itugl\include\ituGL\asset\TextureLoader.h" />
+    <ClInclude Include="C:\UnityFiles\graphics-programming-2023\libraries\itugl\include\ituGL\camera\Camera.h" />
+    <ClInclude Include="C:\UnityFiles\graphics-programming-2023\libraries\itugl\include\ituGL\camera\CameraController.h" />
+    <ClInclude Include="C:\UnityFiles\graphics-programming-2023\libraries\itugl\include\ituGL\core\BufferObject.h" />
+    <ClInclude Include="C:\UnityFiles\graphics-programming-2023\libraries\itugl\include\ituGL\core\Color.h" />
+    <ClInclude Include="C:\UnityFiles\graphics-programming-2023\libraries\itugl\include\ituGL\core\Data.h" />
+    <ClInclude Include="C:\UnityFiles\graphics-programming-2023\libraries\itugl\include\ituGL\core\DeviceGL.h" />
+    <ClInclude Include="C:\UnityFiles\graphics-programming-2023\libraries\itugl\include\ituGL\core\Object.h" />
+    <ClInclude Include="C:\UnityFiles\graphics-programming-2023\libraries\itugl\include\ituGL\geometry\Drawcall.h" />
+    <ClInclude Include="C:\UnityFiles\graphics-programming-2023\libraries\itugl\include\ituGL\geometry\ElementBufferObject.h" />
+    <ClInclude Include="C:\UnityFiles\graphics-programming-2023\libraries\itugl\include\ituGL\geometry\Mesh.h" />
+    <ClInclude Include="C:\UnityFiles\graphics-programming-2023\libraries\itugl\include\ituGL\geometry\Model.h" />
+    <ClInclude Include="C:\UnityFiles\graphics-programming-2023\libraries\itugl\include\ituGL\geometry\VertexArrayObject.h" />
+    <ClInclude Include="C:\UnityFiles\graphics-programming-2023\libraries\itugl\include\ituGL\geometry\VertexAttribute.h" />
+    <ClInclude Include="C:\UnityFiles\graphics-programming-2023\libraries\itugl\include\ituGL\geometry\VertexBufferObject.h" />
+    <ClInclude Include="C:\UnityFiles\graphics-programming-2023\libraries\itugl\include\ituGL\geometry\VertexFormat.h" />
+    <ClInclude Include="C:\UnityFiles\graphics-programming-2023\libraries\itugl\include\ituGL\lighting\DirectionalLight.h" />
+    <ClInclude Include="C:\UnityFiles\graphics-programming-2023\libraries\itugl\include\ituGL\lighting\Light.h" />
+    <ClInclude Include="C:\UnityFiles\graphics-programming-2023\libraries\itugl\include\ituGL\lighting\PointLight.h" />
+    <ClInclude Include="C:\UnityFiles\graphics-programming-2023\libraries\itugl\include\ituGL\lighting\SpotLight.h" />
+    <ClInclude Include="C:\UnityFiles\graphics-programming-2023\libraries\itugl\include\ituGL\renderer\DeferredRenderPass.h" />
+    <ClInclude Include="C:\UnityFiles\graphics-programming-2023\libraries\itugl\include\ituGL\renderer\ForwardRenderPass.h" />
+    <ClInclude Include="C:\UnityFiles\graphics-programming-2023\libraries\itugl\include\ituGL\renderer\GBufferRenderPass.h" />
+    <ClInclude Include="C:\UnityFiles\graphics-programming-2023\libraries\itugl\include\ituGL\renderer\PostFXRenderPass.h" />
+    <ClInclude Include="C:\UnityFiles\graphics-programming-2023\libraries\itugl\include\ituGL\renderer\RenderPass.h" />
+    <ClInclude Include="C:\UnityFiles\graphics-programming-2023\libraries\itugl\include\ituGL\renderer\Renderer.h" />
+    <ClInclude Include="C:\UnityFiles\graphics-programming-2023\libraries\itugl\include\ituGL\renderer\ShadowMapRenderPass.h" />
+    <ClInclude Include="C:\UnityFiles\graphics-programming-2023\libraries\itugl\include\ituGL\renderer\SkyboxRenderPass.h" />
+    <ClInclude Include="C:\UnityFiles\graphics-programming-2023\libraries\itugl\include\ituGL\scene\Bounds.h" />
+    <ClInclude Include="C:\UnityFiles\graphics-programming-2023\libraries\itugl\include\ituGL\scene\ImGuiSceneVisitor.h" />
+    <ClInclude Include="C:\UnityFiles\graphics-programming-2023\libraries\itugl\include\ituGL\scene\RendererSceneVisitor.h" />
+    <ClInclude Include="C:\UnityFiles\graphics-programming-2023\libraries\itugl\include\ituGL\scene\Scene.h" />
+    <ClInclude Include="C:\UnityFiles\graphics-programming-2023\libraries\itugl\include\ituGL\scene\SceneCamera.h" />
+    <ClInclude Include="C:\UnityFiles\graphics-programming-2023\libraries\itugl\include\ituGL\scene\SceneLight.h" />
+    <ClInclude Include="C:\UnityFiles\graphics-programming-2023\libraries\itugl\include\ituGL\scene\SceneModel.h" />
+    <ClInclude Include="C:\UnityFiles\graphics-programming-2023\libraries\itugl\include\ituGL\scene\SceneNode.h" />
+    <ClInclude Include="C:\UnityFiles\graphics-programming-2023\libraries\itugl\include\ituGL\scene\SceneVisitor.h" />
+    <ClInclude Include="C:\UnityFiles\graphics-programming-2023\libraries\itugl\include\ituGL\scene\Transform.h" />
+    <ClInclude Include="C:\UnityFiles\graphics-programming-2023\libraries\itugl\include\ituGL\shader\Material.h" />
+    <ClInclude Include="C:\UnityFiles\graphics-programming-2023\libraries\itugl\include\ituGL\shader\Shader.h" />
+    <ClInclude Include="C:\UnityFiles\graphics-programming-2023\libraries\itugl\include\ituGL\shader\ShaderProgram.h" />
+    <ClInclude Include="C:\UnityFiles\graphics-programming-2023\libraries\itugl\include\ituGL\shader\ShaderUniformCollection.h" />
+    <ClInclude Include="C:\UnityFiles\graphics-programming-2023\libraries\itugl\include\ituGL\texture\FramebufferObject.h" />
+    <ClInclude Include="C:\UnityFiles\graphics-programming-2023\libraries\itugl\include\ituGL\texture\Texture2DObject.h" />
+    <ClInclude Include="C:\UnityFiles\graphics-programming-2023\libraries\itugl\include\ituGL\texture\TextureCubemapObject.h" />
+    <ClInclude Include="C:\UnityFiles\graphics-programming-2023\libraries\itugl\include\ituGL\texture\TextureObject.h" />
+    <ClInclude Include="C:\UnityFiles\graphics-programming-2023\libraries\itugl\include\ituGL\utils\DearImGui.h" />
+    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\itugl\src\ituGL\application\Application.cpp" />
+    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\itugl\src\ituGL\application\Window.cpp" />
+    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\itugl\src\ituGL\asset\AssetLoader.cpp" />
+    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\itugl\src\ituGL\asset\ModelLoader.cpp" />
+    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\itugl\src\ituGL\asset\ShaderLoader.cpp" />
+    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\itugl\src\ituGL\asset\Texture2DLoader.cpp" />
+    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\itugl\src\ituGL\asset\TextureCubemapLoader.cpp" />
+    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\itugl\src\ituGL\asset\TextureLoader.cpp" />
+    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\itugl\src\ituGL\camera\Camera.cpp" />
+    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\itugl\src\ituGL\camera\CameraController.cpp" />
+    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\itugl\src\ituGL\core\BufferObject.cpp" />
+    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\itugl\src\ituGL\core\Color.cpp" />
+    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\itugl\src\ituGL\core\Data.cpp" />
+    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\itugl\src\ituGL\core\DeviceGL.cpp" />
+    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\itugl\src\ituGL\core\Object.cpp" />
+    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\itugl\src\ituGL\geometry\Drawcall.cpp" />
+    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\itugl\src\ituGL\geometry\ElementBufferObject.cpp" />
+    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\itugl\src\ituGL\geometry\Mesh.cpp" />
+    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\itugl\src\ituGL\geometry\Model.cpp" />
+    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\itugl\src\ituGL\geometry\VertexArrayObject.cpp" />
+    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\itugl\src\ituGL\geometry\VertexAttribute.cpp" />
+    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\itugl\src\ituGL\geometry\VertexBufferObject.cpp" />
+    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\itugl\src\ituGL\geometry\VertexFormat.cpp" />
+    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\itugl\src\ituGL\lighting\DirectionalLight.cpp" />
+    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\itugl\src\ituGL\lighting\Light.cpp" />
+    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\itugl\src\ituGL\lighting\PointLight.cpp" />
+    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\itugl\src\ituGL\lighting\SpotLight.cpp" />
+    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\itugl\src\ituGL\renderer\DeferredRenderPass.cpp" />
+    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\itugl\src\ituGL\renderer\ForwardRenderPass.cpp" />
+    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\itugl\src\ituGL\renderer\GBufferRenderPass.cpp" />
+    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\itugl\src\ituGL\renderer\PostFXRenderPass.cpp" />
+    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\itugl\src\ituGL\renderer\RenderPass.cpp" />
+    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\itugl\src\ituGL\renderer\Renderer.cpp" />
+    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\itugl\src\ituGL\renderer\ShadowMapRenderPass.cpp" />
+    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\itugl\src\ituGL\renderer\SkyboxRenderPass.cpp" />
+    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\itugl\src\ituGL\scene\Bounds.cpp" />
+    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\itugl\src\ituGL\scene\ImGuiSceneVisitor.cpp" />
+    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\itugl\src\ituGL\scene\RendererSceneVisitor.cpp" />
+    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\itugl\src\ituGL\scene\Scene.cpp" />
+    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\itugl\src\ituGL\scene\SceneCamera.cpp" />
+    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\itugl\src\ituGL\scene\SceneLight.cpp" />
+    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\itugl\src\ituGL\scene\SceneModel.cpp" />
+    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\itugl\src\ituGL\scene\SceneNode.cpp" />
+    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\itugl\src\ituGL\scene\SceneVisitor.cpp" />
+    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\itugl\src\ituGL\scene\Transform.cpp" />
+    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\itugl\src\ituGL\shader\Material.cpp" />
+    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\itugl\src\ituGL\shader\Shader.cpp" />
+    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\itugl\src\ituGL\shader\ShaderProgram.cpp" />
+    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\itugl\src\ituGL\shader\ShaderUniformCollection.cpp" />
+    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\itugl\src\ituGL\texture\FramebufferObject.cpp" />
+    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\itugl\src\ituGL\texture\Texture2DObject.cpp" />
+    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\itugl\src\ituGL\texture\TextureCubemapObject.cpp" />
+    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\itugl\src\ituGL\texture\TextureObject.cpp" />
+    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\libraries\itugl\src\ituGL\utils\DearImGui.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="D:\GraphicsProgramming\graphics-programming-2023\bin\ZERO_CHECK.vcxproj">
-      <Project>{6A54F654-3646-3027-9D6D-C4039BEFE6ED}</Project>
+    <ProjectReference Include="C:\UnityFiles\graphics-programming-2023\Bin\ZERO_CHECK.vcxproj">
+      <Project>{E9ECF176-4261-365A-846B-49A9250BDC5A}</Project>
       <Name>ZERO_CHECK</Name>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>

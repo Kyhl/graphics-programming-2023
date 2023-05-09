@@ -1,8 +1,8 @@
 ﻿  TerrainApplication.cpp
-D:\GraphicsProgramming\graphics-programming-2023\exercises\Exam\TerrainApplication.cpp(91,151): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-D:\GraphicsProgramming\graphics-programming-2023\exercises\Exam\TerrainApplication.cpp(100,153): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-D:\GraphicsProgramming\graphics-programming-2023\exercises\Exam\TerrainApplication.cpp(109,153): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-D:\GraphicsProgramming\graphics-programming-2023\exercises\Exam\TerrainApplication.cpp(118,153): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-D:\GraphicsProgramming\graphics-programming-2023\exercises\Exam\TerrainApplication.cpp(127,153): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-D:\GraphicsProgramming\graphics-programming-2023\exercises\Exam\TerrainApplication.cpp(136,153): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-  Exam.vcxproj -> D:\GraphicsProgramming\graphics-programming-2023\bin\exercises\Exam\Debug\Exam.exe
+C:\UnityFiles\graphics-programming-2023\exercises\Exam\TerrainApplication.cpp(187,153): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\UnityFiles\graphics-programming-2023\exercises\Exam\TerrainApplication.cpp(196,153): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\UnityFiles\graphics-programming-2023\exercises\Exam\TerrainApplication.cpp(205,153): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\UnityFiles\graphics-programming-2023\exercises\Exam\TerrainApplication.cpp(214,153): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\UnityFiles\graphics-programming-2023\exercises\Exam\TerrainApplication.cpp(223,153): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\UnityFiles\graphics-programming-2023\exercises\Exam\TerrainApplication.cpp(232,153): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  Exam.vcxproj -> C:\UnityFiles\graphics-programming-2023\Bin\exercises\Exam\Debug\Exam.exe

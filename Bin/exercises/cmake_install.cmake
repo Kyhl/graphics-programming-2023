@@ -1,4 +1,4 @@
-# Install script for directory: D:/GraphicsProgramming/graphics-programming-2023/exercises
+# Install script for directory: C:/UnityFiles/graphics-programming-2023/exercises
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -34,14 +34,19 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("D:/GraphicsProgramming/graphics-programming-2023/bin/exercises/Exam/cmake_install.cmake")
-  include("D:/GraphicsProgramming/graphics-programming-2023/bin/exercises/exercise00/cmake_install.cmake")
-  include("D:/GraphicsProgramming/graphics-programming-2023/bin/exercises/exercise01/cmake_install.cmake")
-  include("D:/GraphicsProgramming/graphics-programming-2023/bin/exercises/exercise02/cmake_install.cmake")
-  include("D:/GraphicsProgramming/graphics-programming-2023/bin/exercises/exercise03/cmake_install.cmake")
-  include("D:/GraphicsProgramming/graphics-programming-2023/bin/exercises/exercise04/cmake_install.cmake")
-  include("D:/GraphicsProgramming/graphics-programming-2023/bin/exercises/exercise05/cmake_install.cmake")
-  include("D:/GraphicsProgramming/graphics-programming-2023/bin/exercises/exercise06/cmake_install.cmake")
+  include("C:/UnityFiles/graphics-programming-2023/Bin/exercises/Exam/cmake_install.cmake")
+  include("C:/UnityFiles/graphics-programming-2023/Bin/exercises/exercise00/cmake_install.cmake")
+  include("C:/UnityFiles/graphics-programming-2023/Bin/exercises/exercise01/cmake_install.cmake")
+  include("C:/UnityFiles/graphics-programming-2023/Bin/exercises/exercise02/cmake_install.cmake")
+  include("C:/UnityFiles/graphics-programming-2023/Bin/exercises/exercise03/cmake_install.cmake")
+  include("C:/UnityFiles/graphics-programming-2023/Bin/exercises/exercise04/cmake_install.cmake")
+  include("C:/UnityFiles/graphics-programming-2023/Bin/exercises/exercise05/cmake_install.cmake")
+  include("C:/UnityFiles/graphics-programming-2023/Bin/exercises/exercise06/cmake_install.cmake")
+  include("C:/UnityFiles/graphics-programming-2023/Bin/exercises/exercise07/cmake_install.cmake")
+  include("C:/UnityFiles/graphics-programming-2023/Bin/exercises/exercise08/cmake_install.cmake")
+  include("C:/UnityFiles/graphics-programming-2023/Bin/exercises/exercise09/cmake_install.cmake")
+  include("C:/UnityFiles/graphics-programming-2023/Bin/exercises/exercise10/cmake_install.cmake")
+  include("C:/UnityFiles/graphics-programming-2023/Bin/exercises/exercise11/cmake_install.cmake")
 
 endif()
 

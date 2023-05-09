@@ -1,0 +1,393 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <PreferredToolArchitecture>x64</PreferredToolArchitecture>
+  </PropertyGroup>
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="MinSizeRel|x64">
+      <Configuration>MinSizeRel</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelWithDebInfo|x64">
+      <Configuration>RelWithDebInfo</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{1C840C1C-A2B8-33B1-9D6B-83D4B65C3A66}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <WindowsTargetPlatformVersion>10.0.19041.0</WindowsTargetPlatformVersion>
+    <Platform>x64</Platform>
+    <ProjectName>exercise09</ProjectName>
+    <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\UnityFiles\graphics-programming-2023\Bin\exercises\exercise09\Debug\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">exercise09.dir\Debug\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">exercise09</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</GenerateManifest>
+    <LocalDebuggerWorkingDirectory Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:/UnityFiles/graphics-programming-2023/exercises/exercise09</LocalDebuggerWorkingDirectory>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\UnityFiles\graphics-programming-2023\Bin\exercises\exercise09\Release\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">exercise09.dir\Release\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">exercise09</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</GenerateManifest>
+    <LocalDebuggerWorkingDirectory Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:/UnityFiles/graphics-programming-2023/exercises/exercise09</LocalDebuggerWorkingDirectory>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\UnityFiles\graphics-programming-2023\Bin\exercises\exercise09\MinSizeRel\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">exercise09.dir\MinSizeRel\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">exercise09</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">true</GenerateManifest>
+    <LocalDebuggerWorkingDirectory Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:/UnityFiles/graphics-programming-2023/exercises/exercise09</LocalDebuggerWorkingDirectory>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\UnityFiles\graphics-programming-2023\Bin\exercises\exercise09\RelWithDebInfo\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">exercise09.dir\RelWithDebInfo\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">exercise09</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">true</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">true</GenerateManifest>
+    <LocalDebuggerWorkingDirectory Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:/UnityFiles/graphics-programming-2023/exercises/exercise09</LocalDebuggerWorkingDirectory>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\UnityFiles\graphics-programming-2023\libraries\glad\include;C:\UnityFiles\graphics-programming-2023\libraries\glfw\include;C:\UnityFiles\graphics-programming-2023\libraries\imgui\include;C:\UnityFiles\graphics-programming-2023\libraries\glm\include;C:\UnityFiles\graphics-programming-2023\libraries\stb\include;C:\UnityFiles\graphics-programming-2023\libraries\assimp\include;C:\UnityFiles\graphics-programming-2023\libraries\assimp;C:\UnityFiles\graphics-programming-2023\libraries\itugl\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <Optimization>Disabled</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;CMAKE_INTDIR="Debug"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_DEBUG;_WINDOWS;CMAKE_INTDIR=\"Debug\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\UnityFiles\graphics-programming-2023\libraries\glad\include;C:\UnityFiles\graphics-programming-2023\libraries\glfw\include;C:\UnityFiles\graphics-programming-2023\libraries\imgui\include;C:\UnityFiles\graphics-programming-2023\libraries\glm\include;C:\UnityFiles\graphics-programming-2023\libraries\stb\include;C:\UnityFiles\graphics-programming-2023\libraries\assimp\include;C:\UnityFiles\graphics-programming-2023\libraries\assimp;C:\UnityFiles\graphics-programming-2023\libraries\itugl\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\UnityFiles\graphics-programming-2023\libraries\glad\include;C:\UnityFiles\graphics-programming-2023\libraries\glfw\include;C:\UnityFiles\graphics-programming-2023\libraries\imgui\include;C:\UnityFiles\graphics-programming-2023\libraries\glm\include;C:\UnityFiles\graphics-programming-2023\libraries\stb\include;C:\UnityFiles\graphics-programming-2023\libraries\assimp\include;C:\UnityFiles\graphics-programming-2023\libraries\assimp;C:\UnityFiles\graphics-programming-2023\libraries\itugl\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalDependencies>..\..\libraries\glad\Debug\glad.lib;..\..\libraries\glfw\src\Debug\glfw3.lib;..\..\libraries\assimp\Debug\assimp.lib;..\..\libraries\imgui\Debug\imgui.lib;..\..\libraries\itugl\Debug\itugl.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>C:/UnityFiles/graphics-programming-2023/Bin/exercises/exercise09/Debug/exercise09.lib</ImportLibrary>
+      <ProgramDataBaseFile>C:/UnityFiles/graphics-programming-2023/Bin/exercises/exercise09/Debug/exercise09.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\UnityFiles\graphics-programming-2023\libraries\glad\include;C:\UnityFiles\graphics-programming-2023\libraries\glfw\include;C:\UnityFiles\graphics-programming-2023\libraries\imgui\include;C:\UnityFiles\graphics-programming-2023\libraries\glm\include;C:\UnityFiles\graphics-programming-2023\libraries\stb\include;C:\UnityFiles\graphics-programming-2023\libraries\assimp\include;C:\UnityFiles\graphics-programming-2023\libraries\assimp;C:\UnityFiles\graphics-programming-2023\libraries\itugl\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR="Release"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR=\"Release\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\UnityFiles\graphics-programming-2023\libraries\glad\include;C:\UnityFiles\graphics-programming-2023\libraries\glfw\include;C:\UnityFiles\graphics-programming-2023\libraries\imgui\include;C:\UnityFiles\graphics-programming-2023\libraries\glm\include;C:\UnityFiles\graphics-programming-2023\libraries\stb\include;C:\UnityFiles\graphics-programming-2023\libraries\assimp\include;C:\UnityFiles\graphics-programming-2023\libraries\assimp;C:\UnityFiles\graphics-programming-2023\libraries\itugl\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\UnityFiles\graphics-programming-2023\libraries\glad\include;C:\UnityFiles\graphics-programming-2023\libraries\glfw\include;C:\UnityFiles\graphics-programming-2023\libraries\imgui\include;C:\UnityFiles\graphics-programming-2023\libraries\glm\include;C:\UnityFiles\graphics-programming-2023\libraries\stb\include;C:\UnityFiles\graphics-programming-2023\libraries\assimp\include;C:\UnityFiles\graphics-programming-2023\libraries\assimp;C:\UnityFiles\graphics-programming-2023\libraries\itugl\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalDependencies>..\..\libraries\glad\Release\glad.lib;..\..\libraries\glfw\src\Release\glfw3.lib;..\..\libraries\assimp\Release\assimp.lib;..\..\libraries\imgui\Release\imgui.lib;..\..\libraries\itugl\Release\itugl.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>C:/UnityFiles/graphics-programming-2023/Bin/exercises/exercise09/Release/exercise09.lib</ImportLibrary>
+      <ProgramDataBaseFile>C:/UnityFiles/graphics-programming-2023/Bin/exercises/exercise09/Release/exercise09.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\UnityFiles\graphics-programming-2023\libraries\glad\include;C:\UnityFiles\graphics-programming-2023\libraries\glfw\include;C:\UnityFiles\graphics-programming-2023\libraries\imgui\include;C:\UnityFiles\graphics-programming-2023\libraries\glm\include;C:\UnityFiles\graphics-programming-2023\libraries\stb\include;C:\UnityFiles\graphics-programming-2023\libraries\assimp\include;C:\UnityFiles\graphics-programming-2023\libraries\assimp;C:\UnityFiles\graphics-programming-2023\libraries\itugl\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <Optimization>MinSpace</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR="MinSizeRel"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR=\"MinSizeRel\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\UnityFiles\graphics-programming-2023\libraries\glad\include;C:\UnityFiles\graphics-programming-2023\libraries\glfw\include;C:\UnityFiles\graphics-programming-2023\libraries\imgui\include;C:\UnityFiles\graphics-programming-2023\libraries\glm\include;C:\UnityFiles\graphics-programming-2023\libraries\stb\include;C:\UnityFiles\graphics-programming-2023\libraries\assimp\include;C:\UnityFiles\graphics-programming-2023\libraries\assimp;C:\UnityFiles\graphics-programming-2023\libraries\itugl\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\UnityFiles\graphics-programming-2023\libraries\glad\include;C:\UnityFiles\graphics-programming-2023\libraries\glfw\include;C:\UnityFiles\graphics-programming-2023\libraries\imgui\include;C:\UnityFiles\graphics-programming-2023\libraries\glm\include;C:\UnityFiles\graphics-programming-2023\libraries\stb\include;C:\UnityFiles\graphics-programming-2023\libraries\assimp\include;C:\UnityFiles\graphics-programming-2023\libraries\assimp;C:\UnityFiles\graphics-programming-2023\libraries\itugl\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalDependencies>..\..\libraries\glad\MinSizeRel\glad.lib;..\..\libraries\glfw\src\MinSizeRel\glfw3.lib;..\..\libraries\assimp\MinSizeRel\assimp.lib;..\..\libraries\imgui\MinSizeRel\imgui.lib;..\..\libraries\itugl\MinSizeRel\itugl.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>C:/UnityFiles/graphics-programming-2023/Bin/exercises/exercise09/MinSizeRel/exercise09.lib</ImportLibrary>
+      <ProgramDataBaseFile>C:/UnityFiles/graphics-programming-2023/Bin/exercises/exercise09/MinSizeRel/exercise09.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\UnityFiles\graphics-programming-2023\libraries\glad\include;C:\UnityFiles\graphics-programming-2023\libraries\glfw\include;C:\UnityFiles\graphics-programming-2023\libraries\imgui\include;C:\UnityFiles\graphics-programming-2023\libraries\glm\include;C:\UnityFiles\graphics-programming-2023\libraries\stb\include;C:\UnityFiles\graphics-programming-2023\libraries\assimp\include;C:\UnityFiles\graphics-programming-2023\libraries\assimp;C:\UnityFiles\graphics-programming-2023\libraries\itugl\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR="RelWithDebInfo"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR=\"RelWithDebInfo\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\UnityFiles\graphics-programming-2023\libraries\glad\include;C:\UnityFiles\graphics-programming-2023\libraries\glfw\include;C:\UnityFiles\graphics-programming-2023\libraries\imgui\include;C:\UnityFiles\graphics-programming-2023\libraries\glm\include;C:\UnityFiles\graphics-programming-2023\libraries\stb\include;C:\UnityFiles\graphics-programming-2023\libraries\assimp\include;C:\UnityFiles\graphics-programming-2023\libraries\assimp;C:\UnityFiles\graphics-programming-2023\libraries\itugl\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\UnityFiles\graphics-programming-2023\libraries\glad\include;C:\UnityFiles\graphics-programming-2023\libraries\glfw\include;C:\UnityFiles\graphics-programming-2023\libraries\imgui\include;C:\UnityFiles\graphics-programming-2023\libraries\glm\include;C:\UnityFiles\graphics-programming-2023\libraries\stb\include;C:\UnityFiles\graphics-programming-2023\libraries\assimp\include;C:\UnityFiles\graphics-programming-2023\libraries\assimp;C:\UnityFiles\graphics-programming-2023\libraries\itugl\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalDependencies>..\..\libraries\glad\RelWithDebInfo\glad.lib;..\..\libraries\glfw\src\RelWithDebInfo\glfw3.lib;..\..\libraries\assimp\RelWithDebInfo\assimp.lib;..\..\libraries\imgui\RelWithDebInfo\imgui.lib;..\..\libraries\itugl\RelWithDebInfo\itugl.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>C:/UnityFiles/graphics-programming-2023/Bin/exercises/exercise09/RelWithDebInfo/exercise09.lib</ImportLibrary>
+      <ProgramDataBaseFile>C:/UnityFiles/graphics-programming-2023/Bin/exercises/exercise09/RelWithDebInfo/exercise09.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\UnityFiles\graphics-programming-2023\exercises\exercise09\CMakeLists.txt">
+      <UseUtf8Encoding>Always</UseUtf8Encoding>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule C:/UnityFiles/graphics-programming-2023/exercises/exercise09/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/UnityFiles/graphics-programming-2023 -BC:/UnityFiles/graphics-programming-2023/Bin --check-stamp-file C:/UnityFiles/graphics-programming-2023/Bin/exercises/exercise09/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\UnityFiles\graphics-programming-2023\Bin\exercises\exercise09\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule C:/UnityFiles/graphics-programming-2023/exercises/exercise09/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/UnityFiles/graphics-programming-2023 -BC:/UnityFiles/graphics-programming-2023/Bin --check-stamp-file C:/UnityFiles/graphics-programming-2023/Bin/exercises/exercise09/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\UnityFiles\graphics-programming-2023\Bin\exercises\exercise09\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule C:/UnityFiles/graphics-programming-2023/exercises/exercise09/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/UnityFiles/graphics-programming-2023 -BC:/UnityFiles/graphics-programming-2023/Bin --check-stamp-file C:/UnityFiles/graphics-programming-2023/Bin/exercises/exercise09/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\UnityFiles\graphics-programming-2023\Bin\exercises\exercise09\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule C:/UnityFiles/graphics-programming-2023/exercises/exercise09/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/UnityFiles/graphics-programming-2023 -BC:/UnityFiles/graphics-programming-2023/Bin --check-stamp-file C:/UnityFiles/graphics-programming-2023/Bin/exercises/exercise09/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\UnityFiles\graphics-programming-2023\Bin\exercises\exercise09\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="C:\UnityFiles\graphics-programming-2023\exercises\exercise09\PostFXSceneViewerApplication.h" />
+    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\exercises\exercise09\PostFXSceneViewerApplication.cpp" />
+    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\exercises\exercise09\main.cpp" />
+    <None Include="C:\UnityFiles\graphics-programming-2023\exercises\exercise09\shaders\default.frag">
+    </None>
+    <None Include="C:\UnityFiles\graphics-programming-2023\exercises\exercise09\shaders\default.vert">
+    </None>
+    <None Include="C:\UnityFiles\graphics-programming-2023\exercises\exercise09\shaders\lambert-ggx.glsl">
+    </None>
+    <None Include="C:\UnityFiles\graphics-programming-2023\exercises\exercise09\shaders\lighting.glsl">
+    </None>
+    <None Include="C:\UnityFiles\graphics-programming-2023\exercises\exercise09\shaders\postfx\bloom.frag">
+    </None>
+    <None Include="C:\UnityFiles\graphics-programming-2023\exercises\exercise09\shaders\postfx\blur.frag">
+    </None>
+    <None Include="C:\UnityFiles\graphics-programming-2023\exercises\exercise09\shaders\postfx\compose.frag">
+    </None>
+    <None Include="C:\UnityFiles\graphics-programming-2023\exercises\exercise09\shaders\postfx\copy.frag">
+    </None>
+    <None Include="C:\UnityFiles\graphics-programming-2023\exercises\exercise09\shaders\renderer\deferred.frag">
+    </None>
+    <None Include="C:\UnityFiles\graphics-programming-2023\exercises\exercise09\shaders\renderer\deferred.vert">
+    </None>
+    <None Include="C:\UnityFiles\graphics-programming-2023\exercises\exercise09\shaders\renderer\empty.frag">
+    </None>
+    <None Include="C:\UnityFiles\graphics-programming-2023\exercises\exercise09\shaders\renderer\empty.vert">
+    </None>
+    <None Include="C:\UnityFiles\graphics-programming-2023\exercises\exercise09\shaders\renderer\fullscreen.vert">
+    </None>
+    <None Include="C:\UnityFiles\graphics-programming-2023\exercises\exercise09\shaders\renderer\skybox.frag">
+    </None>
+    <None Include="C:\UnityFiles\graphics-programming-2023\exercises\exercise09\shaders\renderer\skybox.vert">
+    </None>
+    <None Include="C:\UnityFiles\graphics-programming-2023\exercises\exercise09\shaders\utils.glsl">
+    </None>
+    <None Include="C:\UnityFiles\graphics-programming-2023\exercises\exercise09\shaders\version330.glsl">
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="C:\UnityFiles\graphics-programming-2023\Bin\ZERO_CHECK.vcxproj">
+      <Project>{E9ECF176-4261-365A-846B-49A9250BDC5A}</Project>
+      <Name>ZERO_CHECK</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="C:\UnityFiles\graphics-programming-2023\Bin\libraries\assimp\assimp.vcxproj">
+      <Project>{FBDD6CD6-3292-39F0-B443-549327B74B1D}</Project>
+      <Name>assimp</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\UnityFiles\graphics-programming-2023\Bin\libraries\glad\glad.vcxproj">
+      <Project>{837AEA5A-4661-39AD-9C11-A9076465D9B9}</Project>
+      <Name>glad</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\UnityFiles\graphics-programming-2023\Bin\libraries\glfw\src\glfw.vcxproj">
+      <Project>{C04CDDAE-93E1-3ABA-BD94-763A55BEA0A4}</Project>
+      <Name>glfw</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\UnityFiles\graphics-programming-2023\Bin\libraries\imgui\imgui.vcxproj">
+      <Project>{E351DA93-B97B-3CB3-A86D-E1B11A431A94}</Project>
+      <Name>imgui</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\UnityFiles\graphics-programming-2023\Bin\libraries\itugl\itugl.vcxproj">
+      <Project>{50886B97-E333-322B-9E96-7049A82316A6}</Project>
+      <Name>itugl</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

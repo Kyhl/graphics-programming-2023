@@ -1,50 +1,50 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\exercises\Exam\TerrainApplication.cpp">
+    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\exercises\Exam\TerrainApplication.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\exercises\Exam\main.cpp">
+    <ClCompile Include="C:\UnityFiles\graphics-programming-2023\exercises\Exam\main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="D:\GraphicsProgramming\graphics-programming-2023\exercises\Exam\TerrainApplication.h">
+    <ClInclude Include="C:\UnityFiles\graphics-programming-2023\exercises\Exam\TerrainApplication.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <CustomBuild Include="D:\GraphicsProgramming\graphics-programming-2023\exercises\Exam\CMakeLists.txt" />
+    <CustomBuild Include="C:\UnityFiles\graphics-programming-2023\exercises\Exam\CMakeLists.txt" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="D:\GraphicsProgramming\graphics-programming-2023\exercises\Exam\shaders\default.frag">
+    <None Include="C:\UnityFiles\graphics-programming-2023\exercises\Exam\shaders\default.frag">
       <Filter>Shaders</Filter>
     </None>
-    <None Include="D:\GraphicsProgramming\graphics-programming-2023\exercises\Exam\shaders\default.vert">
+    <None Include="C:\UnityFiles\graphics-programming-2023\exercises\Exam\shaders\default.vert">
       <Filter>Shaders</Filter>
     </None>
-    <None Include="D:\GraphicsProgramming\graphics-programming-2023\exercises\Exam\shaders\terrain.frag">
+    <None Include="C:\UnityFiles\graphics-programming-2023\exercises\Exam\shaders\terrain.frag">
       <Filter>Shaders</Filter>
     </None>
-    <None Include="D:\GraphicsProgramming\graphics-programming-2023\exercises\Exam\shaders\terrain.vert">
+    <None Include="C:\UnityFiles\graphics-programming-2023\exercises\Exam\shaders\terrain.vert">
       <Filter>Shaders</Filter>
     </None>
-    <None Include="D:\GraphicsProgramming\graphics-programming-2023\exercises\Exam\shaders\water.frag">
+    <None Include="C:\UnityFiles\graphics-programming-2023\exercises\Exam\shaders\water.frag">
       <Filter>Shaders</Filter>
     </None>
-    <None Include="D:\GraphicsProgramming\graphics-programming-2023\exercises\Exam\shaders\water.vert">
+    <None Include="C:\UnityFiles\graphics-programming-2023\exercises\Exam\shaders\water.vert">
       <Filter>Shaders</Filter>
     </None>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Header Files">
-      <UniqueIdentifier>{3378DBF5-1BCA-3A3E-84DA-82AB77AEDA8E}</UniqueIdentifier>
+      <UniqueIdentifier>{16C8EA6D-F51E-3B49-8915-47636A1B82C5}</UniqueIdentifier>
     </Filter>
     <Filter Include="Shaders">
-      <UniqueIdentifier>{BB3DA5E7-2DA1-3C97-A7D8-2557C6373DB1}</UniqueIdentifier>
+      <UniqueIdentifier>{0B35AA16-ACA2-367B-9F6D-E430E58E463E}</UniqueIdentifier>
     </Filter>
     <Filter Include="Source Files">
-      <UniqueIdentifier>{B118B8BD-CB6A-3871-85B7-2B0494A28BA4}</UniqueIdentifier>
+      <UniqueIdentifier>{1161C1DE-5027-30E9-959B-5F602847D71E}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

@@ -257,7 +257,7 @@ void TexturedTerrainApplication::CreateTerrainMesh(Mesh& mesh, unsigned int grid
 
     // Define the vertex format (should match the vertex structure)
     VertexFormat vertexFormat;
-    vertexFormat.AddVertexAttribute<float>(3);
+    vertexFormat.AddVertexAttribute<float>(3, VertexAttribute::Semantic::Position);
     vertexFormat.AddVertexAttribute<float>(3);
     vertexFormat.AddVertexAttribute<float>(2);
 

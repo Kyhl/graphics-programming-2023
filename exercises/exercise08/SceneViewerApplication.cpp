@@ -3,7 +3,7 @@
 #include <ituGL/asset/TextureCubemapLoader.h>
 #include <ituGL/asset/ShaderLoader.h>
 #include <ituGL/asset/ModelLoader.h>
-
+#include <ituGL/geometry/VertexFormat.h>
 #include <ituGL/camera/Camera.h>
 #include <ituGL/scene/SceneCamera.h>
 
@@ -22,7 +22,18 @@
 
 #include <ituGL/scene/ImGuiSceneVisitor.h>
 #include <imgui.h>
+#define STB_PERLIN_IMPLEMENTATION
+#include <stb_perlin.h>
 
+
+#include <fstream>
+#include <sstream>
+
+#include <cmath>
+#include <iostream>
+#include <numbers> 
+using namespace std;
+using namespace glm;
 SceneViewerApplication::SceneViewerApplication()
     : Application(1024, 1024, "Scene Viewer demo")
     , m_renderer(GetDevice())
@@ -161,7 +172,29 @@ void SceneViewerApplication::InitializeMaterial()
     assert(shaderProgramPtr);
     m_defaultMaterial = std::make_shared<Material>(shaderProgramPtr, filteredUniforms);
 }
-
+vec3 GetColorFromHeight(float height)
+{
+    if (height > 0.47f)
+    {
+        return vec3(1.0f, 1.0f, 1.0f); // Snow
+    }
+    else if (height > 0.15f)
+    {
+        return vec3(0.3f, 0.3f, 0.35f); // Rock
+    }
+    else if (height > -0.08f)
+    {
+        return vec3(0.1f, 0.4f, 0.15f); // Grass
+    }
+    else if (height > -0.12f)
+    {
+        return vec3(0.6f, 0.5f, 0.4f); // Sand
+    }
+    else
+    {
+        return vec3(0.1f, 0.1f, 0.3f); // Water
+    }
+}
 void SceneViewerApplication::InitializeModels()
 {
     m_skyboxTexture = TextureCubemapLoader::LoadTextureShared("models/skybox/defaultCubemap.png", TextureObject::FormatRGB, TextureObject::InternalFormatSRGB8);
@@ -211,6 +244,172 @@ void SceneViewerApplication::InitializeModels()
 
     //std::shared_ptr<Model> clockModel = loader.LoadShared("models/alarm_clock/alarm_clock.obj");
     //m_scene.AddSceneNode(std::make_shared<SceneModel>("alarm clock", clockModel));
+    // Create containers for the vertex data
+    struct Vertex
+    {
+        Vertex() = default;
+        Vertex(const glm::vec3& position, const glm::vec3& normal, const glm::vec2 texCoord)
+            : position(position), normal(normal), texCoord(texCoord) {}
+        glm::vec3 position;
+        glm::vec2 texCoord;
+        glm::vec3 color;
+        glm::vec3 normal;
+
+    };
+
+    // Define the vertex format (should match the vertex structure)
+    VertexFormat vertexFormat;
+    vertexFormat.AddVertexAttribute<float>(3, VertexAttribute::Semantic::Position);
+    vertexFormat.AddVertexAttribute<float>(2);
+    vertexFormat.AddVertexAttribute<float>(3);
+    vertexFormat.AddVertexAttribute<float>(3);
+    std::vector<Vertex> vertices;
+
+    // Create container for the element data
+    std::vector<unsigned int> indices;
+    int m_grid = 256;
+    // Grid scale to convert the entire grid to size 1x1
+    float scale = (1.0f / m_grid);
+
+    // Number of columns and rows
+    unsigned int columnCount = m_grid + 1;
+    unsigned int rowCount = m_grid + 1;
+    float maxHeight = 0.05f;
+    float lacunarity = 1.9f;
+    float gain = 0.55f;
+    float octaves = 8;
+    float minVal = -0.2f;
+    float maxVal = 1.0f;
+    // Iterate over each VERTEX
+    for (unsigned int u = 0; u < 6; u++)
+    {
+        for (unsigned int j = 0; j < rowCount; ++j)
+        {
+            for (unsigned int i = 0; i < columnCount; ++i)
+            {
+                Vertex& vertex = vertices.emplace_back();
+                // -0.5f is the offset
+                float x = i * scale - 0.5f;
+                float y = j * scale - 0.5f;
+                float noise;
+                float z = 0.0f;
+                switch (u)
+                {
+                case 5:
+                    //Back
+                    vertex.texCoord = vec2(static_cast<float>(i), static_cast<float>(j));
+                    vertex.normal = vec3(1.0f, 0.0f, 0.0f);
+                    //the *0.5f is the scale
+                    vertex.position = glm::normalize((vec3(z - 0.5f, x, y) * 2.0f) / scale - vec3(1.0f)) * 0.5f;
+                    noise = clamp(stb_perlin_fbm_noise3(vertex.position.x * 2.0f, vertex.position.y * 2.0f, vertex.position.z * 2.0f, lacunarity, gain, octaves), minVal, maxVal);
+                    vertex.color = GetColorFromHeight(noise);
+                    vertex.position += vertex.position * 2.0f * noise * maxHeight;
+                    break;
+                case 4:
+                    //Front
+                    vertex.texCoord = vec2(static_cast<float>(i), static_cast<float>(j));
+                    vertex.normal = vec3(1.0f, 0.0f, 0.0f);
+                    vertex.position = glm::normalize((vec3(z + 0.5f, x, y) * 2.0f) / scale - vec3(1.0f)) * 0.5f;
+                    noise = clamp(stb_perlin_fbm_noise3(vertex.position.x * 2.0f, vertex.position.y * 2.0f, vertex.position.z * 2.0f, lacunarity, gain, octaves), minVal, maxVal);
+                    vertex.color = GetColorFromHeight(noise);
+                    vertex.position += vertex.position * 2.0f * noise * maxHeight;
+                    break;
+                case 3:
+                    //Left
+                    vertex.texCoord = vec2(static_cast<float>(i), static_cast<float>(j));
+                    vertex.normal = vec3(0.0f, 1.0f, 0.0f);
+                    vertex.position = glm::normalize((vec3(x, z - 0.5f, y) * 2.0f) / scale - vec3(1.0f)) * 0.5f;
+                    noise = clamp(stb_perlin_fbm_noise3(vertex.position.x * 2.0f, vertex.position.y * 2.0f, vertex.position.z * 2.0f, lacunarity, gain, octaves), minVal, maxVal);
+                    vertex.color = GetColorFromHeight(noise);
+                    vertex.position += vertex.position * 2.0f * noise * maxHeight;
+                    break;
+                case 2:
+                    //Bottom
+                    vertex.texCoord = vec2(static_cast<float>(i), static_cast<float>(j));
+                    vertex.normal = vec3(0.0f, 0.0f, 1.0f);
+                    vertex.position = glm::normalize((vec3(x, y, (z * -1) - 0.5f) * 2.0f) / scale - vec3(1.0f)) * 0.5f;
+                    noise = clamp(stb_perlin_fbm_noise3(vertex.position.x * 2.0f, vertex.position.y * 2.0f, vertex.position.z * 2.0f, lacunarity, gain, octaves), minVal, maxVal);
+                    vertex.color = GetColorFromHeight(noise);
+                    vertex.position += vertex.position * 2.0f * noise * maxHeight;
+                    break;
+                case 1:
+                    //Right
+                    vertex.texCoord = vec2(static_cast<float>(i), static_cast<float>(j));
+                    vertex.normal = vec3(0.0f, 1.0f, 0.0f);
+                    vertex.position = glm::normalize((vec3(x, z + 0.5f, y) * 2.0f) / scale - vec3(1.0f)) * 0.5f;
+                    noise = clamp(stb_perlin_fbm_noise3(vertex.position.x * 2.0f, vertex.position.y * 2.0f, vertex.position.z * 2.0f, lacunarity, gain, octaves), minVal, maxVal);
+                    vertex.color = GetColorFromHeight(noise);
+                    vertex.position += vertex.position * 2.0f * noise * maxHeight;
+                    break;
+                case 0:
+                    //Top
+                    vertex.texCoord = vec2(static_cast<float>(i), static_cast<float>(j));
+                    vertex.normal = vec3(0.0f, 0.0f, 1.0f);
+                    vertex.position = glm::normalize((vec3(x, y, z + 0.5f) * 2.0f) / scale - vec3(1.0f)) * 0.5f;
+                    noise = clamp(stb_perlin_fbm_noise3(vertex.position.x * 2.0f, vertex.position.y * 2.0f, vertex.position.z * 2.0f, lacunarity, gain, octaves), minVal, maxVal);
+                    vertex.color = GetColorFromHeight(noise);
+                    vertex.position += vertex.position * 2.0f * noise * maxHeight;
+                    break;
+                }
+
+                if (i > 0 && j > 0)
+                {
+                    unsigned int offset = rowCount * columnCount * u;
+                    unsigned int top_right = (j * columnCount + i) + offset; // Current vertex
+                    unsigned int top_left = top_right - 1;
+                    unsigned int bottom_right = top_right - columnCount;
+                    unsigned int bottom_left = bottom_right - 1;
+
+                    //Triangle 1
+                    indices.push_back(bottom_left);
+                    indices.push_back(bottom_right);
+                    indices.push_back(top_left);
+
+                    //Triangle 2
+                    indices.push_back(bottom_right);
+                    indices.push_back(top_left);
+                    indices.push_back(top_right);
+                }
+            }
+        }
+    }
+    for (unsigned int u = 0; u < 6; u++)
+    {
+        for (unsigned int j = 0; j < rowCount; ++j)
+        {
+            for (unsigned int i = 0; i < columnCount; ++i)
+            {
+                // Get the vertex at (i, j)
+                unsigned int offset = (rowCount * columnCount) * u;
+                int index = j * columnCount + i + offset;
+                Vertex& vertex = vertices[index];
+
+                // Compute the delta in X
+                unsigned int prevX = i > 0 ? index - 1 : index;
+                unsigned int nextX = i < m_grid ? index + 1 : index;
+
+                // Compute the delta in Y
+                int prevY = j > 0 ? index - columnCount : index;
+                int nextY = j < m_grid ? index + columnCount : index;
+
+                vec3 deltaX = normalize(vertices[nextX].position - vertices[prevX].position);
+                vec3 deltaY = normalize(vertices[nextY].position - vertices[prevY].position);
+
+                vertex.normal = cross(deltaX, deltaY);
+                if (sign(dot(vertex.position, vertex.normal)) < 0)
+                {
+                    vertex.normal = cross(deltaY, deltaX);
+                }
+            }
+        }
+    }
+    std::shared_ptr<Model> planetModel = std::make_shared<Model>(make_shared<Mesh>());
+
+    planetModel->GetMesh().AddSubmesh<Vertex, unsigned int, VertexFormat::LayoutIterator>(Drawcall::Primitive::Triangles, vertices, indices,
+        vertexFormat.LayoutBegin(static_cast<int>(vertices.size()), true /* interleaved */), vertexFormat.LayoutEnd());
+//    std::shared_ptr<Material> planetMaterial = std::make_shared<Material>();
+    planetModel->AddMaterial(m_defaultMaterial);
+    m_scene.AddSceneNode(std::make_shared<SceneModel>("Earth", planetModel));
 }
 
 void SceneViewerApplication::InitializeRenderer()

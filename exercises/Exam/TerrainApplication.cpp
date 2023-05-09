@@ -308,7 +308,7 @@ void TerrainApplication::InitializePlanet(vec3 offset, float scaleSize)
                     vertex.position = glm::normalize((vec3(z - 0.5f, x, y) * 2.0f) / scale - vec3(1.0f)) * scaleSize;
                     noise = 0.0f;//clamp(stb_perlin_fbm_noise3(vertex.position.x * 2.0f, vertex.position.y * 2.0f, vertex.position.z * 2.0f, lacunarity, gain, octaves), minVal, maxVal);
                     vertex.color = vec3(0.969, 0.839, 0.408);
-                    vertex.position += vertex.position * 2.0f * noise * maxHeight ;
+                    vertex.position += vertex.position * 2.0f * noise * maxHeight + offset;
                     break;
                 case 4:
                     //Front
@@ -317,7 +317,7 @@ void TerrainApplication::InitializePlanet(vec3 offset, float scaleSize)
                     vertex.position = glm::normalize((vec3(z + 0.5f, x, y) * 2.0f) / scale - vec3(1.0f)) * scaleSize;
                     noise = 0.0f;//clamp(stb_perlin_fbm_noise3(vertex.position.x * 2.0f, vertex.position.y * 2.0f, vertex.position.z * 2.0f, lacunarity, gain, octaves), minVal, maxVal);
                     vertex.color = vec3(0.969, 0.839, 0.408);
-                    vertex.position += vertex.position * 2.0f * noise * maxHeight ;
+                    vertex.position += vertex.position * 2.0f * noise * maxHeight + offset;
                     break;
                 case 3:
                     //Left
@@ -326,7 +326,7 @@ void TerrainApplication::InitializePlanet(vec3 offset, float scaleSize)
                     vertex.position = glm::normalize((vec3(x, z - 0.5f, y) * 2.0f) / scale - vec3(1.0f)) * scaleSize;
                     noise = 0.0f;//clamp(stb_perlin_fbm_noise3(vertex.position.x * 2.0f, vertex.position.y * 2.0f, vertex.position.z * 2.0f, lacunarity, gain, octaves), minVal, maxVal);
                     vertex.color = vec3(0.969, 0.839, 0.408);
-                    vertex.position += vertex.position * 2.0f * noise * maxHeight;
+                    vertex.position += vertex.position * 2.0f * noise * maxHeight + offset;
                     break;
                 case 2:
                     //Bottom
@@ -335,7 +335,7 @@ void TerrainApplication::InitializePlanet(vec3 offset, float scaleSize)
                     vertex.position = glm::normalize((vec3(x, y, (z * -1) - 0.5f) * 2.0f) / scale - vec3(1.0f)) * scaleSize;
                     noise = 0.0f;//clamp(stb_perlin_fbm_noise3(vertex.position.x * 2.0f, vertex.position.y * 2.0f, vertex.position.z * 2.0f, lacunarity, gain, octaves), minVal, maxVal);
                     vertex.color = vec3(0.969, 0.839, 0.408);
-                    vertex.position += vertex.position * 2.0f * noise * maxHeight;
+                    vertex.position += vertex.position * 2.0f * noise * maxHeight + offset;
                     break;
                 case 1:
                     //Right
@@ -344,7 +344,7 @@ void TerrainApplication::InitializePlanet(vec3 offset, float scaleSize)
                     vertex.position = glm::normalize((vec3(x, z + 0.5f, y) * 2.0f) / scale - vec3(1.0f)) * scaleSize;
                     noise = 0.0f;//clamp(stb_perlin_fbm_noise3(vertex.position.x * 2.0f, vertex.position.y * 2.0f, vertex.position.z * 2.0f, lacunarity, gain, octaves), minVal, maxVal);
                     vertex.color = vec3(0.969, 0.839, 0.408);
-                    vertex.position += vertex.position * 2.0f * noise * maxHeight ;
+                    vertex.position += vertex.position * 2.0f * noise * maxHeight + offset;
                     break;
                 case 0:
                     //Top
@@ -353,7 +353,7 @@ void TerrainApplication::InitializePlanet(vec3 offset, float scaleSize)
                     vertex.position = glm::normalize((vec3(x, y, z + 0.5f) * 2.0f) / scale - vec3(1.0f)) * scaleSize;
                     noise = 0.0f;//clamp(stb_perlin_fbm_noise3(vertex.position.x * 2.0f, vertex.position.y * 2.0f, vertex.position.z * 2.0f, lacunarity, gain, octaves), minVal, maxVal);
                     vertex.color = vec3(0.969, 0.839, 0.408);
-                    vertex.position += vertex.position * 2.0f * noise * maxHeight ;
+                    vertex.position += vertex.position * 2.0f * noise * maxHeight + offset;
                     break;
                 }
 

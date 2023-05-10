@@ -24,7 +24,7 @@
 #include <imgui.h>
 #define STB_PERLIN_IMPLEMENTATION
 #include <stb_perlin.h>
-
+#include <ituGL/scene/Transform.h>
 
 #include <fstream>
 #include <sstream>
@@ -52,7 +52,7 @@ void SceneViewerApplication::Initialize()
 
     // Initialize DearImGUI
     m_imGui.Initialize(GetMainWindow());
-
+    
     InitializeCamera();
     //InitializeLights();
     InitializeMaterial();
@@ -66,6 +66,8 @@ void SceneViewerApplication::Update()
 
     // Update camera controller
     m_cameraController.Update(GetMainWindow(), GetDeltaTime());
+
+    m_scene.GetSceneNode("Earth")->GetTransform()->SetRotation(m_scene.GetSceneNode("Earth")->GetTransform()->GetRotation()+vec3(0,0.001f,0));
 
     // Add the scene nodes to the renderer
     RendererSceneVisitor rendererSceneVisitor(m_renderer);

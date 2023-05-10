@@ -34,7 +34,8 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("D:/GraphicsProgramming/graphics-programming-2023/bin/exercises/Exam/cmake_install.cmake")
+  include("D:/GraphicsProgramming/graphics-programming-2023/bin/exercises/Exam_final_kaky/cmake_install.cmake")
+  include("D:/GraphicsProgramming/graphics-programming-2023/bin/exercises/Exam_old/cmake_install.cmake")
   include("D:/GraphicsProgramming/graphics-programming-2023/bin/exercises/exercise00/cmake_install.cmake")
   include("D:/GraphicsProgramming/graphics-programming-2023/bin/exercises/exercise01/cmake_install.cmake")
   include("D:/GraphicsProgramming/graphics-programming-2023/bin/exercises/exercise02/cmake_install.cmake")

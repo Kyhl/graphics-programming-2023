@@ -188,7 +188,7 @@ void SolarSystemSimulation::InitializeModels()
     vertexFormat.AddVertexAttribute<float>(3, VertexAttribute::Semantic::Color0);
     vertexFormat.AddVertexAttribute<float>(3, VertexAttribute::Semantic::Normal);
     
-    unsigned int m_grid = 128u;
+    unsigned int m_grid = 512u;
     // Grid scale to convert the entire grid to size 1x1
     float scale = (1.0f / m_grid);
 

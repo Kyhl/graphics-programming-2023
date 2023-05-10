@@ -1,11 +1,1 @@
-﻿  Building Custom Rule D:/GraphicsProgramming/graphics-programming-2023/exercises/Exam/CMakeLists.txt
-  TerrainApplication.cpp
-D:\GraphicsProgramming\graphics-programming-2023\exercises\Exam\TerrainApplication.cpp(187,153): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-D:\GraphicsProgramming\graphics-programming-2023\exercises\Exam\TerrainApplication.cpp(196,153): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-D:\GraphicsProgramming\graphics-programming-2023\exercises\Exam\TerrainApplication.cpp(205,153): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-D:\GraphicsProgramming\graphics-programming-2023\exercises\Exam\TerrainApplication.cpp(214,153): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-D:\GraphicsProgramming\graphics-programming-2023\exercises\Exam\TerrainApplication.cpp(223,153): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-D:\GraphicsProgramming\graphics-programming-2023\exercises\Exam\TerrainApplication.cpp(232,153): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-  main.cpp
-  Generating Code...
-  Exam.vcxproj -> D:\GraphicsProgramming\graphics-programming-2023\bin\exercises\Exam\Debug\Exam.exe
+﻿

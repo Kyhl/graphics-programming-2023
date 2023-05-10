@@ -97,7 +97,7 @@ void SceneViewerApplication::InitializeCamera()
 {
     // Create the main camera
     std::shared_ptr<Camera> camera = std::make_shared<Camera>();
-    camera->SetViewMatrix(glm::vec3(-1, 1, 1), glm::vec3(0, 0, 0), glm::vec3(0, 1, 0));
+    camera->SetViewMatrix(glm::vec3(-1, 1, 2), glm::vec3(0, 0, 0), glm::vec3(0, 1, 0));
     camera->SetPerspectiveProjectionMatrix(1.0f, 1.0f, 0.1f, 100.0f);
 
     // Create a scene node for the camera
@@ -408,32 +408,29 @@ void SceneViewerApplication::InitializeModels()
                     if (sign(dot(vertex.normal, facing)) > 0)
                     {
 
-
                         //Triangle 1
-                        indices.push_back(top_left);
-                        indices.push_back(top_right);
-                        indices.push_back(bottom_right);
-                        
-
-                        //Triangle 2
                         indices.push_back(bottom_right);
                         indices.push_back(bottom_left);
                         indices.push_back(top_left);
                         
+                        //Triangle 2
+                        indices.push_back(top_left);
+                        indices.push_back(top_right);
+                        indices.push_back(bottom_right);
+
                     }
                     else
                     {
-                        //Triangle 2
-                        indices.push_back(top_left);
-                        indices.push_back(bottom_right);
-                        indices.push_back(top_right);
-                        
+
                         //Triangle 1
                         indices.push_back(bottom_right);
                         indices.push_back(top_left);
                         indices.push_back(bottom_left);
                         
-
+                        //Triangle 2
+                        indices.push_back(top_left);
+                        indices.push_back(bottom_right);
+                        indices.push_back(top_right);
                         
                     }
                     
@@ -464,12 +461,17 @@ void SceneViewerApplication::InitializeModels()
 
                 vec3 deltaX = normalize(vertices[nextX].position - vertices[prevX].position);
                 vec3 deltaY = normalize(vertices[nextY].position - vertices[prevY].position);
-
-                vertex.normal = cross(deltaX, deltaY);
-                if (sign(dot(vertex.position, vertex.normal)) < 0)
+                vec3 temp = cross(deltaY, deltaX);
+                if (sign(dot(vertex.normal, temp)) > 0)
                 {
-                    vertex.normal = cross(deltaY, deltaX);
+                    vertex.normal = cross(deltaX, deltaY);
                 }
+                else {
+                    vertex.normal = temp;
+                }
+
+                
+
             }
         }
     }
@@ -500,46 +502,44 @@ void SceneViewerApplication::InitializeModels()
                 // -0.5f is the offset
                 float x = i * scale - 0.5f;
                 float y = j * scale - 0.5f;
-                float noise;
                 float z = 0.0f;
                 switch (u)
                 {
                 case 5:
                     //Back
                     vertex.texCoord = vec2(static_cast<float>(i), static_cast<float>(j));
-                    vertex.normal = vec3(1.0f, 0.0f, 0.0f);
-                    //the *0.5f is the scale
                     vertex.position = glm::normalize((vec3(z - 0.5f, x, y) * 2.0f) / scale - vec3(1.0f)) * sunScale;
+                    vertex.normal = normalize(vertex.position);
                     break;
                 case 4:
                     //Front
                     vertex.texCoord = vec2(static_cast<float>(i), static_cast<float>(j));
-                    vertex.normal = vec3(1.0f, 0.0f, 0.0f);
                     vertex.position = glm::normalize((vec3(z + 0.5f, x, y) * 2.0f) / scale - vec3(1.0f)) * sunScale;
+                    vertex.normal = normalize(vertex.position);
                     break;
                 case 3:
                     //Left
                     vertex.texCoord = vec2(static_cast<float>(i), static_cast<float>(j));
-                    vertex.normal = vec3(0.0f, 1.0f, 0.0f);
                     vertex.position = glm::normalize((vec3(x, z - 0.5f, y) * 2.0f) / scale - vec3(1.0f)) * sunScale;
+                    vertex.normal = normalize(vertex.position);
                     break;
                 case 2:
                     //Bottom
                     vertex.texCoord = vec2(static_cast<float>(i), static_cast<float>(j));
-                    vertex.normal = vec3(0.0f, 0.0f, 1.0f);
                     vertex.position = glm::normalize((vec3(x, y, (z * -1) - 0.5f) * 2.0f) / scale - vec3(1.0f)) * sunScale;
+                    vertex.normal = normalize(vertex.position);
                     break;
                 case 1:
                     //Right
                     vertex.texCoord = vec2(static_cast<float>(i), static_cast<float>(j));
-                    vertex.normal = vec3(0.0f, 1.0f, 0.0f);
                     vertex.position = glm::normalize((vec3(x, z + 0.5f, y) * 2.0f) / scale - vec3(1.0f)) * sunScale;
+                    vertex.normal = normalize(vertex.position);
                     break;
                 case 0:
                     //Top
                     vertex.texCoord = vec2(static_cast<float>(i), static_cast<float>(j));
-                    vertex.normal = vec3(0.0f, 0.0f, 1.0f);
                     vertex.position = glm::normalize((vec3(x, y, z + 0.5f) * 2.0f) / scale - vec3(1.0f)) * sunScale;
+                    vertex.normal = normalize(vertex.position);
                     break;
                 }
 
@@ -583,37 +583,6 @@ void SceneViewerApplication::InitializeModels()
                     
                     
                 }
-            }
-        }
-    }
-    for (unsigned int u = 0; u < 6; u++)
-    {
-        for (unsigned int j = 0; j < rowCount; ++j)
-        {
-            for (unsigned int i = 0; i < columnCount; ++i)
-            {
-                // Get the vertex at (i, j)
-                unsigned int offset = (rowCount * columnCount) * u;
-                int index = j * columnCount + i + offset;
-                Vertex& vertex = sunVertices[index];
-
-                // Compute the delta in X
-                unsigned int prevX = i > 0 ? index - 1 : index;
-                unsigned int nextX = i < m_grid ? index + 1 : index;
-
-                // Compute the delta in Y
-                int prevY = j > 0 ? index - columnCount : index;
-                int nextY = j < m_grid ? index + columnCount : index;
-
-                vec3 deltaX = normalize(sunVertices[nextX].position - sunVertices[prevX].position);
-                vec3 deltaY = normalize(sunVertices[nextY].position - sunVertices[prevY].position);
-
-                /*vertex.normal = cross(deltaX, deltaY);
-                if (sign(dot(vertex.position, vertex.normal)) < 0)
-                {
-                    vertex.normal = cross(deltaY, deltaX);
-                }*/
-                vertex.normal = normalize(vertex.position);
             }
         }
     }

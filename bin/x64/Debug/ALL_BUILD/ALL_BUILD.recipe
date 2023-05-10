@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project>
+  <ProjectOutputs>
+    <ProjectOutput>
+      <FullPath>D:\GraphicsProgramming\graphics-programming-2023\Bin\x64\Debug\ZERO_CHECK</FullPath>
+    </ProjectOutput>
+    <ProjectOutput>
+      <FullPath>D:\GraphicsProgramming\graphics-programming-2023\bin\exercises\Exam\Debug\Exam.exe</FullPath>
+    </ProjectOutput>
+    <ProjectOutput>
+      <FullPath>D:\GraphicsProgramming\graphics-programming-2023\bin\exercises\exercise00\Debug\exercise00.exe</FullPath>
+    </ProjectOutput>
+    <ProjectOutput>
+      <FullPath>D:\GraphicsProgramming\graphics-programming-2023\bin\exercises\exercise01\Debug\exercise01.exe</FullPath>
+    </ProjectOutput>
+    <ProjectOutput>
+      <FullPath>D:\GraphicsProgramming\graphics-programming-2023\bin\exercises\exercise02\Debug\exercise02.exe</FullPath>
+    </ProjectOutput>
+    <ProjectOutput>
+      <FullPath>D:\GraphicsProgramming\graphics-programming-2023\bin\exercises\exercise03\Debug\exercise03.exe</FullPath>
+    </ProjectOutput>
+    <ProjectOutput>
+      <FullPath>D:\GraphicsProgramming\graphics-programming-2023\bin\exercises\exercise04\Debug\exercise04.exe</FullPath>
+    </ProjectOutput>
+    <ProjectOutput>
+      <FullPath>D:\GraphicsProgramming\graphics-programming-2023\bin\exercises\exercise05\Debug\exercise05.exe</FullPath>
+    </ProjectOutput>
+    <ProjectOutput>
+      <FullPath>D:\GraphicsProgramming\graphics-programming-2023\bin\exercises\exercise07\Debug\exercise07.exe</FullPath>
+    </ProjectOutput>
+    <ProjectOutput>
+      <FullPath>D:\GraphicsProgramming\graphics-programming-2023\bin\exercises\exercise08\Debug\exercise08.exe</FullPath>
+    </ProjectOutput>
+    <ProjectOutput>
+      <FullPath>D:\GraphicsProgramming\graphics-programming-2023\bin\exercises\exercise09\Debug\exercise09.exe</FullPath>
+    </ProjectOutput>
+    <ProjectOutput>
+      <FullPath>D:\GraphicsProgramming\graphics-programming-2023\bin\exercises\exercise10\Debug\exercise10.exe</FullPath>
+    </ProjectOutput>
+    <ProjectOutput>
+      <FullPath>D:\GraphicsProgramming\graphics-programming-2023\bin\exercises\exercise11\Debug\exercise11.exe</FullPath>
+    </ProjectOutput>
+    <ProjectOutput>
+      <FullPath>D:\GraphicsProgramming\graphics-programming-2023\Bin\x64\Debug\ALL_BUILD</FullPath>
+    </ProjectOutput>
+  </ProjectOutputs>
+  <ContentFiles />
+  <SatelliteDlls />
+  <NonRecipeFileRefs />
+</Project>

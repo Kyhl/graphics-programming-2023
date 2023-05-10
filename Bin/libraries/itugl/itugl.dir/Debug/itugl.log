@@ -1,1 +1,64 @@
-﻿  itugl.vcxproj -> D:\GraphicsProgramming\graphics-programming-2023\bin\libraries\itugl\Debug\itugl.lib
+﻿  Building Custom Rule D:/GraphicsProgramming/graphics-programming-2023/libraries/itugl/CMakeLists.txt
+  Application.cpp
+  Window.cpp
+  AssetLoader.cpp
+  ModelLoader.cpp
+  ShaderLoader.cpp
+  Texture2DLoader.cpp
+  TextureCubemapLoader.cpp
+  TextureLoader.cpp
+  Camera.cpp
+  CameraController.cpp
+  BufferObject.cpp
+  Color.cpp
+  Data.cpp
+  DeviceGL.cpp
+  Object.cpp
+  Drawcall.cpp
+  ElementBufferObject.cpp
+  Mesh.cpp
+  Model.cpp
+  VertexArrayObject.cpp
+  Generating Code...
+  Compiling...
+  VertexAttribute.cpp
+  VertexBufferObject.cpp
+  VertexFormat.cpp
+  DirectionalLight.cpp
+  Light.cpp
+  PointLight.cpp
+  SpotLight.cpp
+  DeferredRenderPass.cpp
+  ForwardRenderPass.cpp
+  GBufferRenderPass.cpp
+  PostFXRenderPass.cpp
+  RenderPass.cpp
+  Renderer.cpp
+  ShadowMapRenderPass.cpp
+  SkyboxRenderPass.cpp
+  Bounds.cpp
+D:\GraphicsProgramming\graphics-programming-2023\libraries\itugl\src\ituGL\scene\Bounds.cpp(11,75): warning C4244: '=': conversion from 'glm::vec<3,float,glm::packed_highp>::length_type' to 'float', possible loss of data
+D:\GraphicsProgramming\graphics-programming-2023\libraries\itugl\src\ituGL\scene\Bounds.cpp(14,74): warning C4244: '=': conversion from 'glm::vec<3,float,glm::packed_highp>::length_type' to 'float', possible loss of data
+  ImGuiSceneVisitor.cpp
+  RendererSceneVisitor.cpp
+  Scene.cpp
+  SceneCamera.cpp
+  Generating Code...
+  Compiling...
+  SceneLight.cpp
+  SceneModel.cpp
+  SceneNode.cpp
+  SceneVisitor.cpp
+  Transform.cpp
+  Material.cpp
+  Shader.cpp
+  ShaderProgram.cpp
+D:\GraphicsProgramming\graphics-programming-2023\libraries\itugl\src\ituGL\shader\ShaderProgram.cpp(160,107): warning C4267: 'argument': conversion from 'size_t' to 'GLsizei', possible loss of data
+  ShaderUniformCollection.cpp
+  FramebufferObject.cpp
+  Texture2DObject.cpp
+  TextureCubemapObject.cpp
+  TextureObject.cpp
+  DearImGui.cpp
+  Generating Code...
+  itugl.vcxproj -> D:\GraphicsProgramming\graphics-programming-2023\bin\libraries\itugl\Debug\itugl.lib

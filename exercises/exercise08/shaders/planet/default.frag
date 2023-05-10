@@ -27,7 +27,7 @@ void main()
         FragColor = vec4(normalize(normal), 1.0f);  
         break;  
     case 4u:  
-        FragColor = vec4(color * max(dot(normalize(normal), normalize(vec3(worldPos))), 0.2f), 1.0f);  
+        FragColor = vec4(color * max(dot(normalize(normal), normalize(worldPos)), 0.2f), 1.0f);  
         break;  
     }  
 }

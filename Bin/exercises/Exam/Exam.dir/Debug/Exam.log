@@ -8,5 +8,4 @@ D:\GraphicsProgramming\graphics-programming-2023\exercises\Exam\TerrainApplicati
 D:\GraphicsProgramming\graphics-programming-2023\exercises\Exam\TerrainApplication.cpp(232,153): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
   main.cpp
   Generating Code...
-  LINK : D:\GraphicsProgramming\graphics-programming-2023\bin\exercises\Exam\Debug\Exam.exe not found or not built by the last incremental link; performing full link
   Exam.vcxproj -> D:\GraphicsProgramming\graphics-programming-2023\bin\exercises\Exam\Debug\Exam.exe

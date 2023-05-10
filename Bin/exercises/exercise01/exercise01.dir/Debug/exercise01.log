@@ -1,7 +1,10 @@
-﻿  TerrainApplication.cpp
+﻿  Building Custom Rule D:/GraphicsProgramming/graphics-programming-2023/exercises/exercise01/CMakeLists.txt
+  TerrainApplication.cpp
 D:\GraphicsProgramming\graphics-programming-2023\exercises\exercise01\TerrainApplication.cpp(125,23): warning C4018: '<': signed/unsigned mismatch
 D:\GraphicsProgramming\graphics-programming-2023\exercises\exercise01\TerrainApplication.cpp(128,27): warning C4018: '<': signed/unsigned mismatch
 D:\GraphicsProgramming\graphics-programming-2023\exercises\exercise01\TerrainApplication.cpp(140,23): warning C4018: '<': signed/unsigned mismatch
 D:\GraphicsProgramming\graphics-programming-2023\exercises\exercise01\TerrainApplication.cpp(143,27): warning C4018: '<': signed/unsigned mismatch
 D:\GraphicsProgramming\graphics-programming-2023\exercises\exercise01\TerrainApplication.cpp(180,23): warning C4018: '<': signed/unsigned mismatch
+  main.cpp
+  Generating Code...
   exercise01.vcxproj -> D:\GraphicsProgramming\graphics-programming-2023\bin\exercises\exercise01\Debug\exercise01.exe

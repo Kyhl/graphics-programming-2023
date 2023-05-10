@@ -2,10 +2,10 @@
 <Project>
   <ProjectOutputs>
     <ProjectOutput>
-      <FullPath>C:\UnityFiles\graphics-programming-2023\Bin\x64\Debug\ZERO_CHECK</FullPath>
+      <FullPath>D:\GraphicsProgramming\graphics-programming-2023\Bin\x64\Debug\ZERO_CHECK</FullPath>
     </ProjectOutput>
     <ProjectOutput>
-      <FullPath>C:\UnityFiles\graphics-programming-2023\Bin\exercises\exercise04\Debug\exercise04.exe</FullPath>
+      <FullPath>D:\GraphicsProgramming\graphics-programming-2023\bin\exercises\exercise04\Debug\exercise04.exe</FullPath>
     </ProjectOutput>
   </ProjectOutputs>
   <ContentFiles />

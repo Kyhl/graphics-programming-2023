@@ -188,7 +188,7 @@ void SolarSystemSimulation::InitializeModels()
     vertexFormat.AddVertexAttribute<float>(3, VertexAttribute::Semantic::Color0);
     vertexFormat.AddVertexAttribute<float>(3, VertexAttribute::Semantic::Normal);
     
-    unsigned int m_grid = 512u;
+    unsigned int m_grid = 128u;
     // Grid scale to convert the entire grid to size 1x1
     float scale = (1.0f / m_grid);
 
@@ -204,7 +204,7 @@ void SolarSystemSimulation::InitializeModels()
 
     std::shared_ptr<Model> planetModel = std::make_shared<Model>(make_shared<Mesh>());
 
-    vec3 offset = vec3(5.5f, 0.0f, 0.0f);
+    vec3 offset = vec3(6.5f, 0.0f, 0.0f);
     std::vector<Vertex> vertices;
 
     // Create container for the element data

@@ -6,10 +6,12 @@
 #include <ituGL/renderer/Renderer.h>
 #include <ituGL/camera/CameraController.h>
 #include <ituGL/utils/DearImGui.h>
+#include <ituGL/asset/ShaderLoader.h>
+
 
 class TextureCubemapObject;
 class Material;
-
+class Texture2DObject;
 class SolarSystemSimulation : public Application
 {
 public:
@@ -23,11 +25,10 @@ protected:
 
 private:
     void InitializeCamera();
-    void InitializeLights();
     void InitializeMaterial();
     void InitializeModels();
     void InitializeRenderer();
-
+    std::shared_ptr<Texture2DObject> LoadTexture(const char* path);
     void RenderGUI();
 
 private:
@@ -54,4 +55,7 @@ private:
     std::shared_ptr<Material> m_defaultMaterial;
 
     std::shared_ptr<Material> m_planetMaterial;
+
+    std::shared_ptr<Material> m_sunMaterial;
+
 };

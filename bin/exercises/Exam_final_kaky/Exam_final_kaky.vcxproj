@@ -321,8 +321,8 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\..\exercises\Exam_final_kaky\SolarSystemSimulation.h" />
-    <ClCompile Include="..\..\..\exercises\Exam_final_kaky\SolarSystemSimulation.cpp" />
+    <ClInclude Include="D:\GraphicsProgramming\graphics-programming-2023\exercises\Exam_final_kaky\SolarSystemSimulation.h" />
+    <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\exercises\Exam_final_kaky\SolarSystemSimulation.cpp" />
     <ClCompile Include="D:\GraphicsProgramming\graphics-programming-2023\exercises\Exam_final_kaky\main.cpp" />
     <None Include="D:\GraphicsProgramming\graphics-programming-2023\exercises\Exam_final_kaky\shaders\planet\default.frag">
     </None>
@@ -331,6 +331,10 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <None Include="D:\GraphicsProgramming\graphics-programming-2023\exercises\Exam_final_kaky\shaders\renderer\skybox.frag">
     </None>
     <None Include="D:\GraphicsProgramming\graphics-programming-2023\exercises\Exam_final_kaky\shaders\renderer\skybox.vert">
+    </None>
+    <None Include="D:\GraphicsProgramming\graphics-programming-2023\exercises\Exam_final_kaky\shaders\sun\sun.frag">
+    </None>
+    <None Include="D:\GraphicsProgramming\graphics-programming-2023\exercises\Exam_final_kaky\shaders\sun\sun.vert">
     </None>
   </ItemGroup>
   <ItemGroup>

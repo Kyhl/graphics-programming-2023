@@ -1,16 +1,10 @@
 #include "SolarSystemSimulation.h"
 
 #include <ituGL/asset/TextureCubemapLoader.h>
-#include <ituGL/asset/ShaderLoader.h>
-#include <ituGL/asset/ModelLoader.h>
 #include <ituGL/geometry/VertexFormat.h>
 #include <ituGL/camera/Camera.h>
 #include <ituGL/scene/SceneCamera.h>
-#include <ituGL/asset/ShaderLoader.h>
-#include <ituGL/lighting/DirectionalLight.h>
-#include <ituGL/lighting/PointLight.h>
-#include <ituGL/scene/SceneLight.h>
-
+#include <ituGL/texture/Texture2DObject.h>
 #include <ituGL/shader/ShaderUniformCollection.h>
 #include <ituGL/shader/Material.h>
 #include <ituGL/geometry/Model.h>
@@ -19,19 +13,21 @@
 #include <ituGL/renderer/SkyboxRenderPass.h>
 #include <ituGL/renderer/ForwardRenderPass.h>
 #include <ituGL/scene/RendererSceneVisitor.h>
-
+#include <ituGL/scene/Transform.h>
 #include <ituGL/scene/ImGuiSceneVisitor.h>
 #include <imgui.h>
+
 #define STB_PERLIN_IMPLEMENTATION
 #include <stb_perlin.h>
-#include <ituGL/scene/Transform.h>
 
-#include <fstream>
-#include <sstream>
 
-#include <cmath>
-#include <iostream>
-#include <numbers> 
+#include <stb_image.h>
+
+
+
+
+
+
 using namespace std;
 using namespace glm;
 SolarSystemSimulation::SolarSystemSimulation()
@@ -48,13 +44,13 @@ struct Vertex
     vec3 color;
     vec3 normal;
 };
+
 void SolarSystemSimulation::Initialize()
 {
     Application::Initialize();
 
     // Initialize DearImGUI
     m_imGui.Initialize(GetMainWindow());
-
     InitializeCamera();
     InitializeMaterial();
     InitializeModels();
@@ -70,7 +66,7 @@ void SolarSystemSimulation::Update()
 
     if (m_enablePlanetRotation)
     {
-        m_scene.GetSceneNode("Earth")->GetTransform()->SetRotation(m_scene.GetSceneNode("Earth")->GetTransform()->GetRotation() + vec3(m_planetRotationSpeed * 0.0005f,m_planetRotationSpeed*0.001f, 0));
+        m_scene.GetSceneNode("Earth")->GetTransform()->SetRotation(m_scene.GetSceneNode("Earth")->GetTransform()->GetRotation() + vec3(m_planetRotationSpeed * 0.0005f,m_planetRotationSpeed * 0.001f, 0));
 
         m_scene.GetSceneNode("Mars")->GetTransform()->SetRotation(m_scene.GetSceneNode("Mars")->GetTransform()->GetRotation() + vec3(0.0f, m_planetRotationSpeed * -0.002f, 0));
     }
@@ -147,6 +143,36 @@ void SolarSystemSimulation::InitializeMaterial()
     assert(planetShaderProgramPtr);
     m_planetMaterial = std::make_shared<Material>(planetShaderProgramPtr);
 
+
+    Shader sunVertexShader = ShaderLoader(Shader::VertexShader).Load("shaders/sun/sun.vert");
+    Shader sunFragmentShader = ShaderLoader(Shader::FragmentShader).Load("shaders/sun/sun.frag");
+
+    std::shared_ptr<ShaderProgram> sunShaderProgramPtr = std::make_shared<ShaderProgram>();
+    sunShaderProgramPtr->Build(sunVertexShader, sunFragmentShader);
+
+    ShaderProgram::Location sunWorldMatrixLocation = sunShaderProgramPtr->GetUniformLocation("WorldMatrix");
+    ShaderProgram::Location sunViewProjLocation = sunShaderProgramPtr->GetUniformLocation("ViewProjMatrix");
+
+    m_renderer.RegisterShaderProgram(sunShaderProgramPtr, [=](const ShaderProgram& shaderProgram, const glm::mat4& worldMatrix, const Camera& camera, bool cameraChanged)
+        {
+            if (cameraChanged)
+            {
+                //shaderProgram.SetUniform(cameraPositionLocation, camera.ExtractTranslation());
+                shaderProgram.SetUniform(sunViewProjLocation, camera.GetViewProjectionMatrix());
+            }
+
+            shaderProgram.SetUniform(sunWorldMatrixLocation, worldMatrix);
+
+        },
+        m_renderer.GetDefaultUpdateLightsFunction(*sunShaderProgramPtr));
+    // Water material
+    m_sunMaterial = std::make_shared<Material>(sunShaderProgramPtr);
+    m_sunMaterial->SetUniformValue("Color", glm::vec4(1.0f, 1.0f, 1.0f, 0.5f));
+    m_sunMaterial->SetUniformValue("ColorTexture", LoadTexture("textures/sun.png"));
+    m_sunMaterial->SetUniformValue("ColorTextureScale", glm::vec2(0.0625f));
+    m_sunMaterial->SetBlendEquation(Material::BlendEquation::Add);
+    m_sunMaterial->SetBlendParams(Material::BlendParam::SourceAlpha, Material::BlendParam::OneMinusSourceAlpha);
+
 }
 vec3 GetColorFromHeight(float height)
 {
@@ -188,7 +214,7 @@ void SolarSystemSimulation::InitializeModels()
     vertexFormat.AddVertexAttribute<float>(3, VertexAttribute::Semantic::Color0);
     vertexFormat.AddVertexAttribute<float>(3, VertexAttribute::Semantic::Normal);
     
-    unsigned int m_grid = 128u;
+    unsigned int m_grid = 512u;
     // Grid scale to convert the entire grid to size 1x1
     float scale = (1.0f / m_grid);
 
@@ -367,9 +393,7 @@ void SolarSystemSimulation::InitializeModels()
     float marsScale = 0.2f;
     minVal = -2.0f;
     maxVal = 2.0f;
-    lacunarity = 2.9f;
-    gain = 0.55f;
-    octaves = 12;
+
 
     //Mars
     // Iterate over each VERTEX
@@ -513,9 +537,21 @@ void SolarSystemSimulation::InitializeModels()
     marsModel->AddMaterial(m_planetMaterial);
     marsModel->GetMesh().AddSubmesh<Vertex, unsigned int, VertexFormat::LayoutIterator>(Drawcall::Primitive::Triangles, marsVertices, marsIndices,
         vertexFormat.LayoutBegin(static_cast<int>(marsVertices.size()), true /* interleaved */), vertexFormat.LayoutEnd());
-
+    struct SunVertex
+    {
+        SunVertex() = default;
+        SunVertex(const glm::vec3& position, const glm::vec3& normal, const glm::vec2 texCoord)
+            : position(position), normal(normal), texCoord(texCoord) {}
+        glm::vec3 position;
+        glm::vec3 normal;
+        glm::vec2 texCoord;
+    };
+    VertexFormat sunVertexFormat;
+    sunVertexFormat.AddVertexAttribute<float>(3, VertexAttribute::Semantic::Position);
+    sunVertexFormat.AddVertexAttribute<float>(3);
+    sunVertexFormat.AddVertexAttribute<float>(2);
     //Sun
-    std::vector<Vertex> sunVertices;
+    std::vector<SunVertex> sunVertices;
 
     // Create container for the element data
     std::vector<unsigned int> sunIndices;
@@ -531,8 +567,8 @@ void SolarSystemSimulation::InitializeModels()
         {
             for (unsigned int i = 0; i < columnCount; ++i)
             {
-                Vertex& vertex = sunVertices.emplace_back();
-                vertex.color = vec3(0.969, 0.839, 0.408);
+                SunVertex& vertex = sunVertices.emplace_back();
+                //vertex.color = vec3(0.969, 0.839, 0.408);
                 // -0.5f is the offset
                 float x = i * scale - 0.5f;
                 float y = j * scale - 0.5f;
@@ -617,9 +653,9 @@ void SolarSystemSimulation::InitializeModels()
     }
 
     std::shared_ptr<Model> sunModel = std::make_shared<Model>(make_shared<Mesh>());
-    sunModel->AddMaterial(m_planetMaterial);
-    sunModel->GetMesh().AddSubmesh<Vertex, unsigned int, VertexFormat::LayoutIterator>(Drawcall::Primitive::Triangles, sunVertices, sunIndices,
-        vertexFormat.LayoutBegin(static_cast<int>(sunVertices.size()), true /* interleaved */), vertexFormat.LayoutEnd());
+    sunModel->AddMaterial(m_sunMaterial);
+    sunModel->GetMesh().AddSubmesh<SunVertex, unsigned int, VertexFormat::LayoutIterator>(Drawcall::Primitive::Triangles, sunVertices, sunIndices,
+        sunVertexFormat.LayoutBegin(static_cast<int>(sunVertices.size()), true /* interleaved */), sunVertexFormat.LayoutEnd());
 
     m_scene.AddSceneNode(std::make_shared<SceneModel>("Sun", sunModel));
 
@@ -647,4 +683,26 @@ void SolarSystemSimulation::RenderGUI()
     m_scene.AcceptVisitor(imGuiVisitor);
 
     m_imGui.EndFrame();
+}
+std::shared_ptr<Texture2DObject> SolarSystemSimulation::LoadTexture(const char* path)
+{
+    std::shared_ptr<Texture2DObject> texture = std::make_shared<Texture2DObject>();
+
+    int width = 0;
+    int height = 0;
+    int components = 0;
+
+    // Load the texture data here
+    unsigned char* data = stbi_load(path, &width, &height, &components, 4);
+
+    texture->Bind();
+    texture->SetImage(0, width, height, TextureObject::FormatRGBA, TextureObject::InternalFormatRGBA, std::span<const unsigned char>(data, width * height * 4));
+
+    // Generate mipmaps
+    texture->GenerateMipmap();
+
+    // Release texture data
+    stbi_image_free(data);
+
+    return texture;
 }

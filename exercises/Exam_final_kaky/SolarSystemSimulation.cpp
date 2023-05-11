@@ -166,6 +166,7 @@ void SolarSystemSimulation::InitializeMaterial()
         m_renderer.GetDefaultUpdateLightsFunction(*sunShaderProgramPtr));
     // Water material
     m_sunMaterial = std::make_shared<Material>(sunShaderProgramPtr);
+    m_sunMaterial->SetUniformValue("Mode", 4u);
     m_sunMaterial->SetUniformValue("Color", glm::vec4(1.0f, 1.0f, 1.0f, 0.5f));
     m_sunMaterial->SetUniformValue("ColorTexture", LoadTexture("textures/sun.png"));
     m_sunMaterial->SetUniformValue("ColorTextureScale", glm::vec2(0.0625f));
@@ -717,6 +718,7 @@ void SolarSystemSimulation::UpdateOutputMode()
         if (GetMainWindow().IsKeyPressed(GLFW_KEY_0 + i))
         {
             m_planetMaterial->SetUniformValue("Mode", (unsigned int)i);
+            m_sunMaterial->SetUniformValue("Mode", (unsigned int)i);
             break;
         }
     }

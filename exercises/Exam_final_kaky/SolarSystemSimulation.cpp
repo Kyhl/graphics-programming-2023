@@ -60,7 +60,7 @@ void SolarSystemSimulation::Initialize()
 void SolarSystemSimulation::Update()
 {
     Application::Update();
-
+    UpdateOutputMode();
     // Update camera controller
     m_cameraController.Update(GetMainWindow(), GetDeltaTime());
 
@@ -136,13 +136,12 @@ void SolarSystemSimulation::InitializeMaterial()
             }
 
             shaderProgram.SetUniform(planetWorldMatrixLocation, worldMatrix);
-            shaderProgram.SetUniform(planetModeLocation, 4u);
         },
         m_renderer.GetDefaultUpdateLightsFunction(*planetShaderProgramPtr));
 
     assert(planetShaderProgramPtr);
     m_planetMaterial = std::make_shared<Material>(planetShaderProgramPtr);
-
+    m_planetMaterial->SetUniformValue("Mode", 4u);
 
     Shader sunVertexShader = ShaderLoader(Shader::VertexShader).Load("shaders/sun/sun.vert");
     Shader sunFragmentShader = ShaderLoader(Shader::FragmentShader).Load("shaders/sun/sun.frag");
@@ -710,4 +709,16 @@ std::shared_ptr<Texture2DObject> SolarSystemSimulation::LoadTexture(const char* 
     stbi_image_free(data);
 
     return texture;
+}
+void SolarSystemSimulation::UpdateOutputMode()
+{
+    for (int i = 0; i <= 4; ++i)
+    {
+        if (GetMainWindow().IsKeyPressed(GLFW_KEY_0 + i))
+        {
+            m_planetMaterial->SetUniformValue("Mode", (unsigned int)i);
+            break;
+        }
+    }
+
 }

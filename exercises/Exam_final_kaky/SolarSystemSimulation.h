@@ -30,6 +30,7 @@ private:
     void InitializeRenderer();
     std::shared_ptr<Texture2DObject> LoadTexture(const char* path);
     void RenderGUI();
+    void UpdateOutputMode();
 
 private:
     // Helper object for debug GUI

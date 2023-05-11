@@ -200,6 +200,7 @@ vec3 GetColorFromHeight(float height)
 
 void SolarSystemSimulation::InitializeModels()
 {
+    //Initialize the skybox.
     m_skyboxTexture = TextureCubemapLoader::LoadTextureShared("models/skybox/spaceSkybox.png", TextureObject::FormatRGB, TextureObject::InternalFormatSRGB8);
 
     m_skyboxTexture->Bind();
@@ -214,17 +215,21 @@ void SolarSystemSimulation::InitializeModels()
     vertexFormat.AddVertexAttribute<float>(3, VertexAttribute::Semantic::Color0);
     vertexFormat.AddVertexAttribute<float>(3, VertexAttribute::Semantic::Normal);
     
-    unsigned int m_grid = 512u;
+    //Size of the grid for the individual planes
+    unsigned int gridSize = 512u;
+
     // Grid scale to convert the entire grid to size 1x1
-    float scale = (1.0f / m_grid);
+    float scale = (1.0f / gridSize);
 
     // Number of columns and rows
-    unsigned int columnCount = m_grid + 1;
-    unsigned int rowCount = m_grid + 1;
+    unsigned int columnCount = gridSize + 1u;
+    unsigned int rowCount = gridSize + 1u;
+
+    //Parameter for the noise.
     float maxHeight = 0.05f;
     float lacunarity = 1.9f;
     float gain = 0.55f;
-    float octaves = 8;
+    int octaves = 8;
     float minVal = -0.2f;
     float maxVal = 1.0f;
 
@@ -238,11 +243,11 @@ void SolarSystemSimulation::InitializeModels()
 
     //Earth
     // Iterate over each VERTEX
-    for (unsigned int u = 0; u < 6; u++)
+    for (unsigned int u = 0u; u < 6u; u++)
     {
-        for (unsigned int j = 0; j < rowCount; ++j)
+        for (unsigned int j = 0u; j < rowCount; ++j)
         {
-            for (unsigned int i = 0; i < columnCount; ++i)
+            for (unsigned int i = 0u; i < columnCount; ++i)
             {
                 Vertex& vertex = vertices.emplace_back();
                 // -0.5f is the offset
@@ -252,7 +257,7 @@ void SolarSystemSimulation::InitializeModels()
                 float z = 0.0f;
                 switch (u)
                 {
-                case 5:
+                case 5u:
                     //Back
                     vertex.texCoord = vec2(static_cast<float>(i), static_cast<float>(j));
                     vertex.position = glm::normalize((vec3(z - 0.5f, x, y) * 2.0f) / scale - vec3(1.0f)) * 0.5f;
@@ -261,7 +266,7 @@ void SolarSystemSimulation::InitializeModels()
                     vertex.normal = vertex.position;
                     vertex.position += vertex.position * 2.0f * noise * maxHeight - offset;
                     break;
-                case 4:
+                case 4u:
                     //Front
                     vertex.texCoord = vec2(static_cast<float>(i), static_cast<float>(j));
                     vertex.position = glm::normalize((vec3(z + 0.5f, x, y) * 2.0f) / scale - vec3(1.0f)) * 0.5f;
@@ -270,7 +275,7 @@ void SolarSystemSimulation::InitializeModels()
                     vertex.normal = vertex.position;
                     vertex.position += vertex.position * 2.0f * noise * maxHeight - offset;
                     break;
-                case 3:
+                case 3u:
                     //Left
                     vertex.texCoord = vec2(static_cast<float>(i), static_cast<float>(j));
                     vertex.position = glm::normalize((vec3(x, z - 0.5f, y) * 2.0f) / scale - vec3(1.0f)) * 0.5f;
@@ -279,7 +284,7 @@ void SolarSystemSimulation::InitializeModels()
                     vertex.normal = vertex.position;
                     vertex.position += vertex.position * 2.0f * noise * maxHeight - offset;
                     break;
-                case 2:
+                case 2u:
                     //Bottom
                     vertex.texCoord = vec2(static_cast<float>(i), static_cast<float>(j));
                     vertex.position = glm::normalize((vec3(x, y, (z * -1) - 0.5f) * 2.0f) / scale - vec3(1.0f)) * 0.5f;
@@ -288,7 +293,7 @@ void SolarSystemSimulation::InitializeModels()
                     vertex.normal = vertex.position;
                     vertex.position += vertex.position * 2.0f * noise * maxHeight - offset;
                     break;
-                case 1:
+                case 1u:
                     //Right
                     vertex.texCoord = vec2(static_cast<float>(i), static_cast<float>(j));
                     vertex.position = glm::normalize((vec3(x, z + 0.5f, y) * 2.0f) / scale - vec3(1.0f)) * 0.5f;
@@ -297,7 +302,7 @@ void SolarSystemSimulation::InitializeModels()
                     vertex.normal = vertex.position;
                     vertex.position += vertex.position * 2.0f * noise * maxHeight - offset;
                     break;
-                case 0:
+                case 0u:
                     //Top
                     vertex.texCoord = vec2(static_cast<float>(i), static_cast<float>(j));
                     vertex.position = glm::normalize((vec3(x, y, z + 0.5f) * 2.0f) / scale - vec3(1.0f)) * 0.5f;
@@ -312,9 +317,9 @@ void SolarSystemSimulation::InitializeModels()
                 {
                     unsigned int offset = rowCount * columnCount * u;
                     unsigned int top_right = (j * columnCount + i) + offset; // Current vertex
-                    unsigned int top_left = top_right - 1;
+                    unsigned int top_left = top_right - 1u;
                     unsigned int bottom_right = top_right - columnCount;
-                    unsigned int bottom_left = bottom_right - 1;
+                    unsigned int bottom_left = bottom_right - 1u;
 
                     vec3 facing = cross((vertices[bottom_left].position - vertices[bottom_right].position), (vertices[top_left].position - vertices[bottom_right].position));
 
@@ -346,11 +351,11 @@ void SolarSystemSimulation::InitializeModels()
             }
         }
     }
-    for (unsigned int u = 0; u < 6; u++)
+    for (unsigned int u = 0u; u < 6u; u++)
     {
-        for (unsigned int j = 0; j < rowCount; ++j)
+        for (unsigned int j = 0u; j < rowCount; ++j)
         {
-            for (unsigned int i = 0; i < columnCount; ++i)
+            for (unsigned int i = 0u; i < columnCount; ++i)
             {
                 // Get the vertex at (i, j)
                 unsigned int offset = (rowCount * columnCount) * u;
@@ -358,12 +363,12 @@ void SolarSystemSimulation::InitializeModels()
                 Vertex& vertex = vertices[index];
 
                 // Compute the delta in X
-                unsigned int prevX = i > 0 ? index - 1 : index;
-                unsigned int nextX = i < m_grid ? index + 1 : index;
+                unsigned int prevX = i > 0u ? index - 1u : index;
+                unsigned int nextX = i < gridSize ? index + 1u : index;
 
                 // Compute the delta in Y
                 int prevY = j > 0 ? index - columnCount : index;
-                int nextY = j < m_grid ? index + columnCount : index;
+                int nextY = j < gridSize ? index + columnCount : index;
 
                 vec3 deltaX = normalize(vertices[nextX].position - vertices[prevX].position);
                 vec3 deltaY = normalize(vertices[nextY].position - vertices[prevY].position);
@@ -397,11 +402,11 @@ void SolarSystemSimulation::InitializeModels()
 
     //Mars
     // Iterate over each VERTEX
-    for (unsigned int u = 0; u < 6; u++)
+    for (unsigned int u = 0u; u < 6u; u++)
     {
-        for (unsigned int j = 0; j < rowCount; ++j)
+        for (unsigned int j = 0u; j < rowCount; ++j)
         {
-            for (unsigned int i = 0; i < columnCount; ++i)
+            for (unsigned int i = 0u; i < columnCount; ++i)
             {
                 Vertex& vertex = marsVertices.emplace_back();
                 vertex.color = vec3(0.69, 0.184, 0.016);
@@ -413,7 +418,7 @@ void SolarSystemSimulation::InitializeModels()
                 float z = 0.0f;
                 switch (u)
                 {
-                case 5:
+                case 5u:
                     //Back
                     vertex.texCoord = vec2(static_cast<float>(i), static_cast<float>(j));
                     //the *0.5f is the scale
@@ -422,7 +427,7 @@ void SolarSystemSimulation::InitializeModels()
                     vertex.normal = vertex.position;
                     vertex.position += vertex.position * 2.0f * noise * maxHeight - marsOffset;
                     break;
-                case 4:
+                case 4u:
                     //Front
                     vertex.texCoord = vec2(static_cast<float>(i), static_cast<float>(j));
                     vertex.position = glm::normalize((vec3(z + 0.5f, x, y) * 2.0f) / scale - vec3(1.0f)) * marsScale;
@@ -430,7 +435,7 @@ void SolarSystemSimulation::InitializeModels()
                     vertex.normal = vertex.position;
                     vertex.position += vertex.position * 2.0f * noise * maxHeight - marsOffset;
                     break;
-                case 3:
+                case 3u:
                     //Left
                     vertex.texCoord = vec2(static_cast<float>(i), static_cast<float>(j));
                     vertex.position = glm::normalize((vec3(x, z - 0.5f, y) * 2.0f) / scale - vec3(1.0f)) * marsScale;
@@ -438,7 +443,7 @@ void SolarSystemSimulation::InitializeModels()
                     vertex.normal = vertex.position;
                     vertex.position += vertex.position * 2.0f * noise * maxHeight - marsOffset;
                     break;
-                case 2:
+                case 2u:
                     //Bottom
                     vertex.texCoord = vec2(static_cast<float>(i), static_cast<float>(j));
                     vertex.position = glm::normalize((vec3(x, y, (z * -1) - 0.5f) * 2.0f) / scale - vec3(1.0f)) * marsScale;
@@ -446,7 +451,7 @@ void SolarSystemSimulation::InitializeModels()
                     vertex.normal = vertex.position;
                     vertex.position += vertex.position * 2.0f * noise * maxHeight - marsOffset;
                     break;
-                case 1:
+                case 1u:
                     //Right
                     vertex.texCoord = vec2(static_cast<float>(i), static_cast<float>(j));
                     vertex.position = glm::normalize((vec3(x, z + 0.5f, y) * 2.0f) / scale - vec3(1.0f)) * marsScale;
@@ -454,7 +459,7 @@ void SolarSystemSimulation::InitializeModels()
                     vertex.normal = vertex.position;
                     vertex.position += vertex.position * 2.0f * noise * maxHeight - marsOffset;
                     break;
-                case 0:
+                case 0u:
                     //Top
                     vertex.texCoord = vec2(static_cast<float>(i), static_cast<float>(j));
                     vertex.position = glm::normalize((vec3(x, y, z + 0.5f) * 2.0f) / scale - vec3(1.0f)) * marsScale;
@@ -464,13 +469,13 @@ void SolarSystemSimulation::InitializeModels()
                     break;
                 }
 
-                if (i > 0 && j > 0)
+                if (i > 0u && j > 0u)
                 {
                     unsigned int offset = rowCount * columnCount * u;
                     unsigned int top_right = (j * columnCount + i) + offset; // Current vertex
-                    unsigned int top_left = top_right - 1;
+                    unsigned int top_left = top_right - 1u;
                     unsigned int bottom_right = top_right - columnCount;
-                    unsigned int bottom_left = bottom_right - 1;
+                    unsigned int bottom_left = bottom_right - 1u;
 
                     vec3 facing = cross((marsVertices[bottom_left].position - marsVertices[bottom_right].position), (marsVertices[top_left].position - marsVertices[bottom_right].position));
 
@@ -502,11 +507,11 @@ void SolarSystemSimulation::InitializeModels()
             }
         }
     }
-    for (unsigned int u = 0; u < 6; u++)
+    for (unsigned int u = 0u; u < 6u; u++)
     {
-        for (unsigned int j = 0; j < rowCount; ++j)
+        for (unsigned int j = 0u; j < rowCount; ++j)
         {
-            for (unsigned int i = 0; i < columnCount; ++i)
+            for (unsigned int i = 0u; i < columnCount; ++i)
             {
                 // Get the vertex at (i, j)
                 unsigned int offset = (rowCount * columnCount) * u;
@@ -514,12 +519,12 @@ void SolarSystemSimulation::InitializeModels()
                 Vertex& vertex = marsVertices[index];
 
                 // Compute the delta in X
-                unsigned int prevX = i > 0 ? index - 1 : index;
-                unsigned int nextX = i < m_grid ? index + 1 : index;
+                unsigned int prevX = i > 0u ? index - 1u : index;
+                unsigned int nextX = i < gridSize ? index + 1u : index;
 
                 // Compute the delta in Y
                 int prevY = j > 0 ? index - columnCount : index;
-                int nextY = j < m_grid ? index + columnCount : index;
+                int nextY = j < gridSize ? index + columnCount : index;
 
                 vec3 deltaX = normalize(marsVertices[nextX].position - marsVertices[prevX].position);
                 vec3 deltaY = normalize(marsVertices[nextY].position - marsVertices[prevY].position);
@@ -558,14 +563,14 @@ void SolarSystemSimulation::InitializeModels()
     // Iterate over each VERTEX
 
     float sunScale = 1.0f;
-    rowCount -= m_grid * 0.75f;
-    columnCount -= m_grid * 0.75f;
-    scale = (1.0f / (m_grid*0.25f));
-    for (unsigned int u = 0; u < 6; u++)
+    rowCount -= gridSize * 0.75f;
+    columnCount -= gridSize * 0.75f;
+    scale = (1.0f / (gridSize*0.25f));
+    for (unsigned int u = 0u; u < 6u; u++)
     {
-        for (unsigned int j = 0; j < rowCount; ++j)
+        for (unsigned int j = 0u; j < rowCount; ++j)
         {
-            for (unsigned int i = 0; i < columnCount; ++i)
+            for (unsigned int i = 0u; i < columnCount; ++i)
             {
                 SunVertex& vertex = sunVertices.emplace_back();
                 //vertex.color = vec3(0.969, 0.839, 0.408);
@@ -575,37 +580,37 @@ void SolarSystemSimulation::InitializeModels()
                 float z = 0.0f;
                 switch (u)
                 {
-                case 5:
+                case 5u:
                     //Back
                     vertex.texCoord = vec2(static_cast<float>(i), static_cast<float>(j));
                     vertex.position = glm::normalize((vec3(z - 0.5f, x, y) * 2.0f) / scale - vec3(1.0f)) * sunScale;
                     vertex.normal = normalize(vertex.position);
                     break;
-                case 4:
+                case 4u:
                     //Front
                     vertex.texCoord = vec2(static_cast<float>(i), static_cast<float>(j));
                     vertex.position = glm::normalize((vec3(z + 0.5f, x, y) * 2.0f) / scale - vec3(1.0f)) * sunScale;
                     vertex.normal = normalize(vertex.position);
                     break;
-                case 3:
+                case 3u:
                     //Left
                     vertex.texCoord = vec2(static_cast<float>(i), static_cast<float>(j));
                     vertex.position = glm::normalize((vec3(x, z - 0.5f, y) * 2.0f) / scale - vec3(1.0f)) * sunScale;
                     vertex.normal = normalize(vertex.position);
                     break;
-                case 2:
+                case 2u:
                     //Bottom
                     vertex.texCoord = vec2(static_cast<float>(i), static_cast<float>(j));
                     vertex.position = glm::normalize((vec3(x, y, (z * -1) - 0.5f) * 2.0f) / scale - vec3(1.0f)) * sunScale;
                     vertex.normal = normalize(vertex.position);
                     break;
-                case 1:
+                case 1u:
                     //Right
                     vertex.texCoord = vec2(static_cast<float>(i), static_cast<float>(j));
                     vertex.position = glm::normalize((vec3(x, z + 0.5f, y) * 2.0f) / scale - vec3(1.0f)) * sunScale;
                     vertex.normal = normalize(vertex.position);
                     break;
-                case 0:
+                case 0u:
                     //Top
                     vertex.texCoord = vec2(static_cast<float>(i), static_cast<float>(j));
                     vertex.position = glm::normalize((vec3(x, y, z + 0.5f) * 2.0f) / scale - vec3(1.0f)) * sunScale;
@@ -613,13 +618,13 @@ void SolarSystemSimulation::InitializeModels()
                     break;
                 }
 
-                if (i > 0 && j > 0)
+                if (i > 0u && j > 0u)
                 {
                     unsigned int offset = rowCount * columnCount * u;
                     unsigned int top_right = (j * columnCount + i) + offset; // Current vertex
-                    unsigned int top_left = top_right - 1;
+                    unsigned int top_left = top_right - 1u;
                     unsigned int bottom_right = top_right - columnCount;
-                    unsigned int bottom_left = bottom_right - 1;
+                    unsigned int bottom_left = bottom_right - 1u;
 
                     vec3 facing = cross((sunVertices[bottom_left].position - sunVertices[bottom_right].position), (sunVertices[top_left].position - sunVertices[bottom_right].position));
 

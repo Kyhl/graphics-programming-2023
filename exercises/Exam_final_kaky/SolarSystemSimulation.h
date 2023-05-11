@@ -51,9 +51,6 @@ private:
     // Skybox texture
     std::shared_ptr<TextureCubemapObject> m_skyboxTexture;
 
-    // Default material
-    std::shared_ptr<Material> m_defaultMaterial;
-
     std::shared_ptr<Material> m_planetMaterial;
 
     std::shared_ptr<Material> m_sunMaterial;

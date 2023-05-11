@@ -66,9 +66,9 @@ void SolarSystemSimulation::Update()
 
     if (m_enablePlanetRotation)
     {
-        m_scene.GetSceneNode("Earth")->GetTransform()->SetRotation(m_scene.GetSceneNode("Earth")->GetTransform()->GetRotation() + vec3(m_planetRotationSpeed * 0.0005f,m_planetRotationSpeed * 0.001f, 0));
+        m_scene.GetSceneNode("Earth")->GetTransform()->SetRotation(m_scene.GetSceneNode("Earth")->GetTransform()->GetRotation() + vec3(0.0f, m_planetRotationSpeed * 0.001f, 0.0f));
 
-        m_scene.GetSceneNode("Mars")->GetTransform()->SetRotation(m_scene.GetSceneNode("Mars")->GetTransform()->GetRotation() + vec3(0.0f, m_planetRotationSpeed * -0.002f, 0));
+        m_scene.GetSceneNode("Mars")->GetTransform()->SetRotation(m_scene.GetSceneNode("Mars")->GetTransform()->GetRotation() + vec3(0.0f, m_planetRotationSpeed * -0.002f, 0.0f));
     }
 
     // Add the scene nodes to the renderer

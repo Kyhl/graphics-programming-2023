@@ -9,7 +9,6 @@
 #include <ituGL/shader/Material.h>
 #include <ituGL/geometry/Model.h>
 #include <ituGL/scene/SceneModel.h>
-
 #include <ituGL/renderer/SkyboxRenderPass.h>
 #include <ituGL/renderer/ForwardRenderPass.h>
 #include <ituGL/scene/RendererSceneVisitor.h>
@@ -26,7 +25,7 @@ using namespace glm;
 SolarSystemSimulation::SolarSystemSimulation()
     : Application(1024, 1024, "Planet Scene Exam")
     , m_renderer(GetDevice())
-    , m_enablePlanetRotation(true)
+    , m_enablePlanetRotation(false)
     , m_planetRotationSpeed(1.0f)
 {
 }
@@ -60,7 +59,7 @@ void SolarSystemSimulation::Update()
     if (m_enablePlanetRotation)
     {
         m_scene.GetSceneNode("Earth")->GetTransform()->SetRotation(m_scene.GetSceneNode("Earth")->GetTransform()->GetRotation() + vec3(0.0f, m_planetRotationSpeed * 0.001f, 0.0f));
-
+        
         m_scene.GetSceneNode("Mars")->GetTransform()->SetRotation(m_scene.GetSceneNode("Mars")->GetTransform()->GetRotation() + vec3(0.0f, m_planetRotationSpeed * -0.002f, 0.0f));
     }
 

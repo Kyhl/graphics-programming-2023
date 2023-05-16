@@ -177,57 +177,9 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
       <Project>{77951829-EAAF-3919-81F3-BCF801BE1832}</Project>
       <Name>Exam_final_kaky</Name>
     </ProjectReference>
-    <ProjectReference Include="D:\GraphicsProgramming\graphics-programming-2023\bin\exercises\Exam_old\Exam_old.vcxproj">
-      <Project>{DE01A57F-2824-3BD0-989C-8EE3069003E5}</Project>
-      <Name>Exam_old</Name>
-    </ProjectReference>
     <ProjectReference Include="D:\GraphicsProgramming\graphics-programming-2023\bin\libraries\assimp\assimp.vcxproj">
       <Project>{46841CA4-55A3-3A53-A0BA-68DDE2FF95AA}</Project>
       <Name>assimp</Name>
-    </ProjectReference>
-    <ProjectReference Include="D:\GraphicsProgramming\graphics-programming-2023\bin\exercises\exercise00\exercise00.vcxproj">
-      <Project>{A6E9F76F-2E27-30CF-B784-55814D81AE1C}</Project>
-      <Name>exercise00</Name>
-    </ProjectReference>
-    <ProjectReference Include="D:\GraphicsProgramming\graphics-programming-2023\bin\exercises\exercise01\exercise01.vcxproj">
-      <Project>{D2A4DCC2-1966-34E8-A86E-77D97681A541}</Project>
-      <Name>exercise01</Name>
-    </ProjectReference>
-    <ProjectReference Include="D:\GraphicsProgramming\graphics-programming-2023\bin\exercises\exercise02\exercise02.vcxproj">
-      <Project>{D320E976-C5A6-3039-8B84-F4339BADB9B9}</Project>
-      <Name>exercise02</Name>
-    </ProjectReference>
-    <ProjectReference Include="D:\GraphicsProgramming\graphics-programming-2023\bin\exercises\exercise03\exercise03.vcxproj">
-      <Project>{BA350488-9B70-3C60-A4D0-6C79ABE8CE42}</Project>
-      <Name>exercise03</Name>
-    </ProjectReference>
-    <ProjectReference Include="D:\GraphicsProgramming\graphics-programming-2023\bin\exercises\exercise04\exercise04.vcxproj">
-      <Project>{0A889F67-4CAD-3D06-8EB3-583321F56214}</Project>
-      <Name>exercise04</Name>
-    </ProjectReference>
-    <ProjectReference Include="D:\GraphicsProgramming\graphics-programming-2023\bin\exercises\exercise05\exercise05.vcxproj">
-      <Project>{ECF28117-5CD8-3F2D-A172-3EA9A43FA799}</Project>
-      <Name>exercise05</Name>
-    </ProjectReference>
-    <ProjectReference Include="D:\GraphicsProgramming\graphics-programming-2023\bin\exercises\exercise07\exercise07.vcxproj">
-      <Project>{E53F48EF-7F16-399F-8590-2BE63245B2D2}</Project>
-      <Name>exercise07</Name>
-    </ProjectReference>
-    <ProjectReference Include="D:\GraphicsProgramming\graphics-programming-2023\bin\exercises\exercise08\exercise08.vcxproj">
-      <Project>{EBD66E50-2267-3909-996A-63FD585B1D23}</Project>
-      <Name>exercise08</Name>
-    </ProjectReference>
-    <ProjectReference Include="D:\GraphicsProgramming\graphics-programming-2023\bin\exercises\exercise09\exercise09.vcxproj">
-      <Project>{5CC779E0-C427-32AA-8A3D-B695E5536F30}</Project>
-      <Name>exercise09</Name>
-    </ProjectReference>
-    <ProjectReference Include="D:\GraphicsProgramming\graphics-programming-2023\bin\exercises\exercise10\exercise10.vcxproj">
-      <Project>{8EB641C9-3D4F-398B-A5CC-46D8804926E4}</Project>
-      <Name>exercise10</Name>
-    </ProjectReference>
-    <ProjectReference Include="D:\GraphicsProgramming\graphics-programming-2023\bin\exercises\exercise11\exercise11.vcxproj">
-      <Project>{57D5B1CD-6871-3D29-9CFD-92D60AA725A1}</Project>
-      <Name>exercise11</Name>
     </ProjectReference>
     <ProjectReference Include="D:\GraphicsProgramming\graphics-programming-2023\bin\libraries\glad\glad.vcxproj">
       <Project>{00632718-6804-3228-8755-2BA6D817F66A}</Project>

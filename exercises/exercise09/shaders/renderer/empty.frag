@@ -1,4 +1,0 @@
-// Empty
-void main()
-{
-}

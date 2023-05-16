@@ -19,14 +19,7 @@
 
 #define STB_PERLIN_IMPLEMENTATION
 #include <stb_perlin.h>
-
-
 #include <stb_image.h>
-
-
-
-
-
 
 using namespace std;
 using namespace glm;
@@ -131,7 +124,6 @@ void SolarSystemSimulation::InitializeMaterial()
         {
             if (cameraChanged)
             {
-                //shaderProgram.SetUniform(cameraPositionLocation, camera.ExtractTranslation());
                 shaderProgram.SetUniform(planetViewProjLocation, camera.GetViewProjectionMatrix());
             }
 
@@ -156,7 +148,6 @@ void SolarSystemSimulation::InitializeMaterial()
         {
             if (cameraChanged)
             {
-                //shaderProgram.SetUniform(cameraPositionLocation, camera.ExtractTranslation());
                 shaderProgram.SetUniform(sunViewProjLocation, camera.GetViewProjectionMatrix());
             }
 
@@ -164,7 +155,7 @@ void SolarSystemSimulation::InitializeMaterial()
 
         },
         m_renderer.GetDefaultUpdateLightsFunction(*sunShaderProgramPtr));
-    // Water material
+    // Sun material
     m_sunMaterial = std::make_shared<Material>(sunShaderProgramPtr);
     m_sunMaterial->SetUniformValue("Mode", 4u);
     m_sunMaterial->SetUniformValue("Color", glm::vec4(1.0f, 1.0f, 1.0f, 0.5f));
@@ -421,7 +412,6 @@ void SolarSystemSimulation::InitializeModels()
                 case 5u:
                     //Back
                     vertex.texCoord = vec2(static_cast<float>(i), static_cast<float>(j));
-                    //the *0.5f is the scale
                     vertex.position = glm::normalize((vec3(z - 0.5f, x, y) * 2.0f) / scale - vec3(1.0f)) * marsScale;
                     noise = clamp(stb_perlin_fbm_noise3(vertex.position.x * 2.0f, vertex.position.y * 2.0f, vertex.position.z * 2.0f, lacunarity, gain, octaves), minVal, maxVal);
                     vertex.normal = vertex.position;
@@ -573,8 +563,6 @@ void SolarSystemSimulation::InitializeModels()
             for (unsigned int i = 0u; i < columnCount; ++i)
             {
                 SunVertex& vertex = sunVertices.emplace_back();
-                //vertex.color = vec3(0.969, 0.839, 0.408);
-                // -0.5f is the offset
                 float x = i * scale - 0.5f;
                 float y = j * scale - 0.5f;
                 float z = 0.0f;
@@ -713,7 +701,7 @@ std::shared_ptr<Texture2DObject> SolarSystemSimulation::LoadTexture(const char* 
 }
 void SolarSystemSimulation::UpdateOutputMode()
 {
-    for (int i = 0; i <= 4; ++i)
+    for (int i = 1; i <= 4; ++i)
     {
         if (GetMainWindow().IsKeyPressed(GLFW_KEY_0 + i))
         {

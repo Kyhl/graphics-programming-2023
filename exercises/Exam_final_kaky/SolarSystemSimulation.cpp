@@ -25,17 +25,10 @@ using namespace glm;
 SolarSystemSimulation::SolarSystemSimulation()
     : Application(1024, 1024, "Planet Scene Exam")
     , m_renderer(GetDevice())
-    , m_enablePlanetRotation(false)
+    , m_enablePlanetRotation(true)
     , m_planetRotationSpeed(1.0f)
 {
 }
-struct Vertex
-{
-    vec3 position;
-    vec2 texCoord;
-    vec3 color;
-    vec3 normal;
-};
 
 void SolarSystemSimulation::Initialize()
 {
@@ -59,8 +52,10 @@ void SolarSystemSimulation::Update()
     if (m_enablePlanetRotation)
     {
         m_scene.GetSceneNode("Earth")->GetTransform()->SetRotation(m_scene.GetSceneNode("Earth")->GetTransform()->GetRotation() + vec3(0.0f, m_planetRotationSpeed * 0.001f, 0.0f));
-        
+
         m_scene.GetSceneNode("Mars")->GetTransform()->SetRotation(m_scene.GetSceneNode("Mars")->GetTransform()->GetRotation() + vec3(0.0f, m_planetRotationSpeed * -0.002f, 0.0f));
+
+        m_scene.GetSceneNode("Sun")->GetTransform()->SetRotation(m_scene.GetSceneNode("Sun")->GetTransform()->GetRotation() + vec3(0.0f, m_planetRotationSpeed * 0.0004f, m_planetRotationSpeed * 0.0004f));
     }
 
     // Add the scene nodes to the renderer
@@ -151,7 +146,6 @@ void SolarSystemSimulation::InitializeMaterial()
             }
 
             shaderProgram.SetUniform(sunWorldMatrixLocation, worldMatrix);
-
         },
         m_renderer.GetDefaultUpdateLightsFunction(*sunShaderProgramPtr));
     // Sun material
@@ -204,7 +198,17 @@ void SolarSystemSimulation::InitializeModels()
     vertexFormat.AddVertexAttribute<float>(2, VertexAttribute::Semantic::TexCoord0);
     vertexFormat.AddVertexAttribute<float>(3, VertexAttribute::Semantic::Color0);
     vertexFormat.AddVertexAttribute<float>(3, VertexAttribute::Semantic::Normal);
-    
+
+    //Define the Vertex struct
+    struct Vertex
+    {
+        vec3 position;
+        vec2 texCoord;
+        vec3 color;
+        vec3 normal;
+    };
+
+
     //Size of the grid for the individual planes
     unsigned int gridSize = 512u;
 
@@ -542,8 +546,8 @@ void SolarSystemSimulation::InitializeModels()
     };
     VertexFormat sunVertexFormat;
     sunVertexFormat.AddVertexAttribute<float>(3, VertexAttribute::Semantic::Position);
-    sunVertexFormat.AddVertexAttribute<float>(3);
-    sunVertexFormat.AddVertexAttribute<float>(2);
+    sunVertexFormat.AddVertexAttribute<float>(3, VertexAttribute::Semantic::Normal);
+    sunVertexFormat.AddVertexAttribute<float>(2, VertexAttribute::Semantic::TexCoord0);
     //Sun
     std::vector<SunVertex> sunVertices;
 
@@ -554,7 +558,7 @@ void SolarSystemSimulation::InitializeModels()
     float sunScale = 1.0f;
     rowCount -= gridSize * 0.75f;
     columnCount -= gridSize * 0.75f;
-    scale = (1.0f / (gridSize*0.25f));
+    scale = (1.0f / (gridSize * 0.25f));
     for (unsigned int u = 0u; u < 6u; u++)
     {
         for (unsigned int j = 0u; j < rowCount; ++j)
@@ -667,7 +671,7 @@ void SolarSystemSimulation::RenderGUI()
     m_imGui.BeginFrame();
 
     ImGui::Checkbox("Enable Planet Rotation", &m_enablePlanetRotation);
-    
+
     ImGui::DragFloat("Planet Rotation Speed", &m_planetRotationSpeed, 0.05f);
 
     // Draw GUI for scene nodes, using the visitor pattern
